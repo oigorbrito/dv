@@ -3,6 +3,18 @@
 This record closes the locally executable part of the current DV execution
 loop on September 11, 2026. It does not report treatment evidence.
 
+## Continuation snapshot
+
+At the latest local continuation, DV `HEAD` is
+`4152b9a...`. The normative development corpus is
+`experiments/p1/p1-development-corpus-v6.json`, with four admitted tasks
+(`D-F2-05`, `D-F2-06`, `D-F5-01`, and `D-F6-01`) across three families. The
+additional SMAG lead `64da73d...` was rejected because its parent had no focal
+verifier. `D-F2-06` remains admissible with the explicit Windows symlink
+privilege limitation documented in v6. This continuation still reports no
+treatment evidence: `P1_S1_RELEASE=NO`, `REAL_P0_RUNS=0/24`,
+`P0_RELEASE=NO`, and `HOLDOUT=SEALED`.
+
 ## Evidence boundary
 
 - DV `HEAD` is `08dcd2c1340b3b6c30d7733fa48e6e1f441d24b9`.
