@@ -181,6 +181,20 @@
     "classification": "ENVIRONMENT_BLOCKED_LOCKFILE_REPRODUCIBILITY",
     "treatment_executed": false
   },
+  "smag_parent695_offline_install_probe": {
+    "repository": "C:\\Projetos\\smag",
+    "parent_sha": "f5bc2686dfe5a5311546547a7b0ef7f73bacb266",
+    "workspace": "temporary local clone; removed after probe",
+    "command": "bun install --offline --frozen-lockfile",
+    "runtime": "bun 1.4.0",
+    "resolution": "19 packages resolved/downloaded/extracted from local cache",
+    "exit_code": 1,
+    "observed_error": "lockfile had changes, but lockfile is frozen",
+    "source_checkout_modified": false,
+    "lockfile_modified": false,
+    "classification": "ENVIRONMENT_BLOCKED_LOCKFILE_REPRODUCIBILITY",
+    "treatment_executed": false
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],

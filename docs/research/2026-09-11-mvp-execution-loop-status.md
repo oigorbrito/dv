@@ -84,6 +84,12 @@ lockfile had changes and exited 1. No lockfile or source checkout was modified.
 It remains `BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE`; this is not a product
 failure, and no solution diff was inspected.
 
+The same offline frozen-install probe was then run against the exact verifier
+parent `f5bc2686d`. Bun resolved 19 packages from the local cache but again
+reported `lockfile had changes, but lockfile is frozen` and exited 1. The
+source checkout and lockfile remained unchanged; the SMAG lead stays pending
+under `ENVIRONMENT_BLOCKED_LOCKFILE_REPRODUCIBILITY`.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor
