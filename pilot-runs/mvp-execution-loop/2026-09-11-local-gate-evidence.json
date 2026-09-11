@@ -1,10 +1,10 @@
 {
   "record_id": "mvp-execution-loop-2026-09-11-local-gate",
   "repository": "C:\\Projetos\\dv",
-  "dv_head": "87e87614a3bbbc246a55e367b5889a85bef25761",
+  "dv_head": "08dcd2c1340b3b6c30d7733fa48e6e1f441d24b9",
   "origin_main": "13d2742c7b3ea2de0f5accb02089dd4edf2a2b35",
   "worktree": "CLEAN",
-  "divergence": {"remote_only": 0, "local_only": 10},
+  "divergence": {"remote_only": 0, "local_only": 13},
   "treatment_execution": "NOT_EXECUTED",
   "holdout": "SEALED",
   "harness_self_test": {"command": "python -B tools/test_dv_pilot_harness.py", "exit_code": 0, "result": "9/9 PASS"},
