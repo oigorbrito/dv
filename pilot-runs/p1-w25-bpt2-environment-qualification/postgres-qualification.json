@@ -1,0 +1,24 @@
+{
+  "postgres_required": true,
+  "expected_version": "17",
+  "service_observed": {
+    "name": "postgresql-x64-18",
+    "status": "Stopped",
+    "start_type": "Automatic"
+  },
+  "postgres_cli_tools": {
+    "postgres": "NOT_FOUND",
+    "pg_ctl": "NOT_FOUND",
+    "pg_isready": "NOT_FOUND",
+    "psql": "NOT_FOUND"
+  },
+  "localhost_5432": "RESPONDED_BUT_OWNER_UNIDENTIFIED; access denied",
+  "docker": {
+    "binary": "AVAILABLE",
+    "daemon": "BLOCKED; permission denied connecting to docker_engine"
+  },
+  "controlled_instance": "NOT_AVAILABLE",
+  "database_bootstrap": "NOT_EXECUTED",
+  "postgres_env": "BLOCKED",
+  "unblock_condition": "controlled PostgreSQL 17 instance or pinned local image with accessible daemon, disposable database, and reproducible bootstrap"
+}

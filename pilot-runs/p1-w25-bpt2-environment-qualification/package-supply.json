@@ -1,0 +1,23 @@
+{
+  "known_parent_sha": "f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "package_supply": "BLOCKED",
+  "required_version_sources": [
+    "modules/Directory.Packages.props",
+    "project PackageReference declarations",
+    ".config/dotnet-tools.json"
+  ],
+  "lockfile": "ABSENT",
+  "nuget_config": "ABSENT",
+  "global_packages_cache": {
+    "path": "C:\\Users\\CodexSandboxOffline\\.nuget\\packages",
+    "present": true,
+    "top_level_directory_count": 17,
+    "required_package_presence_checked": false,
+    "reason": "bounded observation did not establish complete graph coverage"
+  },
+  "exact_graph_reproducible": "NO_EVIDENCE",
+  "restore_attempted": false,
+  "restore_exit_code": null,
+  "network_attempted": false,
+  "blocker": "no repository lockfile and no evidence that the exact parent dependency graph is satisfiable from local cache without external restore"
+}

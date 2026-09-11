@@ -1,0 +1,11 @@
+{
+  "repository": "C:\\Projetos\\bpt2-abp",
+  "source_head": "2a6d3b4a0578a722ef5f0d7cef8dfa748d8401a6",
+  "source_branch": "research/deploy-rollback-topology-rehearsal",
+  "initial_dirty": true,
+  "initial_status_line_count": 4,
+  "initial_status_sha256": "90ce91323af9b1886e47f6f819f08c1b1bd93dec605e99e575056e55115a9d29",
+  "used_for_execution": false,
+  "modified_by_w25": false,
+  "note": "source checkout was read-only metadata input; no build, restore, reset, clean, stash, or service mutation was performed"
+}

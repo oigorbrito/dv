@@ -1,0 +1,41 @@
+{
+  "repository": "oigorbrito/bpt2-abp",
+  "known_parent_sha": "f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "dotnet_sdk_required": "10.0.100 with latestFeature rollForward; allowPrerelease=false",
+  "dotnet_sdk_observed": "10.0.401",
+  "dependency_manifest_paths": [
+    "global.json",
+    "modules/Directory.Packages.props",
+    "main/BomPraTi.slnx",
+    "main/BomPraTi/BomPraTi.csproj",
+    "tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj"
+  ],
+  "lockfile_paths": [],
+  "nuget_config": "ABSENT_AT_KNOWN_PARENT",
+  "central_package_versions": [
+    "Volo.Abp.* 10.6.0",
+    "Microsoft.EntityFrameworkCore.Design 10.0.9",
+    "dotnet-ef 10.0.9",
+    "volo.abp.cli 10.6.0"
+  ],
+  "nuget_sources": "default configuration only; repository NuGet.config absent",
+  "restore_commands_documented": [
+    "dotnet tool restore",
+    "dotnet restore main/BomPraTi.slnx",
+    "bash scripts/fresh-migration-gate.sh"
+  ],
+  "restore_mode_available": "NOT_PROVEN_OFFLINE",
+  "offline_restore_possible": "NO_EVIDENCE",
+  "postgres_required": true,
+  "postgres_version_expected": "17",
+  "postgres_version_observed": "18 service registered; Stopped",
+  "database_bootstrap_command": "bash scripts/fresh-migration-gate.sh against a disposable database",
+  "env_var_names": ["BPT_DB_CONNECTION", "ConnectionStrings__Default", "BPT_FIXTURE_VEHICLE_ID"],
+  "external_network_required": "YES_OR_UNRESOLVED",
+  "deviations": [
+    "no complete parent lockfile identified",
+    "exact packages absent from observed global package cache",
+    "PostgreSQL 17 controlled instance unavailable",
+    "Docker binary present but daemon inaccessible"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "bpt2_environment_qualified": "BLOCKED",
+  "package_supply": "BLOCKED",
+  "postgres_env": "BLOCKED",
+  "environment_smoke": "NOT_EXECUTED",
+  "source_disposition": "BLOCKED_SOURCE",
+  "metadata_only_leads": 0,
+  "leads_pre_frozen": 0,
+  "parent_materializations": 0,
+  "parent_focal_executions": 0,
+  "solution_diffs_authorized": 0,
+  "solution_diffs_inspected": 0,
+  "candidate_executions": 0,
+  "preservation_executions": 0,
+  "new_admissions": 0,
+  "reason": "environment contract cannot be established reproducibly before candidate search",
+  "unblock_conditions": [
+    "exact dependency graph supplied through approved reproducible offline cache or runner",
+    "controlled PostgreSQL 17 runtime",
+    "reproducible bootstrap and cleanup contract"
+  ],
+  "task_corpus": "PARTIAL",
+  "comparative_corpus_ready": "NO",
+  "p1_s1_release": "NO",
+  "real_p0_runs": "0/24",
+  "holdout": "SEALED",
+  "treatment_model_api_execution": "NOT_EXECUTED"
+}

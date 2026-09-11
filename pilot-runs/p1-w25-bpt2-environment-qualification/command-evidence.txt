@@ -1,0 +1,31 @@
+WAVE P1-W25 COMMAND EVIDENCE
+
+Baseline:
+  branch: main
+  HEAD: 2bbe7cc8e46ff22e956870f2716f555ff42e8070
+  origin/main: 13d2742c7b3ea2de0f5accb02089dd4edf2a2b35
+  divergence: LOCAL_ONLY=3; REMOTE_ONLY=0
+  worktree: clean
+  origin is ancestor: true
+
+python -B tools/test_dv_pilot_harness.py
+  exit code: 0
+  result: Ran 9 tests; OK
+
+dotnet --version
+  10.0.401
+
+PostgreSQL service:
+  postgresql-x64-18: Stopped
+  postgres/pg_ctl/pg_isready/psql: NOT_FOUND
+  localhost:5432: responded, owner could not be identified because access was denied
+
+Docker:
+  binary present
+  daemon: permission denied connecting to docker_engine
+
+Network:
+  github.com TCP/443: unavailable
+
+No restore, build, database start, candidate search, solution inspection,
+candidate execution, treatment, model, paid API, or holdout operation occurred.

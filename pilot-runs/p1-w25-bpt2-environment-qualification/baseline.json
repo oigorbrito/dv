@@ -1,0 +1,21 @@
+{
+  "wave": "P1-W25",
+  "branch": "main",
+  "head": "2bbe7cc8e46ff22e956870f2716f555ff42e8070",
+  "origin_main": "13d2742c7b3ea2de0f5accb02089dd4edf2a2b35",
+  "local_only": 3,
+  "remote_only": 0,
+  "worktree": "CLEAN",
+  "origin_is_ancestor": true,
+  "harness_self_test": {
+    "command": "python -B tools/test_dv_pilot_harness.py",
+    "exit_code": 0,
+    "result": "9/9 PASS"
+  },
+  "git_diff_check": {
+    "exit_code": 0,
+    "result": "PASS"
+  },
+  "holdout": "SEALED",
+  "treatment_model_api_execution": "NOT_EXECUTED"
+}
