@@ -84,6 +84,14 @@ lockfile had changes and exited 1. No lockfile or source checkout was modified.
 It remains `BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE`; this is not a product
 failure, and no solution diff was inspected.
 
+Using the non-frozen offline install only in the temporary clone allowed the
+parent test command to start, but it failed before assertions because the
+transitive module `@ai-sdk/gateway` was absent (`0 pass`, `2 fail`, `1 error`,
+exit code 1). Raw output is retained at
+`pilot-runs/mvp-execution-loop/smag-parent695-offline-test.txt`; the temporary
+workspace was removed. This remains an environment blocker, not product
+evidence.
+
 The same offline frozen-install probe was then run against the exact verifier
 parent `f5bc2686d`. Bun resolved 19 packages from the local cache but again
 reported `lockfile had changes, but lockfile is frozen` and exited 1. The

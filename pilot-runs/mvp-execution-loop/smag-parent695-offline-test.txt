@@ -1,0 +1,15 @@
+bun test v1.4.0 (34cbb9a40)
+
+test\tool\external-directory-symlink.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@ai-sdk/gateway' from 'C:\Projetos\dv\.tmp-smag-parent695-offline-nf\node_modules\.bun\ai@6.0.168+d6123d32214422cb\node_modules\ai\dist\index.mjs'
+-------------------------------
+
+(fail) (unnamed) [28.61ms]
+
+ 0 pass
+ 2 fail
+ 1 error
+Ran 2 tests across 1 file. [8.84s]
