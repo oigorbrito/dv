@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "2026-09-11T02:52:54.4698953Z",
+  "credential_present": true,
+  "connectivity": "PASS",
+  "auth": "PASS",
+  "authorization": "NOT_EXECUTED",
+  "model_access": "ADVERTISED",
+  "quota_billing": "FAIL",
+  "response_id": null,
+  "returned_model": null,
+  "provider_native_usage": null,
+  "http_status": 429,
+  "error_literal": "HTTP 429 Too Many Requests from the Responses preflight request",
+  "secret_handling": "OPENAI_API_KEY value was not printed, persisted, or committed"
+}
