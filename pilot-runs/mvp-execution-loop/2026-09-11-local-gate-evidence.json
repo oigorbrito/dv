@@ -1,0 +1,55 @@
+{
+  "record_id": "mvp-execution-loop-2026-09-11-local-gate",
+  "repository": "C:\\Projetos\\dv",
+  "dv_head": "ba9de9ce395afeca7dd003b4446f2bfe99d2606c",
+  "origin_main": "13d2742c7b3ea2de0f5accb02089dd4edf2a2b35",
+  "worktree": "CLEAN",
+  "divergence": {"remote_only": 0, "local_only": 5},
+  "treatment_execution": "NOT_EXECUTED",
+  "holdout": "SEALED",
+  "harness_self_test": {"command": "python -B tools/test_dv_pilot_harness.py", "exit_code": 0, "result": "9/9 PASS"},
+  "p1_json_validation": {"files": 28, "valid": 28, "invalid": 0},
+  "p0_immutability": "PASS",
+  "diff_check": {"command": "git diff --check", "exit_code": 0},
+  "credential_presence": {
+    "OPENAI_API_KEY": false,
+    "ANTHROPIC_API_KEY": false,
+    "GEMINI_API_KEY": true,
+    "values_recorded": false
+  },
+  "gemini_probe": {
+    "status": "NOT_EXECUTED",
+    "reason": "credentialed external generation endpoint may incur charges; free-tier eligibility was not verified and no explicit charge authorization was available",
+    "model_candidate": "gemini-3.7-flash",
+    "probe_type": "QUALIFICATION_PROBE_ONLY"
+  },
+  "local_surfaces": {
+    "ollama": "NOT_AVAILABLE",
+    "vllm": "NOT_AVAILABLE",
+    "llama_server": "NOT_AVAILABLE",
+    "llama_cli": "NOT_AVAILABLE",
+    "docker": "INSTALLED_DAEMON_INACCESSIBLE",
+    "nvidia": "GeForce GTX 1650 / 4096 MiB / driver 462.30"
+  },
+  "new_local_lead": {
+    "repository": "C:\\Projetos\\naia",
+    "task_commit": "756ebf1d8b8b9805f4b4835acd7fd087a5c7a4d8",
+    "parent": "e583b45050f0fb519507555902a9b1497a297c52",
+    "changed_path_metadata": ["src/product/calendar.mjs"],
+    "preexisting_verifier": "test/product/calendar.test.mjs",
+    "screening_result": "REJECTED_NO_PARENT_FAILURE_DEMONSTRATED",
+    "reason": "the parent test suite contains no assertion for the changed list-range contract; no valid failing-parent/verifier pair was established",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
+  "scientific_state": {
+    "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
+    "admitted_families": ["F2", "F5", "F6"],
+    "task_corpus": "PARTIAL",
+    "comparative_corpus_ready": "NO",
+    "strong_executor": "NOT_QUALIFIED",
+    "p1_s1_release": "NO",
+    "real_p0_runs": "0/24",
+    "architecture_decision": "INCONCLUSIVE"
+  }
+}
