@@ -175,6 +175,14 @@ privilege skip in both parent and candidate. This supports admission with the
 platform limitation recorded; it is not treatment evidence. The broad suite
 probes remain inconclusive and are not used as a silent substitute.
 
+A BPT2 lead, commit `122594aea314388282cd4e53c5e70997b15e6984`, was screened
+against parent `f3d2cd2d4c0840077451222868ca0d1c0323cdd2`. The parent tree did
+not contain an independent focal verifier for the retry/cancellation behavior;
+matching entries were audit documents and fixture projects, not a verifier
+bound to the proposed product change. It was rejected as
+`REJECTED_NO_PARENT_FOCAL_VERIFIER`. No .NET suite was run, no solution diff
+was inspected, and no treatment was executed.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

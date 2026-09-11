@@ -347,6 +347,22 @@
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
+  "bpt2_runner_retry_lead": {
+    "repository": "C:\\Projetos\\bpt2-abp",
+    "task_commit": "122594aea314388282cd4e53c5e70997b15e6984",
+    "parent_sha": "f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+    "commit_message": "Fix Saved Search runner retry and cancellation correctness (#144)",
+    "changed_path_metadata": [
+      "modules/marketplace/src/BomPraTi.Marketplace/Domain/SavedSearchAlertDetectionRequest.cs",
+      "modules/marketplace/src/BomPraTi.Marketplace/Services/SavedSearchAlertDetectionProcessor.cs",
+      "tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/ProductionExplicitClaim/Program.cs"
+    ],
+    "parent_verifier_inventory": "No focal retry/cancellation verifier identified in parent tree; matching parent entries are audit documents and fixture projects without an independent focal test",
+    "screening_result": "REJECTED_NO_PARENT_FOCAL_VERIFIER",
+    "classification": "FAIL",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F2-06", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],
