@@ -35,6 +35,7 @@ Não congelar isso como arquitetura antes de testes.
 ## Documentação
 
 - [`docs/research/2026-09-10-brain-falsification.md`](docs/research/2026-09-10-brain-falsification.md) — snapshot da pesquisa, evidências, hipóteses eliminadas e próxima falsificação.
+- [`docs/research/2026-09-10-capability-coverage-matrix.md`](docs/research/2026-09-10-capability-coverage-matrix.md) — matriz do que já existe, o que falta provar/adicionar e quais funções podem ser supridas por MetaO, SMAG e standards externos.
 
 ## Regra de decisão
 
