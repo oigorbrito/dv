@@ -1,0 +1,5 @@
+node --test packages/smag-governance/test/mission-operator-supervision.test.mjs
+4 tests passed; 0 failed; exit code 0.
+The artifact predates the candidate base and is present in that base, but the base already contains the supervision
+implementation lineage for the associated task; it therefore fails the clean pre-solution provenance criterion and was
+not selected as a replacement.

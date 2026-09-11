@@ -1,0 +1,19 @@
+{
+  "corpus_version": "p0-executable-corpus-v1",
+  "canonical_corpus_version": "v0",
+  "canonical_manifest": "docs/research/2026-09-10-block-1-canonical-corpus-manifest.md",
+  "holdout": "SEALED",
+  "selection_rule": "same-family canonical manifest order; original, then second, then third development task",
+  "families": [
+    {"family":"F1","canonical_task":"D-F1-01","final_task":null,"status":"UNAVAILABLE","disposition":"P0_TEMPORARILY_ENVIRONMENT_BLOCKED","reason":"NuGet environment is not reproducible offline"},
+    {"family":"F2","canonical_task":"D-F2-01","final_task":null,"status":"UNAVAILABLE","disposition":"P0_ORACLE_INVALID","reason":"Focal verifier absent; F2-02 candidate base is not clean pre-solution provenance for the task"},
+    {"family":"F3","canonical_task":"D-F3-01","final_task":null,"status":"UNAVAILABLE","disposition":"P0_ORACLE_INVALID","reason":"No same-test or independent verifier artifact in D-F3-02/D-F3-03 bases"},
+    {"family":"F4","canonical_task":"D-F4-01","final_task":null,"status":"UNAVAILABLE","disposition":"P0_ORACLE_INVALID","reason":"No independently versioned verifier-owned artifact and injection procedure"},
+    {"family":"F5","canonical_task":"D-F5-01","final_task":null,"status":"UNAVAILABLE","disposition":"P0_TEMPORARILY_ENVIRONMENT_BLOCKED","reason":"Setuptools/editable console environment is not reproducible offline"},
+    {"family":"F6","canonical_task":"D-F6-01","final_task":"D-F6-01","status":"SAME","disposition":"P0_ADMISSIBLE_WITH_V2_ORACLE","oracle_version":"oracle-contract-v2","base_sha":"5d00cd284ce8fe810b0f5192c56d98608be516d4","evidence":"pilot-runs/block-4ah-offline-oracle-closure/evidence/f6-offline-recovery-results.json"}
+  ],
+  "executable_family_count": 1,
+  "planned_real_run_count": 4,
+  "representativeness_claim": "none beyond the single executable F6 development task; original six-family coverage is incomplete",
+  "treatment_execution": false
+}

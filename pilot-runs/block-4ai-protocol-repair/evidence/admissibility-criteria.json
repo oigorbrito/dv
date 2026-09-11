@@ -1,0 +1,17 @@
+{
+  "criteria_version": "block-4ai-admissibility-v1",
+  "frozen_before_replacement_search": true,
+  "p0_executable_requires": [
+    "exact historical base available",
+    "independent verifier exists or is reconstructible from pre-existing versioned treatment-independent evidence",
+    "explicit verifier semantics",
+    "focal verification executable",
+    "preservation/regression evidence executable or explicitly scoped",
+    "reproducible environment requirements",
+    "no gold solution leakage",
+    "verifier independent of treatment identity",
+    "deterministic harness evidence binding",
+    "failure attribution distinguishes harness/environment from product failure"
+  ],
+  "exclusion_reasons": ["INVALID_ORACLE","VERIFIER_ARTIFACT_UNAVAILABLE","ENVIRONMENT_NOT_REPRODUCIBLE","BASE_UNUSABLE","SOLUTION_LEAKAGE_REQUIRED","OTHER_EXPLICIT_REASON"]
+}

@@ -1,0 +1,20 @@
+{
+  "dv_head": "4d4b22dddbd4f1482736b8ea112ac3eac496a9f8",
+  "canonical_corpus_manifest_sha256": "8b8d97239acc08c0b30471778705991ff05c2b3397435baa0a0104f1ef689f47",
+  "operational_manifest_sha256": "a25f5fd453c95db6ae0a57db62a9d0f0557594e8ac51db2dee12acebd2758e09",
+  "oracle_contract_v1_identity": "block-2b-v1+4m-command-manifest-v1",
+  "oracle_contract_v1_artifact_sha256": "NOT_MATERIALIZED_AS_STANDALONE_FILE",
+  "oracle_contract_v2_sha256": "4741d6a24e2a51e6c50d75595b4ca70d481eb00b2e1f2b726921fbac15edef93",
+  "v1_specs": "24/24 previously valid; preserved",
+  "v2_specs": "24/24 previously valid; revalidated in 4AI",
+  "development_tasks": [
+    "D-F1-01:c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d",
+    "D-F2-01:5c3bcdfb0c8aec778727a756f484a4b67a23601d",
+    "D-F3-01:76ef9277062085e113c14bf1fdbb9c4bd218045b",
+    "D-F4-01:9d35699eb9f9e85e13a7c59b7acbf391dfb4c685",
+    "D-F5-01:9cc5d6d722d509175a669624c9235156dffb4f85",
+    "D-F6-01:5d00cd284ce8fe810b0f5192c56d98608be516d4"
+  ],
+  "holdout": "SEALED",
+  "treatment_execution": false
+}

@@ -1,0 +1,14 @@
+{
+  "ordering_frozen_before_search": true,
+  "rule": "canonical manifest order within the same family: original, second development task, third development task",
+  "screened": [
+    {"family":"F1","candidates":[{"task":"D-F1-02","base_available":true,"verifier":"not same construct; existing preflight test does not verify numeric coercion","admissible":false},{"task":"D-F1-03","base_available":true,"verifier":"existing lifecycle test is not the selected freshness-flag verifier","admissible":false}],"selected":null},
+    {"family":"F2","candidates":[{"task":"D-F2-02","base_available":true,"verifier":"mission-operator-supervision.test.mjs exists and passes, but its implementation lineage is already an ancestor of the stated base, so it is not clean pre-solution task provenance","admissible":false},{"task":"D-F2-03","base_available":true,"verifier":"staging-links.test.mjs is unrelated to the F2-03 construct and no exact independent task verifier was frozen","admissible":false}],"selected":null},
+    {"family":"F3","candidates":[{"task":"D-F3-02","base_available":true,"verifier":"no exact ProjectCompletionGate focal test in base","admissible":false},{"task":"D-F3-03","base_available":true,"verifier":"no exact discovery coordinator focal test in base","admissible":false}],"selected":null},
+    {"family":"F4","candidates":[{"task":"D-F4-02","base_available":true,"verifier":"property harness absent from base","admissible":false},{"task":"D-F4-03","base_available":true,"verifier":"boundary test is coupled to source-fix commit and not independent verifier-owned evidence","admissible":false}],"selected":null},
+    {"family":"F5","candidates":[{"task":"D-F5-02","base_available":true,"verifier":"operator UX tests do not verify runtime command store wiring","admissible":false},{"task":"D-F5-03","base_available":true,"verifier":"no exact independent retirement verifier identified","admissible":false}],"selected":null}
+  ],
+  "holdout_consulted": false,
+  "treatments_consulted": false,
+  "gold_solution_consulted": false
+}
