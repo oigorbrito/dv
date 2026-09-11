@@ -1,0 +1,53 @@
+{
+  "wave": "P1-W24",
+  "sources": [
+    {
+      "repository": "C:\\Projetos\\bpt2-abp",
+      "prior_status": "BLOCKED_SOURCE",
+      "prior_blocker": "NuGet/network restore and PostgreSQL availability",
+      "exact_unblock_condition": "new clean lead plus reproducible locked .NET restore and versioned PostgreSQL/service runtime",
+      "current_observation": {
+        "dotnet": "10.0.401 available",
+        "global_json": "present",
+        "packages_lock_json": "not found in bounded inventory",
+        "nuget_cache": "present; 17 top-level package directories observed",
+        "postgresql_x64_18": "service present but Stopped",
+        "source_worktree": "dirty; not used or modified",
+        "network": "TCP github.com:443 unavailable"
+      },
+      "blocker_satisfied": "NO",
+      "independent_verifier_first_path_remains": "YES for a future clean lead, not currently materialized",
+      "local_runtime_available": "PARTIAL",
+      "lockfile_reproducibility_available": "NO",
+      "focal_execution_plausibly_local": "NO for a new lead until service/dependency contract is complete",
+      "preservation_plausibly_local": "NO",
+      "external_service_required": "YES",
+      "decision": "BLOCKED_SOURCE",
+      "unblock_condition": "approved offline package supply or reproducible external runner, plus bounded PostgreSQL runtime and a genuinely new lead"
+    },
+    {
+      "repository": "C:\\Projetos\\smag",
+      "prior_status": "BLOCKED_SOURCE",
+      "prior_blocker": "external GitHub/network preservation dependency",
+      "exact_unblock_condition": "genuinely new lead with local focal and sufficient local preservation, or reproducible network-enabled environment",
+      "current_observation": {
+        "package_manifest": "package.json present",
+        "lockfiles": "bun.lock and package-scoped bun.lock files present",
+        "source_worktree": "dirty; not used or modified",
+        "network": "TCP github.com:443 unavailable",
+        "closed_leads": "SMAG-N1/N2 remain definitive closed decisions"
+      },
+      "blocker_satisfied": "NO",
+      "independent_verifier_first_path_remains": "YES only for a future genuinely new lead",
+      "local_runtime_available": "NOT_REQUALIFIED_FOR_NEW_LEAD",
+      "lockfile_reproducibility_available": "PARTIAL",
+      "focal_execution_plausibly_local": "UNKNOWN for a new lead",
+      "preservation_plausibly_local": "NO evidence for a new lead",
+      "external_service_required": "UNKNOWN for a new lead; required by closed broad preservation",
+      "decision": "BLOCKED_SOURCE",
+      "unblock_condition": "new lead with parent-side verifier and task-scoped local preservation, or reproducible network-enabled environment"
+    }
+  ],
+  "reopened_definitive_leads": [],
+  "new_leads": []
+}

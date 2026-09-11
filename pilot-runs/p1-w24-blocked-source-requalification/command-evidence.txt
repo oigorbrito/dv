@@ -1,0 +1,26 @@
+WAVE P1-W24 COMMAND EVIDENCE
+
+Baseline:
+  branch: main
+  HEAD: 741e186b07a13315b3825d081d3e220a0ac7da0d
+  origin/main: 13d2742c7b3ea2de0f5accb02089dd4edf2a2b35
+  divergence: LOCAL_ONLY=2; REMOTE_ONLY=0
+  worktree: clean
+  origin is ancestor: true
+
+python -B tools/test_dv_pilot_harness.py
+  exit code: 0
+  result: Ran 9 tests; OK
+
+Environment:
+  dotnet: 10.0.401
+  NuGet cache: present; 17 top-level package directories observed
+  PostgreSQL service: postgresql-x64-18; Stopped
+  github.com TCP/443: unavailable
+
+Source checkout observations (read-only):
+  C:\Projetos\bpt2-abp: dirty; not modified
+  C:\Projetos\smag: dirty; not modified
+
+No parent workspace, candidate workspace, solution diff, treatment, model,
+paid API, or holdout artifact was created or accessed.

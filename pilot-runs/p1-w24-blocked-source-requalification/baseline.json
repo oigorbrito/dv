@@ -1,0 +1,35 @@
+{
+  "wave": "P1-W24",
+  "branch": "main",
+  "head": "741e186b07a13315b3825d081d3e220a0ac7da0d",
+  "origin_main": "13d2742c7b3ea2de0f5accb02089dd4edf2a2b35",
+  "local_only": 2,
+  "remote_only": 0,
+  "worktree": "CLEAN",
+  "origin_is_ancestor": true,
+  "harness_self_test": {
+    "command": "python -B tools/test_dv_pilot_harness.py",
+    "exit_code": 0,
+    "result": "9/9 PASS"
+  },
+  "git_diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0,
+    "result": "PASS"
+  },
+  "toolchains": {
+    "dotnet": "10.0.401",
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "python": "3.13.14",
+    "cargo": "1.98.0",
+    "rustc": "1.98.0"
+  },
+  "network": {
+    "github_tcp_443": "FAIL; connection did not succeed within 3 seconds",
+    "interpretation": "external GitHub/network dependency remains unavailable"
+  },
+  "postgresql_x64_18": "INSTALLED_OR_REGISTERED_BUT_STOPPED",
+  "holdout": "SEALED",
+  "treatment_model_api_execution": "NOT_EXECUTED"
+}

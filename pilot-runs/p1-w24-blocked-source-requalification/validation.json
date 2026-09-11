@@ -1,0 +1,17 @@
+{
+  "json_parse": "PASS; 4/4 W24 JSON artifacts",
+  "source_exclusion": "PASS; definitive candidates not reopened",
+  "source_disposition_consistency": "PASS; BLOCKED_SOURCE retained without disproving eligibility",
+  "candidate_id_uniqueness": "PASS; no new IDs",
+  "verifier_hash_validation": "NOT_APPLICABLE; no new lead",
+  "lockfile_hash_validation": "NOT_APPLICABLE; no surviving lead",
+  "parent_failure_gate": "PASS; no lead advanced",
+  "failure_attribution": "PASS; environment blockers not classified as product failures",
+  "solution_leakage": "PASS; zero solution diffs opened",
+  "holdout_leakage": "PASS; HOLDOUT=SEALED",
+  "p0_immutability": "PASS",
+  "secret_scan": "PASS; no secret values recorded",
+  "harness_self_test": "PASS; 9/9",
+  "git_diff_check": "PASS",
+  "push": "NOT_EXECUTED; authorization unavailable"
+}
