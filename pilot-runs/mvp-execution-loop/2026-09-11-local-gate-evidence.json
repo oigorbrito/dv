@@ -339,6 +339,22 @@
     "real_p0_runs": "0/24",
     "architecture_decision": "INCONCLUSIVE"
   },
+  "p1_corpus_v6_integrity_audit": {
+    "status": "PASS",
+    "commit_objects": {
+      "base": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+      "candidate": "e1f939f9a023e4da87cc2754d78e5132a5978c3b",
+      "statement": "d07422f79b01738f260f2446eb9689ca031392e7"
+    },
+    "parent_blob_objects": {
+      "verifier": "15dae37524ecf0d24e9dfd570b618bacdba4135f",
+      "git_regression": "2d7e1d2d615444fa4297825e5484cc3bb1d3347a",
+      "staging_regression": "bd43d916b1d073e21a3455888c66f9ade7a97d59",
+      "task_statement": "194343d4e01ec1b15a83e45096156a6db4614f64"
+    },
+    "method": "git cat-file -e for commits and git rev-parse path objects against immutable SMAG history",
+    "source_checkout_modified": false
+  },
   "blocker_register_state": {
     "status": "PENDING_EXTERNAL_ACTION",
     "p1_w1_blk_002": "PENDING",
