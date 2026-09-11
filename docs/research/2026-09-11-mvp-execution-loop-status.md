@@ -40,6 +40,13 @@ An isolated archive of the parent was replayed with
 exit code 0. This confirms `NO_PARENT_FAILURE`, rather than a product failure.
 No solution diff was inspected and no source was modified.
 
+A second local lead in `Rag-git` was screened at commit `5e366b36`, whose
+parent contains preexisting governance and evidence tests. The isolated
+parent replay was blocked before test execution because the environment lacks
+`pytest` and `fitz`. The lead is therefore recorded as
+`BLOCKED / ENVIRONMENT_NOT_REPRODUCIBLE`; it is not admitted and is not
+classified as a product failure.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

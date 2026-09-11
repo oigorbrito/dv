@@ -51,6 +51,22 @@
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
+  "rag_git_lead": {
+    "repository": "C:\\Projetos\\Rag-git",
+    "task_commit": "5e366b3672a3d4385856b23578e1f7941bbe2c1a",
+    "parent": "61b6192ba57207ec1174e487a0d6b4e890e4341a",
+    "changed_path_metadata": ["harness/governance.py"],
+    "preexisting_verifiers": ["tests/test_governance.py", "tests/test_evidence_contract.py", "tests/test_harness.py"],
+    "baseline_replay": {
+      "command": "python -B -m unittest tests.test_governance tests.test_evidence_contract tests.test_harness",
+      "exit_code": 1,
+      "status": "BLOCKED",
+      "errors": ["ModuleNotFoundError: No module named 'pytest'", "ModuleNotFoundError: No module named 'fitz'"]
+    },
+    "admissibility": "BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],
