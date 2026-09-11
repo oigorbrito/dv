@@ -1,0 +1,31 @@
+{
+  "wave": "P1-W19",
+  "holdout": "SEALED",
+  "blockers": [
+    {
+      "id": "P1-W1-BLK-002",
+      "type": "CORPUS",
+      "status": "OPEN",
+      "impact": "comparative corpus remains partial; no new task admitted",
+      "work_continuable": "bounded verifier-first acquisition",
+      "unblock_condition": "independent pre-solution verifier with valid parent product failure and executable preservation evidence"
+    },
+    {
+      "id": "P1-W4-BLK-STRONG-CREDENTIAL",
+      "type": "EXTERNAL_CREDENTIAL",
+      "status": "OPEN",
+      "impact": "P1-S1 release remains blocked",
+      "work_continuable": "local documentation and non-paid qualification preparation",
+      "unblock_condition": "authorized credential for approved C1 surface"
+    },
+    {
+      "id": "P1-W16-SMAG-PRESERVATION-NETWORK",
+      "type": "EXTERNAL_ENVIRONMENT",
+      "status": "OBSERVED",
+      "impact": "broad SMAG preservation remains unavailable under current network policy",
+      "work_continuable": "local focal screening and evidence preservation",
+      "unblock_condition": "reproducible network-enabled environment or repository-defined offline fixture"
+    }
+  ],
+  "new_blockers": "NONE"
+}

@@ -1,0 +1,48 @@
+{
+  "wave": "P1-W19",
+  "baseline_head": "13cec2bbdf2bb2b68030b288c571fea877affa34",
+  "baseline_origin_main": "13cec2bbdf2bb2b68030b288c571fea877affa34",
+  "worktree": "CLEAN",
+  "objective": "Acquire at most one verifier-first candidate with a valid parent product failure before solution inspection.",
+  "parent_failure_gate": "PARENT_FOCAL_PASS => REJECT; do not inspect solution or execute candidate",
+  "closed_prior_inventory": {
+    "source": "pilot-runs/block-5b/task-discovery-screening.json",
+    "candidate_count": 18,
+    "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
+    "new_admission_count": 0
+  },
+  "new_source_lead": {
+    "lead_id": "METAO-GATE-N1",
+    "source": "C:\\Projetos\\metao-gate",
+    "parent_sha": "2572ddcc1ca4c0aa78abc095fdc35bccc6e15a05",
+    "candidate_sha": "2f730773d073a5c4c5bd05b7ae4c0a4f2481a533",
+    "parent_focal": "PASS; 12/12",
+    "parent_focal_exit_code": 0,
+    "classification": "NO_PARENT_FAILURE",
+    "decision": "REJECTED",
+    "solution_diff": "NOT_INSPECTED",
+    "candidate_execution": "NOT_TESTED",
+    "preservation": "NOT_TESTED_BY_GATE",
+    "evidence": [
+      "pilot-runs/p1-w18-acquisition/lead-freeze.json",
+      "pilot-runs/p1-w18-acquisition/parent-result.json",
+      "pilot-runs/p1-w18-acquisition/metao-gate-n1-parent-focal.stdout.log",
+      "pilot-runs/p1-w18-acquisition/metao-gate-n1-parent-focal.stderr.log"
+    ]
+  },
+  "evidence_gate": {
+    "recommendations_emitted": 0,
+    "recommendations_committed": 0,
+    "unsupported_changes": "NONE",
+    "policy": "NO_METHODOLOGICAL_OR_DOCUMENTARY_CHANGE_BY_PREFERENCE",
+    "supported_change_chain": "observed problem -> evidence class -> smallest sufficient change -> validation"
+  },
+  "treatment_execution": "NOT_EXECUTED",
+  "model_api_execution": "NOT_EXECUTED",
+  "holdout": "SEALED",
+  "result": "NO_NEW_ADMISSION",
+  "corpus": "PARTIAL",
+  "comparative_corpus_ready": "NO",
+  "p1_s1_release": "NO",
+  "next_objective_gap": "independent parent-side verifier with valid reproducible parent product failure and executable preservation evidence"
+}

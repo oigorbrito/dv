@@ -1,0 +1,20 @@
+{
+  "wave": "P1-W19",
+  "baseline": "PASS",
+  "harness_self_test": {
+    "command": "python -B tools/test_dv_pilot_harness.py",
+    "exit_code": 0,
+    "tests": 6,
+    "result": "PASS"
+  },
+  "candidate_count": 18,
+  "new_candidate_count": 0,
+  "parent_failure_gate": "PASS; W18 parent focal was executed and passed, so solution inspection was prohibited",
+  "solution_leakage": "PASS; no new solution diff opened",
+  "treatment_execution": "NOT_EXECUTED",
+  "model_api_execution": "NOT_EXECUTED",
+  "holdout_leakage": "PASS; HOLDOUT=SEALED",
+  "secret_scan": "PASS; no secret values recorded",
+  "evidence_policy": "PASS; no unsupported methodological/documentary recommendation emitted",
+  "git_diff_check": "PENDING_PRE_COMMIT"
+}
