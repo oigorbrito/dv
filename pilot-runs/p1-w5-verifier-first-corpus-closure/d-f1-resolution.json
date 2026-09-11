@@ -1,0 +1,21 @@
+{
+  "task_id": "D-F1-01",
+  "repository": "oigorbrito/RJ",
+  "base_sha": "c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d",
+  "workspace": "C:\\Projetos\\dv-preserved-workspaces\\2026-09-11-p1-w1\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F1-01",
+  "workspace_head": "c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d",
+  "workspace_state": "DETACHED_CLEAN_BEFORE_COMMAND",
+  "sdk": {"installed":"10.0.400, 10.0.401","required_by_global_json":"10.0.100 with latestFeature rollForward"},
+  "frozen_configuration": {"global_json_runner":"Microsoft.Testing.Platform","test_project":"tests/RJ.DomainTests/RJ.DomainTests.csproj","test_framework":"xunit.v3"},
+  "commands": [
+    {"command":"dotnet test tests/RJ.DomainTests/RJ.DomainTests.csproj --filter FullyQualifiedName~ProcessTextNormalizerTests --no-restore","exit_code":1,"result":"FAIL_BEFORE_TEST_EXECUTION"},
+    {"command":"dotnet test RJ.slnx --configuration Release --no-build --no-restore","exit_code":1,"result":"FAIL_BEFORE_TEST_EXECUTION"}
+  ],
+  "exact_cause": "Microsoft.Testing.Platform reports that VSTest-targeted projects are not supported under the configured .NET 10 test runner; four solution test projects use the VSTest executor",
+  "focal_tests_executed": 0,
+  "preservation_tests_executed": 0,
+  "classification": "BLOCKED_HISTORICAL_TOOLCHAIN_MISMATCH",
+  "admissibility": "NOT_ADMITTED",
+  "source_modified": false,
+  "treatment_executed": false
+}

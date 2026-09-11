@@ -1,0 +1,45 @@
+{
+  "corpus_id": "p1-development-corpus-v2",
+  "supersedes": "experiments/p1/p1-development-corpus-v1.json",
+  "selection_rule": "existing development inventory; admit only after frozen verifier-first gate and reproducible baseline evidence",
+  "task_admissibility_contract": "experiments/p1/task-admissibility-contract-v1.json",
+  "admitted_tasks": [
+    {
+      "task_id": "D-F5-01",
+      "family": "F5",
+      "repository": "oigorbrito/metaO",
+      "base_sha": "9cc5d6d722d509175a669624c9235156dffb4f85",
+      "task_statement_ref": "docs/research/2026-09-10-block-1-canonical-corpus-manifest.md",
+      "verifier_ref": "tests/unit/test_operator_ux_doctor.py and test_roadmap_1_work_unit_06.py",
+      "verifier_sha256": "8216e56aa683724f2a61368ebc04264174e4207c3694c9793894a98bd886563b",
+      "verifier_provenance": "historical repository test suite and task record; no treatment output used",
+      "verifier_ownership": "pre-existing repository test; no injected solution artifact",
+      "environment_contract": {"python":"3.13.14","venv":"isolated with system setuptools 84.0.0","install":"python -m pip install --no-index --no-deps --no-build-isolation --editable <base>","pythonpath":"src","console_script":"venv Scripts/metao.exe"},
+      "focal_command": "python -B -m unittest tests.unit.test_operator_ux_doctor",
+      "preservation_command": "python -B -m unittest discover -s tests/unit",
+      "baseline_result": {"focal":"PASS; 10 tests; exit 0","preservation":"PASS; 469 tests; exit 0","evidence_ref":"pilot-runs/p1-w5-verifier-first-corpus-closure/d-f5-execution.json"},
+      "admissibility": "ADMITTED",
+      "admissibility_proof": ["exact base detached and clean","focal verifier passed","preservation suite passed after repository-defined editable setup","verifier hash recorded","treatment-independent","no solution or holdout used"]
+    },
+    {
+      "task_id": "D-F6-01",
+      "family": "F6",
+      "repository": "oigorbrito/metaO",
+      "base_sha": "5d00cd284ce8fe810b0f5192c56d98608be516d4",
+      "task_statement_ref": "experiments/p1/p1-development-corpus-v1.json",
+      "verifier_ref": "pilot-runs/block-4ah-offline-oracle-closure/run-specs/D-F6-01-oracle.json",
+      "verifier_sha256": "daad36054dcaaa179bcf4604374e17420884785d489401b462d08dda0be87af3",
+      "verifier_provenance": "oracle-contract-v2 neutral cwd amendment and controlled baseline evidence",
+      "environment_contract": {"cwd":"experiments/rust-chassis-a","commands":["cargo test --locked --offline --workspace --test discovery_persistence_tests","cargo test --locked --offline --workspace --test phase6_shadow","cargo test --locked --offline --workspace"],"toolchain":"cargo/rustc 1.98.0"},
+      "baseline_result": {"focal":"PASS","preservation":"PASS","evidence_ref":"pilot-runs/block-4ah-offline-oracle-closure/evidence/f6-offline-recovery-results.json"},
+      "admissibility": "ADMITTED"
+    }
+  ],
+  "previously_screened_candidates": "pilot-runs/block-5b/task-discovery-screening.json",
+  "counts": {"screened":18,"admitted":2,"not_admitted_or_rejected":16,"admitted_families":2},
+  "family_states": {"F1":"PARTIAL","F2":"NOT_OPERATIONALIZABLE_YET","F3":"NOT_OPERATIONALIZABLE_YET","F4":"NOT_OPERATIONALIZABLE_YET","F5":"OPERATIONALIZABLE_FOR_D-F5-01","F6":"OPERATIONALIZABLE"},
+  "task_corpus": "PARTIAL",
+  "pilot_decision": {"proposed_s1_tasks":["D-F5-01","D-F6-01"],"size":2,"status":"SMOKE_OR_PIPELINE_ONLY_NOT_RELEASED","claims_not_supported":["executor ranking","family superiority","generalization","statistical superiority"]},
+  "holdout": "SEALED",
+  "treatment_execution": "NOT_EXECUTED"
+}

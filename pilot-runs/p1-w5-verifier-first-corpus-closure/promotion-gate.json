@@ -1,0 +1,16 @@
+{
+  "phase": "P1-S0_TO_P1-S1",
+  "task_corpus": "PARTIAL",
+  "admitted_tasks": 2,
+  "admitted_families": 2,
+  "strong_path_ready": false,
+  "economic_or_local_or_free_path_ready": false,
+  "harness_ready": false,
+  "D-F5-01_admissible": true,
+  "D-F6-01_admissible": true,
+  "holdout_sealed": true,
+  "P1_S1_RELEASE": "NO",
+  "smoke_spec_created": false,
+  "reason": "corpus improved from 1 to 2 tasks, but strong and economic/local/free executor gates remain unresolved",
+  "treatment_execution": "NOT_EXECUTED"
+}

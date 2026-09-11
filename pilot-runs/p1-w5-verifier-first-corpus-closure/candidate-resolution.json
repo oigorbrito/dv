@@ -1,0 +1,12 @@
+{
+  "wave": "P1-W5",
+  "source": "existing 18-candidate P1 inventory only",
+  "candidate_count": 18,
+  "admitted": ["D-F5-01","D-F6-01"],
+  "new_candidates_discovered": 0,
+  "nearest_candidate_resolution": {"D-F5-01":"ADMITTED_AFTER_REPRODUCIBLE_EDITABLE_SETUP","D-F1-01":"BLOCKED_HISTORICAL_TOOLCHAIN_MISMATCH"},
+  "provenance_screened_without_materialization": ["D-F1-02","D-F1-03","D-F5-02","D-F5-03","D-F2-01","D-F2-02","D-F2-03","D-F3-01","D-F3-02","D-F3-03","D-F4-01","D-F4-02","D-F4-03","D-F6-02","D-F6-03"],
+  "provenance_outcome": "No additional independent verifier was defensibly available for the listed candidates; existing 5B evidence retained",
+  "holdout": "SEALED",
+  "treatment_execution": "NOT_EXECUTED"
+}

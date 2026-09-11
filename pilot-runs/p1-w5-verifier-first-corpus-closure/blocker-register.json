@@ -1,0 +1,12 @@
+{
+  "wave": "P1-W5",
+  "blockers": [
+    {"blocker_id":"P1-W1-BLK-002","type":"CORPUS","status":"OPEN","impact":"two tasks across two families are admitted, but corpus remains partial and not comparative-ready","next_condition":"expand verifier-first corpus with additional independently admissible tasks"},
+    {"blocker_id":"P1-W1-BLK-003","type":"EXECUTOR","status":"OPEN","impact":"no strong or economic/local/free path is fully S0-qualified","next_condition":"authorized strong qualification and complete economic telemetry"},
+    {"blocker_id":"P1-W1-BLK-004","type":"HARNESS_SURFACE","status":"OPEN","impact":"provider retry semantics remain unobserved","next_condition":"surface-specific evidence or qualification closes retry limitation"},
+    {"blocker_id":"P1-W4-BLK-STRONG-CREDENTIAL","type":"EXTERNAL_CREDENTIAL","status":"OPEN","impact":"P1-S0 strong path promotion blocked","next_condition":"authorized credential for approved C1 surface"},
+    {"blocker_id":"P1-W5-D-F1-01","type":"ENVIRONMENT","status":"OPEN","impact":"RJ task remains not admitted","next_condition":"historically compatible Microsoft.Testing.Platform/VSTest toolchain becomes reproducible without source or version mutation"}
+  ],
+  "closed_in_prior_waves": ["P1-W1-BLK-001"],
+  "holdout": "SEALED"
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "D-F5-01",
+  "repository": "oigorbrito/metaO",
+  "base_sha": "9cc5d6d722d509175a669624c9235156dffb4f85",
+  "workspace": "C:\\Projetos\\dv-preserved-workspaces\\2026-09-11-p1-w1\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F5-01",
+  "workspace_head": "9cc5d6d722d509175a669624c9235156dffb4f85",
+  "workspace_state": "DETACHED_CLEAN",
+  "verifier_hash": "8216e56aa683724f2a61368ebc04264174e4207c3694c9793894a98bd886563b",
+  "toolchain": {"python":"3.13.14","pip":"26.2.1","setuptools":"84.0.0"},
+  "environment_setup": {"command":"python -m venv --system-site-packages <venv>; <venv>\\Scripts\\python.exe -m pip install --no-index --no-deps --no-build-isolation --editable <base>","result":"PASS","dependency_mutation":"NONE","network":"NOT_USED"},
+  "focal": {"command":"python -B -m unittest tests.unit.test_operator_ux_doctor","cwd":"base root","exit_code":0,"tests":10,"status":"PASS","stdout_stderr":"captured in command output; no source changes"},
+  "preservation": {"command":"python -B -m unittest discover -s tests/unit","cwd":"base root","exit_code":0,"tests":469,"status":"PASS","stdout_stderr":"captured in command output; no source changes"},
+  "historical_failure_cause": "installed console script was absent from the active environment; repository-defined editable installation restored it",
+  "gold_solution": "NOT_ACCESSED",
+  "holdout": "SEALED",
+  "source_modified": false,
+  "treatment_executed": false
+}
