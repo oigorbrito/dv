@@ -1,0 +1,26 @@
+{
+  "wave": "P1-W20",
+  "scope": "bounded verifier-first acquisition; at most one new candidate",
+  "closed_inventory": "pilot-runs/block-5b/task-discovery-screening.json; 18 candidates",
+  "prior_leads": [
+    {"reference": "P1-W14 medvi", "status": "CLOSED_NO_ADMISSION"},
+    {"reference": "P1-W16 SMAG-N1/N2", "status": "CLOSED_OR_BLOCKED"},
+    {"reference": "P1-W17 inventory", "status": "CLOSED_NO_ELIGIBLE_LEAD"},
+    {"reference": "P1-W18 METAO-GATE-N1", "status": "REJECTED_NO_PARENT_FAILURE"}
+  ],
+  "local_sources_checked": [
+    {"path": "C:\\Projetos\\metao-gate", "status": "CLOSED_BY_W18_PARENT_PASS"},
+    {"path": "C:\\Projetos\\opencode-direct-proof", "status": "NO_P1_VERIFIER_METADATA_IN_DV"},
+    {"path": "C:\\Projetos\\naia", "status": "PRESERVED_CLOSED_LEAD"},
+    {"path": "C:\\Projetos\\bpt2-abp", "status": "PRESERVED_CLOSED_LEAD"},
+    {"path": "C:\\Projetos\\searchleads", "status": "IN_CLOSED_18_CANDIDATE_INVENTORY"}
+  ],
+  "new_leads_frozen": 0,
+  "new_admissions": 0,
+  "solution_diffs_opened": 0,
+  "candidate_executions": 0,
+  "treatment_executions": 0,
+  "holdout_access": "NONE",
+  "decision": "NO_NEW_ADMISSION",
+  "next_objective_gap": "independent parent-side verifier with valid reproducible parent product failure and executable preservation evidence"
+}

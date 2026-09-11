@@ -1,0 +1,15 @@
+{
+  "wave": "P1-W20",
+  "branch": "main",
+  "expected_baseline_head": "1e2fe31b9b09850d965e81ae95fecf603a2263ee",
+  "observed_head": "412d1d5a0ceb76815e1231467300ceb244ed517b",
+  "origin_main": "13cec2bbdf2bb2b68030b288c571fea877affa34",
+  "worktree": "CLEAN",
+  "remote_only": 0,
+  "local_only": 2,
+  "divergence_reason": "W19 acquisition commit plus evidence-gated harness commit are local and not remotely reconciled",
+  "remote_reconciliation": "NOT_ATTEMPTED_IN_ACQUISITION_WAVE",
+  "destructive_operations": "NONE",
+  "remote_state_is_blocker": true,
+  "unblock_condition": "explicit remote-reconciliation operation with clean worktree and non-force fast-forward push"
+}

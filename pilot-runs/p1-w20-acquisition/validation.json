@@ -1,0 +1,17 @@
+{
+  "wave": "P1-W20",
+  "baseline_head_mismatch": "RECORDED; W19 harness commit is included in observed HEAD",
+  "worktree": "CLEAN",
+  "harness_self_test": {"tests": 9, "exit_code": 0, "result": "PASS"},
+  "new_candidate_count": 0,
+  "closed_candidates_reviewed": 18,
+  "parent_failure_gate": "PASS",
+  "solution_leakage": "PASS; no new solution diff opened",
+  "treatment_execution": "NOT_EXECUTED",
+  "model_api_execution": "NOT_EXECUTED",
+  "holdout": "SEALED",
+  "secret_scan": "PASS; no secret values recorded",
+  "policy_gate": "PASS",
+  "p0_immutability": "PASS",
+  "git_diff_check": "PENDING_PRE_COMMIT"
+}

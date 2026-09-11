@@ -1,0 +1,19 @@
+{
+  "wave": "P1-W20",
+  "policy": "HARNESS-POLICY-EVIDENCE-GATED",
+  "recommendations_emitted": 0,
+  "recommendations_committed": 0,
+  "unsupported_recommendations": 0,
+  "change_gate": "PASS",
+  "supported_evidence_classes_used": [
+    "ORACLE_VALIDITY",
+    "FAILURE_ATTRIBUTION",
+    "REPRODUCIBILITY",
+    "TRACEABILITY"
+  ],
+  "parent_gate": "PARENT_FOCAL_PASS => REJECT; no solution inspection",
+  "no_solution_derived_oracle": true,
+  "no_methodological_change_by_preference": true,
+  "holdout": "SEALED",
+  "treatment_model_api_execution": "NOT_EXECUTED"
+}
