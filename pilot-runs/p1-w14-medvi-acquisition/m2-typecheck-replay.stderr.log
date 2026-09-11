@@ -1,0 +1,11 @@
+Failed to compile.
+
+./src/lib/prisma.ts:1:10
+Type error: Module '"@prisma/client"' has no exported member 'PrismaClient'.
+
+> 1 | import { PrismaClient } from '@prisma/client';
+    |          ^
+  2 |
+  3 | const prismaClientSingleton = () => {
+  4 |   return new PrismaClient();
+Next.js build worker exited with code: 1 and signal: null

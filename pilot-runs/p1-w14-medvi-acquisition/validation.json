@@ -1,0 +1,15 @@
+{
+  "json_parse":"PASS",
+  "candidate_id_uniqueness":"PASS",
+  "base_sha_resolution":"PASS",
+  "verifier_hashes":"PASS_FOR_PARENT_BLOBS",
+  "solution_leakage":"PASS; diffs inspected only after freeze",
+  "environment_provenance":"PASS_WITH_BLOCKED_PRESERVATION",
+  "evidence_paths":"PASS",
+  "secret_scan":"PASS",
+  "holdout_leakage":"PASS; HOLDOUT=SEALED",
+  "p0_immutability":"PASS",
+  "harness_self_test":"PASS_6_OF_6",
+  "git_diff_check":"PASS",
+  "treatment_execution":"NOT_EXECUTED"
+}

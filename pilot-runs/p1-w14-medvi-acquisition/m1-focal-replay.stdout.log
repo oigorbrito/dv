@@ -1,0 +1,9 @@
+
+ RUN  v4.1.7 C:/Projetos/dv/.tmp-w14-candidates/M1
+
+
+ Test Files  3 passed (3)
+      Tests  7 passed (7)
+   Start at  15:45:15
+   Duration  4.63s (transform 352ms, setup 936ms, import 265ms, tests 32ms, environment 11.17s)
+

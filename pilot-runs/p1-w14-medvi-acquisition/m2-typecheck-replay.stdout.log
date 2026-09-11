@@ -1,0 +1,13 @@
+
+> medvi-app@0.1.0 typecheck
+> npm run build && tsc --noEmit
+
+
+> medvi-app@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.18
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 3.7s
+   Linting and checking validity of types ...

@@ -1,0 +1,45 @@
+{
+  "executions": [
+    {
+      "candidate_id":"MEDVI-M1",
+      "base_sha":"f5feac3223b46b7079df897d84f7825f954d52ea",
+      "workspace":"C:\\Projetos\\dv\\.tmp-w14-candidates\\M1",
+      "focal_command":"npm exec -- vitest run src/test/unit/observability.test.ts src/test/unit/audit-sanitize.test.ts src/test/unit/logger-correlation.test.ts",
+      "focal_exit_code":0,
+      "focal_result":"PASS_7_TESTS",
+      "preservation_command":"npm exec -- vitest run src/test/unit",
+      "preservation_exit_code":1,
+      "preservation_result":"ENVIRONMENT_BLOCKED_PRISMA_CLIENT_MISSING",
+      "failure_attribution":"PRESERVATION_ENVIRONMENT_BLOCKED",
+      "evidence_refs":["m1-focal-replay.stdout.log","m1-focal-replay.stderr.log","m1-preservation-replay.stdout.log","m1-preservation-replay.stderr.log"]
+    },
+    {
+      "candidate_id":"MEDVI-M2",
+      "base_sha":"10b5d8e761545038a33b510ab64c590e36f7e6e8",
+      "workspace":"C:\\Projetos\\dv\\.tmp-w14-candidates\\M2",
+      "focal_command":"npm run typecheck",
+      "focal_exit_code":1,
+      "focal_result":"ENVIRONMENT_BLOCKED_PRISMA_CLIENT_MISSING",
+      "preservation_command":"npm run test",
+      "preservation_exit_code":1,
+      "preservation_result":"BASELINE_FAIL_WITH_PRISMA_AND_UNRELATED_LOGGER_FAILURES",
+      "failure_attribution":"ENVIRONMENT_DRIFT_OR_NON_LOCAL_SETUP; NOT_ADMITTED",
+      "evidence_refs":["m2-typecheck-replay.stdout.log","m2-typecheck-replay.stderr.log","m2-preservation.stdout.log","m2-preservation.stderr.log"]
+    },
+    {
+      "candidate_id":"MEDVI-M3",
+      "base_sha":"02437412944950c05f9f37a430be9a2d16735715",
+      "workspace":"C:\\Projetos\\dv\\.tmp-w14-candidates\\M3",
+      "focal_command":"npm run build",
+      "focal_exit_code":1,
+      "focal_result":"EXPECTED_PRODUCT_FAILURE_SUBMITCHECKOUT_UNDEFINED",
+      "preservation_command":"npm run test",
+      "preservation_exit_code":1,
+      "preservation_result":"ENVIRONMENT_BLOCKED_PRISMA_CLIENT_MISSING",
+      "failure_attribution":"PRESERVATION_ENVIRONMENT_BLOCKED; NOT_ADMITTED",
+      "evidence_refs":["m3-build-replay.stdout.log","m3-build-replay.stderr.log","m3-preservation.stdout.log","m3-preservation.stderr.log"]
+    }
+  ],
+  "solution_application":"NONE",
+  "treatment_execution":"NOT_EXECUTED"
+}

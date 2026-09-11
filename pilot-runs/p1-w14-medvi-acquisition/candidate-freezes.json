@@ -1,0 +1,50 @@
+{
+  "freeze_stage": "BEFORE_SOLUTION_DIFF",
+  "source_repository": "oigorbrito/medvi",
+  "candidates": [
+    {
+      "candidate_id":"MEDVI-M1",
+      "family":"F1",
+      "solution_sha":"721b7106ad634add64dce2ed37c9bd7439ff5b55",
+      "base_sha":"f5feac3223b46b7079df897d84f7825f954d52ea",
+      "task_statement":"The logger and observability surfaces must satisfy the existing structured logging and sanitization contract exercised by the pre-existing unit tests.",
+      "verifier_ref":"src/test/unit/observability.test.ts; src/test/unit/audit-sanitize.test.ts; src/test/unit/logger-correlation.test.ts",
+      "verifier_provenance":"repository-owned tests present in the first functional parent tree before solution inspection",
+      "verifier_hashes":{"src/test/unit/observability.test.ts":"de05fb5de96a395415a3d134f3a9f61aa24693a3","src/test/unit/audit-sanitize.test.ts":"5cf006ea140bb8bba17bfa9526ab66ad79370b87","src/test/unit/logger-correlation.test.ts":"f26a4a8c81eb33bf9e1be824382e721bab97236d"},
+      "focal_command":"npm exec -- vitest run src/test/unit/observability.test.ts src/test/unit/audit-sanitize.test.ts src/test/unit/logger-correlation.test.ts",
+      "preservation_command":"npm exec -- vitest run src/test/unit",
+      "environment_contract":"Node runtime plus package-lock.json and npm ci from the frozen parent; no external service expected for focal tests",
+      "solution_diff_inspected_before_freeze":false
+    },
+    {
+      "candidate_id":"MEDVI-M2",
+      "family":"F6",
+      "solution_sha":"94eca79709084443c7daede646ba4d4c4caf4a51",
+      "base_sha":"10b5d8e761545038a33b510ab64c590e36f7e6e8",
+      "task_statement":"The historical auth/build surface must satisfy the repository's pre-existing deterministic type/build contract.",
+      "verifier_ref":"package.json scripts.build and scripts.typecheck",
+      "verifier_provenance":"repository-owned build/typecheck commands present in the functional parent",
+      "verifier_hashes":{"package.json":"531e5aed83d9ad12ba78f95f9276044879efc13c"},
+      "focal_command":"npm run typecheck",
+      "preservation_command":"npm run test",
+      "environment_contract":"Node runtime plus package-lock.json and npm ci from the frozen parent",
+      "solution_diff_inspected_before_freeze":false
+    },
+    {
+      "candidate_id":"MEDVI-M3",
+      "family":"F6",
+      "solution_sha":"364d721b718f22c50404d1111375019efd08672a",
+      "base_sha":"02437412944950c05f9f37a430be9a2d16735715",
+      "task_statement":"The checkout production build must satisfy the repository's pre-existing deterministic build contract.",
+      "verifier_ref":"package.json scripts.build and scripts.typecheck",
+      "verifier_provenance":"repository-owned build/typecheck commands present in the functional parent",
+      "verifier_hashes":{"package.json":"531e5aed83d9ad12ba78f95f9276044879efc13c"},
+      "focal_command":"npm run build",
+      "preservation_command":"npm run test",
+      "environment_contract":"Node runtime plus pnpm-lock.yaml/package-lock.json and frozen-parent install procedure",
+      "solution_diff_inspected_before_freeze":false
+    }
+  ],
+  "not_frozen_as_candidates":"MEDVI-M4, MEDVI-M5, MEDVI-L1, MEDVI-L2, MEDVI-L3, MEDVI-L4, MEDVI-L5 remain metadata/cheap-screen leads until high-priority candidates are resolved",
+  "no_solution_content_used":true
+}

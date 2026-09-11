@@ -1,0 +1,20 @@
+{
+  "wave": "P1-W14",
+  "source": "oigorbrito/medvi",
+  "source_head": "531ba28602714359bafeeb8d806e4e06cc7ac34b",
+  "freeze_rule": "Only parent metadata and parent tree inspection precede candidate freeze; solution content is not used to define a verifier",
+  "leads": [
+    {"candidate_id":"MEDVI-M1","solution_sha":"721b7106ad634add64dce2ed37c9bd7439ff5b55","message":"fix(logger): resolve unit test failures and sanitize PII in observability","parent_sha":"f5feac3223b46b7079df897d84f7825f954d52ea","family_provisional":"F1","priority":"HIGH"},
+    {"candidate_id":"MEDVI-M2","solution_sha":"94eca79709084443c7daede646ba4d4c4caf4a51","message":"fix(auth): unblock build by aligning repository return type","parent_sha":"10b5d8e761545038a33b510ab64c590e36f7e6e8","family_provisional":"F6","priority":"HIGH"},
+    {"candidate_id":"MEDVI-M3","solution_sha":"364d721b718f22c50404d1111375019efd08672a","message":"fix(checkout): restore production build imports","parent_sha":"02437412944950c05f9f37a430be9a2d16735715","family_provisional":"F6","priority":"HIGH"},
+    {"candidate_id":"MEDVI-M4","solution_sha":"0c81289d10f3e3bea0e55e5d5d0f552c28a270ad","message":"fix(logger): resolve unit test failures and sanitize PII in observability","parent_sha":"852ee0cdfe8793b25aa11c00480bef2095758053","family_provisional":"F1","priority":"INTERLEAVED_DUPLICATE_SCREEN"},
+    {"candidate_id":"MEDVI-M5","solution_sha":"6319dc16e24f167fcbeae8d3dd749cde32cd25e6","message":"fix(checkout): restore main deployability and checkout path","parent_sha":"5c8f2b926685ebdfefb043595df4a2d6e296fff0","family_provisional":"F6","priority":"HIGH_BROAD_CHANGESET"},
+    {"candidate_id":"MEDVI-L1","solution_sha":"531ba28602714359bafeeb8d806e4e06cc7ac34b","message":"fix(auth): canonicalize login rate limit buckets (#197)","parent_sha":"25062d6fa14e60bba40228f275c5ae9c99d75d81","family_provisional":"F1","priority":"LOW"},
+    {"candidate_id":"MEDVI-L2","solution_sha":"25062d6fa14e60bba40228f275c5ae9c99d75d81","message":"fix(payments): lease synchronous webhook recovery (#201)","parent_sha":"0a0eb299d3ccedabce9114609a05b6536e72e3c7","family_provisional":"F2","priority":"LOW"},
+    {"candidate_id":"MEDVI-L3","solution_sha":"0a0eb299d3ccedabce9114609a05b6536e72e3c7","message":"fix(security): allow Stripe Payment Element CSP origins (#198)","parent_sha":"82b3f6630b0b48c7152930a5af08f2719197faa5","family_provisional":"F1","priority":"LOW"},
+    {"candidate_id":"MEDVI-L4","solution_sha":"82b3f6630b0b48c7152930a5af08f2719197faa5","message":"fix(security): harden distributed rate limit provider (#202)","parent_sha":"f371cfaee8758e2517f7d2cc147d1879b609fd5e","family_provisional":"F2","priority":"LOW"},
+    {"candidate_id":"MEDVI-L5","solution_sha":"f371cfaee8758e2517f7d2cc147d1879b609fd5e","message":"fix(auth): enforce live session role freshness (#195)","parent_sha":"8493ad99bfc10084fc0147335684f21d47a248b8","family_provisional":"F1","priority":"LOW"}
+  ],
+  "screened_metadata_only": true,
+  "solution_diff_inspected_before_freeze": false
+}

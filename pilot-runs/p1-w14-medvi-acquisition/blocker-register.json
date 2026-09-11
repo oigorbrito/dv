@@ -1,0 +1,11 @@
+{
+  "wave":"P1-W14",
+  "blockers":[
+    {"id":"P1-W1-BLK-002","type":"CORPUS","status":"OPEN","impact":"comparative corpus remains partial; no new task admitted","next_condition":"admissible verifier-first task from a reproducible source"},
+    {"id":"P1-W4-BLK-STRONG-CREDENTIAL","type":"EXTERNAL_CREDENTIAL","status":"OPEN","impact":"P1-S1 release remains blocked","next_condition":"authorized credential for approved C1 surface"},
+    {"id":"P1-W14-MEDVI-ENV","type":"ENVIRONMENT","status":"OBSERVED","impact":"M2/M3 preservation cannot be admitted from current disposable parent environments","next_condition":"reproducible parent-defined Prisma/client environment, if one exists"}
+  ],
+  "closed":[],
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

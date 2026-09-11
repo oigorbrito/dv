@@ -1,0 +1,10 @@
+{
+  "before":{"tasks":3,"families":3,"repositories":2},
+  "after":{"tasks":3,"families":3,"repositories":2},
+  "new_admissions":[],
+  "medvi_status":"NO_ADMISSION",
+  "task_corpus":"PARTIAL",
+  "comparative_corpus_ready":"NO",
+  "reason":"M1 has no tree delta at the stated solution commit; M2 and M3 lack reproducible preservation environments; remaining leads are interleaved or broad and do not supply a clean independent verifier.",
+  "holdout":"SEALED"
+}

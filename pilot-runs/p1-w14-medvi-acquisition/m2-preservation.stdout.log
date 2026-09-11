@@ -1,0 +1,114 @@
+
+> medvi-app@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.7 C:/Projetos/dv/.tmp-w14-candidates/M2
+
+ ❯ src/test/unit/orders-state-machine.test.ts (0 test)
+ ❯ src/modules/payments/services/payments.service.test.ts (0 test)
+ ❯ src/modules/payments/__tests__/stripe-hardening.preservation.test.ts (0 test)
+ ❯ src/test/unit/auth.test.ts (0 test)
+ ❯ src/test/unit/observability.test.ts (2 tests | 2 failed) 13ms
+     × writes structured JSON without PII or secrets 8ms
+     × generates a requestId for critical operation events 3ms
+ ❯ src/test/unit/auth.actions.test.ts (0 test)
+ ❯ src/test/unit/logger-correlation.test.ts (2 tests | 2 failed) 21ms
+     × includes requestId and actorId in logs when context is present 17ms
+     × works without context 2ms
+ ❯ src/test/unit/ownership.test.ts (0 test)
+ ❯ src/test/unit/audit-correlation.test.ts (0 test)
+ ❯ src/test/unit/prescriptions.actions.test.ts (0 test)
+ ❯ src/test/unit/checkout.actions.test.ts (0 test)
+ ❯ src/test/unit/with-audit.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 10 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/unit/audit-correlation.test.ts [ src/test/unit/audit-correlation.test.ts ]
+ FAIL  src/test/unit/auth.actions.test.ts [ src/test/unit/auth.actions.test.ts ]
+ FAIL  src/test/unit/auth.test.ts [ src/test/unit/auth.test.ts ]
+ FAIL  src/test/unit/checkout.actions.test.ts [ src/test/unit/checkout.actions.test.ts ]
+ FAIL  src/test/unit/orders-state-machine.test.ts [ src/test/unit/orders-state-machine.test.ts ]
+ FAIL  src/test/unit/ownership.test.ts [ src/test/unit/ownership.test.ts ]
+ FAIL  src/test/unit/prescriptions.actions.test.ts [ src/test/unit/prescriptions.actions.test.ts ]
+ FAIL  src/test/unit/with-audit.test.ts [ src/test/unit/with-audit.test.ts ]
+ FAIL  src/modules/payments/services/payments.service.test.ts [ src/modules/payments/services/payments.service.test.ts ]
+ FAIL  src/modules/payments/__tests__/stripe-hardening.preservation.test.ts [ src/modules/payments/__tests__/stripe-hardening.preservation.test.ts ]
+Error: Cannot find module '.prisma/client/default'
+Require stack:
+- C:\Projetos\dv\.tmp-w14-candidates\M2\node_modules\@prisma\client\default.js
+ ❯ Object.<anonymous> node_modules/@prisma/client/default.js:2:6
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/14]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/unit/logger-correlation.test.ts > Logger Correlation > includes requestId and actorId in logs when context is present
+AssertionError: expected "info" to be called with arguments: [ StringContaining{…} ]
+
+Received:
+
+  1st info call:
+
+  [
+-   StringContaining "\"requestId\":\"test-request-id\"",
++   "[medvi:info] [test-request-id] test message | payload: {\"foo\":\"bar\"}",
+  ]
+
+
+Number of calls: 1
+
+ ❯ src/test/unit/logger-correlation.test.ts:19:24
+     17|     });
+     18|
+     19|     expect(consoleSpy).toHaveBeenCalledWith(
+       |                        ^
+     20|       expect.stringContaining('"requestId":"test-request-id"')
+     21|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/14]⎯
+
+ FAIL  src/test/unit/logger-correlation.test.ts > Logger Correlation > works without context
+SyntaxError: Unexpected token 'm', "[medvi:info"... is not valid JSON
+ ❯ src/test/unit/logger-correlation.test.ts:35:23
+     33|     logger.info('test message');
+     34|
+     35|     const call = JSON.parse(String(consoleSpy.mock.calls[0][0])) as Re…
+       |                       ^
+     36|     expect(call).toMatchObject({
+     37|       level: 'info',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/14]⎯
+
+ FAIL  src/test/unit/observability.test.ts > observability > writes structured JSON without PII or secrets
+SyntaxError: Unexpected token 'm', "[medvi:info"... is not valid JSON
+ ❯ src/test/unit/observability.test.ts:23:22
+     21|
+     22|     const raw = String(consoleSpy.mock.calls[0][0]);
+     23|     const log = JSON.parse(raw) as Record<string, unknown>;
+       |                      ^
+     24|
+     25|     expect(log).toMatchObject({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/14]⎯
+
+ FAIL  src/test/unit/observability.test.ts > observability > generates a requestId for critical operation events
+SyntaxError: Unexpected token 'm', "[medvi:info"... is not valid JSON
+ ❯ src/test/unit/observability.test.ts:51:60
+     49|     );
+     50|
+     51|     const logs = consoleSpy.mock.calls.map(([raw]) => JSON.parse(Strin…
+       |                                                            ^
+     52|     expect(logs).toHaveLength(2);
+     53|     expect(logs[0]).toMatchObject({ event: 'checkout_started', result:…
+ ❯ src/test/unit/observability.test.ts:51:40
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/14]⎯
+
+
+ Test Files  12 failed | 19 passed (31)
+      Tests  4 failed | 73 passed (77)
+   Start at  15:42:24
+   Duration  30.17s (transform 5.56s, setup 10.72s, import 5.88s, tests 434ms, environment 141.80s)
+

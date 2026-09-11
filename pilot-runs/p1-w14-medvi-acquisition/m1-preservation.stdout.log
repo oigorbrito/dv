@@ -1,0 +1,35 @@
+
+ RUN  v4.1.7 C:/Projetos/dv/.tmp-w14-candidates/M1
+
+ ❯ src/test/unit/auth.test.ts (0 test)
+ ❯ src/test/unit/orders-state-machine.test.ts (0 test)
+ ❯ src/test/unit/auth.actions.test.ts (0 test)
+ ❯ src/test/unit/audit-correlation.test.ts (0 test)
+ ❯ src/test/unit/ownership.test.ts (0 test)
+ ❯ src/test/unit/prescriptions.actions.test.ts (0 test)
+ ❯ src/test/unit/checkout.actions.test.ts (0 test)
+ ❯ src/test/unit/with-audit.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/unit/audit-correlation.test.ts [ src/test/unit/audit-correlation.test.ts ]
+ FAIL  src/test/unit/auth.actions.test.ts [ src/test/unit/auth.actions.test.ts ]
+ FAIL  src/test/unit/auth.test.ts [ src/test/unit/auth.test.ts ]
+ FAIL  src/test/unit/checkout.actions.test.ts [ src/test/unit/checkout.actions.test.ts ]
+ FAIL  src/test/unit/orders-state-machine.test.ts [ src/test/unit/orders-state-machine.test.ts ]
+ FAIL  src/test/unit/ownership.test.ts [ src/test/unit/ownership.test.ts ]
+ FAIL  src/test/unit/prescriptions.actions.test.ts [ src/test/unit/prescriptions.actions.test.ts ]
+ FAIL  src/test/unit/with-audit.test.ts [ src/test/unit/with-audit.test.ts ]
+Error: Cannot find module '.prisma/client/default'
+Require stack:
+- C:\Projetos\dv\.tmp-w14-candidates\M1\node_modules\@prisma\client\default.js
+ ❯ Object.<anonymous> node_modules/@prisma/client/default.js:2:6
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+
+ Test Files  8 failed | 16 passed (24)
+      Tests  51 passed (51)
+   Start at  15:38:56
+   Duration  15.49s (transform 3.55s, setup 7.72s, import 7.91s, tests 337ms, environment 64.88s)
+

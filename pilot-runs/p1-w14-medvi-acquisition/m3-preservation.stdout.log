@@ -1,0 +1,43 @@
+
+> medvi-app@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.7 C:/Projetos/dv/.tmp-w14-candidates/M3
+
+ ❯ src/test/unit/orders-state-machine.test.ts (0 test)
+ ❯ src/modules/payments/__tests__/stripe-hardening.preservation.test.ts (0 test)
+ ❯ src/modules/payments/services/payments.service.test.ts (0 test)
+ ❯ src/test/unit/auth.test.ts (0 test)
+ ❯ src/test/unit/auth.actions.test.ts (0 test)
+ ❯ src/test/unit/ownership.test.ts (0 test)
+ ❯ src/test/unit/audit-correlation.test.ts (0 test)
+ ❯ src/test/unit/prescriptions.actions.test.ts (0 test)
+ ❯ src/test/unit/checkout.actions.test.ts (0 test)
+ ❯ src/test/unit/with-audit.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 10 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/unit/audit-correlation.test.ts [ src/test/unit/audit-correlation.test.ts ]
+ FAIL  src/test/unit/auth.actions.test.ts [ src/test/unit/auth.actions.test.ts ]
+ FAIL  src/test/unit/auth.test.ts [ src/test/unit/auth.test.ts ]
+ FAIL  src/test/unit/checkout.actions.test.ts [ src/test/unit/checkout.actions.test.ts ]
+ FAIL  src/test/unit/orders-state-machine.test.ts [ src/test/unit/orders-state-machine.test.ts ]
+ FAIL  src/test/unit/ownership.test.ts [ src/test/unit/ownership.test.ts ]
+ FAIL  src/test/unit/prescriptions.actions.test.ts [ src/test/unit/prescriptions.actions.test.ts ]
+ FAIL  src/test/unit/with-audit.test.ts [ src/test/unit/with-audit.test.ts ]
+ FAIL  src/modules/payments/services/payments.service.test.ts [ src/modules/payments/services/payments.service.test.ts ]
+ FAIL  src/modules/payments/__tests__/stripe-hardening.preservation.test.ts [ src/modules/payments/__tests__/stripe-hardening.preservation.test.ts ]
+Error: Cannot find module '.prisma/client/default'
+Require stack:
+- C:\Projetos\dv\.tmp-w14-candidates\M3\node_modules\@prisma\client\default.js
+ ❯ Object.<anonymous> node_modules/@prisma/client/default.js:2:6
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+
+ Test Files  10 failed | 24 passed (34)
+      Tests  88 passed (88)
+   Start at  15:43:43
+   Duration  22.46s (transform 4.99s, setup 9.67s, import 5.28s, tests 749ms, environment 108.87s)
+

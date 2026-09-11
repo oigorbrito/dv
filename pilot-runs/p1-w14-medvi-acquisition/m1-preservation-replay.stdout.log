@@ -1,0 +1,17 @@
+
+ RUN  v4.1.7 C:/Projetos/dv/.tmp-w14-candidates/M1
+
+ ❯ src/test/unit/auth.test.ts (0 test)
+ ❯ src/test/unit/checkout.actions.test.ts (0 test)
+ ❯ src/test/unit/orders-state-machine.test.ts (0 test)
+ ❯ src/test/unit/audit-correlation.test.ts (0 test)
+ ❯ src/test/unit/ownership.test.ts (0 test)
+ ❯ src/test/unit/auth.actions.test.ts (0 test)
+ ❯ src/test/unit/prescriptions.actions.test.ts (0 test)
+ ❯ src/test/unit/with-audit.test.ts (0 test)
+
+ Test Files  8 failed | 16 passed (24)
+      Tests  51 passed (51)
+   Start at  15:45:22
+   Duration  13.88s (transform 2.88s, setup 7.41s, import 3.38s, tests 335ms, environment 56.57s)
+

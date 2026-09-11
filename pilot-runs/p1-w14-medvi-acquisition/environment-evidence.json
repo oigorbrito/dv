@@ -1,0 +1,21 @@
+{
+  "source": "oigorbrito/medvi",
+  "discovery": {
+    "node": "v24.18.0",
+    "npm": "11.16.0",
+    "pnpm": "available in host fallback runtime; not used for these npm-lock parents",
+    "package_lock_blob_sha": "42c6d51dfd53f4790c4a31455c56f6503e148def",
+    "install": "npm ci --ignore-scripts",
+    "network_dependency": "npm registry access required and was used only for disposable baseline setup",
+    "source_checkout_modified": false
+  },
+  "workspaces": [
+    {"candidate_id":"MEDVI-M1","path":"C:\\Projetos\\dv\\.tmp-w14-candidates\\M1","base_sha":"f5feac3223b46b7079df897d84f7825f954d52ea","detached":true,"clean":true,"dependencies":"npm ci completed; prisma generation not available because no schema in parent"},
+    {"candidate_id":"MEDVI-M2","path":"C:\\Projetos\\dv\\.tmp-w14-candidates\\M2","base_sha":"10b5d8e761545038a33b510ab64c590e36f7e6e8","detached":true,"clean":true,"dependencies":"npm ci completed; generated Prisma client unavailable in parent"},
+    {"candidate_id":"MEDVI-M3","path":"C:\\Projetos\\dv\\.tmp-w14-candidates\\M3","base_sha":"02437412944950c05f9f37a430be9a2d16735715","detached":true,"clean":true,"dependencies":"npm ci completed; generated Prisma client unavailable in parent"}
+  ],
+  "environment_limitations": [
+    "The frozen parents do not contain a usable Prisma schema/client generation path for the broad suite.",
+    "No arbitrary package upgrade or source modification was made."
+  ]
+}
