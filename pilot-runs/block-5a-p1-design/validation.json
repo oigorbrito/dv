@@ -1,0 +1,14 @@
+{
+  "block": "5A",
+  "artifact_json_parse": "PASS",
+  "artifact_count": 7,
+  "candidate_record_count": 10,
+  "candidate_currently_verified_count": 6,
+  "staged_phase_count": 4,
+  "harness_self_test": {"command": "python -B tools/test_dv_pilot_harness.py", "exit_code": 0, "result": "PASS", "tests": 6},
+  "holdout_reference_scan": "PASS",
+  "api_secret_scan": "PASS",
+  "p0_artifact_change_scan": "PASS",
+  "treatment_execution": "NOT_EXECUTED",
+  "model_api_calls": "NOT_EXECUTED"
+}

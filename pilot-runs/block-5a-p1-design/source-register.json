@@ -1,0 +1,24 @@
+{
+  "block": "5A",
+  "retrieved_at": "2026-09-11",
+  "purpose": "current-source register for candidate discovery and prior-art screening; not a support or pricing freeze",
+  "sources": [
+    {"scope": "OpenAI models/API", "url": "https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4", "status": "CURRENTLY_VERIFIED", "use": "model/API identity and capability discovery"},
+    {"scope": "Anthropic pricing", "url": "https://platform.claude.com/docs/en/about-claude/pricing", "status": "CURRENTLY_VERIFIED", "use": "pricing-source discovery; no price frozen"},
+    {"scope": "Google Gemini pricing and limits", "url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en", "status": "CURRENTLY_VERIFIED", "use": "pricing/usage-source discovery; no price frozen"},
+    {"scope": "Ollama OpenAI compatibility", "url": "https://docs.ollama.com/api/openai-compatibility", "status": "CURRENTLY_VERIFIED", "use": "local programmatic surface discovery"},
+    {"scope": "OpenRouter models", "url": "https://openrouter.ai/docs/guides/overview/models", "status": "CURRENTLY_VERIFIED", "use": "unified provider surface discovery"},
+    {"scope": "Microsoft Agent Framework", "url": "https://learn.microsoft.com/en-us/agent-framework/", "status": "CURRENTLY_VERIFIED", "use": "prior-art capability discovery"},
+    {"scope": "BenchExec", "url": "https://github.com/sosy-lab/benchexec", "status": "CURRENTLY_VERIFIED", "use": "resource-measurement prior art"},
+    {"scope": "Experiment Runner", "url": "https://github.com/S2-group/experiment-runner", "status": "CURRENTLY_VERIFIED", "use": "campaign-runner prior art; Windows limitation recorded"},
+    {"scope": "MCP tools", "url": "https://modelcontextprotocol.io/specification/draft/server/tools", "status": "CURRENTLY_VERIFIED", "use": "tool discovery/invocation standard"},
+    {"scope": "A2A specification", "url": "https://github.com/a2aproject/A2A/blob/main/docs/specification.md", "status": "CURRENTLY_VERIFIED", "use": "agent communication standard"},
+    {"scope": "OpenTelemetry semantic conventions", "url": "https://opentelemetry.io/docs/specs/semconv/", "status": "CURRENTLY_VERIFIED", "use": "telemetry standard"},
+    {"scope": "W3C Trace Context", "url": "https://www.w3.org/TR/trace-context/", "status": "CURRENTLY_VERIFIED", "use": "trace propagation standard"}
+  ],
+  "limitations": [
+    "Source retrieval does not qualify an executor for real P1.",
+    "Exact prices, quotas, telemetry fields, licenses, and local hardware remain S0 gates.",
+    "No holdout or treatment output was inspected."
+  ]
+}

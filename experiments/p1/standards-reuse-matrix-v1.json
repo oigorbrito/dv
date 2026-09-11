@@ -1,0 +1,11 @@
+{
+  "matrix_id":"p1-standards-reuse-v1",
+  "standards":[
+    {"standard":"MCP","source":"https://modelcontextprotocol.io/specification/draft/server/tools","fit":{"tool_capability_discovery":"AVAILABLE","tool_invocation":"AVAILABLE","provider_abstraction":"ABSENT","experiment_provenance":"ABSENT","telemetry":"ABSENT"},"decision":"reuse for tools/resources; keep evaluation provenance separate"},
+    {"standard":"A2A","source":"https://github.com/a2aproject/A2A/blob/main/docs/specification.md","fit":{"agent_capability_discovery":"AVAILABLE","agent_communication":"AVAILABLE","tool_invocation":"PARTIAL","provider_abstraction":"ABSENT","experiment_provenance":"ABSENT","telemetry":"PARTIAL"},"decision":"consider only for agent-to-agent surfaces, not as accounting contract"},
+    {"standard":"OpenTelemetry","source":"https://opentelemetry.io/docs/specs/semconv/","fit":{"tool_capability_discovery":"ABSENT","agent_communication":"ABSENT","telemetry":"AVAILABLE","experiment_provenance":"PARTIAL","provider_abstraction":"ABSENT"},"decision":"reuse semantic conventions and trace context for spans/metrics/logs"},
+    {"standard":"W3C Trace Context","source":"https://www.w3.org/TR/trace-context/","fit":{"trace_propagation":"AVAILABLE","telemetry":"PARTIAL","experiment_provenance":"PARTIAL","provider_abstraction":"ABSENT"},"decision":"reuse trace propagation; do not encode acceptance authority in headers"},
+    {"standard":"OpenAI-compatible HTTP surfaces","source":"provider-specific compatibility documentation; not a formal cross-provider standard","fit":{"provider_invocation":"PARTIAL","tool_invocation":"PARTIAL","usage_accounting":"PARTIAL"},"decision":"treat as adapter compatibility only; pin native identity and usage per provider"}
+  ],
+  "custom_protocol_rule":"No provider-neutral IR or new runtime/router is proposed in 5A. Use existing interfaces first and add only a narrow evidence binding if a demonstrated gap remains."
+}

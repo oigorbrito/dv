@@ -1,0 +1,19 @@
+{
+  "contract_id": "p1-executor-screening-v1",
+  "screen_before_real_p1": [
+    "programmatic invocation",
+    "observable version and model identity",
+    "usage telemetry sufficient for accounting or explicit telemetry-incomplete classification",
+    "reproducible invocation parameters",
+    "capturable candidate artifact",
+    "enforceable timeout and cancellation",
+    "no hidden manual intervention",
+    "compatible terms and licensing",
+    "known cost source",
+    "known environment requirements"
+  ],
+  "local_additional_requirements": ["hardware identity", "model artifact hash/version", "quantization", "inference runtime/version", "energy measurement availability or explicit omission", "cold/warm startup policy"],
+  "telemetry_rule": "UNMEASURED is not ZERO; missing provider-native usage is telemetry-incomplete and cannot silently enter primary cost comparisons",
+  "candidate_status_vocab": ["CURRENTLY_VERIFIED", "KNOWN_BUT_NOT_CURRENTLY_VERIFIED", "NOT_ADMISSIBLE_PENDING_GATE", "UNKNOWN"],
+  "no_treatment_execution": true
+}

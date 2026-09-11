@@ -1,0 +1,14 @@
+{
+  "block": "5A",
+  "captured_at": "2026-09-11",
+  "repository": "C:\\Projetos\\dv",
+  "entry_head": "d010d41e245e21c7b3e628747b20e1b3a163113c",
+  "p0_treatment_evidence": "NONE",
+  "p0_protocol_finding": "historical-task selection without verifier-first admissibility screening produced insufficient executable coverage for comparative evaluation",
+  "real_p0_runs": "0/24",
+  "p0_release": "NO",
+  "holdout": "SEALED",
+  "api_or_model_execution": "NOT_EXECUTED",
+  "treatment_execution": "NOT_EXECUTED",
+  "p0_artifacts_modified": false
+}

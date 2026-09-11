@@ -1,0 +1,16 @@
+{
+  "design_id": "p1-treatment-design-v1",
+  "primary_metric": "TOTAL_SYSTEM_TOKENS / VERIFIED_SOLVED_TASK",
+  "secondary_metrics": ["monetary cost / verified solved task", "wall-clock latency", "verified solve rate", "escalation rate", "verification cost", "planning/task-shaping cost", "retry cost", "failure/inconclusive rate"],
+  "treatments": [
+    {"id":"B0","name":"STRONG_DIRECT","definition":"strong executor directly"},
+    {"id":"B1","name":"CHEAP_DIRECT_VERIFY","definition":"economic executor plus frozen verification"},
+    {"id":"B2","name":"CHEAP_THEN_ESCALATE","definition":"economic executor first; deterministic state-based escalation"},
+    {"id":"B3","name":"STATIC_FAMILY_POLICY","definition":"predefined executor selection by task family"},
+    {"id":"B4","name":"LOCAL_OR_FREE_FIRST","definition":"local/free executor first plus deterministic verification/escalation"}
+  ],
+  "optional_treatment": {"id":"B5","name":"EXISTING_MATURE_ROUTER_POLICY","status":"not included until prior-art qualification justifies it"},
+  "prohibited_default": "learned or dynamic custom dv router",
+  "outcome_boundaries": ["EXECUTOR_SUCCESS != VERIFIED_TASK_SUCCESS", "LOWER_EXECUTOR_TOKENS != LOWER_SYSTEM_COST", "INCONCLUSIVE is first-class"],
+  "provider_binding": "prospective qualification only; no final model binding in 5A"
+}

@@ -1,0 +1,11 @@
+{
+  "plan_id": "p1-staged-experiment-v1",
+  "stages": [
+    {"id":"P1-S0","purpose":"qualify executor, invocation, isolation, telemetry, candidate capture, and oracle binding","tasks":"synthetic and verifier fixtures only","treatments":"candidate executor surfaces, no research claim","repetitions":"until gate evidence is stable","promotion":"all screening contract gates pass"},
+    {"id":"P1-S1","purpose":"small development pilot and variance discovery","tasks":"minimum 6 verifier-first tasks, one per family where available","treatments":["B0","B1","B2","B3","B4"],"repetitions":"one exploratory rollout per cell, then predeclared repeats if failures are environmental","promotion":"no unresolved oracle or telemetry blocker; report distributions, not ranking"},
+    {"id":"P1-S2","purpose":"repeated controlled development comparison","tasks":"all admitted development tasks from S1","treatments":"only treatments surviving S0/S1","repetitions":"pre-register after S1 variance and cost review; no arbitrary n asserted here","promotion":"stable provenance, complete accounting, reproducible oracle reconciliation"},
+    {"id":"P1-S3","purpose":"external confirmation","tasks":"new sealed external holdout acquired under same verifier-first contract","treatments":"frozen survivors only","repetitions":"pre-registered with holdout protocol","promotion":"independent confirmation; no tuning from holdout outcomes"}
+  ],
+  "claims_not_allowed_before_s3": ["generalization", "executor ranking", "production release", "architectural approval"],
+  "sample_size_rule": "choose repetitions after observed variance and resource budget are documented; do not reuse P0's 24-run count by inertia"
+}

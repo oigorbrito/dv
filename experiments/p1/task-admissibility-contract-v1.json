@@ -1,0 +1,22 @@
+{
+  "contract_id": "p1-task-admissibility-v1",
+  "frozen_before_task_discovery": true,
+  "admit_only_if": [
+    "exact pre-solution base identified",
+    "task statement frozen before treatment execution",
+    "independent focal verifier exists",
+    "verifier provenance is known",
+    "verifier is independent from treatment output",
+    "base and candidate verification is executable in a reproducible environment",
+    "expected base behavior is known for Fail-to-Pass tasks",
+    "preservation or regression suite is executable",
+    "toolchain and environment requirements are reproducible",
+    "executor does not need gold solution",
+    "verifier artifacts are hashable and versioned",
+    "Harness attributes product, harness, and environment failure separately",
+    "task belongs to exactly one family",
+    "no treatment result has influenced selection"
+  ],
+  "exclusion_reasons": ["INVALID_ORACLE","VERIFIER_ARTIFACT_UNAVAILABLE","ENVIRONMENT_NOT_REPRODUCIBLE","BASE_UNUSABLE","SOLUTION_LEAKAGE_REQUIRED","OTHER_EXPLICIT_REASON"],
+  "acquisition_order": ["discover candidate", "identify base", "identify verifier", "prove provenance", "run base verifier", "run preservation baseline", "classify environment", "admit and freeze task", "withhold solution from executor"]
+}
