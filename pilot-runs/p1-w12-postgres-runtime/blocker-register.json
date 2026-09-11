@@ -1,0 +1,10 @@
+{
+  "wave":"P1-W12",
+  "blockers":[
+    {"id":"P1-W9-D-F2-04","status":"CLOSED_TERMINAL_LOCAL_WORK_NONE","classification":"BLOCKED_NO_REPRODUCIBLE_HISTORICAL_RESOLUTION","condition":"unversioned pytest has no recoverable dated CI/index resolution"},
+    {"id":"P1-W9-D-F2-05","status":"CLOSED","classification":"RESOLVED_BY_BOUNDED_RUNTIME","condition":"local postgres:17-alpine image and isolated fresh databases enabled valid focal/preservation execution"},
+    {"id":"P1-W4-BLK-STRONG-CREDENTIAL","status":"OPEN","condition":"strong executor qualification remains credential blocked"}
+  ],
+  "holdout":"SEALED",
+  "treatments":"NOT_EXECUTED"
+}

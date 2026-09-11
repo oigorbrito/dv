@@ -1,0 +1,15 @@
+{
+  "candidate":"D-F2-05",
+  "repository":"oigorbrito/bpt2-abp",
+  "base_sha":"f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "postgres_major_version":"17",
+  "image":"postgres:17-alpine",
+  "resolved_image_digest":"sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+  "database":"BomPraTi",
+  "username":"postgres",
+  "port_contract":5432,
+  "required_environment_variable_names":["BPT_DB_CONNECTION","BPT_SAVED_SEARCH_CLAIM_OUTPUT"],
+  "health":"pg_isready -U postgres -d BomPraTi",
+  "migration":"scripts/fresh-migration-gate.sh semantics: tool restore, build, add five module migrations, apply six contexts",
+  "secret_values_persisted":false
+}

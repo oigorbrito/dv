@@ -1,0 +1,10 @@
+{
+  "before":["D-F5-01","D-F6-01"],
+  "after":["D-F2-05","D-F5-01","D-F6-01"],
+  "new_admission":"D-F2-05",
+  "counts":{"tasks":3,"families":3,"repositories":2,"runtimes":"Python,Rust,.NET/PostgreSQL"},
+  "comparative_corpus_ready":"NO",
+  "reason":"three admitted tasks improve diversity but do not establish comparative readiness",
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

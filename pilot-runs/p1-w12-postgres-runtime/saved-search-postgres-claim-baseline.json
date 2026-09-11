@@ -1,0 +1,72 @@
+{
+  "schema": "bpt2.saved-search-postgres-claim-baseline.v1",
+  "protocol": {
+    "database": "PostgreSQL",
+    "claim": "SELECT pending request FOR UPDATE SKIP LOCKED LIMIT 1 inside transaction",
+    "claimStateColumnsAdded": false,
+    "schedulingEnabled": false,
+    "automaticRunnerEnabled": false,
+    "correctnessStateInProcessMemory": false
+  },
+  "invariants": {
+    "simultaneousOwnersDisjoint": true,
+    "rollbackMakesRequestEligible": true,
+    "crashAfterLedgerReplayIdempotent": true,
+    "completedNeverReclaimed": true,
+    "slowLockedItemDoesNotBlockIndependentItem": true,
+    "cancellationEquivalentRollbackRecoverable": true,
+    "concurrentEnqueueOneDurableRow": true,
+    "uniquenessUsedAsWorkerCoordination": false
+  },
+  "observations": [
+    {
+      "test": "overlapping-workers",
+      "w1": "40000000-0000-0000-0000-000000000001",
+      "w2": "40000000-0000-0000-0000-000000000002",
+      "disjoint": true,
+      "w1ClaimMs": 343.351,
+      "w2ClaimMs": 5.84
+    },
+    {
+      "test": "rollback-recovery",
+      "listingId": "41000000-0000-0000-0000-000000000001",
+      "recovered": true,
+      "ClaimMs": 2.531,
+      "TransactionMs": 12.9802
+    },
+    {
+      "test": "crash-after-ledger-replay",
+      "listingId": "41000000-0000-0000-0000-000000000003",
+      "durableMatches": 1,
+      "duplicateInsertAttempted": false
+    },
+    {
+      "test": "independent-progress-and-cancellation",
+      "slow": "41000000-0000-0000-0000-000000000004",
+      "progressed": "41000000-0000-0000-0000-000000000005",
+      "recovered": "41000000-0000-0000-0000-000000000004"
+    },
+    {
+      "test": "completed-noop",
+      "eligible": 0
+    },
+    {
+      "test": "concurrent-enqueue-baseline",
+      "outcomes": [
+        "INSERTED",
+        "UNIQUE_BACKSTOP"
+      ],
+      "durableRows": 1,
+      "interpretation": "uniqueness is a backstop, not worker coordination"
+    }
+  ],
+  "disposition": {
+    "postgresTransactionalClaim": "BASELINE_PROVED_BOUNDED",
+    "productionRunner": "NOT_YET_SELECTED",
+    "transactionAcrossFullDetection": "NOT_AUTHORIZED_BY_THIS_BENCHMARK",
+    "durableClaimColumns": "NOT_JUSTIFIED_YET",
+    "abpBackgroundJobs": "COMPARATOR_IF_RETRY_SCHEDULING_COMPLEXITY_JUSTIFIES",
+    "hangfireQuartzRedis": "NOT_JUSTIFIED",
+    "pollLeaseRetryThresholds": "UNSET"
+  }
+}

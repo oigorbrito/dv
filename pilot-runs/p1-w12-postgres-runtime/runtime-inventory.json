@@ -1,0 +1,16 @@
+{
+  "docker_cli":"29.7.2",
+  "docker_desktop":"4.86.0",
+  "docker_engine":"PASS when accessed with authorized runtime permissions",
+  "engine_context":"desktop-linux",
+  "engine_version":"29.7.2",
+  "postgres_image_present":true,
+  "image_id":"sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+  "repo_digest":"postgres@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+  "created":"2026-08-13T19:17:35.122910679Z",
+  "architecture":"amd64",
+  "postgres_version":"17.11",
+  "local_postgres_command":"NOT_FOUND",
+  "postgres_service":"postgresql-x64-18 STOPPED; not used because contract requires PostgreSQL 17",
+  "selected_runtime":"isolated postgres:17-alpine container"
+}

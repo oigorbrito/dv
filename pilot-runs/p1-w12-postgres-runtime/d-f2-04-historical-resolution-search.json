@@ -1,0 +1,11 @@
+{
+  "candidate":"D-F2-04",
+  "base_sha":"2c886f863cf6d5f9473d15e60f2f55f938162876",
+  "search_scope":["local frozen repository metadata","repository-controlled CI workflow","prior W9/W10 evidence"],
+  "historical_ci_run_id":"NOT_FOUND",
+  "resolved_pytest_version":"NOT_FOUND",
+  "historical_contract":"pip install --upgrade pip pytest; unpinned",
+  "result":"BLOCKED_NO_REPRODUCIBLE_HISTORICAL_RESOLUTION",
+  "local_work_remaining":"NONE",
+  "treatment_execution":"NOT_EXECUTED"
+}

@@ -1,0 +1,16 @@
+{
+  "json_parse":"PASS",
+  "focal_evidence":"PASS; exit code 0 and raw artifact hash D00A914263BAAB8523D35680D624EE289492690593D21A69AB15BDD1947180CD",
+  "preservation_evidence":"PASS; exit code 0 and raw stdout hash C359CF0274611421129A8CD0003C64916DF899FF6A990C14B7BA189CBDAA8068",
+  "postgres_provenance":"PASS; image digest and PostgreSQL 17.11 captured",
+  "container_cleanup":"PASS",
+  "nuget_package_consistency":"PASS; W11 frozen cache reused",
+  "base_sha":"PASS",
+  "candidate_id_uniqueness":"PASS",
+  "secret_scan":"PASS",
+  "holdout_leakage":"PASS; SEALED",
+  "p0_immutability":"PASS",
+  "harness_self_test":"PASS; 6/6",
+  "git_diff_check":"PASS",
+  "treatment_execution":"NOT_EXECUTED"
+}

@@ -1,0 +1,14 @@
+{
+  "runtime":"docker container dv-p1-w12-d-f2-05-postgres",
+  "image":"postgres:17-alpine",
+  "digest":"sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+  "host_port":55432,
+  "container_port":5432,
+  "database":"BomPraTi",
+  "health_command":"docker exec <container> pg_isready -U postgres -d BomPraTi",
+  "health_exit_code":0,
+  "health_result":"accepting connections",
+  "version_result":"PostgreSQL 17.11 on x86_64-pc-linux-musl",
+  "credentials":"ephemeral in process memory; value not persisted",
+  "cleanup":"container removed after evidence capture"
+}

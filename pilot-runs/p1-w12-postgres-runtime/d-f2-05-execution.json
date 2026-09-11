@@ -1,0 +1,17 @@
+{
+  "candidate":"D-F2-05",
+  "base_sha":"f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "workspace":"fresh detached exact-base clone; removed after capture",
+  "restore":"PASS; existing cache; no package download; versions unchanged",
+  "build":"PASS; fixture and production probe built with 0 warnings and 0 errors",
+  "migration_setup":"PASS; BomPraTiDbContext, CatalogDbContext, MediaDbContext, SellersDbContext, MarketplaceDbContext, IngestionDbContext",
+  "focal_command":"dotnet run --project tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj --configuration Release --no-build",
+  "focal_exit_code":0,
+  "focal_outcome":"PASS; six transactional claim/recovery invariants reported PASS",
+  "preservation_command":"dotnet run --project tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/ProductionExplicitClaim/BomPraTi.SavedSearchExplicitClaimFixture.csproj --configuration Release --no-build",
+  "preservation_exit_code":0,
+  "preservation_outcome":"PASS; production lock, release, and pending-retry invariants reported PASS",
+  "focal_failure_attribution":"NONE",
+  "solution_application":"NONE",
+  "treatment_execution":"NOT_EXECUTED"
+}
