@@ -143,6 +143,11 @@ is therefore `INCONCLUSIVE`, not preservation PASS. The temporary workspace was
 eventually removed without force-killing unidentified processes. No source
 checkout was changed and no treatment was executed.
 
+A second preservation probe with `--test-concurrency=1` likewise produced no
+terminal summary or exit code and left a Node process live. That specifically
+identified probe process was terminated and its exact temporary workspace was
+removed. The result remains `INCONCLUSIVE`; no preservation PASS is inferred.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

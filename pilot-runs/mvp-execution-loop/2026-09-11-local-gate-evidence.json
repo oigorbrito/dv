@@ -274,6 +274,15 @@
       "temporary_workspace_cleanup": "PASS_AFTER_NATURAL_TERMINATION",
       "qualification_effect": "does_not_establish_preservation_pass"
     },
+    "candidate_preservation_serial_probe": {
+      "command": "node --test --test-concurrency=1 test/*.test.mjs",
+      "test_file_count": 55,
+      "execution_state": "INCONCLUSIVE",
+      "exit_code": "UNOBSERVED",
+      "observed_condition": "Node process remained live without terminal summary or exit status",
+      "cleanup": "identified probe process terminated; exact temporary workspace removed",
+      "qualification_effect": "does_not_establish_preservation_pass"
+    },
     "screening_result": "PROMISING_FAIL_TO_PASS_PENDING_ADMISSIBILITY_CLOSURE",
     "classification": "BLOCKED",
     "solution_diff_inspected": false,
