@@ -1,0 +1,37 @@
+{
+  "matrix_id": "p1-w13-c1-surface-matrix-v1",
+  "as_of": "2026-09-11",
+  "candidates": [
+    {
+      "candidate_id": "C1-openai-sol",
+      "provider": "OpenAI",
+      "logical_model_name": "GPT-5.6 Sol",
+      "stored_model_identifier": "gpt-5.6-sol",
+      "intended_api_surface": "Responses API",
+      "canonical_api_model_id": "gpt-5.6-sol",
+      "api_status": "CURRENTLY_VERIFIED",
+      "credential_env_var": "OPENAI_API_KEY",
+      "credential_present": false,
+      "surface_valid": "YES_DOCUMENTED",
+      "eligible_for_qualification_now": false,
+      "evidence": "https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4"
+    },
+    {
+      "candidate_id": "C1-anthropic-opus",
+      "provider": "Anthropic",
+      "logical_model_name": "Claude Opus 4.8",
+      "stored_model_identifier": "claude-opus-4.8",
+      "intended_api_surface": "Claude API",
+      "canonical_api_model_id": "claude-opus-4-8",
+      "api_status": "ACTIVE_LEGACY",
+      "credential_env_var": "ANTHROPIC_API_KEY",
+      "credential_present": false,
+      "surface_valid": "YES_AFTER_MAPPING",
+      "eligible_for_qualification_now": false,
+      "evidence": "https://platform.claude.com/docs/en/claude_api_primer"
+    }
+  ],
+  "selection": "NONE",
+  "selection_reason": "Both approved C1 credentials are absent",
+  "secret_values": "NOT_CAPTURED"
+}

@@ -1,0 +1,43 @@
+{
+  "qualification_id": "p1-executor-s0-qualification-v5",
+  "supersedes": "experiments/p1/executor-s0-qualification-v4.json for W13 canonical C1 surface state",
+  "as_of": "2026-09-11",
+  "probe_policy": "one synthetic qualification probe only; no P1 task, candidate, holdout, or treatment execution",
+  "selection": "NONE",
+  "candidates": [
+    {
+      "candidate": "C1-openai-sol",
+      "provider": "OpenAI",
+      "logical_model_name": "GPT-5.6 Sol",
+      "canonical_api_model_id": "gpt-5.6-sol",
+      "api_surface": "Responses API",
+      "credential_env_var": "OPENAI_API_KEY",
+      "credential_present": false,
+      "S0_STATUS": "S0_CREDENTIAL_BLOCKED",
+      "accounting_primary": "NOT_OBSERVED",
+      "raw_evidence": "pilot-runs/p1-w13-strong-surface/strong-probe.json"
+    },
+    {
+      "candidate": "C1-anthropic-opus",
+      "provider": "Anthropic",
+      "logical_model_name": "Claude Opus 4.8",
+      "canonical_api_model_id": "claude-opus-4-8",
+      "stored_legacy_identifier": "claude-opus-4.8",
+      "api_surface": "Claude API",
+      "credential_env_var": "ANTHROPIC_API_KEY",
+      "credential_present": false,
+      "S0_STATUS": "S0_CREDENTIAL_BLOCKED",
+      "accounting_primary": "NOT_OBSERVED",
+      "raw_evidence": "pilot-runs/p1-w13-strong-surface/strong-probe.json"
+    }
+  ],
+  "summary": {
+    "S0_READY": 0,
+    "S0_READY_TELEMETRY_LIMITED": 0,
+    "S0_CREDENTIAL_BLOCKED": 2,
+    "probe_executed": false,
+    "P1_S1_RELEASE": "NO",
+    "holdout": "SEALED",
+    "treatment_execution": "NOT_EXECUTED"
+  }
+}

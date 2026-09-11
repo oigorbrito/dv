@@ -1,0 +1,7 @@
+{
+  "accounting_primary_strong": "FAIL",
+  "accounting_partition_detail_strong": "UNMEASURED",
+  "reason": "No strong qualification request was executed",
+  "primary_metric_blocked": true,
+  "missing_values_are_zero": false
+}

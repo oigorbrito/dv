@@ -1,0 +1,19 @@
+{
+  "erratum_id": "p1-c1-surface-erratum-v1",
+  "date": "2026-09-11",
+  "scope": "C1 Anthropic invocation mapping only",
+  "candidate_id": "C1-anthropic-opus",
+  "provider": "Anthropic",
+  "logical_model_name": "Claude Opus 4.8",
+  "frozen_invalid_invocation_string": "claude-opus-4.8",
+  "canonical_api_model_id": "claude-opus-4-8",
+  "classification": "PROTOCOL_ERRATUM_REQUIRED",
+  "change_type": "NON_SEMANTIC_SURFACE_CANONICALIZATION",
+  "preserved": ["provider", "logical model", "C1 category", "frozen ordering"],
+  "treatment_neutral": true,
+  "holdout_neutral": true,
+  "source": "https://platform.claude.com/docs/en/claude_api_primer",
+  "source_date": "2026-09-11",
+  "runtime_qualification": "NOT_EXECUTED_CREDENTIAL_BLOCKED",
+  "does_not_authorize": ["model upgrade", "P1 task execution", "treatment execution"]
+}

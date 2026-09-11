@@ -1,0 +1,13 @@
+{
+  "wave": "P1-W13",
+  "head": "ba7949f7fb276e7b9c12af0b00679469af567b21",
+  "origin_main": "ba7949f7fb276e7b9c12af0b00679469af567b21",
+  "branch": "main",
+  "worktree": "CLEAN",
+  "holdout": "SEALED",
+  "p1_s1_execution": "NOT_EXECUTED",
+  "harness_command": "python -B tools/test_dv_pilot_harness.py",
+  "harness_exit_code": 0,
+  "harness_result": "PASS",
+  "harness_tests": 6
+}

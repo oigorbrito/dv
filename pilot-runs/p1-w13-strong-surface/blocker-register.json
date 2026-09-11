@@ -1,0 +1,21 @@
+{
+  "wave": "P1-W13",
+  "blockers": [
+    {
+      "blocker_id": "P1-W4-BLK-STRONG-CREDENTIAL",
+      "type": "EXTERNAL_CREDENTIAL",
+      "status": "OPEN",
+      "impact": "Strong C1 qualification and P1-S1 release remain blocked",
+      "unblock_condition": "Authorized credential for an already approved C1 surface"
+    },
+    {
+      "blocker_id": "P1-W1-BLK-002",
+      "type": "CORPUS",
+      "status": "OPEN",
+      "impact": "Comparative corpus remains partial",
+      "unblock_condition": "Additional verifier-first task admission"
+    }
+  ],
+  "closed": [],
+  "holdout": "SEALED"
+}

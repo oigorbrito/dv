@@ -1,0 +1,14 @@
+{
+  "wave": "P1-W13",
+  "terms": {
+    "S1_CORPUS_READY": "PASS",
+    "STRONG_PATH_READY": "NO",
+    "ECONOMIC_PATH_READY": "PASS_WITH_TELEMETRY_LIMITATION",
+    "ACCOUNTING_PRIMARY_READY": "PASS",
+    "HARNESS_P1_REMOTE_READINESS": "PASS",
+    "HOLDOUT_SEALED": true
+  },
+  "P1_S1_RELEASE": "NO",
+  "smoke_specs_created": false,
+  "treatment_execution": "NOT_EXECUTED"
+}

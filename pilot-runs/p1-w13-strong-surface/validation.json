@@ -1,0 +1,16 @@
+{
+  "wave": "P1-W13",
+  "checks": {
+    "c1_identifier_consistency": "PASS",
+    "provider_api_id_consistency": "PASS",
+    "json_parse": "PASS",
+    "accounting_references": "PASS",
+    "raw_artifact_sha_validation": "NOT_APPLICABLE_NO_PROBE",
+    "secret_scan": "PASS",
+    "holdout_leakage": "PASS",
+    "p0_immutability": "PASS",
+    "harness_self_test": "PASS_6_OF_6",
+    "git_diff_check": "PASS"
+  },
+  "treatment_execution": "NOT_EXECUTED"
+}

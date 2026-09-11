@@ -1,0 +1,17 @@
+{
+  "probe_classification": "QUALIFICATION_PROBE_ONLY",
+  "not_a_p1_run": true,
+  "status": "NOT_EXECUTED",
+  "reason": "No authorized C1 credential was present",
+  "provider": "UNMEASURED",
+  "candidate_id": "NONE",
+  "model_requested": "UNMEASURED",
+  "model_observed": "UNMEASURED",
+  "request_id": "UNMEASURED",
+  "candidate_text": "UNMEASURED",
+  "usage": "UNMEASURED",
+  "raw_artifact": "NONE",
+  "raw_sha256": "UNMEASURED",
+  "application_retry_count": "UNMEASURED",
+  "timeout": "NOT_APPLIED"
+}
