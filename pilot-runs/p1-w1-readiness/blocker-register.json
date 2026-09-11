@@ -1,0 +1,9 @@
+{
+  "blockers":[
+    {"blocker_id":"P1-W1-BLK-001","type":"REMOTE_STATE","blocked_operation":"canonical remote reconciliation","evidence":{"local_head":"771bfda344f0be08eb36fd6df32d25880d6a658e","origin_main":"85af7db00f5753825311b744807bb12a858806b9","remote_only":0,"local_only":14},"impact":"origin/main does not expose the local P1 history","work_continuable":true,"unblock_condition":"clean operational worktree followed by non-force fast-forward push","status":"OPEN"},
+    {"blocker_id":"P1-W1-BLK-002","type":"CORPUS","blocked_operation":"P1-S1 comparative release","evidence":"F1/F5 environment or preservation blockers; F2/F3/F4 verifier provenance defects","impact":"only D-F6-01 is admissible and remains smoke-only","work_continuable":true,"unblock_condition":"additional verifier-first task admission","status":"OPEN"},
+    {"blocker_id":"P1-W1-BLK-003","type":"EXECUTOR","blocked_operation":"P1-S0 to P1-S1 promotion","evidence":"no strong or economic/local/free candidate is S0_READY","impact":"required strong and comparison path absent","work_continuable":true,"unblock_condition":"credentialed remote qualification or installed local/free runtime/model with telemetry evidence","status":"OPEN"},
+    {"blocker_id":"P1-W1-BLK-004","type":"HARNESS_SURFACE","blocked_operation":"surface-specific S0 qualification","evidence":"provider retry/escalation semantics and dedicated GPU/energy schema remain unqualified","impact":"no core Harness change required for current F6 path; future surfaces need explicit evidence","work_continuable":true,"unblock_condition":"qualify actual executor surface and record semantics","status":"OPEN"}
+  ],
+  "historical_workspace_housekeeping":"LOCAL_CONDITION_ONLY; preserved and not classified as external blocker"
+}

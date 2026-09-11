@@ -1,0 +1,18 @@
+{
+  "qualification_id":"p1-executor-s0-qualification-v2",
+  "supersedes":"experiments/p1/executor-s0-qualification-v1.json for observed local readiness only; v1 preserved",
+  "as_of":"2026-09-11",
+  "remote_credentials":{"OPENAI_API_KEY":"PRESENT_BOOLEAN_ONLY","ANTHROPIC_API_KEY":"ABSENT","GOOGLE_API_KEY":"ABSENT","GEMINI_API_KEY":"PRESENT_BOOLEAN_ONLY","OPENROUTER_API_KEY":"ABSENT"},
+  "local_surfaces":[
+    {"surface_id":"python","binary":"python","path":"C:\\Users\\Igor B\\AppData\\Local\\Programs\\Python\\Python313\\python.exe","version":"3.13.14","runtime":"CPython","hardware_dependency":"none observed","model_present":"not applicable","programmatic_surface":"AVAILABLE","status":"AVAILABLE","evidence":"version command exit 0"},
+    {"surface_id":"node","binary":"node","path":"C:\\Program Files\\nodejs\\node.exe","version":"24.18.0","runtime":"Node.js","hardware_dependency":"none observed","model_present":"not applicable","programmatic_surface":"AVAILABLE","status":"AVAILABLE","evidence":"version command exit 0"},
+    {"surface_id":"docker","binary":"docker","path":"C:\\Users\\Igor B\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe","version":"29.7.2","runtime":"Docker Desktop","hardware_dependency":"host dependent","model_present":"not checked","programmatic_surface":"AVAILABLE","status":"AVAILABLE","evidence":"version command exit 0; not used as executor"},
+    {"surface_id":"nvidia-smi","binary":"nvidia-smi","path":"C:\\WINDOWS\\system32\\nvidia-smi.exe","version":"driver 462.30 / CUDA 11.2","runtime":"NVIDIA utility","hardware_dependency":"NVIDIA","model_present":"not applicable","programmatic_surface":"resource observation","status":"AVAILABLE","evidence":"GeForce GTX 1650, 4096 MiB reported; query exit 0"},
+    {"surface_id":"ollama","binary":"ollama","path":null,"version":null,"runtime":null,"hardware_dependency":"local","model_present":false,"programmatic_surface":"NOT_AVAILABLE","status":"NOT_AVAILABLE","evidence":"Get-Command NOT_FOUND; ollama list not run"},
+    {"surface_id":"vllm","binary":"vllm","path":null,"version":null,"runtime":null,"hardware_dependency":"local Python/CUDA dependent","model_present":false,"programmatic_surface":"NOT_AVAILABLE","status":"NOT_AVAILABLE","evidence":"Get-Command NOT_FOUND"},
+    {"surface_id":"llama.cpp","binary":"llama-server/llama-cli","path":null,"version":null,"runtime":null,"hardware_dependency":"local","model_present":false,"programmatic_surface":"NOT_AVAILABLE","status":"NOT_AVAILABLE","evidence":"Get-Command NOT_FOUND"}
+  ],
+  "remote_candidates":"retain S0_CREDENTIAL_BLOCKED from v1; credential presence does not qualify executor",
+  "framework_candidates":"OpenManus and Microsoft Agent Framework remain S0_NOT_A_STANDALONE_EXECUTOR",
+  "qualification_summary":{"S0_READY":0,"S0_READY_TELEMETRY_LIMITED":0,"S0_CREDENTIAL_BLOCKED":6,"S0_DOWNLOAD_REQUIRED":1,"S0_ENVIRONMENT_BLOCKED":1,"S0_NOT_A_STANDALONE_EXECUTOR":2,"S0_FAIL":0}
+}

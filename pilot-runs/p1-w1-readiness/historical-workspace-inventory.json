@@ -1,0 +1,14 @@
+{
+  "classification":"historical_untracked_workspace_artifacts",
+  "tracked_references_exist":"PASS",
+  "action":"preserve_in_place; do not stage, delete, stash, overwrite, or add broad ignore rule",
+  "items":[
+    {"path":"pilot-runs/block-4aa-d-f1-01-e0-r1/workspace/","files":171,"bytes":533698,"status":"PRESERVED"},
+    {"path":"pilot-runs/block-4ab-d-f1-01-e0-r1/workspace/","files":171,"bytes":533698,"status":"PRESERVED"},
+    {"path":"pilot-runs/block-4af-offline-readiness/workspaces/","files":11640,"bytes":1293405333,"status":"PRESERVED"},
+    {"path":"pilot-runs/block-4ai-protocol-repair/workspaces/","files":6719,"bytes":133468385,"status":"PRESERVED"}
+  ],
+  "external_move":"NOT_EXECUTED",
+  "reason":"prior documentation references in-place paths and no contract authorizes relocation",
+  "evidence_limit":"aggregate size/count recorded; full content hash manifest not generated because these are prior evidence trees and are not being migrated"
+}

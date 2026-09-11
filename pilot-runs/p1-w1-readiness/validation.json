@@ -1,0 +1,3 @@
+{
+  "wave":"P1-W1F","json_parse":"PASS","candidate_matrix":"7 records, unique IDs","base_materialization":"6/6 archive trees extracted cleanly","f6_consistency":"PASS","executor_surface_discovery":"7 surfaces recorded","contract_cases":"10/10 represented","holdout_leakage":"PASS","secret_scan":"PASS","p0_immutability":"PASS","harness_self_test":{"command":"python -B tools/test_dv_pilot_harness.py","exit_code":0,"tests":6,"result":"PASS"},"git_diff_check":"PENDING_COMMIT_FINAL_CHECK","treatment_execution":"NOT_EXECUTED","model_calls":0
+}

@@ -1,0 +1,17 @@
+{
+  "wave":"P1-W1F",
+  "captured_at":"2026-09-11",
+  "initial_head":"771bfda344f0be08eb36fd6df32d25880d6a658e",
+  "branch":"main",
+  "origin_main":"85af7db00f5753825311b744807bb12a858806b9",
+  "remote_only":0,
+  "local_only":14,
+  "holdout":"SEALED",
+  "p0_treatment_evidence":"NONE",
+  "real_p0_runs":"0/24",
+  "p0_release":"NO",
+  "p1_s1_release":"NO",
+  "architecture_approval":"NONE",
+  "historical_untracked_workspaces_preserved":true,
+  "treatment_execution":"NOT_EXECUTED"
+}

@@ -1,0 +1,19 @@
+{
+  "audit_id":"p1-w1-harness-gap-v1",
+  "harness_version":"Harness v1 existing tools/dv_pilot_harness.py",
+  "requirements":[
+    {"requirement":"run identity","supported":"PASS","evidence":"existing required spec fields and generated run IDs","gap":null,"required_for_p1":true,"action":"none"},
+    {"requirement":"task/executor/model identity","supported":"PASS","evidence":"required identity fields and child telemetry provenance","gap":null,"required_for_p1":true,"action":"none"},
+    {"requirement":"raw invocation/candidate capture","supported":"PASS","evidence":"executor logs and artifact hashing paths","gap":null,"required_for_p1":true,"action":"none"},
+    {"requirement":"verifier/preservation evidence","supported":"PASS","evidence":"verifier command and log fields","gap":null,"required_for_p1":true,"action":"none"},
+    {"requirement":"environment provenance","supported":"PASS","evidence":"environment_snapshot and git identity","gap":null,"required_for_p1":true,"action":"none"},
+    {"requirement":"token/resource accounting","supported":"PASS","evidence":"child event token/resource source validation","gap":null,"required_for_p1":true,"action":"none"},
+    {"requirement":"telemetry missingness","supported":"PASS","evidence":"missing telemetry warning; no coercion to zero","gap":null,"required_for_p1":true,"action":"none"},
+    {"requirement":"retry/escalation/timeout","supported":"PARTIAL","evidence":"timeout fields and event envelope exist","gap":"provider-specific retry and framework escalation semantics require surface adapter qualification","required_for_p1":true,"action":"record per-surface semantics; no generic adapter yet"},
+    {"requirement":"local hardware evidence","supported":"PARTIAL","evidence":"environment contract can carry additions; nvidia-smi observed externally","gap":"Harness has no dedicated normalized GPU/energy schema","required_for_p1":false,"action":"preserve as environment evidence until a real local executor is available"},
+    {"requirement":"failure attribution","supported":"PASS","evidence":"Harness result classes and timeout handling","gap":null,"required_for_p1":true,"action":"none"},
+    {"requirement":"artifact hashing/reconciliation","supported":"PASS","evidence":"hash helpers and self-tests","gap":null,"required_for_p1":true,"action":"none"}
+  ],
+  "decision":"HARNESS_CHANGE = NOT_REQUIRED",
+  "readiness":"HARNESS_P1_READINESS = PARTIAL because executor-specific qualification is incomplete, not because a demonstrated Harness core gap blocks D-F6-01"
+}

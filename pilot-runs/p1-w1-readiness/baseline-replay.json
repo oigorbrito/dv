@@ -1,0 +1,22 @@
+{
+  "wave":"P1-W1F",
+  "materialization_method":"git archive from exact source SHA into fresh temporary archive workspace; source checkout not modified",
+  "materialized_candidates":[
+    {"id":"D-F1-01","sha":"c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d","files_at_extraction":171,"clean_archive":true},
+    {"id":"D-F1-02","sha":"e5e50c848079664e176592c7b231a88269737572","files_at_extraction":367,"clean_archive":true},
+    {"id":"D-F1-03","sha":"520204257dc8318b31bda9c34d7173b41bd71200","files_at_extraction":366,"clean_archive":true},
+    {"id":"D-F5-01","sha":"9cc5d6d722d509175a669624c9235156dffb4f85","files_at_extraction":359,"clean_archive":true},
+    {"id":"D-F5-02","sha":"88525508b4da960057e4e59a78198b4c1a522601","files_at_extraction":364,"clean_archive":true},
+    {"id":"D-F5-03","sha":"18b5d90ac7bba05d8342b73b69b3b3226b32fd65","files_at_extraction":224,"clean_archive":true}
+  ],
+  "runs":[
+    {"id":"D-F1-01","command":"dotnet test tests/RJ.DomainTests/RJ.DomainTests.csproj --filter FullyQualifiedName~ProcessTextNormalizerTests --no-restore","cwd":"fresh archive D-F1-01","exit_code":1,"status":"BLOCKED","observed":"global.json requires Microsoft.Testing.Platform; project uses VSTest","classification":"ENVIRONMENT_DRIFT"},
+    {"id":"D-F1-02","command":"focal verifier already registered","cwd":"fresh archive D-F1-02","exit_code":null,"status":"NOT_TESTED","observed":"no independent focal verifier identified","classification":"PROVENANCE_INSUFFICIENT"},
+    {"id":"D-F1-03","command":"focal verifier already registered","cwd":"fresh archive D-F1-03","exit_code":null,"status":"NOT_TESTED","observed":"no independent focal verifier identified","classification":"PROVENANCE_INSUFFICIENT"},
+    {"id":"D-F5-01","command":"python -m unittest tests.unit.test_operator_ux_doctor; python -m unittest discover -s tests/unit","cwd":"fresh archive D-F5-01 with PYTHONPATH=src","focal_exit_code":0,"preservation_exit_code":1,"status":"BLOCKED","observed":"10 focal tests passed; 469 preservation tests with one installed console-script failure","classification":"ENVIRONMENT_DRIFT"},
+    {"id":"D-F5-02","command":"focal verifier already registered","cwd":"fresh archive D-F5-02","exit_code":null,"status":"NOT_TESTED","observed":"no independent focal verifier identified","classification":"PROVENANCE_INSUFFICIENT"},
+    {"id":"D-F5-03","command":"focal verifier already registered","cwd":"fresh archive D-F5-03","exit_code":null,"status":"NOT_TESTED","observed":"no independent focal verifier identified","classification":"PROVENANCE_INSUFFICIENT"}
+  ],
+  "no_solution_applied":true,
+  "treatment_execution":false
+}

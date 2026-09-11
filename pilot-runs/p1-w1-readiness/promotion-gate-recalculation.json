@@ -1,0 +1,7 @@
+{
+  "phase":"P1-S0_TO_P1-S1",
+  "requirements":{"strong_path":"FAIL_S0_READY=0","economic_or_local_free_path":"FAIL_no_C2_C3_C4_S0_READY","harness":"PARTIAL_surface-specific qualification pending","accounting":"PASS_representation available","task":"PASS_one_admissible_task","leakage":"PASS_holdout sealed"},
+  "P1_S1_RELEASE":"NO",
+  "reason":"mandatory strong and economic/local/free qualified paths are absent; one admitted task is smoke-only",
+  "next_phase":"P1-S0 qualification remains current"
+}
