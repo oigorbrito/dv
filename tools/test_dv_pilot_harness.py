@@ -5,11 +5,51 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from dv_pilot_harness import validate_suggestion
+
 HERE = Path(__file__).resolve().parent
 HARNESS = HERE / "dv_pilot_harness.py"
 
 
 class HarnessTests(unittest.TestCase):
+    def test_evidence_gated_suggestion_is_accepted(self):
+        result = validate_suggestion({
+            "proposed_change": "Record verifier SHA-256",
+            "evidence_class": ["REPRODUCIBILITY", "ORACLE_VALIDITY"],
+            "experimental_problem_addressed": "Parent and candidate verifier bytes must be reproducible",
+            "necessity": True,
+            "existing_artifact_sufficient": False,
+            "smallest_sufficient_change": "Add one SHA-256 field to the admission evidence",
+            "consequence_if_not_done": "Independent replay cannot prove identical verifier input",
+        })
+        self.assertEqual(result["recommendation"], "ACCEPTED")
+        self.assertEqual(result["supported"], "YES")
+
+    def test_unsupported_documentary_preference_is_rejected(self):
+        result = validate_suggestion({
+            "proposed_change": "Add an architecture overview",
+            "evidence_class": [],
+            "experimental_problem_addressed": "",
+            "necessity": False,
+            "existing_artifact_sufficient": True,
+            "smallest_sufficient_change": "",
+            "consequence_if_not_done": "None for reproduction",
+        })
+        self.assertEqual(result["recommendation"], "REJECTED_UNSUPPORTED")
+        self.assertEqual(result["supported"], "NO")
+        self.assertTrue(result["errors"])
+
+    def test_unknown_evidence_class_is_rejected(self):
+        result = validate_suggestion({
+            "proposed_change": "Create a richer dashboard",
+            "evidence_class": ["BEST_PRACTICE"],
+            "experimental_problem_addressed": "No declared measurement problem",
+            "necessity": True,
+            "existing_artifact_sufficient": False,
+            "smallest_sufficient_change": "Create the dashboard",
+            "consequence_if_not_done": "Status is less polished",
+        })
+        self.assertEqual(result["recommendation"], "REJECTED_UNSUPPORTED")
     def _scripts_and_spec(self, root: Path, *, telemetry=True):
         executor = root / "executor.py"
         if telemetry:

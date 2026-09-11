@@ -19,6 +19,10 @@ SCHEMA_VERSION = "dv-pilot-run-v1"
 OUTCOMES = {"YES", "NO", "INCONCLUSIVE"}
 TOKEN_CATEGORIES = {"routing", "planning", "context", "execution", "handoff", "verification", "retry"}
 FAILURE_ATTRIBUTIONS = {None, "PRODUCT_FAILURE", "HARNESS_FAILURE", "ORACLE_DEFECT", "ENVIRONMENT_DRIFT", "INCONCLUSIVE_OTHER"}
+SUGGESTION_EVIDENCE_CLASSES = {
+    "EMPIRICAL_RESEARCH_GUIDANCE", "EXPERIMENTAL_DESIGN", "REPRODUCIBILITY",
+    "MEASUREMENT", "ORACLE_VALIDITY", "FAILURE_ATTRIBUTION", "TRACEABILITY",
+}
 REQUIRED_SPEC = (
     "protocol_version", "corpus_version", "task_id", "task_family", "base_revision",
     "oracle_version", "treatment_id", "treatment_version", "rollout_id", "environment_id",
@@ -65,6 +69,40 @@ def append_jsonl(path: Path, value: dict[str, Any]) -> None:
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def validate_suggestion(suggestion: dict[str, Any]) -> dict[str, Any]:
+    """Apply the evidence gate to one methodological/documentary suggestion."""
+    required = (
+        "proposed_change", "evidence_class", "experimental_problem_addressed",
+        "necessity", "existing_artifact_sufficient", "smallest_sufficient_change",
+        "consequence_if_not_done",
+    )
+    errors = [f"missing suggestion field: {key}" for key in required if key not in suggestion]
+    classes = suggestion.get("evidence_class")
+    if isinstance(classes, str):
+        classes = [classes]
+    if not isinstance(classes, list) or not classes or not all(isinstance(value, str) for value in classes):
+        errors.append("evidence_class must be a non-empty string or array of strings")
+        classes = []
+    elif any(value not in SUGGESTION_EVIDENCE_CLASSES for value in classes):
+        errors.append("evidence_class contains an unsupported class")
+    for key in ("proposed_change", "experimental_problem_addressed", "smallest_sufficient_change", "consequence_if_not_done"):
+        if key in suggestion and (not isinstance(suggestion[key], str) or not suggestion[key].strip()):
+            errors.append(f"{key} must be a non-empty string")
+    if "necessity" in suggestion and suggestion["necessity"] is not True:
+        errors.append("necessity must be true for a supported recommendation")
+    if suggestion.get("existing_artifact_sufficient") is True:
+        errors.append("existing artifact is sufficient; no change is necessary")
+    supported = not errors
+    return {
+        "supported": "YES" if supported else "NO",
+        "recommendation": "ACCEPTED" if supported else "REJECTED_UNSUPPORTED",
+        "evidence_class": classes,
+        "experimental_problem_addressed": suggestion.get("experimental_problem_addressed"),
+        "smallest_sufficient_change": suggestion.get("smallest_sufficient_change"),
+        "errors": errors,
+    }
 
 
 def validate_spec(spec: dict[str, Any]) -> list[str]:
@@ -332,6 +370,15 @@ def cmd_reconcile(args: argparse.Namespace) -> int:
     return 0 if rec["status"] == "PASS" else 2
 
 
+def cmd_policy_check(args: argparse.Namespace) -> int:
+    suggestion = load_json(Path(args.suggestion).resolve())
+    if not isinstance(suggestion, dict):
+        raise SystemExit("suggestion must be a JSON object")
+    result = validate_suggestion(suggestion)
+    print(json.dumps(result, indent=2, sort_keys=True))
+    return 0 if result["supported"] == "YES" else 2
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -343,6 +390,9 @@ def main() -> int:
     rec = sub.add_parser("reconcile")
     rec.add_argument("run_dir")
     rec.set_defaults(func=cmd_reconcile)
+    policy = sub.add_parser("policy-check", help="validate an evidence-gated methodological/documentary suggestion")
+    policy.add_argument("--suggestion", required=True)
+    policy.set_defaults(func=cmd_policy_check)
     args = parser.parse_args()
     return args.func(args)
 
