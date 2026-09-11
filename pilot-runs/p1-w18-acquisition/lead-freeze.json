@@ -1,0 +1,31 @@
+{
+  "wave":"P1-W18",
+  "source_rationale":{"repository":"oigorbrito/metaO","local_checkout":"C:\\Projetos\\metao-gate","why_new":"closed P1 inventory for RJ/metaO/smag has no fresh eligible lead","why_plausible":"historical Rust test artifacts and lockfile include an issue-specific verifier before later qualification commits","runtime":"Rust/Cargo","preservation_feasibility":"locked workspace tests; local cache preferred","external_risk":"Cargo cache availability and GitHub network only if dependencies are absent"},
+  "leads":[
+    {
+      "lead_id":"METAO-GATE-N1",
+      "repository":"oigorbrito/metaO",
+      "candidate_sha":"2f730773d073a5c4c5bd05b7ae4c0a4f2481a533",
+      "parent_sha":"2572ddcc1ca4c0aa78abc095fdc35bccc6e15a05",
+      "commit_message":"qualification: prove terminal causes no longer collide",
+      "independent_task_source":"issue-396 ADO qualification history and parent-side issue_396_ado_qualification.rs",
+      "frozen_task_statement":"Issue 396 ADO qualification must preserve factual terminal outcomes and verifier/version provenance without collapsing distinct terminal causes.",
+      "proposed_family":"F6",
+      "focal_verifier":"experiments/rust-chassis-a/metao-testkit/tests/issue_396_ado_qualification.rs",
+      "verifier_provenance":"present in parent tree through earlier commit 7e71adc; parent-side test artifact",
+      "verifier_present_in_parent":"YES",
+      "verifier_blob_hash":"8D9F894F453BE40DED191F96B7B69601EFCB91BF21D3153A2294094DC04CBBF7",
+      "oracle":"cargo test --manifest-path experiments/rust-chassis-a/Cargo.toml --locked --offline --test issue_396_ado_qualification",
+      "runtime":"cargo/rustc",
+      "dependency_lockfile":"experiments/rust-chassis-a/Cargo.lock",
+      "required_services":"NONE_EXPECTED",
+      "environment_variable_names":[],
+      "preservation_command":"cargo test --manifest-path experiments/rust-chassis-a/Cargo.toml --locked --offline --workspace",
+      "external_dependency_assessment":"local Cargo cache required; no model/API/credential",
+      "freeze_timestamp":"2026-09-11",
+      "solution_diff_inspected_before_freeze":false
+    }
+  ],
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

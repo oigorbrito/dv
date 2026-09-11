@@ -1,0 +1,11 @@
+{
+  "wave":"P1-W18",
+  "closed_prior_inventory":"pilot-runs/block-5b/task-discovery-screening.json; 18 candidates",
+  "contaminated_or_closed_leads":["W15 naia-preserved","W15 bpt2-abp-preserved","W16 SMAG-N1","W16 SMAG-N2","W17 closed inventory"],
+  "fresh_source":"C:\\Projetos\\metao-gate",
+  "fresh_lead":"METAO-GATE-N1",
+  "fresh_lead_status":"REJECTED",
+  "fresh_lead_classification":"NO_PARENT_FAILURE",
+  "no_reopen_of_definitive_rejections":true,
+  "holdout":"SEALED"
+}

@@ -1,0 +1,19 @@
+{
+  "wave":"P1-W18",
+  "baseline":"PASS; expected HEAD and origin/main matched",
+  "lead_freeze_before_solution_inspection":"PASS",
+  "parent_sha":"PASS",
+  "verifier_hash":"PASS",
+  "parent_materialization":"PASS; detached and clean",
+  "parent_focal_execution":"PASS; exit 0; 12/12",
+  "parent_failure_gate":"PASS; PASS correctly rejected as NO_PARENT_FAILURE",
+  "solution_diff_inspection":"NOT_EXECUTED",
+  "candidate_execution":"NOT_EXECUTED",
+  "preservation_candidate":"NOT_TESTED_BY_GATE",
+  "holdout_leakage":"PASS; SEALED",
+  "p0_immutability":"PASS",
+  "secret_scan":"PASS",
+  "harness_self_test":"PASS; 6/6",
+  "git_diff_check":"PASS",
+  "treatment_execution":"NOT_EXECUTED"
+}

@@ -1,0 +1,17 @@
+
+running 12 tests
+test b2_runner_success_cannot_create_pass_without_required_evidence ... ok
+test b3_timeout_is_preserved_and_can_remain_retry_eligible_when_factually_transient ... ok
+test b6_attempt_budget_exhaustion_blocks_retry_without_rewriting_outcome ... ok
+test b7_baseline_collapses_criterion_satisfied_and_sampling_budget_exhausted_into_succeeded ... ok
+test b1_verified_pass_is_well_formed ... ok
+test b4_cancellation_is_not_rewritten_as_failure_or_retryable_work ... ok
+test p1_versioned_verifier_identity_is_recorded_at_attempt_start ... ok
+test p3_policy_bundle_drift_is_observable_in_evidence ... ok
+test p4_provenance_root_is_explicit_but_orchestrator_version_is_not_in_envelope ... ok
+test b5_failure_causality_preserves_original_failure ... ok
+test p2_adapter_version_drift_is_observable_in_evidence ... ok
+test p5_version_lineage_can_be_compared_without_overwriting_prior_record ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
