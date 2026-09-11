@@ -1,0 +1,5 @@
+error: no test target named `marketplace_discovery_fixture_tests` in default-run packages
+help: available test targets:
+    project_contract_tests
+    reference_intake_tests
+    tech_stack_intake_tests

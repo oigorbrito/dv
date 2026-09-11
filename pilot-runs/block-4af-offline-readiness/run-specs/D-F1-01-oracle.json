@@ -1,0 +1,35 @@
+{
+  "status": "EXECUTABLE",
+  "task_id": "D-F1-01",
+  "task_family": "F1",
+  "base_revision": "c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d",
+  "working_directory": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F1-01",
+  "checks": [
+    {
+      "id": "focal",
+      "role": "mandatory",
+      "command": [
+        "dotnet",
+        "test",
+        "RJ.DomainTests/RJ.DomainTests.csproj",
+        "--filter",
+        "FullyQualifiedName~ProcessTextNormalizerTests"
+      ],
+      "expected_exit_codes": [
+        0
+      ]
+    },
+    {
+      "id": "preservation",
+      "role": "mandatory",
+      "command": [
+        "dotnet",
+        "test",
+        "RJ.DomainTests/RJ.DomainTests.csproj"
+      ],
+      "expected_exit_codes": [
+        0
+      ]
+    }
+  ]
+}

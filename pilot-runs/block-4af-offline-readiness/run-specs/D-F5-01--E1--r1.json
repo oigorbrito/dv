@@ -1,0 +1,45 @@
+{
+  "protocol_version": "4M-v1",
+  "corpus_version": "v0",
+  "task_id": "D-F5-01",
+  "task_family": "F5",
+  "repository": "oigorbrito/metaO",
+  "base_revision": "9cc5d6d722d509175a669624c9235156dffb4f85",
+  "oracle_version": "block-2b-v1+4m-command-manifest-v1",
+  "treatment_id": "E1",
+  "treatment_version": "dv-treatment-binding-v1",
+  "rollout_id": "r1",
+  "run_id": "D-F5-01--E1--r1",
+  "environment_id": "offline-base-D-F5-01",
+  "working_directory": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F5-01",
+  "executor_command": [
+    "BLOCKED_OFFLINE_NO_EXECUTOR"
+  ],
+  "verifier_command": [
+    "python",
+    "tools/dv_oracle_adapter.py",
+    "--spec",
+    "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01-oracle.json"
+  ],
+  "executor_timeout_seconds": 3600,
+  "verifier_timeout_seconds": 1800,
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "escalation": "none",
+  "escalation_semantics": "cheap-direct-plus-verify",
+  "harness": "Harness v1 / dv-pilot-run-v1",
+  "telemetry_requirements": [
+    "provider/model identity",
+    "input tokens",
+    "cached input tokens when reported",
+    "output tokens",
+    "provider-native usage record or raw response",
+    "price snapshot identifier",
+    "wall-clock timestamps",
+    "all retries/escalations retained under parent run"
+  ],
+  "pricing_snapshot_identity": "experiments/p0/treatment-binding-v1.json@2026-09-10",
+  "executor_surface": "BLOCKED",
+  "ready_for_real_execution": "NO",
+  "holdout_allowed": false
+}

@@ -1,0 +1,975 @@
+EEEEEEEEEEEEEEEEEEEEEEEEE...........EEEEEEEE..EEE..................EEEEEEEEEEEEEEEEEEEEEEEEEE
+======================================================================
+ERROR: test_adapter_capacity_observation_red (unittest.loader._FailedTest.test_adapter_capacity_observation_red)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_adapter_capacity_observation_red
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_adapter_capacity_observation_red.py", line 3, in <module>
+    from metao.adapters.openai_agents import OpenAIAgentsOrchestratorAdapter
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_block_g_runtime_invariants (unittest.loader._FailedTest.test_block_g_runtime_invariants)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_block_g_runtime_invariants
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_block_g_runtime_invariants.py", line 3, in <module>
+    from metao.runtime import (
+    ...<10 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_block_h_strategy_scoring (unittest.loader._FailedTest.test_block_h_strategy_scoring)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_block_h_strategy_scoring
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_block_h_strategy_scoring.py", line 3, in <module>
+    from metao.strategy import (
+    ...<8 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_block_i_replan_failover (unittest.loader._FailedTest.test_block_i_replan_failover)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_block_i_replan_failover
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_block_i_replan_failover.py", line 3, in <module>
+    from metao.replan import (
+    ...<11 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_block_j_acceptance_trust (unittest.loader._FailedTest.test_block_j_acceptance_trust)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_block_j_acceptance_trust
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_block_j_acceptance_trust.py", line 4, in <module>
+    from metao.acceptance import (
+    ...<12 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_block_k_governance_budget_approval (unittest.loader._FailedTest.test_block_k_governance_budget_approval)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_block_k_governance_budget_approval
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_block_k_governance_budget_approval.py", line 3, in <module>
+    from metao.acceptance import AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_block_l_multi_orchestrator (unittest.loader._FailedTest.test_block_l_multi_orchestrator)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_block_l_multi_orchestrator
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_block_l_multi_orchestrator.py", line 4, in <module>
+    from metao.acceptance import EvidenceEnvelope
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_block_m_hostile_trust (unittest.loader._FailedTest.test_block_m_hostile_trust)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_block_m_hostile_trust
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_block_m_hostile_trust.py", line 3, in <module>
+    from metao.security import (
+    ...<13 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_block_n_release_readiness (unittest.loader._FailedTest.test_block_n_release_readiness)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_block_n_release_readiness
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_block_n_release_readiness.py", line 6, in <module>
+    import metao
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_capacity_control_plane_clock_wiring (unittest.loader._FailedTest.test_capacity_control_plane_clock_wiring)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_capacity_control_plane_clock_wiring
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_capacity_control_plane_clock_wiring.py", line 4, in <module>
+    from metao.control_plane import execute_mission_once
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_capacity_control_plane_dispatch (unittest.loader._FailedTest.test_capacity_control_plane_dispatch)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_capacity_control_plane_dispatch
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_capacity_control_plane_dispatch.py", line 3, in <module>
+    from metao.acceptance import AcceptanceContext
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_capacity_recovery_evidence_basis_hostile (unittest.loader._FailedTest.test_capacity_recovery_evidence_basis_hostile)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_capacity_recovery_evidence_basis_hostile
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_capacity_recovery_evidence_basis_hostile.py", line 3, in <module>
+    from metao.strategy import CapacityRecovery
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_capacity_recovery_evidence_red (unittest.loader._FailedTest.test_capacity_recovery_evidence_red)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_capacity_recovery_evidence_red
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_capacity_recovery_evidence_red.py", line 3, in <module>
+    from metao.strategy import CapacityStatus, OrchestratorPoolState, OrchestratorStatus
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_capacity_recovery_window (unittest.loader._FailedTest.test_capacity_recovery_window)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_capacity_recovery_window
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_capacity_recovery_window.py", line 3, in <module>
+    from metao.strategy import (
+    ...<7 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_capacity_supervision_red (unittest.loader._FailedTest.test_capacity_supervision_red)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_capacity_supervision_red
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_capacity_supervision_red.py", line 5, in <module>
+    from metao.acceptance import AcceptanceContext, EvidenceEnvelope
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_capacity_temporary_quota_recovery_red (unittest.loader._FailedTest.test_capacity_temporary_quota_recovery_red)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_capacity_temporary_quota_recovery_red
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_capacity_temporary_quota_recovery_red.py", line 3, in <module>
+    from metao.strategy import (
+    ...<5 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_chassis_golden_v1 (unittest.loader._FailedTest.test_chassis_golden_v1)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_chassis_golden_v1
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_chassis_golden_v1.py", line 5, in <module>
+    from metao.acceptance import (
+    ...<4 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_chassis_invalid_states_v1 (unittest.loader._FailedTest.test_chassis_invalid_states_v1)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_chassis_invalid_states_v1
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_chassis_invalid_states_v1.py", line 3, in <module>
+    from metao.core import ExecutionRequest, Mission, OrchestratorDescriptor
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_chassis_l5_budget_atomicity_v1 (unittest.loader._FailedTest.test_chassis_l5_budget_atomicity_v1)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_chassis_l5_budget_atomicity_v1
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_chassis_l5_budget_atomicity_v1.py", line 4, in <module>
+    from metao.governance import AcceptanceBudget, AcceptanceBudgetAuthority, BudgetExhausted
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_chassis_l5_evidence_replay_v1 (unittest.loader._FailedTest.test_chassis_l5_evidence_replay_v1)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_chassis_l5_evidence_replay_v1
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_chassis_l5_evidence_replay_v1.py", line 4, in <module>
+    from metao.acceptance import (
+    ...<5 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_codex_app_server_adapter (unittest.loader._FailedTest.test_codex_app_server_adapter)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_codex_app_server_adapter
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_codex_app_server_adapter.py", line 5, in <module>
+    from metao.adapters.codex_app_server import (
+    ...<3 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_codex_app_server_stdio (unittest.loader._FailedTest.test_codex_app_server_stdio)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_codex_app_server_stdio
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_codex_app_server_stdio.py", line 6, in <module>
+    from metao.adapters.codex_app_server import CodexAppServerOrchestratorAdapter
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_codex_app_server_trace (unittest.loader._FailedTest.test_codex_app_server_trace)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_codex_app_server_trace
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_codex_app_server_trace.py", line 3, in <module>
+    from metao.adapters.codex_app_server import CodexAppServerOrchestratorAdapter, normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_core (unittest.loader._FailedTest.test_core)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_core
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_core.py", line 7, in <module>
+    from metao import (
+    ...<8 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_deepseek_http_adapter (unittest.loader._FailedTest.test_deepseek_http_adapter)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_deepseek_http_adapter
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_deepseek_http_adapter.py", line 3, in <module>
+    from metao.adapters.deepseek_http import (
+    ...<3 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_gemini_api_key_invalid_red (unittest.loader._FailedTest.test_gemini_api_key_invalid_red)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_gemini_api_key_invalid_red
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_gemini_api_key_invalid_red.py", line 3, in <module>
+    from metao.adapters.gemini_interactions import (
+    ...<2 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_gemini_interactions_adapter (unittest.loader._FailedTest.test_gemini_interactions_adapter)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_gemini_interactions_adapter
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_gemini_interactions_adapter.py", line 3, in <module>
+    from metao.adapters.gemini_interactions import (
+    ...<3 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_gemini_live_success_smoke_guard (unittest.loader._FailedTest.test_gemini_live_success_smoke_guard)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_gemini_live_success_smoke_guard
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_gemini_live_success_smoke_guard.py", line 5, in <module>
+    from scripts import gemini_live_success_smoke as smoke
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\scripts\gemini_live_success_smoke.py", line 18, in <module>
+    from metao.adapters.gemini_interactions import (
+    ...<2 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_github_adapter (unittest.loader._FailedTest.test_github_adapter)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_github_adapter
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_github_adapter.py", line 5, in <module>
+    from metao.github_adapter import (
+    ...<3 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_github_adapter_v2 (unittest.loader._FailedTest.test_github_adapter_v2)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_github_adapter_v2
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_github_adapter_v2.py", line 5, in <module>
+    from metao.github_adapter import GitHubRepositoryAdapter, MutationAuthorization, MutationDenied
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_jules_http_adapter (unittest.loader._FailedTest.test_jules_http_adapter)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_jules_http_adapter
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_jules_http_adapter.py", line 3, in <module>
+    from metao.adapters.jules_http import (
+    ...<3 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_openai_agents_provider_signals (unittest.loader._FailedTest.test_openai_agents_provider_signals)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_openai_agents_provider_signals
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_openai_agents_provider_signals.py", line 3, in <module>
+    from metao.adapters.openai_agents import OpenAIAgentsOrchestratorAdapter
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_operator_ux_doctor (unittest.loader._FailedTest.test_operator_ux_doctor)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_operator_ux_doctor
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_operator_ux_doctor.py", line 8, in <module>
+    from metao.catalog import OrchestratorCatalog
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_phase7_gated_cutover (unittest.loader._FailedTest.test_phase7_gated_cutover)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_phase7_gated_cutover
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_phase7_gated_cutover.py", line 7, in <module>
+    from metao.cutover import (
+    ...<5 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_phase8_runtime_qualification (unittest.loader._FailedTest.test_phase8_runtime_qualification)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_phase8_runtime_qualification
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_phase8_runtime_qualification.py", line 9, in <module>
+    from metao.cutover import CapabilityAuthority, default_phase8_cutover_state
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_provider_unavailable_adapter_red (unittest.loader._FailedTest.test_provider_unavailable_adapter_red)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_provider_unavailable_adapter_red
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_provider_unavailable_adapter_red.py", line 3, in <module>
+    from metao.adapters.openai_agents import OpenAIAgentsOrchestratorAdapter
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_01 (unittest.loader._FailedTest.test_roadmap_1_work_unit_01)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_01
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_01.py", line 6, in <module>
+    import metao.core as core_module
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_02 (unittest.loader._FailedTest.test_roadmap_1_work_unit_02)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_02
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_02.py", line 6, in <module>
+    import metao
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_03 (unittest.loader._FailedTest.test_roadmap_1_work_unit_03)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_03
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_03.py", line 6, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_04 (unittest.loader._FailedTest.test_roadmap_1_work_unit_04)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_04
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_04.py", line 9, in <module>
+    from metao.acceptance import AcceptanceDecision, AcceptanceProof, AcceptanceResult
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_05 (unittest.loader._FailedTest.test_roadmap_1_work_unit_05)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_05
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_05.py", line 7, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_06 (unittest.loader._FailedTest.test_roadmap_1_work_unit_06)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_06
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_06.py", line 13, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_07 (unittest.loader._FailedTest.test_roadmap_1_work_unit_07)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_07
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_07.py", line 10, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_08 (unittest.loader._FailedTest.test_roadmap_1_work_unit_08)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_08
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_08.py", line 13, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_09 (unittest.loader._FailedTest.test_roadmap_1_work_unit_09)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_09
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_09.py", line 13, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_1_work_unit_10 (unittest.loader._FailedTest.test_roadmap_1_work_unit_10)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_1_work_unit_10
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_1_work_unit_10.py", line 13, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_2_work_unit_02 (unittest.loader._FailedTest.test_roadmap_2_work_unit_02)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_2_work_unit_02
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_2_work_unit_02.py", line 13, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_2_work_unit_03 (unittest.loader._FailedTest.test_roadmap_2_work_unit_03)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_2_work_unit_03
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_2_work_unit_03.py", line 7, in <module>
+    from metao.acceptance import AcceptanceContext
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_2_work_unit_04 (unittest.loader._FailedTest.test_roadmap_2_work_unit_04)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_2_work_unit_04
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_2_work_unit_04.py", line 13, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_2_work_unit_05 (unittest.loader._FailedTest.test_roadmap_2_work_unit_05)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_2_work_unit_05
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_2_work_unit_05.py", line 13, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_3_work_unit_01 (unittest.loader._FailedTest.test_roadmap_3_work_unit_01)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_3_work_unit_01
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_3_work_unit_01.py", line 8, in <module>
+    from metao.acceptance import EvidenceEnvelope
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_3_work_unit_02 (unittest.loader._FailedTest.test_roadmap_3_work_unit_02)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_3_work_unit_02
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_3_work_unit_02.py", line 8, in <module>
+    from metao.acceptance import EvidenceEnvelope
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_3_work_unit_03 (unittest.loader._FailedTest.test_roadmap_3_work_unit_03)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_3_work_unit_03
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_3_work_unit_03.py", line 9, in <module>
+    from metao.acceptance import EvidenceEnvelope
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_4_work_unit_01 (unittest.loader._FailedTest.test_roadmap_4_work_unit_01)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_4_work_unit_01
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_4_work_unit_01.py", line 10, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_4_work_unit_02 (unittest.loader._FailedTest.test_roadmap_4_work_unit_02)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_4_work_unit_02
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_4_work_unit_02.py", line 10, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_5_work_unit_01 (unittest.loader._FailedTest.test_roadmap_5_work_unit_01)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_5_work_unit_01
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_5_work_unit_01.py", line 12, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_5_work_unit_02 (unittest.loader._FailedTest.test_roadmap_5_work_unit_02)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_5_work_unit_02
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_5_work_unit_02.py", line 11, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_5_work_unit_03 (unittest.loader._FailedTest.test_roadmap_5_work_unit_03)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_5_work_unit_03
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_5_work_unit_03.py", line 13, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_5_work_unit_05 (unittest.loader._FailedTest.test_roadmap_5_work_unit_05)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_5_work_unit_05
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_5_work_unit_05.py", line 10, in <module>
+    from metao.adapters.langgraph import normalize_evidence
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_6_work_unit_04 (unittest.loader._FailedTest.test_roadmap_6_work_unit_04)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_6_work_unit_04
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_6_work_unit_04.py", line 7, in <module>
+    from metao.adapters.openai_agents import (
+    ...<2 lines>...
+    )
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_7_work_unit_01 (unittest.loader._FailedTest.test_roadmap_7_work_unit_01)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_7_work_unit_01
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_7_work_unit_01.py", line 7, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision, EvidenceEnvelope
+ModuleNotFoundError: No module named 'metao'
+
+
+======================================================================
+ERROR: test_roadmap_7_work_unit_02 (unittest.loader._FailedTest.test_roadmap_7_work_unit_02)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roadmap_7_work_unit_02
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_roadmap_7_work_unit_02.py", line 7, in <module>
+    from metao.acceptance import AcceptanceContext, AcceptanceDecision
+ModuleNotFoundError: No module named 'metao'
+
+
+----------------------------------------------------------------------
+Ran 93 tests in 12.576s
+
+FAILED (errors=62)

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "source_binding": "experiments/p0/treatment-binding-v1.json",
+  "source_manifest": "experiments/p0/p0-operational-manifest.json",
+  "spec_count": 24,
+  "model_consistency": true
+}

@@ -1,0 +1,21 @@
+{
+  "status": "EXECUTABLE",
+  "task_id": "D-F3-01",
+  "task_family": "F3",
+  "base_revision": "76ef9277062085e113c14bf1fdbb9c4bd218045b",
+  "working_directory": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F3-01",
+  "checks": [
+    {
+      "id": "focal",
+      "role": "mandatory",
+      "command": [
+        "node",
+        "--test",
+        "packages/smag-governance/test/operator-session.test.mjs"
+      ],
+      "expected_exit_codes": [
+        0
+      ]
+    }
+  ]
+}

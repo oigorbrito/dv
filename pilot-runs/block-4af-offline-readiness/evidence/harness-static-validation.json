@@ -1,0 +1,487 @@
+{
+  "status": "PASS",
+  "count": 24,
+  "unique_run_ids": 24,
+  "records": [
+    {
+      "run_id": "D-F1-01--E0--r1",
+      "task": "D-F1-01",
+      "family": "F1",
+      "treatment": "E0",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F1-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F1-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F1-01--E0--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F1-01--E1--r1",
+      "task": "D-F1-01",
+      "family": "F1",
+      "treatment": "E1",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F1-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F1-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F1-01--E1--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F1-01--E2--r1",
+      "task": "D-F1-01",
+      "family": "F1",
+      "treatment": "E2",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F1-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F1-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F1-01--E2--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F1-01--E3--r1",
+      "task": "D-F1-01",
+      "family": "F1",
+      "treatment": "E3",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F1-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F1-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F1-01--E3--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F2-01--E0--r1",
+      "task": "D-F2-01",
+      "family": "F2",
+      "treatment": "E0",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F2-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F2-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F2-01--E0--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F2-01--E1--r1",
+      "task": "D-F2-01",
+      "family": "F2",
+      "treatment": "E1",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F2-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F2-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F2-01--E1--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F2-01--E2--r1",
+      "task": "D-F2-01",
+      "family": "F2",
+      "treatment": "E2",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F2-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F2-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F2-01--E2--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F2-01--E3--r1",
+      "task": "D-F2-01",
+      "family": "F2",
+      "treatment": "E3",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F2-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F2-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F2-01--E3--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F3-01--E0--r1",
+      "task": "D-F3-01",
+      "family": "F3",
+      "treatment": "E0",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F3-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F3-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F3-01--E0--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F3-01--E1--r1",
+      "task": "D-F3-01",
+      "family": "F3",
+      "treatment": "E1",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F3-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F3-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F3-01--E1--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F3-01--E2--r1",
+      "task": "D-F3-01",
+      "family": "F3",
+      "treatment": "E2",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F3-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F3-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F3-01--E2--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F3-01--E3--r1",
+      "task": "D-F3-01",
+      "family": "F3",
+      "treatment": "E3",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F3-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F3-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F3-01--E3--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F4-01--E0--r1",
+      "task": "D-F4-01",
+      "family": "F4",
+      "treatment": "E0",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F4-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F4-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F4-01--E0--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F4-01--E1--r1",
+      "task": "D-F4-01",
+      "family": "F4",
+      "treatment": "E1",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F4-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F4-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F4-01--E1--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F4-01--E2--r1",
+      "task": "D-F4-01",
+      "family": "F4",
+      "treatment": "E2",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F4-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F4-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F4-01--E2--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F4-01--E3--r1",
+      "task": "D-F4-01",
+      "family": "F4",
+      "treatment": "E3",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F4-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F4-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F4-01--E3--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F5-01--E0--r1",
+      "task": "D-F5-01",
+      "family": "F5",
+      "treatment": "E0",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F5-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01--E0--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F5-01--E1--r1",
+      "task": "D-F5-01",
+      "family": "F5",
+      "treatment": "E1",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F5-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01--E1--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F5-01--E2--r1",
+      "task": "D-F5-01",
+      "family": "F5",
+      "treatment": "E2",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F5-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01--E2--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F5-01--E3--r1",
+      "task": "D-F5-01",
+      "family": "F5",
+      "treatment": "E3",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F5-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F5-01--E3--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F6-01--E0--r1",
+      "task": "D-F6-01",
+      "family": "F6",
+      "treatment": "E0",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F6-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F6-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F6-01--E0--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F6-01--E1--r1",
+      "task": "D-F6-01",
+      "family": "F6",
+      "treatment": "E1",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F6-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F6-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F6-01--E1--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F6-01--E2--r1",
+      "task": "D-F6-01",
+      "family": "F6",
+      "treatment": "E2",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F6-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F6-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F6-01--E2--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    },
+    {
+      "run_id": "D-F6-01--E3--r1",
+      "task": "D-F6-01",
+      "family": "F6",
+      "treatment": "E3",
+      "base_object": "AVAILABLE",
+      "workspace": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F6-01",
+      "toolchain": "git, python, dotnet, node, npm, cargo, rustc",
+      "oracle_command": [
+        "python",
+        "tools/dv_oracle_adapter.py",
+        "--spec",
+        "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F6-01-oracle.json"
+      ],
+      "run_spec": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\run-specs\\D-F6-01--E3--r1.json",
+      "harness_static_validation": "PASS",
+      "harness_errors": [],
+      "executor_surface": "BLOCKED",
+      "ready_for_real_execution": "NO"
+    }
+  ]
+}

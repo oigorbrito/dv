@@ -1,0 +1,37 @@
+{
+  "status": "EXECUTABLE",
+  "task_id": "D-F2-01",
+  "task_family": "F2",
+  "base_revision": "5c3bcdfb0c8aec778727a756f484a4b67a23601d",
+  "working_directory": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F2-01",
+  "checks": [
+    {
+      "id": "focal",
+      "role": "mandatory",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "tests.unit.test_mission_run_input_preflight"
+      ],
+      "expected_exit_codes": [
+        0
+      ]
+    },
+    {
+      "id": "preservation",
+      "role": "mandatory",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/unit"
+      ],
+      "expected_exit_codes": [
+        0
+      ]
+    }
+  ]
+}

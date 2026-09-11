@@ -1,0 +1,128 @@
+{
+  "count": 24,
+  "unique_run_ids": 24,
+  "records": [
+    {
+      "run_id": "D-F1-01--E0--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F1-01--E1--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F1-01--E2--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F1-01--E3--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F2-01--E1--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F2-01--E2--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F2-01--E3--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F2-01--E0--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F3-01--E2--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F3-01--E3--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F3-01--E0--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F3-01--E1--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F4-01--E3--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F4-01--E0--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F4-01--E1--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F4-01--E2--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F5-01--E0--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F5-01--E1--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F5-01--E2--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F5-01--E3--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F6-01--E1--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F6-01--E2--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F6-01--E3--r1",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "run_id": "D-F6-01--E0--r1",
+      "status": "PASS",
+      "errors": []
+    }
+  ],
+  "missing_telemetry_is_zero": false,
+  "holdout_references": 0
+}

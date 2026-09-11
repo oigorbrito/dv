@@ -1,0 +1,6 @@
+﻿D-F1-01|head=c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d|detached=True|clean=True|origin=C:\Projetos\RJ
+D-F2-01|head=5c3bcdfb0c8aec778727a756f484a4b67a23601d|detached=True|clean=True|origin=C:\Projetos\metao-gate
+D-F3-01|head=76ef9277062085e113c14bf1fdbb9c4bd218045b|detached=True|clean=True|origin=C:\Projetos\smag
+D-F4-01|head=9d35699eb9f9e85e13a7c59b7acbf391dfb4c685|detached=True|clean=True|origin=C:\Projetos\metao-gate
+D-F5-01|head=9cc5d6d722d509175a669624c9235156dffb4f85|detached=True|clean=True|origin=C:\Projetos\metao-gate
+D-F6-01|head=5d00cd284ce8fe810b0f5192c56d98608be516d4|detached=True|clean=True|origin=C:\Projetos\metao-gate

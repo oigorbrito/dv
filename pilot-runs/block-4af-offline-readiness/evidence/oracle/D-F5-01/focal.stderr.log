@@ -1,0 +1,17 @@
+E
+======================================================================
+ERROR: test_operator_ux_doctor (unittest.loader._FailedTest.test_operator_ux_doctor)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_operator_ux_doctor
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F5-01\tests\unit\test_operator_ux_doctor.py", line 8, in <module>
+    from metao.catalog import OrchestratorCatalog
+ModuleNotFoundError: No module named 'metao'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
