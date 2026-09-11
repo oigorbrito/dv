@@ -71,6 +71,14 @@ passed the import boundary but was blocked at `brasilapi.com.br:443` by
 unverified under a reproducible network contract. No solution diff was
 inspected and no source was modified.
 
+A fifth local lead in `smag` was screened around issue #94. The verifier
+`packages/opencode/test/tool/external-directory-symlink.test.ts` was introduced
+before the later source fix `6959888ca`, establishing temporal independence.
+The isolated parent replay from `packages/opencode` reached Bun but was blocked
+by the local dependency surface (`preload not found "@opentui/solid/preload"`,
+exit code 1). It remains `BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE`; this is not a
+product failure, and no solution diff or source checkout was modified.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

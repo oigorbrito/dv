@@ -132,6 +132,29 @@
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
+  "smag_issue94_lead": {
+    "repository": "C:\\Projetos\\smag",
+    "task_commit": "6959888ca",
+    "parent": "6959888ca^",
+    "verifier_commit": "f5bc2686d",
+    "verifier_path": "packages/opencode/test/tool/external-directory-symlink.test.ts",
+    "verifier_provenance": "verifier test added before the later source fix; verifier artifact exists independently in the parent of the fix",
+    "changed_path_metadata": ["packages/opencode/src/tool/external-directory.ts"],
+    "parent_materialization": "isolated minimal git archive; source checkout unchanged",
+    "command": "bun test test/tool/external-directory-symlink.test.ts",
+    "cwd": "packages/opencode",
+    "runtime": "bun 1.4.0",
+    "baseline_replay": {
+      "status": "BLOCKED",
+      "exit_code": 1,
+      "observed_error": "preload not found @opentui/solid/preload",
+      "classification": "ENVIRONMENT_NOT_REPRODUCIBLE"
+    },
+    "admissibility": "BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE",
+    "preservation_status": "NOT_TESTED",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],
