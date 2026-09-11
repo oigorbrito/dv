@@ -155,6 +155,17 @@
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
+  "smag_issue94_dependency_recheck": {
+    "repository": "C:\\Projetos\\smag",
+    "source_checkout_preexisting_changes": true,
+    "required_surface": "@opentui/solid/preload",
+    "root_node_modules_package_present": false,
+    "local_workspace_package_present": false,
+    "bun_lock_present": true,
+    "resolution": "DOWNLOAD_OR_INSTALL_REQUIRED",
+    "action_taken": "read_only_check; no bun install and no download",
+    "classification": "ENVIRONMENT_BLOCKED"
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],
