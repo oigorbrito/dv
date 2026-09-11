@@ -22,6 +22,12 @@ OpenAI and Anthropic credentials are absent. Ollama, vLLM, and llama.cpp are
 not installed. Docker is installed but its daemon is inaccessible. The GPU is
 reported as a GeForce GTX 1650 with 4096 MiB.
 
+A non-generative Gemini model-catalog request succeeded and exposed
+`models/gemini-3.7-flash` and `models/gemini-3.8-flash`, among others. This
+proves metadata-surface access only. It does not qualify generation,
+provider-native usage telemetry, pricing, or free-tier eligibility, so the
+qualification probe remains pending.
+
 The current admitted corpus remains `D-F2-05`, `D-F5-01`, and `D-F6-01`.
 `COMPARATIVE_CORPUS_READY=NO`, `P1_S1_RELEASE=NO`, and `REAL_P0_RUNS=0/24`.
 The registered external blockers are marked `PENDING_EXTERNAL_ACTION` for

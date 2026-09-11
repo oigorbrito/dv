@@ -23,6 +23,22 @@
     "model_candidate": "gemini-3.7-flash",
     "probe_type": "QUALIFICATION_PROBE_ONLY"
   },
+  "gemini_catalog_metadata": {
+    "status": "PASS",
+    "request_type": "non_generative_model_catalog",
+    "credential_value_recorded": false,
+    "models_observed": [
+      "models/gemini-3.7-flash",
+      "models/gemini-3.8-flash",
+      "models/gemini-3.6-flash",
+      "models/gemini-3.5-flash",
+      "models/gemini-2.5-flash"
+    ],
+    "generation_executed": false,
+    "usage_observed": false,
+    "cost_eligibility_proven": false,
+    "qualification_effect": "catalog_access_only"
+  },
   "local_surfaces": {
     "ollama": "NOT_AVAILABLE",
     "vllm": "NOT_AVAILABLE",
