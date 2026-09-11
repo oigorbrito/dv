@@ -1,0 +1,79 @@
+{
+  "wave": "P1-W23",
+  "selection_rule": "prefer parent-side failing verifier with local deterministic execution; do not reopen definitive rejection",
+  "sources": [
+    {
+      "repository": "C:\\Projetos\\metao-gate",
+      "runtime": "Python project",
+      "parent_side_verifier_density": "OBSERVED",
+      "historical_fix_availability": "OBSERVED",
+      "offline_feasibility": "NOT_REQUIRED_AFTER_PARENT_PASS",
+      "dependency_locking": "RECORDED_IN_PRIOR_EVIDENCE",
+      "preservation_feasibility": "NOT_TESTED_BY_GATE",
+      "external_risk": "LOW_FOR_CLOSED_DECISION",
+      "decision": "REJECT_SOURCE",
+      "reason": "METAO-GATE-N1 parent focal passed 12/12; definitive NO_PARENT_FAILURE"
+    },
+    {
+      "repository": "C:\\Projetos\\opencode-direct-proof",
+      "runtime": "NOT_ESTABLISHED_FOR_P1",
+      "parent_side_verifier_density": "NO_P1_METADATA_IN_DV",
+      "historical_fix_availability": "NOT_ESTABLISHED",
+      "offline_feasibility": "UNKNOWN",
+      "dependency_locking": "UNKNOWN",
+      "preservation_feasibility": "UNKNOWN",
+      "external_risk": "UNKNOWN",
+      "decision": "REJECT_SOURCE",
+      "reason": "W20 recorded no P1 verifier metadata; no bounded lead was available"
+    },
+    {
+      "repository": "C:\\Projetos\\naia",
+      "runtime": "NOT_REQUALIFIED",
+      "parent_side_verifier_density": "CLOSED_PRIOR_LEAD",
+      "historical_fix_availability": "CLOSED_PRIOR_LEAD",
+      "offline_feasibility": "NOT_ESTABLISHED",
+      "dependency_locking": "NOT_ESTABLISHED",
+      "preservation_feasibility": "NOT_ESTABLISHED",
+      "external_risk": "NOT_ESTABLISHED",
+      "decision": "REJECT_SOURCE",
+      "reason": "preserved closed lead; no undecided lead with a satisfied unblock condition"
+    },
+    {
+      "repository": "C:\\Projetos\\bpt2-abp",
+      "runtime": "dotnet",
+      "parent_side_verifier_density": "OBSERVED_FOR_PRIOR_D-F2-05",
+      "historical_fix_availability": "OBSERVED",
+      "offline_feasibility": "BLOCKED",
+      "dependency_locking": "OBSERVED_BUT_RESTORE_BLOCKED",
+      "preservation_feasibility": "BLOCKED_BY_SAME_RESTORE_DEPENDENCY",
+      "external_risk": "NuGet/network dependency",
+      "decision": "BLOCKED_SOURCE",
+      "reason": "no new offline package supply or external runner; prior lead remains blocked and not requalified"
+    },
+    {
+      "repository": "C:\\Projetos\\searchleads",
+      "runtime": "NOT_REQUALIFIED",
+      "parent_side_verifier_density": "CLOSED_INVENTORY",
+      "historical_fix_availability": "CLOSED_INVENTORY",
+      "offline_feasibility": "NOT_REQUALIFIED",
+      "dependency_locking": "NOT_REQUALIFIED",
+      "preservation_feasibility": "NOT_REQUALIFIED",
+      "external_risk": "NOT_REQUALIFIED",
+      "decision": "REJECT_SOURCE",
+      "reason": "already represented in the closed 18-candidate inventory"
+    },
+    {
+      "repository": "C:\\Projetos\\smag",
+      "runtime": "Node/Bun project",
+      "parent_side_verifier_density": "CLOSED_ORACLE_HISTORY",
+      "historical_fix_availability": "OBSERVED",
+      "offline_feasibility": "FOCAL_PRIOR; PRESERVATION NETWORK-BLOCKED",
+      "dependency_locking": "NOT_REQUALIFIED",
+      "preservation_feasibility": "BLOCKED_FOR_CLOSED_LEAD",
+      "external_risk": "GitHub/network",
+      "decision": "BLOCKED_SOURCE",
+      "reason": "no undecided lead; SMAG-N1 is definitively rejected for NO_PARENT_FAILURE"
+    }
+  ],
+  "new_source_selected": false
+}

@@ -1,0 +1,18 @@
+{
+  "json_parse": "PASS; 5/5 W23 JSON artifacts",
+  "sha_resolution": "PASS for carried lead evidence; no new SHA selected",
+  "candidate_id_uniqueness": "PASS; no new IDs",
+  "verifier_hash_validation": "PASS for carried evidence; no new verifier",
+  "lockfile_hash_validation": "NOT_APPLICABLE; no lead survived source gate",
+  "parent_failure_gate": "PASS; no lead advanced",
+  "failure_attribution": "PASS; NO_PARENT_FAILURE kept distinct from PRODUCT_FAILURE",
+  "closed_inventory_exclusion": "PASS",
+  "solution_leakage": "PASS; zero solution diffs opened",
+  "evidence_path_validation": "PASS",
+  "holdout_leakage": "PASS; HOLDOUT=SEALED",
+  "p0_immutability": "PASS",
+  "secret_scan": "PASS; no secret values persisted",
+  "harness_self_test": "PASS; 9/9",
+  "git_diff_check": "PASS",
+  "literal_harness_invocation": "NOT_APPLICABLE; exit 2 requires subcommand"
+}

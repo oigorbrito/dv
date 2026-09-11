@@ -1,0 +1,24 @@
+{
+  "wave": "P1-W23",
+  "leads": [
+    {
+      "lead_id": "METAO-GATE-N1",
+      "repository": "C:\\Projetos\\metao-gate",
+      "parent_sha": "2572ddcc1ca4c0aa78abc095fdc35bccc6e15a05",
+      "prospective_candidate_sha": "2f730773d073a5c4c5bd05b7ae4c0a4f2481a533",
+      "parent_focal": "PASS; 12/12; exit 0",
+      "classification": "NO_PARENT_FAILURE",
+      "lead_prequalification": "REJECTED",
+      "candidate_disposition": "REJECTED",
+      "solution_diff": "NOT_INSPECTED",
+      "candidate_execution": "NOT_TESTED",
+      "evidence_refs": [
+        "pilot-runs/p1-w18-acquisition/lead-freeze.json",
+        "pilot-runs/p1-w18-acquisition/parent-result.json"
+      ]
+    }
+  ],
+  "new_leads": [],
+  "parent_failure_qualified": [],
+  "pre_solution_freezes": []
+}

@@ -1,0 +1,36 @@
+{
+  "wave": "P1-W23",
+  "branch": "main",
+  "head": "149471703eab0476b506fa755abe74ebceb67f5f",
+  "origin_main": "13d2742c7b3ea2de0f5accb02089dd4edf2a2b35",
+  "local_only": 1,
+  "remote_only": 0,
+  "worktree": "CLEAN",
+  "harness_literal": {
+    "command": "python -B tools/dv_pilot_harness.py",
+    "exit_code": 2,
+    "classification": "NOT_APPLICABLE",
+    "reason": "the current CLI requires a subcommand"
+  },
+  "harness_self_test": {
+    "command": "python -B tools/test_dv_pilot_harness.py",
+    "exit_code": 0,
+    "result": "9/9 PASS"
+  },
+  "git_diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0,
+    "result": "PASS"
+  },
+  "network": {
+    "dns_github": "PASS; 4.228.31.150",
+    "tcp_443_github": "FAIL; connection did not succeed within 3 seconds"
+  },
+  "credentials": {
+    "OPENAI_API_KEY": false,
+    "ANTHROPIC_API_KEY": false,
+    "values_recorded": false
+  },
+  "holdout": "SEALED",
+  "treatment_model_api_execution": "NOT_EXECUTED"
+}
