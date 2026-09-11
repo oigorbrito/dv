@@ -1,0 +1,53 @@
+BLOCK 4AA LOCAL HISTORICAL WORKSPACE RECOVERY + FIRST REAL RUN
+task: D-F1-01
+family: F1
+repository: oigorbrito/RJ
+base: c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d
+treatment: E0
+model: gpt-5.6-sol
+reasoning_effort: high
+rollout: r1
+
+DV
+head: 96c89010757f75370bb710db94fb83527179935d
+worktree: clean
+
+SOURCE CHECKOUT C:\Projetos\RJ (read-only probes)
+origin: https://github.com/oigorbrito/RJ.git
+head: 4282cd5c836f81c6da95d17cf317c05525b417d7
+branch: preserve/rjudi-local-2026-09-08-192438
+worktree: dirty, 42 status lines
+historical_object: AVAILABLE
+historical_commit: c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d
+historical_subject: Preserve RAG evaluation WIP
+
+ISOLATED WORKSPACE
+clone_source: C:\Projetos\RJ
+clone_mode: --local --no-hardlinks --no-checkout
+checkout: --detach c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d
+head: c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d
+detached_head: true
+worktree: clean
+origin: C:\Projetos\RJ (local provenance)
+
+TOOLCHAIN
+python: Python 3.13.14
+dotnet: 10.0.401
+git: git version 2.55.0.windows.5
+
+E0 ADMISSIBILITY
+status: INCONCLUSIVE / EXECUTOR_TELEMETRY_SURFACE_UNAVAILABLE
+reason: this Codex surface does not expose an authorized E0 executor with provider-native token/cost telemetry bound to DV_RUN_ID
+transcript_is_provider_native_telemetry: false
+token_estimation: not performed
+candidate_manual_creation: not performed
+
+DOWNSTREAM
+e0: NOT_EXECUTED
+focal_oracle: NOT_EXECUTED
+preservation_oracle: NOT_EXECUTED
+harness_run: NOT_EXECUTED
+harness_reconciliation: NOT_EXECUTED
+real_p0_runs: 0/24
+p0_release: NO
+holdout: SEALED / NOT OPENED
