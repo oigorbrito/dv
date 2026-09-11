@@ -1,0 +1,3 @@
+{
+  "block":"5B","captured_at":"2026-09-11","os":"Microsoft Windows NT 10.0.26200.0","processor_count_env":"8","cpu":"UNKNOWN_WMI_ACCESS_DENIED","ram":"UNKNOWN_WMI_ACCESS_DENIED","gpu":"UNKNOWN_WMI_ACCESS_DENIED","disk_free":"UNKNOWN_PS_DRIVE_REPORT_IN_SANDBOX","ollama":"NOT_FOUND","vllm":"NOT_FOUND","docker":"FOUND_VERSION_COMMAND_AVAILABLE","wsl":"FOUND_VERSION_COMMAND_AVAILABLE","ollama_model_inventory":"EMPTY_OR_NOT_ENUMERABLE_WITHOUT_RUNTIME","download_policy":"NO_LARGE_MODEL_DOWNLOAD","classification":"LOCAL_S0_INCOMPLETE"
+}

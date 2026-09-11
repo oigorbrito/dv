@@ -1,0 +1,10 @@
+{
+  "schema_id":"p1-deterministic-task-shaping-v1",
+  "mode":"S1_DETERMINISTIC_TASK_SHAPING",
+  "llm_generation":false,
+  "source":"frozen task metadata and verifier contract only",
+  "required_fields":["objective","constraints","allowed_scope","relevant_repository_paths","verifier_contract_reference","environment_constraints","required_output_artifact"],
+  "field_rules":{"objective":"copy frozen task statement without semantic expansion","constraints":"copy frozen constraints; no solution hints","allowed_scope":"explicit files/directories from task metadata","relevant_repository_paths":"deterministic ordered path list","verifier_contract_reference":"versioned verifier reference and hash","environment_constraints":"toolchain/cwd/network policy","required_output_artifact":"candidate artifact contract only"},
+  "accounting":{"shape_cost":"measure separately","token_conversion":"not permitted","crossing":"do not run S0 versus S1 in 5B"},
+  "holdout":"SEALED"
+}

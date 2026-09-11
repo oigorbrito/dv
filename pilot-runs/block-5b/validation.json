@@ -1,0 +1,17 @@
+{
+  "block":"5B",
+  "captured_at":"2026-09-11",
+  "json_parse":"PASS",
+  "new_json_artifact_count":7,
+  "development_candidate_count":18,
+  "development_admitted_count":1,
+  "base_sha_mapping":"PASS_FOR_ADMITTED_TASK",
+  "verifier_hash_check":"PASS_FOR_ADMITTED_TASK",
+  "holdout_leakage_scan":"PASS",
+  "gold_solution_leakage_scan":"PASS",
+  "secret_scan":"PASS",
+  "harness_self_test":{"command":"python -B tools/test_dv_pilot_harness.py","exit_code":0,"tests":6,"result":"PASS"},
+  "treatment_execution":"NOT_EXECUTED",
+  "paid_api_calls":0,
+  "p0_artifacts_modified":false
+}
