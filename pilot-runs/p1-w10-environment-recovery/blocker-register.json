@@ -1,0 +1,14 @@
+{
+  "wave": "P1-W10",
+  "blockers": [
+    {"blocker_id":"P1-W1-BLK-002","status":"OPEN_FOR_S2","impact":"comparative corpus remains two tasks/two families/one repository","next_condition":"admit additional independently verifiable task from a reproducible source"},
+    {"blocker_id":"P1-W4-BLK-STRONG-CREDENTIAL","status":"OPEN","impact":"S1 release remains blocked","next_condition":"authorized strong executor qualification"},
+    {"blocker_id":"P1-W1-BLK-003","status":"OPEN_FOR_S1","impact":"strong path unavailable","next_condition":"C1 S0 qualification"},
+    {"blocker_id":"P1-W1-BLK-004","status":"CLOSED","impact":"provider-internal retry metadata nonblocking missingness"},
+    {"blocker_id":"P1-W5-D-F1-01","status":"CLOSED","impact":"frozen base runner incompatibility"},
+    {"blocker_id":"P1-W9-D-F2-04","status":"BLOCKED_DEPENDENCY_UNAVAILABLE","impact":"searchleads focal and preservation commands cannot start without pytest","next_condition":"approved local Python/pytest environment or authorized external runner"},
+    {"blocker_id":"P1-W9-D-F2-05","status":"BLOCKED_NUGET_NETWORK","impact":"bpt2 restore/build cannot materialize required packages; PostgreSQL service is also unavailable locally","next_condition":"approved reproducible NuGet package cache/network and bounded PostgreSQL runtime"}
+  ],
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

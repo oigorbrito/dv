@@ -1,0 +1,21 @@
+{
+  "candidate_id": "D-F2-05",
+  "restore": {
+    "command": "dotnet restore tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj --ignore-failed-sources",
+    "exit_code": 1,
+    "outcome": "BLOCKED_NUGET_NETWORK",
+    "observed": ["NU1801 api.nuget.org unavailable", "NU1101 Volo.Abp.Ddd.Application.Contracts absent from sources/cache"],
+    "evidence": ["d-f2-05-restore.stdout.log", "d-f2-05-restore.stderr.log"]
+  },
+  "build_no_restore": {
+    "command": "dotnet build tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj --configuration Release --no-restore",
+    "exit_code": 1,
+    "outcome": "BLOCKED_RESTORE_ASSETS_ABSENT",
+    "observed": "NETSDK1004 project.assets.json not found",
+    "evidence": ["d-f2-05-build.stdout.log", "d-f2-05-build.stderr.log"]
+  },
+  "focal": {"outcome": "NOT_REACHED_RESTORE_BLOCKED"},
+  "preservation": {"outcome": "NOT_REACHED_RESTORE_AND_POSTGRES_BLOCKED"},
+  "final_status": "BLOCKED_NUGET_NETWORK",
+  "admitted": false
+}

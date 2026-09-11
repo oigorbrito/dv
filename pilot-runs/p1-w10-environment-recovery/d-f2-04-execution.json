@@ -1,0 +1,19 @@
+{
+  "candidate_id": "D-F2-04",
+  "focal": {
+    "command": "python -m pytest -q tests/test_evidence_envelope_integrity_v3.py",
+    "exit_code": 1,
+    "outcome": "BLOCKED_DEPENDENCY_NOT_LOCALLY_AVAILABLE",
+    "error": "No module named pytest",
+    "evidence": ["d-f2-04-focal.stdout.log", "d-f2-04-focal.stderr.log"]
+  },
+  "preservation": {
+    "command": "python -m pytest -q tests --ignore=tests/experimental -W error::ResourceWarning",
+    "exit_code": 1,
+    "outcome": "BLOCKED_DEPENDENCY_NOT_LOCALLY_AVAILABLE",
+    "error": "No module named pytest",
+    "evidence": ["d-f2-04-preservation.stdout.log", "d-f2-04-preservation.stderr.log"]
+  },
+  "final_status": "BLOCKED_DEPENDENCY_UNAVAILABLE",
+  "admitted": false
+}

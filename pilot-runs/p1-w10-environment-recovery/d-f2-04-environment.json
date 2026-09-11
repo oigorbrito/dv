@@ -1,0 +1,20 @@
+{
+  "candidate_id": "D-F2-04",
+  "repository": "oigorbrito/searchleads",
+  "base_sha": "2c886f863cf6d5f9473d15e60f2f55f938162876",
+  "workspace": ".tmp-w10/searchleads",
+  "workspace_head": "2c886f863cf6d5f9473d15e60f2f55f938162876",
+  "detached_clean": true,
+  "python_contract": ">=3.11",
+  "available_python": "3.13.14",
+  "pytest_contract": "README and CI explicitly install pytest; pyproject has pytest configuration but no test extra",
+  "historical_install": "python -m pip install pytest; CI also installs the project",
+  "historical_commands": [
+    "python -m pytest -q tests/test_evidence_envelope_integrity_v3.py",
+    "python -m pytest -q tests --ignore=tests/experimental -W error::ResourceWarning"
+  ],
+  "local_cache": "No pytest wheel found in inspected pip cache",
+  "environment_status": "BLOCKED_DEPENDENCY_NOT_LOCALLY_AVAILABLE",
+  "verifier_sha256": "8206726B9546DECE1D2751DF1FC9CB1DBD5D95225229405C4C2B60C87F79AAC0",
+  "solution_application": "NONE"
+}

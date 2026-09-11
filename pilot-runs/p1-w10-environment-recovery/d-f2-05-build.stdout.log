@@ -1,0 +1,9 @@
+C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(266,5): error NETSDK1004: Arquivo de ativos 'C:\Projetos\dv\.tmp-w10\bpt2\tests\BomPraTi.SavedSearchPostgresClaimBenchmarkFixture\obj\project.assets.json' não encontrado. Execute uma restauração de pacote do NuGet para gerar esse arquivo. [C:\Projetos\dv\.tmp-w10\bpt2\tests\BomPraTi.SavedSearchPostgresClaimBenchmarkFixture\BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj]
+
+FALHA da compilação.
+
+C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(266,5): error NETSDK1004: Arquivo de ativos 'C:\Projetos\dv\.tmp-w10\bpt2\tests\BomPraTi.SavedSearchPostgresClaimBenchmarkFixture\obj\project.assets.json' não encontrado. Execute uma restauração de pacote do NuGet para gerar esse arquivo. [C:\Projetos\dv\.tmp-w10\bpt2\tests\BomPraTi.SavedSearchPostgresClaimBenchmarkFixture\BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj]
+    0 Aviso(s)
+    1 Erro(s)
+
+Tempo Decorrido 00:00:00.62

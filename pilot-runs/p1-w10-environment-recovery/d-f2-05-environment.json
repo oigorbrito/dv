@@ -1,0 +1,19 @@
+{
+  "candidate_id": "D-F2-05",
+  "repository": "oigorbrito/bpt2-abp",
+  "base_sha": "f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "workspace": ".tmp-w10/bpt2",
+  "workspace_head": "f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "detached_clean": true,
+  "sdk_contract": "10.0.100, rollForward latestFeature",
+  "available_sdk": "10.0.401",
+  "package_source_contract": "main/NuGet.Config has an empty packageSources element; restore diagnostics also resolve default nuget.org",
+  "central_pinning": "modules/Directory.Packages.props; Volo.Abp packages 10.6.0 and EF design 10.0.9",
+  "lock_files": "No packages.lock.json or pre-existing project.assets.json in fresh workspace",
+  "required_external_environment": "PostgreSQL 17-alpine service defined by workflow",
+  "nuget_global_packages": "Required Volo.Abp and EF packages absent from inspected cache",
+  "docker_cli": "29.7.2 available",
+  "docker_engine": "unavailable; docker API pipe not found",
+  "environment_status": "BLOCKED_NUGET_NETWORK_AND_EXTERNAL_ENVIRONMENT_NOT_BOUNDED",
+  "solution_application": "NONE"
+}

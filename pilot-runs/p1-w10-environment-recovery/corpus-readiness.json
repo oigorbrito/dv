@@ -1,0 +1,12 @@
+{
+  "supersedes": "experiments/p1/p1-development-corpus-v4.json",
+  "admitted_before": ["D-F5-01", "D-F6-01"],
+  "admitted_after": ["D-F5-01", "D-F6-01"],
+  "new_admissions": 0,
+  "candidates_resolved": 0,
+  "task_corpus": "PARTIAL",
+  "comparative_corpus_ready": "NO",
+  "reason": "D-F2-04 remains blocked by missing local pytest; D-F2-05 remains blocked by unavailable NuGet packages/network and unbounded PostgreSQL daemon",
+  "holdout": "SEALED",
+  "treatment_execution": "NOT_EXECUTED"
+}

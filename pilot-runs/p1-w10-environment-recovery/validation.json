@@ -1,0 +1,16 @@
+{
+  "wave": "P1-W10",
+  "json_parse": "PASS",
+  "candidate_ids_unique": "PASS",
+  "base_sha_validation": "PASS",
+  "evidence_paths": "PASS",
+  "verifier_hashes": "PASS",
+  "secret_scan_new_artifacts": "PASS",
+  "holdout_leakage": "NONE; SEALED",
+  "p0_immutability": "PASS; no P0 files changed",
+  "harness_self_test": "PASS 6/6; exit 0",
+  "git_diff_check_before_commit": "PASS",
+  "treatment_execution": "NOT_EXECUTED",
+  "smoke_execution": "NOT_EXECUTED",
+  "api_execution": "NOT_EXECUTED"
+}
