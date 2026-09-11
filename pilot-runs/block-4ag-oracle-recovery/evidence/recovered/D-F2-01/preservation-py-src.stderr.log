@@ -1,0 +1,26 @@
+...............................................................................................................................................................................................................F........................................................................................F.......................................................................................................................................................................................
+======================================================================
+FAIL: test_t09_doctor_preflights_before_sqlite_persistence_wiring (test_operator_ux_doctor.OperatorUXDoctorTests.test_t09_doctor_preflights_before_sqlite_persistence_wiring)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F2-01\tests\unit\test_operator_ux_doctor.py", line 139, in test_t09_doctor_preflights_before_sqlite_persistence_wiring
+    self.assertEqual(data["overall_status"], "NOT_CONFIGURED")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FAIL' != 'NOT_CONFIGURED'
+- FAIL
++ NOT_CONFIGURED
+
+
+======================================================================
+FAIL: test_installed_console_script_is_executable (test_roadmap_1_work_unit_06.MetaOCliV1Tests.test_installed_console_script_is_executable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projetos\dv\pilot-runs\block-4af-offline-readiness\workspaces\D-F2-01\tests\unit\test_roadmap_1_work_unit_06.py", line 281, in test_installed_console_script_is_executable
+    self.assertEqual(completed.returncode, 0, completed.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : 
+
+----------------------------------------------------------------------
+Ran 480 tests in 22.074s
+
+FAILED (failures=2)

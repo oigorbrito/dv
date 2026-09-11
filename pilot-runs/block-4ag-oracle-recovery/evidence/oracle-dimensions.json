@@ -1,0 +1,50 @@
+[
+  {
+    "task_id": "D-F1-01",
+    "harness_validity": "PASS",
+    "focal_test_discoverable": "YES_AFTER_NEUTRAL_PATH_CORRECTION",
+    "preservation_suite_discoverable": "YES_AFTER_NEUTRAL_PATH_CORRECTION",
+    "base_result": "NOT_EXECUTED_DUE_MISSING_DEPENDENCY_SETUP",
+    "classification": "MISSING_DEPENDENCY_SETUP"
+  },
+  {
+    "task_id": "D-F2-01",
+    "harness_validity": "PASS",
+    "focal_test_discoverable": "NO",
+    "preservation_suite_discoverable": "YES_WITH_PYTHONPATH_SRC",
+    "base_result": "FAIL",
+    "classification": "ORACLE_SPEC_DEFECT_AND_BASELINE_EXECUTABLE_FAIL"
+  },
+  {
+    "task_id": "D-F3-01",
+    "harness_validity": "PASS",
+    "focal_test_discoverable": "NO",
+    "preservation_suite_discoverable": "NOT_APPLICABLE",
+    "base_result": "NOT_EXECUTED_MISSING_TEST",
+    "classification": "ORACLE_SPEC_DEFECT"
+  },
+  {
+    "task_id": "D-F4-01",
+    "harness_validity": "INCONCLUSIVE",
+    "focal_test_discoverable": "NO_IN_BASE",
+    "preservation_suite_discoverable": "NOT_APPLICABLE",
+    "base_result": "INCONCLUSIVE_CONTROLLED_REPLAY_UNSPECIFIED",
+    "classification": "ORACLE_SPEC_DEFECT"
+  },
+  {
+    "task_id": "D-F5-01",
+    "harness_validity": "PASS",
+    "focal_test_discoverable": "YES_WITH_PYTHONPATH_SRC",
+    "preservation_suite_discoverable": "YES_WITH_PYTHONPATH_SRC",
+    "base_result": "FOCAL_PASS_PRESERVATION_FAIL",
+    "classification": "MISSING_DEPENDENCY_SETUP_AND_BASELINE_EXECUTABLE_FAIL"
+  },
+  {
+    "task_id": "D-F6-01",
+    "harness_validity": "PASS",
+    "focal_test_discoverable": "YES_FROM_RECOVERED_CARGO_WORKSPACE",
+    "preservation_suite_discoverable": "YES_FROM_RECOVERED_CARGO_WORKSPACE",
+    "base_result": "INCONCLUSIVE_ENVIRONMENT_SETUP",
+    "classification": "WRONG_WORKING_DIRECTORY_AND_ENVIRONMENT_SETUP_REQUIRED"
+  }
+]

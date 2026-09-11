@@ -1,0 +1,130 @@
+[
+  {
+    "task_id": "D-F1-01",
+    "name": "focal-recovered",
+    "frozen_command": "see manifest",
+    "recovered_command": [
+      "dotnet",
+      "test",
+      "tests/RJ.DomainTests/RJ.DomainTests.csproj",
+      "--filter",
+      "FullyQualifiedName~ProcessTextNormalizerTests",
+      "--no-restore"
+    ],
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F1-01",
+    "environment_additions": {},
+    "exit_code": 1,
+    "timed_out": false,
+    "duration_seconds": 1.9824731000117026,
+    "stdout": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F1-01\\focal-recovered.stdout.log",
+    "stderr": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F1-01\\focal-recovered.stderr.log",
+    "classification": "ENVIRONMENT_SETUP_REQUIRED"
+  },
+  {
+    "task_id": "D-F1-01",
+    "name": "preservation-recovered",
+    "frozen_command": "see manifest",
+    "recovered_command": [
+      "dotnet",
+      "test",
+      "tests/RJ.DomainTests/RJ.DomainTests.csproj",
+      "--no-restore"
+    ],
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F1-01",
+    "environment_additions": {},
+    "exit_code": 1,
+    "timed_out": false,
+    "duration_seconds": 0.9477609999594279,
+    "stdout": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F1-01\\preservation-recovered.stdout.log",
+    "stderr": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F1-01\\preservation-recovered.stderr.log",
+    "classification": "ENVIRONMENT_SETUP_REQUIRED"
+  },
+  {
+    "task_id": "D-F2-01",
+    "name": "focal-py-src",
+    "frozen_command": "see manifest",
+    "recovered_command": [
+      "python",
+      "-m",
+      "unittest",
+      "tests.unit.test_mission_run_input_preflight"
+    ],
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F2-01",
+    "environment_additions": {
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 1,
+    "timed_out": false,
+    "duration_seconds": 0.15551379998214543,
+    "stdout": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F2-01\\focal-py-src.stdout.log",
+    "stderr": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F2-01\\focal-py-src.stderr.log",
+    "classification": "BASELINE_EXECUTABLE_FAIL"
+  },
+  {
+    "task_id": "D-F2-01",
+    "name": "preservation-py-src",
+    "frozen_command": "see manifest",
+    "recovered_command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/unit"
+    ],
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F2-01",
+    "environment_additions": {
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 1,
+    "timed_out": false,
+    "duration_seconds": 23.128188800008502,
+    "stdout": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F2-01\\preservation-py-src.stdout.log",
+    "stderr": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F2-01\\preservation-py-src.stderr.log",
+    "classification": "BASELINE_EXECUTABLE_FAIL"
+  },
+  {
+    "task_id": "D-F5-01",
+    "name": "focal-py-src",
+    "frozen_command": "see manifest",
+    "recovered_command": [
+      "python",
+      "-m",
+      "unittest",
+      "tests.unit.test_operator_ux_doctor"
+    ],
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F5-01",
+    "environment_additions": {
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 0,
+    "timed_out": false,
+    "duration_seconds": 0.2543483999907039,
+    "stdout": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F5-01\\focal-py-src.stdout.log",
+    "stderr": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F5-01\\focal-py-src.stderr.log",
+    "classification": "BASELINE_EXECUTABLE_PASS"
+  },
+  {
+    "task_id": "D-F5-01",
+    "name": "preservation-py-src",
+    "frozen_command": "see manifest",
+    "recovered_command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/unit"
+    ],
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F5-01",
+    "environment_additions": {
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 1,
+    "timed_out": false,
+    "duration_seconds": 18.841925099957734,
+    "stdout": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F5-01\\preservation-py-src.stdout.log",
+    "stderr": "C:\\Projetos\\dv\\pilot-runs\\block-4ag-oracle-recovery\\evidence\\recovered\\D-F5-01\\preservation-py-src.stderr.log",
+    "classification": "BASELINE_EXECUTABLE_FAIL"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "status": "ORACLE_READINESS_PARTIAL",
+  "amendment_applied": false,
+  "tasks": [
+    {"task_id":"D-F1-01","frozen_command_valid":false,"recoverable_with_neutral_env_fix":false,"oracle_spec_defect":false,"base_executable":"NO","base_outcome":"NOT_EXECUTED_DUE_MISSING_DEPENDENCY_SETUP","p0_blocking":true,"classification":"MISSING_DEPENDENCY_SETUP"},
+    {"task_id":"D-F2-01","frozen_command_valid":false,"recoverable_with_neutral_env_fix":false,"oracle_spec_defect":true,"base_executable":"PARTIAL","base_outcome":"BASELINE_EXECUTABLE_FAIL","p0_blocking":true,"classification":"ORACLE_SPEC_DEFECT"},
+    {"task_id":"D-F3-01","frozen_command_valid":false,"recoverable_with_neutral_env_fix":false,"oracle_spec_defect":true,"base_executable":"NO","base_outcome":"NOT_EXECUTED_MISSING_TEST","p0_blocking":true,"classification":"ORACLE_SPEC_DEFECT"},
+    {"task_id":"D-F4-01","frozen_command_valid":false,"recoverable_with_neutral_env_fix":false,"oracle_spec_defect":true,"base_executable":"NO","base_outcome":"INCONCLUSIVE_CONTROLLED_REPLAY_UNSPECIFIED","p0_blocking":true,"classification":"ORACLE_SPEC_DEFECT"},
+    {"task_id":"D-F5-01","frozen_command_valid":true,"recoverable_with_neutral_env_fix":true,"oracle_spec_defect":false,"base_executable":"YES_FOCAL_PARTIAL_SUITE","base_outcome":"BASELINE_EXECUTABLE_FAIL","p0_blocking":true,"classification":"MISSING_DEPENDENCY_SETUP"},
+    {"task_id":"D-F6-01","frozen_command_valid":false,"recoverable_with_neutral_env_fix":true,"oracle_spec_defect":false,"base_executable":"INCONCLUSIVE","base_outcome":"NOT_COMPLETED_ENVIRONMENT_SETUP_REQUIRED","p0_blocking":true,"classification":"WRONG_WORKING_DIRECTORY"}
+  ],
+  "f4_controlled_replay": {
+    "status":"INCONCLUSIVE",
+    "reason":"protocol identifies candidate-side test concept but does not identify verifier-owned injection artifact, exact injection operation, or independent base expected-fail command",
+    "procedure_preserved":["base clean","verifier-owned test injection if prospectively specified","base expected fail","candidate workspace","same verifier evidence","candidate expected pass","preservation evidence"],
+    "verifier_owned_vs_solution_owned":"NOT DETERMINABLE from current materialized protocol",
+    "candidate_treatment_produced":false
+  }
+}

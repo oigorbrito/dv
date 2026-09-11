@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "concrete_specs": 24,
+  "unique_run_ids": 24,
+  "cwd_mappings": "PASS",
+  "oracle_bindings": "PASS",
+  "telemetry_requirements": "PASS",
+  "holdout_references": 0,
+  "solution_or_gold_patch_references": 0,
+  "missing_telemetry_as_zero": false,
+  "oracle_version_changed": false,
+  "treatment_bindings_changed": false
+}

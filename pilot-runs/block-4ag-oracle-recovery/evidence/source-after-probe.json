@@ -1,0 +1,26 @@
+{
+  "source_checkouts_unchanged": true,
+  "observed_after_probe": [
+    {
+      "name": "RJ",
+      "path": "C:\\Projetos\\RJ",
+      "head": "4282cd5c836f81c6da95d17cf317c05525b417d7",
+      "branch": "preserve/rjudi-local-2026-09-08-192438",
+      "dirty_lines": 42
+    },
+    {
+      "name": "metaO",
+      "path": "C:\\Projetos\\metao-gate",
+      "head": "2f730773d073a5c4c5bd05b7ae4c0a4f2481a533",
+      "branch": "qualification/issue-396-ado-terminal-provenance",
+      "dirty_lines": 9
+    },
+    {
+      "name": "smag",
+      "path": "C:\\Projetos\\smag",
+      "head": "cca06e6bbf6c5d0c4b654a5807b5ddd2be16fb7b",
+      "branch": "fix/supervisor-session-bootstrap",
+      "dirty_lines": 5
+    }
+  ]
+}

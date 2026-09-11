@@ -1,0 +1,15 @@
+E
+======================================================================
+ERROR: test_mission_run_input_preflight (unittest.loader._FailedTest.test_mission_run_input_preflight)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_mission_run_input_preflight
+Traceback (most recent call last):
+  File "C:\Users\Igor B\AppData\Local\Programs\Python\Python313\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+ModuleNotFoundError: No module named 'tests.unit.test_mission_run_input_preflight'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

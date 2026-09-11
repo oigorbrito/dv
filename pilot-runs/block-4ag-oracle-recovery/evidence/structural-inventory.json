@@ -1,0 +1,56 @@
+{
+  "inventory_scope": "exact frozen base commits only",
+  "holdout_opened": false,
+  "solution_or_gold_patch_consulted": false,
+  "tasks": {
+    "D-F1-01": {
+      "root_manifests": ["RJ.slnx", "global.json", "Directory.Build.props", "Directory.Packages.props"],
+      "project_manifest": "tests/RJ.DomainTests/RJ.DomainTests.csproj",
+      "relevant_test_path": "tests/RJ.DomainTests",
+      "frozen_path_exists_at_root": false,
+      "observed": "frozen command omits tests/ and falls through to RJ.slnx; --no-restore still fails NU1900 because NuGet audit index is unavailable; restore attempts observed NU1301 socket permission block",
+      "classification": "MISSING_DEPENDENCY_SETUP"
+    },
+    "D-F2-01": {
+      "root_manifests": ["pyproject.toml"],
+      "package_layout": "src/metao",
+      "test_directory": "tests/unit",
+      "frozen_focal_exists": false,
+      "observed_tests": ["tests/unit/test_operator_ux_doctor.py", "tests/unit/test_runtime_list_preflight.py"],
+      "observed": "pyproject uses setuptools src layout with no declared runtime dependencies; PYTHONPATH=src makes metao importable, but test_mission_run_input_preflight is absent from this base",
+      "classification": "ORACLE_SPEC_DEFECT"
+    },
+    "D-F3-01": {
+      "root_manifests": ["package.json", "bun.lock", "turbo.json", "tsconfig.json"],
+      "package": "packages/smag-governance",
+      "test_directory": "packages/smag-governance/test",
+      "frozen_focal_exists": false,
+      "observed_related_tests": "multiple *.test.mjs files exist, but operator-session.test.mjs does not",
+      "classification": "ORACLE_SPEC_DEFECT"
+    },
+    "D-F4-01": {
+      "root_manifests": ["pyproject.toml"],
+      "cargo_workspace_manifest": "experiments/rust-chassis-a/Cargo.toml",
+      "candidate_manifest": "experiments/rust-chassis-a/metao-contracts/Cargo.toml",
+      "frozen_target_exists": false,
+      "observed": "marketplace_discovery_fixture_tests and its fixture are absent at this base; the manifest/target exists in a later frozen task identity but no verifier-owned injection mapping is materialized",
+      "classification": "ORACLE_SPEC_DEFECT"
+    },
+    "D-F5-01": {
+      "root_manifests": ["pyproject.toml"],
+      "package_layout": "src/metao",
+      "test_directory": "tests/unit",
+      "frozen_focal_exists": true,
+      "observed": "PYTHONPATH=src runs the focal test (10 tests, exit 0); full suite runs 469 tests and has one failure in installed console-script expectation",
+      "classification": "MISSING_DEPENDENCY_SETUP"
+    },
+    "D-F6-01": {
+      "root_manifests": ["pyproject.toml"],
+      "cargo_workspace_manifest": "experiments/rust-chassis-a/Cargo.toml",
+      "targets": ["metao-contracts/tests/discovery_persistence_tests.rs", "metao-testkit/tests/phase6_shadow.rs"],
+      "frozen_command_root_manifest_exists": false,
+      "observed": "all required Cargo manifests and targets are under experiments/rust-chassis-a; cargo metadata --no-deps succeeds there; build execution remained blocked by setup/build lock",
+      "classification": "WRONG_WORKING_DIRECTORY"
+    }
+  }
+}
