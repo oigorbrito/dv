@@ -109,6 +109,14 @@ historical product change, verifier surface, or missing export contract remains
 unresolved without solution-side semantic inspection. The candidate diff was
 not inspected, no source checkout was changed, and no treatment was executed.
 
+A seventh SMAG lead, commit `a7363a803bb6d3f1c040fd14da8efd08288f54a9`, was
+screened against parent `43573893b32363ac6ea608f5862feb2358f973f7` using the
+pre-existing `packages/smag-governance/test/supervise.test.mjs` verifier. The
+isolated replay from `packages/smag-governance` completed with exit code 0 and
+7/7 tests passing. It therefore establishes `REJECTED_NO_PARENT_FAILURE`, not
+product evidence. The candidate diff was not inspected, no source checkout was
+changed, and no treatment was executed.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

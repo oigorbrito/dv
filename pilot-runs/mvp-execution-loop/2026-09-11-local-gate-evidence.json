@@ -213,6 +213,29 @@
     "source_checkout_modified": false,
     "treatment_executed": false
   },
+  "smag_supervise_lead": {
+    "repository": "C:\\Projetos\\smag",
+    "task_commit": "a7363a803bb6d3f1c040fd14da8efd08288f54a9",
+    "parent_sha": "43573893b32363ac6ea608f5862feb2358f973f7",
+    "changed_path_metadata": ["packages/smag-governance/src/supervise.mjs"],
+    "verifier_path": "packages/smag-governance/test/supervise.test.mjs",
+    "verifier_provenance": "pre-existing verifier in isolated parent archive; source checkout unchanged",
+    "command": "node --test test/supervise.test.mjs",
+    "cwd": "packages/smag-governance",
+    "runtime": "node v24.18.0",
+    "baseline_replay": {
+      "exit_code": 0,
+      "tests_observed": 7,
+      "passed": 7,
+      "failed": 0,
+      "assertions_reached": true,
+      "temporary_workspace_cleanup": "PASS"
+    },
+    "screening_result": "REJECTED_NO_PARENT_FAILURE",
+    "classification": "NOT_ADMISSIBLE",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
   "smag_origin_resolution_lead": {
     "repository": "C:\\Projetos\\smag",
     "task_commit": "0d54f44cf",
