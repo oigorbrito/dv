@@ -1,0 +1,91 @@
+{
+  "schema_version": "dv-p0-operational-v1",
+  "corpus_version": "v0",
+  "holdout_allowed": false,
+  "tasks": [
+    {
+      "task_id": "D-F1-01",
+      "family": "F1",
+      "repository": "oigorbrito/RJ",
+      "base_revision": "c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d",
+      "toolchain": ["git", "dotnet"],
+      "oracle_status": "EXECUTABLE_AFTER_WORKSPACE_BINDING",
+      "checks": [
+        {"id": "focal", "role": "mandatory", "command": ["dotnet", "test", "RJ.DomainTests/RJ.DomainTests.csproj", "--filter", "FullyQualifiedName~ProcessTextNormalizerTests"], "expected_exit_codes": [0]},
+        {"id": "preservation", "role": "mandatory", "command": ["dotnet", "test", "RJ.DomainTests/RJ.DomainTests.csproj"], "expected_exit_codes": [0]}
+      ],
+      "source": "oigorbrito/RJ PR #21"
+    },
+    {
+      "task_id": "D-F2-01",
+      "family": "F2",
+      "repository": "oigorbrito/metaO",
+      "base_revision": "5c3bcdfb0c8aec778727a756f484a4b67a23601d",
+      "toolchain": ["git", "python"],
+      "oracle_status": "EXECUTABLE_AFTER_WORKSPACE_BINDING",
+      "checks": [
+        {"id": "focal", "role": "mandatory", "command": ["python", "-m", "unittest", "tests.unit.test_mission_run_input_preflight"], "expected_exit_codes": [0]},
+        {"id": "preservation", "role": "mandatory", "command": ["python", "-m", "unittest", "discover", "-s", "tests/unit"], "expected_exit_codes": [0]}
+      ],
+      "source": "oigorbrito/metaO PR #413"
+    },
+    {
+      "task_id": "D-F3-01",
+      "family": "F3",
+      "repository": "oigorbrito/smag",
+      "base_revision": "76ef9277062085e113c14bf1fdbb9c4bd218045b",
+      "toolchain": ["git", "node"],
+      "oracle_status": "EXECUTABLE_AFTER_WORKSPACE_BINDING",
+      "checks": [
+        {"id": "focal", "role": "mandatory", "command": ["node", "--test", "packages/smag-governance/test/operator-session.test.mjs"], "expected_exit_codes": [0]}
+      ],
+      "source": "oigorbrito/smag PR #118"
+    },
+    {
+      "task_id": "D-F4-01",
+      "family": "F4",
+      "repository": "oigorbrito/metaO",
+      "base_revision": "9d35699eb9f9e85e13a7c59b7acbf391dfb4c685",
+      "toolchain": ["git", "cargo"],
+      "oracle_status": "BLOCKED_CONTROLLED_FAIL_TO_PASS_REPLAY",
+      "checks": [
+        {"id": "candidate-focal", "role": "mandatory", "command": ["cargo", "test", "--manifest-path", "experiments/rust-chassis-a/metao-contracts/Cargo.toml", "--test", "marketplace_discovery_fixture_tests"], "expected_exit_codes": [0]}
+      ],
+      "blocker": "F4 frozen oracle additionally requires controlled Fail-to-Pass evidence against the base state; a candidate-only command is insufficient.",
+      "source": "oigorbrito/metaO PR #297"
+    },
+    {
+      "task_id": "D-F5-01",
+      "family": "F5",
+      "repository": "oigorbrito/metaO",
+      "base_revision": "9cc5d6d722d509175a669624c9235156dffb4f85",
+      "toolchain": ["git", "python"],
+      "oracle_status": "EXECUTABLE_AFTER_WORKSPACE_BINDING",
+      "checks": [
+        {"id": "focal", "role": "mandatory", "command": ["python", "-m", "unittest", "tests.unit.test_operator_ux_doctor"], "expected_exit_codes": [0]},
+        {"id": "preservation", "role": "mandatory", "command": ["python", "-m", "unittest", "discover", "-s", "tests/unit"], "expected_exit_codes": [0]}
+      ],
+      "source": "oigorbrito/metaO PR #401"
+    },
+    {
+      "task_id": "D-F6-01",
+      "family": "F6",
+      "repository": "oigorbrito/metaO",
+      "base_revision": "5d00cd284ce8fe810b0f5192c56d98608be516d4",
+      "toolchain": ["git", "cargo"],
+      "oracle_status": "EXECUTABLE_AFTER_WORKSPACE_BINDING",
+      "checks": [
+        {"id": "persistence", "role": "mandatory", "command": ["cargo", "test", "--locked", "--workspace", "--test", "discovery_persistence_tests"], "expected_exit_codes": [0]},
+        {"id": "external-target", "role": "mandatory", "command": ["cargo", "test", "--locked", "--workspace", "--test", "phase6_shadow"], "expected_exit_codes": [0]},
+        {"id": "preservation", "role": "mandatory", "command": ["cargo", "test", "--locked", "--workspace"], "expected_exit_codes": [0]}
+      ],
+      "source": "oigorbrito/metaO PR #451"
+    }
+  ],
+  "treatments": {
+    "E0": {"semantics": "strongest-direct", "operational_status": "BLOCKED_PROVIDER_BINDING"},
+    "E1": {"semantics": "cheap-or-free-direct-plus-verify", "operational_status": "BLOCKED_PROVIDER_BINDING"},
+    "E2": {"semantics": "cheap-first-clean-state-based-escalation-to-strong", "operational_status": "BLOCKED_PROVIDER_BINDING_AND_ESCALATION_CERTIFICATE"},
+    "E3": {"semantics": "static-task-family-policy", "operational_status": "BLOCKED_PROVIDER_BINDING_AND_POLICY_MAP"}
+  }
+}
