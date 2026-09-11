@@ -1,199 +1,237 @@
-# Block 4R — Executable measurement harness
+# Block 4R — Executable measurement harness and pilot re-entry gate
 
 Date: 2026-09-10
-Status: MINIMAL HARNESS MATERIALIZED / RESEARCH ONLY
+Status: COMPLETE / HARNESS READY / REAL P0 BLOCKED BEFORE EXECUTION
 Architecture approval: NONE
 Treatment approval: NONE
 
 ## Purpose
 
-Materialize the smallest executable artifact required to unblock the Block 4 pilot measurement gate without creating a dv runtime, router, workflow engine, registry, memory system, provider-neutral IR, or treatment policy.
+Materialize and validate the smallest executable measurement artifact required by Blocks 3 and 4 without creating a dv runtime, router, workflow engine, registry, memory system, provider-neutral IR, provider selector, or retry engine.
 
-This artifact measures and reconciles one already-defined `treatment_run`. It does not decide what treatment to use.
+The harness measures one already-defined `treatment_run`; it does not define the treatment or the task oracle.
 
 ## Empirical/reproducibility basis
 
-The implementation is constrained by official/primary documentation rather than ad-hoc architecture preferences.
+The implementation remains constrained by primary/official guidance already recorded in this block:
 
-1. ACM/SIGSIM artifact-evaluation guidance requires research artifacts to be documented, consistent, complete to the extent possible, exercisable, and accompanied by verification/validation evidence. It also recommends automating computational results, testing from a blank environment, logging success and failure, and measuring resource use.
-   - https://sigsim.acm.org/conf/pads/2026/blog/artifact-evaluation/
+- ACM/SIGSIM artifact-evaluation guidance: exercisable artifacts, automation, logs, validation evidence and reproducibility;
+- SWE-bench evaluation harness: explicit run identity, isolated/reproducible environments, per-run logs and independent grading;
+- BenchExec: separation between experimental orchestration and resource measurement;
+- OpenTelemetry resource semantics: stable identity for the entity to which telemetry belongs.
 
-2. SWE-bench's official evaluation harness uses explicit run identifiers, isolated/reproducible execution environments, per-run logs, patch/test execution, grading, and result records. Its documented result-cache behavior also demonstrates why run identity must be explicit rather than inferred from task identity alone.
-   - https://www.swebench.com/SWE-bench/guides/evaluation/
-   - https://github.com/SWE-bench/SWE-bench/blob/main/docs/reference/harness.md
-
-3. BenchExec documents a separation between benchmark orchestration and single-tool resource measurement (`runexec`), plus benchmarking guidance aimed at reliable measurements and containerized isolation. dv therefore keeps measurement plumbing separable from treatment logic instead of embedding a new orchestration architecture.
-   - https://github.com/sosy-lab/benchexec/blob/main/doc/INDEX.md
-
-4. OpenTelemetry's resource model treats telemetry as belonging to an explicitly identified observed entity and requires resource identity attributes to remain stable over the lifetime of the resource. dv uses the same semantic principle for run-bound telemetry without adopting OpenTelemetry as a mandatory dependency.
-   - https://opentelemetry.io/docs/specs/otel/resource/
-   - https://opentelemetry.io/docs/specs/otel/resource/data-model/
-
-These sources support the engineering shape of the harness; they do not establish that dv's treatments are effective.
+These sources justify the measurement shape only. They do not establish treatment effectiveness.
 
 ## Implemented artifact
 
 `tools/dv_pilot_harness.py`
 
-Properties:
+The harness remains Python-stdlib-only and executes exactly one treatment command and one verifier command per invocation.
 
-- Python standard library only;
-- one invocation executes one frozen treatment run plus one independent verifier command;
-- globally unique `run_id` unless an explicit non-colliding ID is supplied;
+### Core properties
+
+- globally unique `run_id` unless a non-colliding explicit ID is supplied;
 - immutable input spec copied into the run directory;
-- canonical SHA-256 digest of the run spec;
-- UTC timestamps plus monotonic elapsed-time measurement;
-- separate executor and verifier stdout/stderr logs;
-- append-only harness event log (`events.jsonl`);
-- child telemetry ingress through `DV_EVENT_LOG` and `DV_RUN_ID`;
-- token categories constrained to the Block 3 partitions;
-- monetary events require explicit currency;
-- terminal verifier contract remains `YES | NO | INCONCLUSIVE`;
-- a conclusive `YES` or `NO` requires `harness_valid=true`;
-- a conclusive result requires non-empty evidence references during reconciliation;
-- missing token or monetary telemetry remains `MISSING/UNRESOLVED`, never zero;
-- duplicate event identifiers and malformed/misbound telemetry fail reconciliation;
-- `reconcile` can recompute integrity checks from preserved raw artifacts.
+- canonical SHA-256 of the input spec;
+- required explicit `working_directory`;
+- UTC timestamps and monotonic elapsed time;
+- separate executor/verifier stdout and stderr;
+- append-only harness event log;
+- child resource events bound to `DV_RUN_ID`;
+- terminal verifier contract `YES | NO | INCONCLUSIVE`;
+- conclusive YES/NO requires `harness_valid=true` and evidence references;
+- missing telemetry remains missing, never zero;
+- duplicate/misbound/malformed telemetry fails reconciliation;
+- reconciliation is recomputable from raw artifacts.
 
-## Deliberate non-features
+## 4R hardening completed
 
-The harness does not implement:
+The transversal gaps found after the first harness materialization are now closed.
 
-- routing;
-- planning;
-- task-family policy;
+### H1 — environment snapshot
+
+The harness records:
+
+- declared environment ID;
+- Python/runtime identity;
+- platform/machine;
+- Git worktree root when available;
+- Git HEAD when available;
+- dirty-state signal and digest;
+- optional toolchain versions supplied by the run spec;
+- optional container image digest supplied by the run spec.
+
+A full 40-character declared `base_revision` that disagrees with the observed Git HEAD causes reconciliation failure.
+
+`working_directory` is mandatory. This was strengthened after validation showed that an inherited caller directory makes environment attribution ambiguous and can make repository inspection unexpectedly expensive.
+
+### H2 — timeout/cancellation evidence
+
+Executor and verifier support separately declared positive timeout values.
+
+A timeout preserves:
+
+- elapsed duration;
+- termination reason;
+- process result;
+- already-written stdout/stderr;
+- already-emitted resource telemetry.
+
+Verifier timeout produces `INCONCLUSIVE / HARNESS_FAILURE` rather than an inferred product failure.
+
+Executor timeout is recorded but does not itself force `PRODUCT_FAILURE`; the independent verifier remains responsible for task outcome semantics.
+
+### H3 — material artifact integrity
+
+The run summary records SHA-256 plus byte length for the material non-recursive artifacts:
+
+- `spec.json`;
+- `events.jsonl`;
+- `child-events.jsonl`;
+- executor stdout/stderr;
+- verifier stdout/stderr.
+
+`run.json` is intentionally not hashed inside its own manifest to avoid recursive self-hashing.
+
+### H4 — resource provenance
+
+Resource telemetry now requires explicit provenance.
+
+Token events require at minimum:
+
+- `run_id`;
+- unique `event_id`;
+- valid token category;
+- non-negative integer tokens;
+- `source`;
+- `provider`;
+- `model_or_service`.
+
+Monetary events additionally require:
+
+- non-negative monetary cost;
+- currency;
+- `billing_ref` or `price_schedule_ref`.
+
+Optional cache state is restricted to:
+
+`hit | miss | partial | not_applicable | unknown`
+
+Multiple currencies cannot be silently summed without predeclared normalization.
+
+## Test evidence
+
+`tools/test_dv_pilot_harness.py`
+
+The hardened harness was executed against six synthetic/integrity tests and all passed:
+
+1. complete resource telemetry reconciles and material artifacts are hashed;
+2. missing token/money telemetry remains null/MISSING rather than zero;
+3. conclusive verifier outcome without evidence fails reconciliation;
+4. resource telemetry without provenance fails reconciliation;
+5. verifier timeout becomes `INCONCLUSIVE / HARNESS_FAILURE`;
+6. executor timeout is retained without automatically becoming product failure.
+
+Observed validation result:
+
+`6/6 PASS`
+
+This is evidence of harness mechanics and integrity behavior only.
+
+`HARNESS_PASS != TREATMENT_PASS`
+
+## Deliberate non-features remain unchanged
+
+The harness still does not implement:
+
+- routing or planning;
 - E0/E1/E2/E3 semantics;
-- provider/model selection;
+- model/provider selection;
 - provider API clients;
-- token estimation by guessed tokenizer;
-- price tables;
-- currency conversion;
-- retries or escalation policy;
+- guessed token estimation;
+- price tables or currency conversion;
+- retry/escalation policy;
 - Docker/container management;
-- repository checkout/patch application;
-- oracle-family logic;
+- checkout/patch application;
+- family-oracle implementation;
 - statistical aggregation;
-- a database;
+- database/storage service;
 - OpenTelemetry export;
 - BenchExec orchestration.
 
-Those mechanisms belong in narrow adapters or existing external tools if/when required. Their absence is intentional to keep the 4R artifact measurement-only.
+These remain outside the measurement kernel unless empirical execution demonstrates a need.
 
-## Run-spec contract
+## Real P0 re-entry attempt
 
-One JSON object must contain at least:
+Block 4C froze P0 as 24 runs:
 
-```json
-{
-  "protocol_version": "4R-v1",
-  "corpus_version": "v0",
-  "task_id": "D-F1-01",
-  "task_family": "F1",
-  "base_revision": "<frozen-sha>",
-  "oracle_version": "<frozen-oracle-id>",
-  "treatment_id": "E0",
-  "treatment_version": "<frozen-treatment-version>",
-  "rollout_id": "r1",
-  "environment_id": "<environment-identity>",
-  "executor_command": ["<program>", "<arg>"],
-  "verifier_command": ["<program>", "<arg>"]
-}
-```
+- one first development task from each family F1–F6;
+- all E0–E3 candidate treatments;
+- one rollout each;
+- deterministic rotated treatment ordering.
 
-Optional `working_directory` controls the working directory shared by executor and verifier.
+A real dry-run was evaluated for admissibility before execution.
 
-The executor receives:
+It is not yet admissible for two independent reasons.
 
-- `DV_RUN_ID`;
-- `DV_EVENT_LOG`;
-- `DV_RUN_DIR`;
-- `DV_TASK_ID`;
-- `DV_TREATMENT_ID`.
+### P4-BLK-002 — treatment operationalization missing
 
-Provider/treatment adapters may append JSONL resource events to `DV_EVENT_LOG`. Each event must bind to the exact `run_id` and contain a unique `event_id`.
+E0–E3 are frozen only as conceptual arms:
 
-Example token/cost event:
+- E0 strongest-direct;
+- E1 cheap/free-direct + verify;
+- E2 cheap-first -> state-based escalation -> strong;
+- E3 static task-family policy.
 
-```json
-{"run_id":"...","event_id":"...","token_category":"execution","tokens":1234,"monetary_cost":0.01,"currency":"USD","source":"provider-usage"}
-```
+No concrete provider/model/executor command, configuration version, context policy, escalation boundary, or provider telemetry adapter is yet frozen for these arms.
 
-The verifier's final non-empty stdout line must be a JSON object, for example:
+Selecting those values during execution would create the treatment after the pilot design and make the run non-reproducible as an observation of a frozen treatment.
 
-```json
-{"outcome":"YES","harness_valid":true,"evidence_refs":["path/to/evidence"],"failure_attribution":null}
-```
+### P4-BLK-003 — per-instance oracle materialization missing
 
-The executor process exit code is intentionally not equated with `VERIFIED_SOLVED_TASK`.
+Block 2 froze family-level oracle semantics but not executable per-instance commands.
 
-## Execution
+For example, the canonical F1 oracle explicitly records:
 
-From repository root:
+`exact per-instance commands/tests: DEFERRED to later oracle materialization`
 
-```bash
-python tools/dv_pilot_harness.py run --spec path/to/run-spec.json --out pilot-runs
-```
+and:
 
-Reconciliation can be repeated from preserved artifacts:
+`verifier implementation: NONE`
 
-```bash
-python tools/dv_pilot_harness.py reconcile pilot-runs/<run-id>
-```
-
-Tests:
-
-```bash
-python tools/test_dv_pilot_harness.py
-```
-
-## Validation performed before repository materialization
-
-The exact harness logic was exercised with synthetic executor/verifier processes before commit.
-
-Observed synthetic validation:
-
-- unique run directory created;
-- executor and verifier both executed;
-- stdout/stderr preserved separately;
-- one child resource event bound to the generated run ID;
-- 123 synthetic tokens reconciled;
-- USD 0.01 synthetic monetary cost reconciled;
-- wall-clock duration measured;
-- verifier `YES` with `harness_valid=true` and evidence reference accepted;
-- reconciliation returned `PASS`.
-
-The committed test suite additionally covers:
-
-1. complete telemetry -> reconciliation PASS;
-2. absent token/money telemetry -> values remain null/MISSING rather than zero;
-3. conclusive outcome without evidence reference -> reconciliation FAIL.
-
-Synthetic validation proves only harness mechanics. It is not a pilot treatment result.
-
-## Remaining Block 4R gate
-
-The former blocker `P4-BLK-001` is narrowed but not fully closed.
-
-The repository now has an executable measurement envelope, but real P0 execution still requires narrow adapters/configuration that bind:
-
-- the frozen six development tasks selected by Block 4C;
-- the actual E0-E3 treatment commands;
-- provider usage/billing telemetry where applicable;
-- the already-frozen F1-F6 oracle commands/evidence;
-- reproducible task environments.
-
-These adapters must prefer existing execution/evaluation infrastructure (including benchmark-native harnesses where appropriate) and must not become a generic dv runtime.
+Therefore the harness cannot yet bind a real candidate state to an already-materialized independent verifier without inventing evaluation commands after the fact.
 
 ## Decision
 
-`BLOCK_4R_HARNESS = MATERIALIZED`
+The measurement harness itself has reached the defensible first-version boundary.
 
-`HARNESS_MECHANICS = SYNTHETICALLY_EXECUTED`
+`BLOCK_4R = COMPLETE`
 
-`REAL_P0_RUNS = NOT_YET_EXECUTED`
+`HARNESS_V1 = READY`
 
-`P4-BLK-001 = NARROWED_TO_REAL_ADAPTER/ENVIRONMENT_BINDING`
+`HARNESS_TESTS = 6/6 PASS`
+
+`REAL_P0_RUNS = 0/24`
+
+`P4-BLK-001 = CLOSED (measurement harness materialized)`
+
+`P4-BLK-002 = OPEN (treatment operationalization)`
+
+`P4-BLK-003 = OPEN (per-instance oracle materialization)`
+
+`P0_REENTRY = BLOCKED BEFORE EXECUTION`
 
 `ARCHITECTURE_APPROVAL = NONE`
 
-The next defensible action is a real 4R dry run on one development task/treatment using its frozen oracle and real telemetry. Only if reconciliation passes should the 24-run P0 matrix begin.
+No P0 treatment outcome has been observed, so no treatment ranking or policy conclusion exists.
+
+## Next defensible block
+
+Before P0 can execute, a separate pre-outcome materialization block must freeze only the missing operational bindings:
+
+1. concrete E0–E3 treatment configurations and narrow telemetry adapters;
+2. executable verifier/oracle commands for the six P0 development instances;
+3. reproducible workspace/environment recipes bound to the already-frozen base revisions;
+4. one real dry-run admission check through Harness v1.
+
+This next block must prefer existing provider/benchmark/project-native mechanisms and must not expand into a generic dv runtime.
