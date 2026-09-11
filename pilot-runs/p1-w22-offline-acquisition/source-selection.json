@@ -1,0 +1,38 @@
+{
+  "new_source_selected": false,
+  "acquisition": "NOT_APPLICABLE",
+  "rationale": {
+    "unresolved_gap": "independent parent-side verifier with valid reproducible parent product failure and executable preservation",
+    "preferred_sources_reviewed": [
+      {
+        "repository": "C:\\Projetos\\metao-gate",
+        "status": "REJECTED_CLOSED",
+        "evidence": "W18 parent focal PASS; NO_PARENT_FAILURE; solution diff not inspected"
+      },
+      {
+        "repository": "C:\\Projetos\\opencode-direct-proof",
+        "status": "NOT_SELECTED",
+        "evidence": "W20 recorded no P1 verifier metadata in DV"
+      },
+      {
+        "repository": "C:\\Projetos\\naia",
+        "status": "PRESERVED_CLOSED_LEAD",
+        "evidence": "no undecided lead with a newly satisfied unblock condition"
+      },
+      {
+        "repository": "C:\\Projetos\\bpt2-abp",
+        "status": "BLOCKED_PRIOR_LEAD_NOT_REOPENED",
+        "evidence": "NuGet/network blocker remains; no new offline package supply observed"
+      },
+      {
+        "repository": "C:\\Projetos\\searchleads",
+        "status": "IN_CLOSED_INVENTORY",
+        "evidence": "already represented in the closed 18-candidate inventory"
+      }
+    ],
+    "selection_decision": "no local source met the acquisition rationale without reopening a definitive rejection or requiring prohibited solution inspection",
+    "network_constraint": "TCP 443 unavailable; no arbitrary repository expansion was attempted"
+  },
+  "metadata_only_leads": [],
+  "leads_frozen": []
+}

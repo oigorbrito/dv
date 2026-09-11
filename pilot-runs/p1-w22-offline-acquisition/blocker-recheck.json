@@ -1,0 +1,27 @@
+{
+  "wave": "P1-W22",
+  "blockers": [
+    {
+      "id": "P1-W1-BLK-002",
+      "status": "OPEN",
+      "observed_condition": "TASK_CORPUS remains PARTIAL with admitted D-F2-05, D-F5-01, D-F6-01",
+      "impact": "COMPARATIVE_CORPUS_READY remains NO",
+      "unblock_condition": "new independently admissible verifier-first task"
+    },
+    {
+      "id": "P1-W4-BLK-STRONG-CREDENTIAL",
+      "status": "OPEN",
+      "observed_condition": "OPENAI_API_KEY=False and ANTHROPIC_API_KEY=False",
+      "impact": "strong execution remains NOT_TESTED",
+      "unblock_condition": "authorized credential becomes independently available"
+    },
+    {
+      "id": "P1-W16-SMAG-PRESERVATION-NETWORK",
+      "status": "OBSERVED_NON_GATING",
+      "observed_condition": "DNS passes but TCP/443 is unavailable",
+      "impact": "does not change definitive SMAG-N1 rejection for NO_PARENT_FAILURE",
+      "unblock_condition": "reproducible network-enabled environment or repository-defined offline fixture for an undecided lead"
+    }
+  ],
+  "new_blockers": []
+}

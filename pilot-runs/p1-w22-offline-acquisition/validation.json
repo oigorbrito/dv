@@ -1,0 +1,19 @@
+{
+  "json_parse": "PASS; 5/5 W22 JSON artifacts",
+  "candidate_id_uniqueness": "PASS; no new candidate IDs",
+  "sha_resolution": "PASS for carried admitted task references; no new SHA selected",
+  "verifier_hash_validation": "PASS for carried evidence references; no new verifier",
+  "lockfile_hash_validation": "NOT_APPLICABLE; no surviving new lead",
+  "parent_failure_gate": "PASS; no lead advanced; prior METAO-GATE-N1 remains rejected",
+  "failure_attribution_consistency": "PASS",
+  "closed_inventory_exclusion": "PASS",
+  "solution_leakage_scan": "PASS; zero solution diffs opened",
+  "recommendation_policy_check": "NOT_APPLICABLE; no new recommendation emitted",
+  "evidence_path_validation": "PASS",
+  "holdout_leakage_scan": "PASS; HOLDOUT=SEALED and no access",
+  "p0_immutability": "PASS; no P0 artifact changed",
+  "secret_scan": "PASS; no credential values recorded",
+  "harness_self_test": "PASS; 9/9",
+  "git_diff_check": "PASS",
+  "literal_harness_command": "NOT_APPLICABLE; exit 2 because command requires a subcommand"
+}

@@ -1,0 +1,33 @@
+{
+  "wave": "P1-W22",
+  "objective": "offline-reproducible verifier-first acquisition of at most one new candidate",
+  "parent_failure_gate": "PARENT_FOCAL_PASS => REJECT; no solution inspection",
+  "new_candidate": null,
+  "parent_materializations": 0,
+  "parent_focal_executions": 0,
+  "solution_diffs_authorized": 0,
+  "candidate_materializations": 0,
+  "preservation_executions": 0,
+  "admitted_candidates": [],
+  "rejected_candidates": [
+    {
+      "candidate": "METAO-GATE-N1",
+      "classification": "NO_PARENT_FAILURE",
+      "evidence": "W18 parent focal PASS; 12/12; exit 0"
+    },
+    {
+      "candidate": "all closed W17-W21 and block-5b inventory candidates",
+      "classification": "CLOSED_PRIOR_DECISION",
+      "evidence": "closed-inventory-exclusion.json"
+    }
+  ],
+  "blocked_candidates": [],
+  "result": "NO_NEW_ADMISSION",
+  "stop_condition": "B/C/D: all defensible leads are closed or no source satisfies the offline verifier-first rationale; only external blockers remain",
+  "task_corpus": "PARTIAL",
+  "comparative_corpus_ready": "NO",
+  "p1_s1_release": "NO",
+  "real_p0_runs": "0/24",
+  "holdout": "SEALED",
+  "treatment_model_api_execution": "NOT_EXECUTED"
+}

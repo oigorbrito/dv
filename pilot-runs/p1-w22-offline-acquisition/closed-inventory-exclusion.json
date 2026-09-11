@@ -1,0 +1,17 @@
+{
+  "source": "pilot-runs/block-5b/task-discovery-screening.json",
+  "candidate_count": 18,
+  "fresh_reopen_count": 0,
+  "excluded_from_fresh_acquisition": [
+    "18 historically closed candidates",
+    "W15 contaminated leads",
+    "SMAG-N1",
+    "SMAG-N2",
+    "METAO-GATE-N1",
+    "all rejected candidates from W17-W21"
+  ],
+  "reconsidered_blocked_candidates": [],
+  "reason": "no previously blocked undecided lead had its exact unblock condition satisfied",
+  "solution_diffs_opened": 0,
+  "candidate_executions": 0
+}

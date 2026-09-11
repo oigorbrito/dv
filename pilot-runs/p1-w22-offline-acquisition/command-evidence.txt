@@ -1,0 +1,33 @@
+WAVE P1-W22 COMMAND EVIDENCE
+
+Baseline repository:
+  branch: main
+  HEAD: 13d2742c7b3ea2de0f5accb02089dd4edf2a2b35
+  origin/main: 13d2742c7b3ea2de0f5accb02089dd4edf2a2b35
+  divergence: 0 0
+  worktree: clean
+
+python -B tools/dv_pilot_harness.py
+  exit code: 2
+  stderr: usage: dv_pilot_harness.py [-h] {run,reconcile,policy-check} ...
+  stderr: error: the following arguments are required: command
+
+python -B tools/test_dv_pilot_harness.py
+  exit code: 0
+  result: Ran 9 tests; OK
+
+git diff --check
+  exit code: 0
+
+Network:
+  Resolve-DnsName github.com: PASS; 4.228.31.150
+  TCP github.com:443: FAIL; TcpClient connection did not succeed within 3 seconds
+
+Credential presence checks (values not printed):
+  OPENAI_API_KEY PRESENT=False
+  ANTHROPIC_API_KEY PRESENT=False
+  GOOGLE_API_KEY PRESENT=False
+  GEMINI_API_KEY PRESENT=True
+  OPENROUTER_API_KEY PRESENT=False
+
+No model, treatment, candidate, solution diff, paid API, or holdout command was run.
