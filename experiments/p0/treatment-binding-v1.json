@@ -1,0 +1,77 @@
+{
+  "schema_version": "dv-treatment-binding-v1",
+  "frozen_at": "2026-09-10",
+  "purpose": "P0 development pilot only; no architecture approval",
+  "provider": "OpenAI",
+  "execution_surface": "Codex/Work-compatible model tiers or API adapter with provider-native usage telemetry",
+  "pricing_snapshot_usd_per_million_tokens": {
+    "gpt-5.6-sol": {"input": 4.0, "cached_input": 0.4, "output": 20.0},
+    "gpt-5.6-luna": {"input": 0.2, "cached_input": 0.02, "output": 1.2}
+  },
+  "treatments": {
+    "E0": {
+      "semantics": "strongest-direct",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high",
+      "escalation": "none",
+      "verification": "frozen family oracle"
+    },
+    "E1": {
+      "semantics": "cheap-direct-plus-verify",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "escalation": "none",
+      "verification": "frozen family oracle"
+    },
+    "E2": {
+      "semantics": "cheap-first-clean-state-based-escalation-to-strong",
+      "initial_model": "gpt-5.6-luna",
+      "initial_reasoning_effort": "medium",
+      "escalation_model": "gpt-5.6-sol",
+      "escalation_reasoning_effort": "high",
+      "escalation_certificate": {
+        "allowed_triggers": [
+          "executor cannot produce a candidate state within the run timeout",
+          "executor explicitly reports inability/blocker before candidate verification",
+          "candidate reaches frozen verifier and mandatory V1/V2 evidence fails"
+        ],
+        "forbidden_triggers": [
+          "subjective quality impression",
+          "manual preference",
+          "knowledge of holdout outcome",
+          "post-hoc family-specific exception"
+        ],
+        "state_rule": "escalation starts from the same frozen task base plus compact factual failure certificate; do not pass hidden chain-of-thought or unbounded prior transcript"
+      },
+      "verification": "frozen family oracle"
+    },
+    "E3": {
+      "semantics": "static-task-family-policy",
+      "policy_map": {
+        "F1": "gpt-5.6-luna",
+        "F2": "gpt-5.6-sol",
+        "F3": "gpt-5.6-sol",
+        "F4": "gpt-5.6-sol",
+        "F5": "gpt-5.6-luna",
+        "F6": "gpt-5.6-luna"
+      },
+      "policy_basis": "pre-outcome structural task-family complexity hypothesis; experimental arm only",
+      "verification": "frozen family oracle"
+    }
+  },
+  "telemetry_requirements": [
+    "provider/model identity",
+    "input tokens",
+    "cached input tokens when reported",
+    "output tokens",
+    "provider-native usage record or raw response",
+    "price snapshot identifier",
+    "wall-clock timestamps",
+    "all retries/escalations retained under parent run"
+  ],
+  "freeze_rules": [
+    "do not change E0-E3 after observing P0 outcomes",
+    "if a selected model/surface is unavailable, mark run INCONCLUSIVE and amend protocol prospectively rather than silently substitute",
+    "subscription credits are not treated as zero economic cost; token-equivalent accounting remains primary"
+  ]
+}
