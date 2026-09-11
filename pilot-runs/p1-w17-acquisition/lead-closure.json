@@ -1,0 +1,14 @@
+{
+  "wave":"P1-W17",
+  "scope":"existing development inventory and W16 closed leads only",
+  "new_candidates_frozen":0,
+  "screened_records_reference":"pilot-runs/block-5b/task-discovery-screening.json",
+  "closed_leads_reference":"pilot-runs/p1-w16-acquisition/leads-frozen.json",
+  "candidate_inspection_policy":"no new solution diff opened; no candidate execution",
+  "screened_existing_candidates":18,
+  "admitted_existing_tasks":["D-F2-05","D-F5-01","D-F6-01"],
+  "remaining_independent_executable_work":"NONE_IDENTIFIED",
+  "stop_reason":"all remaining work depends on registered environment, credential, or corpus acquisition blockers",
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

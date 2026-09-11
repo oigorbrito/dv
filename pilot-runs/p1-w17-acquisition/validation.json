@@ -1,0 +1,15 @@
+{
+  "wave":"P1-W17",
+  "json_parse":"PASS",
+  "prior_inventory_reference":"PASS",
+  "parent_failure_gate_applied":"PASS",
+  "new_candidate_count":"0",
+  "solution_leakage":"PASS; no new solution diff inspected",
+  "candidate_execution":"NOT_EXECUTED",
+  "treatment_execution":"NOT_EXECUTED",
+  "holdout_leakage":"PASS; SEALED",
+  "p0_immutability":"PASS",
+  "secret_scan":"PASS",
+  "harness_self_test":"PASS; 6/6",
+  "git_diff_check":"PASS"
+}

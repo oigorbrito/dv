@@ -1,0 +1,12 @@
+{
+  "wave":"P1-W17",
+  "parent_failure_gate":"PARENT_FOCAL_MUST_DEMONSTRATE_VALID_FAILURE",
+  "records":[
+    {"task_id":"D-F2-05","parent_evidence":"pilot-runs/p1-w12-postgres-runtime/d-f2-05-execution.json","focal":"PASS; six transactional claim/recovery invariants","decision":"CARRY_FORWARD_ONLY; no fresh candidate acquisition"},
+    {"task_id":"D-F5-01","parent_evidence":"pilot-runs/p1-w5-verifier-first-corpus-closure/d-f5-execution.json","focal":"PASS; 10 tests","decision":"CARRY_FORWARD_ONLY; no fresh candidate acquisition"},
+    {"task_id":"D-F6-01","parent_evidence":"pilot-runs/block-4ah-offline-oracle-closure/evidence/f6-offline-recovery-results.json","focal":"PASS; locked offline workspace evidence","decision":"CARRY_FORWARD_ONLY; no fresh candidate acquisition"}
+  ],
+  "rejected_or_blocked_inventory":"17 prior development candidates remain recorded in pilot-runs/block-5b/task-discovery-screening.json; W16 SMAG-N1/N2 remain closed and are not reused",
+  "no_solution_diff_authorized":"YES",
+  "holdout":"SEALED"
+}
