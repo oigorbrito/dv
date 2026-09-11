@@ -5,7 +5,7 @@ loop on September 11, 2026. It does not report treatment evidence.
 
 ## Evidence boundary
 
-- DV `HEAD` is `ba9de9ce395afeca7dd003b4446f2bfe99d2606c`.
+- DV `HEAD` is `87e87614a3bbbc246a55e367b5889a85bef25761`.
 - The worktree is clean. `origin/main` is an ancestor, but the local branch is
   five commits ahead; remote publication remains unauthorized.
 - The Harness self-test passes `9/9`. All 28 current P1 JSON files parse, the
@@ -52,6 +52,12 @@ parent replay was blocked before test execution because the environment lacks
 `pytest` and `fitz`. The lead is therefore recorded as
 `BLOCKED / ENVIRONMENT_NOT_REPRODUCIBLE`; it is not admitted and is not
 classified as a product failure.
+
+A third local lead in `searchleads` was screened at commit `eb78122`. It changes
+only `.gemini/rules/empirical_guidelines.yaml` and `GEMINI.md`, with no product
+change and no independently failing parent/verifier pair. It is rejected as
+`NO_PRODUCT_VERIFIER_PAIR`; no solution diff was inspected and no source was
+modified.
 
 ## Remaining decision
 

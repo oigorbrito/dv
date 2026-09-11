@@ -1,10 +1,10 @@
 {
   "record_id": "mvp-execution-loop-2026-09-11-local-gate",
   "repository": "C:\\Projetos\\dv",
-  "dv_head": "ba9de9ce395afeca7dd003b4446f2bfe99d2606c",
+  "dv_head": "87e87614a3bbbc246a55e367b5889a85bef25761",
   "origin_main": "13d2742c7b3ea2de0f5accb02089dd4edf2a2b35",
   "worktree": "CLEAN",
-  "divergence": {"remote_only": 0, "local_only": 5},
+  "divergence": {"remote_only": 0, "local_only": 10},
   "treatment_execution": "NOT_EXECUTED",
   "holdout": "SEALED",
   "harness_self_test": {"command": "python -B tools/test_dv_pilot_harness.py", "exit_code": 0, "result": "9/9 PASS"},
@@ -80,6 +80,17 @@
       "errors": ["ModuleNotFoundError: No module named 'pytest'", "ModuleNotFoundError: No module named 'fitz'"]
     },
     "admissibility": "BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
+  "searchleads_lead": {
+    "repository": "C:\\Projetos\\searchleads",
+    "task_commit": "eb78122",
+    "parent": "ae852790e16a2969158e605a99e1a8e3664d72c7",
+    "changed_path_metadata": [".gemini/rules/empirical_guidelines.yaml", "GEMINI.md"],
+    "parent_verifier_inventory": "pre-existing Python test suite present; no focal product verifier tied to the documentation/rules change",
+    "screening_result": "REJECTED_NO_PRODUCT_VERIFIER_PAIR",
+    "reason": "candidate changes documentation and guideline configuration only; no independently failing parent/verifier pair for a product task was established",
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
