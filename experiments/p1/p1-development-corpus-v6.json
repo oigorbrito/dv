@@ -1,0 +1,74 @@
+{
+  "corpus_id": "p1-development-corpus-v6",
+  "supersedes": "experiments/p1/p1-development-corpus-v5.json",
+  "selection_rule": "verifier-first admission after reproducible parent focal replay and scoped preservation evidence",
+  "admitted_tasks": [
+    {
+      "task_id": "D-F2-05",
+      "family": "F2",
+      "repository": "oigorbrito/bpt2-abp",
+      "base_sha": "f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+      "verifier_ref": "tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/Program.cs plus ProductionExplicitClaim/Program.cs",
+      "verifier_hash": {
+        "Program.cs": "3DEB12B4F04EEA19B8E3E7B320EDC6EB5A126E689C450A83C2511399C93AD6E3",
+        "ProductionExplicitClaim/Program.cs": "3EF55825618159AD98BF2281D08720B06AC624596B67C9DEF094DA830A6E3B9F"
+      },
+      "evidence_ref": "pilot-runs/p1-w12-postgres-runtime/d-f2-05-execution.json",
+      "admissibility": "ADMITTED"
+    },
+    {
+      "task_id": "D-F2-06",
+      "family": "F2",
+      "repository": "oigorbrito/smag",
+      "base_sha": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+      "candidate_sha": "e1f939f9a023e4da87cc2754d78e5132a5978c3b",
+      "task_statement_ref": "oigorbrito/smag:docs/evidence/SMAG-WAVE1-STAGING-WINDOWS-LINKS-V1.md@d07422f79b01738f260f2446eb9689ca031392e7",
+      "task_statement_hash_sha1": "194343d4e01ec1b15a83e45096156a6db4614f64",
+      "verifier_ref": "packages/smag-governance/test/git-staging.test.mjs",
+      "verifier_hash_sha1": "15dae37524ecf0d24e9dfd570b618bacdba4135f",
+      "verifier_provenance": "present in parent before candidate; parent blob is unchanged in candidate",
+      "preservation_ref": [
+        "packages/smag-governance/test/git.test.mjs",
+        "packages/smag-governance/test/staging-links.test.mjs"
+      ],
+      "preservation_hash_sha1": {
+        "git.test.mjs": "2d7e1d2d615444fa4297825e5484cc3bb1d3347a",
+        "staging-links.test.mjs": "bd43d916b1d073e21a3455888c66f9ade7a97d59"
+      },
+      "baseline": {
+        "parent_focal": "FAIL",
+        "parent_exit_code": 1,
+        "candidate_focal": "PASS",
+        "candidate_exit_code": 0,
+        "targeted_preservation": "5_PASS_1_EXPLICIT_PLATFORM_SKIP_IN_PARENT_AND_CANDIDATE"
+      },
+      "environment_contract": "Node v24.18.0 and Git on Windows; no external service; file-symlink fixture requires symlink privilege and is explicitly skipped when unavailable",
+      "evidence_ref": "pilot-runs/mvp-execution-loop/2026-09-11-local-gate-evidence.json#smag_git_staging_lead",
+      "admissibility": "ADMITTED_WITH_EXPLICIT_PLATFORM_LIMITATION"
+    },
+    {
+      "task_id": "D-F5-01",
+      "family": "F5",
+      "repository": "oigorbrito/metaO",
+      "base_sha": "9cc5d6d722d509175a669624c9235156dffb4f85",
+      "verifier_ref": "tests/unit/test_operator_ux_doctor.py and test_roadmap_1_work_unit_06.py",
+      "verifier_hash": "8216e56aa683724f2a61368ebc04264174e4207c3694c9793894a98bd886563b",
+      "evidence_ref": "pilot-runs/p1-w5-verifier-first-corpus-closure/d-f5-execution.json",
+      "admissibility": "ADMITTED"
+    },
+    {
+      "task_id": "D-F6-01",
+      "family": "F6",
+      "repository": "oigorbrito/metaO",
+      "base_sha": "5d00cd284ce8fe810b0f5192c56d98608be516d4",
+      "verifier_ref": "pilot-runs/block-4ah-offline-oracle-closure/run-specs/D-F6-01-oracle.json",
+      "verifier_hash": "daad36054dcaaa179bcf4604374e17420884785d489401b462d08dda0be87af3",
+      "evidence_ref": "pilot-runs/block-4ah-offline-oracle-closure/evidence/f6-offline-recovery-results.json",
+      "admissibility": "ADMITTED"
+    }
+  ],
+  "counts": {"tasks": 4, "families": 3, "repositories": 3},
+  "comparative_corpus_ready": "NO",
+  "holdout": "SEALED",
+  "treatment_execution": "NOT_EXECUTED"
+}

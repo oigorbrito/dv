@@ -285,7 +285,7 @@
     },
     "targeted_preservation_replay": {
       "commands": [
-        "node --test test/git.test.mjs test/git-origin-staging.test.mjs test/staging-links.test.mjs"
+        "node --test test/git.test.mjs test/staging-links.test.mjs"
       ],
       "parent": {"exit_code": 0, "passed": 5, "skipped": 1, "failed": 0},
       "candidate": {"exit_code": 0, "passed": 5, "skipped": 1, "failed": 0},

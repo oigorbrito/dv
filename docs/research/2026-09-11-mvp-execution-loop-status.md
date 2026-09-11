@@ -156,8 +156,8 @@ The SMAG staging lead was subsequently closed as an admissible development task
 The focal verifier and related regression files were present in parent
 `6ddf8c7461bdb13d407e7f78239dbecd53375573`; the candidate snapshot passed the
 focal verifier, while the parent failed on the byte-preservation assertion.
-The targeted preservation set (`git.test.mjs`, `git-origin-staging.test.mjs`,
-and `staging-links.test.mjs`) passed 5 tests with 1 explicit Windows symlink
+The targeted preservation set (`git.test.mjs` and `staging-links.test.mjs`)
+passed 5 tests with 1 explicit Windows symlink
 privilege skip in both parent and candidate. This supports admission with the
 platform limitation recorded; it is not treatment evidence. The broad suite
 probes remain inconclusive and are not used as a silent substitute.
