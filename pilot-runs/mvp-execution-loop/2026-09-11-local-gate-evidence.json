@@ -83,6 +83,16 @@
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
+  "rag_git_environment_recheck": {
+    "repository": "C:\\Projetos\\Rag-git",
+    "checkout_status": "CLEAN",
+    "local_environment_found": false,
+    "dependency_manifests_at_parent": [],
+    "required_imports": ["pytest", "jsonschema", "fitz"],
+    "qualification_result": "BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE",
+    "no_install_or_version_change": true,
+    "treatment_executed": false
+  },
   "searchleads_lead": {
     "repository": "C:\\Projetos\\searchleads",
     "task_commit": "eb78122",
