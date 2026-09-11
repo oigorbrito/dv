@@ -1,0 +1,11 @@
+{
+  "wave": "P1-W4",
+  "blockers": [
+    {"blocker_id":"P1-W1-BLK-002","type":"CORPUS","status":"OPEN","impact":"only D-F6-01 is admissible and smoke-only","next_condition":"additional verifier-first task admission"},
+    {"blocker_id":"P1-W1-BLK-003","type":"EXECUTOR","status":"OPEN","impact":"both approved C1 credentials absent; no fully qualified strong path","next_condition":"authorized credential for OpenAI or Anthropic approved C1"},
+    {"blocker_id":"P1-W1-BLK-004","type":"HARNESS_SURFACE","status":"OPEN","impact":"W4 did not produce preservable new response; retry metadata remains unmeasured","next_condition":"successful preservable runtime probe and provider retry evidence"},
+    {"blocker_id":"P1-W4-BLK-STRONG-CREDENTIAL","type":"EXTERNAL_CREDENTIAL","status":"OPEN","impact":"P1-S0 promotion blocked","local_work_remaining":"NONE_FOR_STRONG_PATH","unblock_condition":"authorized credential for an already approved C1 surface"}
+  ],
+  "closed": ["P1-W1-BLK-001"],
+  "holdout": "SEALED"
+}

@@ -1,0 +1,14 @@
+{
+  "accounting_primary": "PASS_FOR_W3_TOTAL_USAGE_EVIDENCE; W4_CLOSURE_NOT_OBSERVED",
+  "accounting_partition_detail": "PARTIAL",
+  "gemini_output_and_cached_fields": "UNMEASURED",
+  "provider_retry_metadata": "UNMEASURED",
+  "strong_path_ready": false,
+  "economic_or_local_or_free_path_ready": false,
+  "harness_s1_ready": false,
+  "D-F6-01_admissible": true,
+  "holdout_sealed": true,
+  "P1_S1_RELEASE": "NO",
+  "smoke_spec_created": false,
+  "treatment_execution": "NOT_EXECUTED"
+}

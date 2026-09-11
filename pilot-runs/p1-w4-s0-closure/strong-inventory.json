@@ -1,0 +1,9 @@
+{
+  "order": ["C1-openai-sol", "C1-anthropic-opus"],
+  "candidates": [
+    {"candidate":"C1-openai-sol","provider":"OpenAI","model":"gpt-5.6-sol","credential_present":false,"status":"S0_CREDENTIAL_BLOCKED"},
+    {"candidate":"C1-anthropic-opus","provider":"Anthropic","model":"claude-opus-4.8","credential_present":false,"status":"S0_CREDENTIAL_BLOCKED"}
+  ],
+  "selection_result": "STRONG_PATH_BLOCKED_EXTERNAL_CREDENTIAL",
+  "secret_values": "NOT_CAPTURED"
+}
