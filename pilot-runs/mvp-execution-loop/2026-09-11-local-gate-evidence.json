@@ -94,6 +94,21 @@
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
+  "searchleads_parent_import_lead": {
+    "repository": "C:\\Projetos\\searchleads",
+    "task_commit": "9df9f6f9d15936796234fa969001e6175fd84780",
+    "parent": "9df9f6f9d15936796234fa969001e6175fd84780^",
+    "parent_materialization": "isolated git archive workspace; removed after replay",
+    "command": "python -B scripts/run_live_network_certification.py",
+    "cwd": "isolated parent root",
+    "exit_code": 1,
+    "observed_error": "ModuleNotFoundError: No module named 'searchleads'",
+    "preexisting_verifier": "tests/test_live_network_smoke.py exists but exercises the library with injected transports; it does not verify the script entrypoint/import-path contract",
+    "screening_result": "REJECTED_NO_INDEPENDENT_ENTRYPOINT_VERIFIER",
+    "reason": "parent import failure is reproducible, but no independent pre-existing verifier for the corrected script entrypoint was established; no solution diff inspected",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],

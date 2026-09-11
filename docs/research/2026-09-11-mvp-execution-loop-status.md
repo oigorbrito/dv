@@ -59,6 +59,14 @@ change and no independently failing parent/verifier pair. It is rejected as
 `NO_PRODUCT_VERIFIER_PAIR`; no solution diff was inspected and no source was
 modified.
 
+A fourth `searchleads` lead was screened at `9df9f6f`. Replaying its isolated
+parent with `python -B scripts/run_live_network_certification.py` produced the
+expected import failure (`ModuleNotFoundError: No module named 'searchleads'`,
+exit code 1). The parent already has library-level tests using injected
+transports, but they do not verify this script entrypoint. The lead is therefore
+rejected as `NO_INDEPENDENT_ENTRYPOINT_VERIFIER`; no solution diff was inspected
+and no source was modified.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor
