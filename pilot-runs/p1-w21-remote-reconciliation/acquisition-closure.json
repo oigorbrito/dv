@@ -1,0 +1,18 @@
+{
+  "wave": "P1-W21",
+  "closed_inventory": 18,
+  "carried_admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
+  "new_leads_frozen": 0,
+  "new_admissions": 0,
+  "reopened_rejections": 0,
+  "solution_diffs_opened": 0,
+  "candidate_executions": 0,
+  "treatment_model_api_execution": "NOT_EXECUTED",
+  "holdout": "SEALED",
+  "parent_failure_gate": "UNCHANGED",
+  "evidence_gate": "UNCHANGED",
+  "corpus": "PARTIAL",
+  "comparative_corpus_ready": "NO",
+  "p1_s1_release": "NO",
+  "decision": "NO_NEW_ADMISSION; NO_NEW_OBJECTIVE_ACQUISITION_EVIDENCE"
+}

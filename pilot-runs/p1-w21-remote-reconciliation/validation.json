@@ -1,0 +1,12 @@
+{
+  "wave": "P1-W21",
+  "harness": {"command": "python -B tools/test_dv_pilot_harness.py", "tests": 9, "exit_code": 0, "result": "PASS"},
+  "remote_reconciliation": "PASS",
+  "fast_forward_only": true,
+  "secret_scan": "PASS",
+  "holdout_leakage": "PASS; HOLDOUT=SEALED",
+  "solution_leakage": "PASS; no new solution diff opened",
+  "treatment_execution": "NOT_EXECUTED",
+  "p0_immutability": "PASS",
+  "git_diff_check": "PENDING_PRE_COMMIT"
+}
