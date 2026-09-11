@@ -32,6 +32,9 @@ The local NAIA lead at commit `756ebf1d` changes only
 `test/product/calendar.test.mjs`, but the parent test does not assert the
 changed list-range behavior. The lead therefore does not establish the
 required failing-parent/verifier pair and is rejected for this screening pass.
+An isolated archive of the parent was replayed with
+`node --test test/product/product-slice.test.mjs`: all 18 tests passed with
+exit code 0. This confirms `NO_PARENT_FAILURE`, rather than a product failure.
 No solution diff was inspected and no source was modified.
 
 ## Remaining decision

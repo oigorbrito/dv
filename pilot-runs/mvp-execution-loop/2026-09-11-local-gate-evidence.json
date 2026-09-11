@@ -39,6 +39,15 @@
     "preexisting_verifier": "test/product/calendar.test.mjs",
     "screening_result": "REJECTED_NO_PARENT_FAILURE_DEMONSTRATED",
     "reason": "the parent test suite contains no assertion for the changed list-range contract; no valid failing-parent/verifier pair was established",
+    "parent_baseline_replay": {
+      "materialization": "git archive of parent into isolated workspace",
+      "base_sha": "643e5a691bb14fa893c23b6aefd813ca19460783",
+      "command": "node --test test/product/product-slice.test.mjs",
+      "tests": 18,
+      "passed": 18,
+      "failed": 0,
+      "exit_code": 0
+    },
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
