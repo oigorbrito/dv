@@ -1,0 +1,12 @@
+{
+  "concrete_specs": 24,
+  "unique_run_ids": 24,
+  "valid": 24,
+  "invalid": 0,
+  "v2_tasks": ["D-F1-01", "D-F6-01"],
+  "exact_base_bindings": 6,
+  "holdout_references": 0,
+  "gold_or_solution_references": 0,
+  "harness_self_test": {"command":"python -B tools/test_dv_pilot_harness.py","tests":6,"exit_code":0},
+  "treatment_execution": false
+}

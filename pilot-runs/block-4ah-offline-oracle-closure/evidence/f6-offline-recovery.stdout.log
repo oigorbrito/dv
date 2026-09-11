@@ -1,0 +1,7 @@
+Command execution from experiments/rust-chassis-a with CARGO_NET_OFFLINE=true and --locked --offline.
+
+discovery_persistence_tests: test result: ok. 6 passed; 0 failed.
+phase6_shadow: test result: ok. 5 passed; 0 failed.
+cargo test --locked --offline --workspace: all executed test binaries passed; 0 failed.
+The phase6_shadow and preservation runs emitted expected simulated external-runtime panic diagnostics while their
+containment tests passed; these are test fixture output, not command failures.

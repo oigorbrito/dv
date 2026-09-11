@@ -1,0 +1,53 @@
+{
+    "status":  "EXECUTABLE",
+    "task_id":  "D-F6-01",
+    "task_family":  "F6",
+    "base_revision":  "5d00cd284ce8fe810b0f5192c56d98608be516d4",
+    "working_directory":  "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F6-01\\experiments\\rust-chassis-a",
+    "checks":  [
+                   {
+                       "id":  "persistence",
+                       "role":  "mandatory",
+                       "command":  [
+                                       "cargo",
+                                       "test",
+                                       "--locked",
+                                       "--workspace",
+                                       "--test",
+                                       "discovery_persistence_tests"
+                                   ],
+                       "expected_exit_codes":  [
+                                                   0
+                                               ]
+                   },
+                   {
+                       "id":  "external-target",
+                       "role":  "mandatory",
+                       "command":  [
+                                       "cargo",
+                                       "test",
+                                       "--locked",
+                                       "--workspace",
+                                       "--test",
+                                       "phase6_shadow"
+                                   ],
+                       "expected_exit_codes":  [
+                                                   0
+                                               ]
+                   },
+                   {
+                       "id":  "preservation",
+                       "role":  "mandatory",
+                       "command":  [
+                                       "cargo",
+                                       "test",
+                                       "--locked",
+                                       "--workspace"
+                                   ],
+                       "expected_exit_codes":  [
+                                                   0
+                                               ]
+                   }
+               ],
+    "oracle_contract_version":  "oracle-contract-v2"
+}

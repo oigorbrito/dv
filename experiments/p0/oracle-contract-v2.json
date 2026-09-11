@@ -1,0 +1,55 @@
+{
+  "oracle_contract_version": "oracle-contract-v2",
+  "supersedes": "block-2b-v1+4m-command-manifest-v1",
+  "scope": "prospective-neutral-operational-amendments",
+  "amendments": [
+    {
+      "task_id": "D-F1-01",
+      "category": "NEUTRAL_OPERATIONAL_AMENDMENT",
+      "frozen_v1": ["dotnet", "test", "RJ.DomainTests/RJ.DomainTests.csproj", "--filter", "FullyQualifiedName~ProcessTextNormalizerTests"],
+      "observed_defect": "The historical base stores RJ.DomainTests.csproj under tests/RJ.DomainTests, so the v1 root-relative path does not identify the intended project.",
+      "v2": ["dotnet", "test", "tests/RJ.DomainTests/RJ.DomainTests.csproj", "--filter", "FullyQualifiedName~ProcessTextNormalizerTests"],
+      "preservation_v2": ["dotnet", "test", "tests/RJ.DomainTests/RJ.DomainTests.csproj"],
+      "semantic_equivalence": "The exact same project and FullyQualifiedName filter are selected; only the omitted repository-relative tests/ segment is restored.",
+      "verifier_owned_artifact_added": false,
+      "artifact_hash_or_provenance": "exact base tree c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d; project path observed by git ls-tree",
+      "treatment_neutral": true,
+      "holdout_neutral": true,
+      "comparability_impact": "Makes the previously intended project addressable; no test, assertion, treatment, or corpus change."
+    },
+    {
+      "task_id": "D-F6-01",
+      "category": "NEUTRAL_OPERATIONAL_AMENDMENT",
+      "frozen_v1": {
+        "cwd": "workspace root",
+        "commands": [
+          ["cargo", "test", "--locked", "--workspace", "--test", "discovery_persistence_tests"],
+          ["cargo", "test", "--locked", "--workspace", "--test", "phase6_shadow"],
+          ["cargo", "test", "--locked", "--workspace"]
+        ]
+      },
+      "observed_defect": "The exact base has no Cargo.toml at repository root; the historical Cargo workspace is experiments/rust-chassis-a/Cargo.toml.",
+      "v2": {
+        "cwd": "experiments/rust-chassis-a",
+        "commands": [
+          ["cargo", "test", "--locked", "--workspace", "--test", "discovery_persistence_tests"],
+          ["cargo", "test", "--locked", "--workspace", "--test", "phase6_shadow"],
+          ["cargo", "test", "--locked", "--workspace"]
+        ]
+      },
+      "semantic_equivalence": "The same locked workspace and same named targets are executed; only the working directory is moved to the manifest's actual workspace root.",
+      "verifier_owned_artifact_added": false,
+      "artifact_hash_or_provenance": "exact base tree 5d00cd284ce8fe810b0f5192c56d98608be516d4; Cargo.toml and Cargo.lock observed under experiments/rust-chassis-a",
+      "treatment_neutral": true,
+      "holdout_neutral": true,
+      "comparability_impact": "Makes the frozen workspace commands executable without changing dependencies, targets, assertions, or acceptance criteria."
+    }
+  ],
+  "unresolved": [
+    {"task_id": "D-F2-01", "status": "UNRESOLVED_ORACLE_DEFECT", "reason": "Frozen focal module absent; no verifier-owned artifact identified."},
+    {"task_id": "D-F3-01", "status": "UNRESOLVED_ORACLE_DEFECT", "reason": "Frozen focal test absent; no verifier-owned artifact identified."},
+    {"task_id": "D-F4-01", "status": "UNRESOLVED_ORACLE_DEFECT", "reason": "Fail-to-Pass verifier artifact and injection procedure remain unspecified."}
+  ],
+  "holdout": "SEALED",
+  "treatment_execution": false
+}

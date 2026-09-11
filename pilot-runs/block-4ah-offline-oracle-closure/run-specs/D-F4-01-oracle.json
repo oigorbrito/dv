@@ -1,0 +1,24 @@
+{
+  "status": "EXECUTABLE",
+  "task_id": "D-F4-01",
+  "task_family": "F4",
+  "base_revision": "9d35699eb9f9e85e13a7c59b7acbf391dfb4c685",
+  "working_directory": "C:\\Projetos\\dv\\pilot-runs\\block-4af-offline-readiness\\workspaces\\D-F4-01",
+  "checks": [
+    {
+      "id": "candidate-focal",
+      "role": "mandatory",
+      "command": [
+        "cargo",
+        "test",
+        "--manifest-path",
+        "experiments/rust-chassis-a/metao-contracts/Cargo.toml",
+        "--test",
+        "marketplace_discovery_fixture_tests"
+      ],
+      "expected_exit_codes": [
+        0
+      ]
+    }
+  ]
+}
