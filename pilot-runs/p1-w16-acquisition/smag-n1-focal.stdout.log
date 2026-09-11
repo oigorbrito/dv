@@ -1,0 +1,15 @@
+✔ build establishes explicit READY barrier before run (3.9065ms)
+✔ failed build prevents executor/supervise start (1.2766ms)
+✔ executor start is observed strictly after SUPERVISOR_READY (10.3358ms)
+✔ three sequential sessions preserve READY before EXECUTOR_START (6.2261ms)
+✔ OpenHands-style operational readiness must succeed before SUPERVISOR_READY (0.831ms)
+✔ failed operational readiness prevents READY and executor execution (0.8529ms)
+✔ startup lifecycle events are observable before task execution (0.4805ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 235.4799

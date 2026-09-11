@@ -1,0 +1,952 @@
+✔ valid execution approval is bound to work unit, baseline and policy (5.2541ms)
+✔ baseline drift invalidates execution approval (2.1978ms)
+✔ policy drift invalidates execution approval (0.5692ms)
+✔ work unit mismatch invalidates approval reuse (0.3886ms)
+✔ expired approval blocks (0.723ms)
+✔ promotion approval is bound to exact audited diff (0.8567ms)
+✔ promotion grant without diff binding fails closed (0.4393ms)
+✔ required approval without grant stays pending, not PASS (0.3303ms)
+✔ CLI prints usage when called with no arguments (566.3726ms)
+✔ CLI --help displays implemented mission commands (473.6091ms)
+✔ CLI --help displays correct configuration paths and profiles (395.2286ms)
+✔ github --help displays supported actions without invoking executor (411.3266ms)
+✔ github --help documents configured default branch without advertising implicit dev (355.003ms)
+✔ github help displays supported actions without invoking executor (444.7599ms)
+✔ smag agents lists executor discovery results (4248.9731ms)
+✔ smag doctor exits with a report (1176.2744ms)
+✔ smag init creates .smag/config.json in target directory (346.4185ms)
+✔ smag init with --profile code creates code config (348.3229ms)
+✔ smag init fails if config.json already exists (299.1695ms)
+✔ smag init with --force overwrites existing config.json (323.6538ms)
+✔ smag --version prints version and exits 0 (366.6068ms)
+✔ smag --dry-run prevents target mutation (1882.5432ms)
+✔ smag run accepts a JSON task spec file (7646.5426ms)
+✔ github subcommand routing does not invoke executor for status (783.028ms)
+✔ github subcommand fails closed if repo missing (882.7521ms)
+✔ github subcommand accepts --repo override (538.8413ms)
+✔ github comment issue does not invoke executor and fails on missing repo (1091.9569ms)
+✔ github comment pr does not invoke executor and fails on missing repo (679.8159ms)
+✔ github issue N subcommand accepts config.json repository (436.1169ms)
+✔ smag bin outputs version, agents and help (1673.8982ms)
+✔ runtime builder preserves executor identity/version for provenance (0.8519ms)
+✔ runtime builder passes Codex task text as a single argv item after exec (0.1005ms)
+✔ BLOCKED_DEPENDENCY maps to governed blocked exit code (0.128ms)
+✔ normal task JSON preserves executor version, provenance and evidence package (0.2128ms)
+✔ github create-branch fails closed when no ref is passed and no config default exists (150.5131ms)
+✔ github create-branch respects config.github.defaultBranch when ref is not passed (204.4902ms)
+✔ github open-pr fails closed when no base is passed and no config default exists (165.1474ms)
+✔ github open-pr respects config.github.defaultBranch when base is not passed (198.0678ms)
+✔ smag run textual task uses supervisor session lifecycle (4691.5547ms)
+✔ smag run missing JSON path fails cleanly without executor (121.1093ms)
+✔ doctor passes Node.js and git checks in current environment (330.5144ms)
+✔ doctor warns when smag.json is absent (173.2125ms)
+✔ doctor passes config check when config is present (280.0219ms)
+✔ doctor marks executor PASS when READY (172.8107ms)
+✔ doctor marks executor FAIL when NOT_INSTALLED (235.5644ms)
+✔ doctor report includes executor identity in evidence (151.2581ms)
+✔ minimal mode excludes unrelated parent secrets (2.2544ms)
+✔ explicit environment values are passed even in minimal mode (0.4228ms)
+✔ inherit mode is explicit and preserves parent environment (0.5202ms)
+✔ allowlist mode inherits only named keys plus explicit values (5.6384ms)
+✔ unknown environment mode fails closed (0.9822ms)
+✔ non-string explicit environment value fails closed (0.2594ms)
+✔ unrequested isolation is NOT_CONFIGURED, not NOT_EVALUATED (3.9104ms)
+✔ pre-runtime isolation block keeps runtime and audit unexecuted (0.5284ms)
+✔ executed runtime PASS is classified EXECUTED (0.347ms)
+✔ dry-run records promotion as not requested, never PASS (17.3666ms)
+✔ configured acceptance not reached is NOT_EXECUTED (8.3158ms)
+✔ rollback PASS requires real rollback execution (2.7335ms)
+✔ execution approval and promotion approval are distinct evidence stages (0.8075ms)
+✔ all stage durations remain null until stage timing is actually measured (0.4263ms)
+✔ executor discovery returns status for all known executors (19.3885ms)
+✔ executor discovery reports READY when probe returns READY (0.5237ms)
+✔ executor discovery handles mixed statuses (0.5544ms)
+✔ executor discovery restricts to requested ids when only is given (0.5865ms)
+✔ executor discovery captures probe failure as NOT_INSTALLED (2.888ms)
+✔ resolveExecutor returns executor when READY (0.5675ms)
+✔ resolveExecutor throws for unknown id (1.4265ms)
+✔ resolveExecutor throws for not-ready executor — no silent fallback (0.467ms)
+✔ selectExecutor returns preferred when READY (1.708ms)
+✔ selectExecutor auto-selects first READY when no preference (5.97ms)
+✔ selectExecutor throws when no executor is READY (0.4764ms)
+✔ selectExecutor throws for specific unavailable executor — no silent fallback (0.4322ms)
+✔ probe invocation remains direct off Windows (1.899ms)
+✔ Windows probe invokes cmd.exe explicitly without shell:true (0.2259ms)
+✔ Windows probe falls back to cmd.exe when ComSpec is absent (0.2033ms)
+✔ J1 primary executor failure is recorded before fallback attempt (5.079ms)
+✔ J2/J3 fallback is marked isFallback=true and startedClean=true in log (0.4453ms)
+✔ J4/J5 runSupervised called with full executor info for policy binding by caller (0.4245ms)
+✔ J6 budget exceeded blocks fallback from running (0.2809ms)
+✔ J7 final result always identifies which executor was actually used (0.3532ms)
+✔ J7 final result identifies primary executor when primary succeeds (0.3084ms)
+✔ J8 executor not in authorizedFallbacks is never used silently (0.3496ms)
+✔ J8 empty authorized fallbacks means no fallback occurs (0.3179ms)
+✔ no-silent-executor-switch: result always contains explicit executor identity (1.3486ms)
+✔ BLOCKED decision does not trigger fallback (0.5022ms)
+✔ FAILED_ACCEPTANCE does not trigger fallback (0.4021ms)
+✔ governance core remains executor-agnostic (37.2963ms)
+✔ preferred executor is never silently substituted (1.4185ms)
+✔ explicit READY executor resolves without mutating governance contract (0.6142ms)
+✔ automatic selection chooses only an explicitly READY executor (0.4319ms)
+✔ no READY executor fails instead of inventing availability (0.3431ms)
+✔ FS_PERMISSION_IGNORED_CACHE keeps inaccessible cache directories from blocking (1456.1978ms)
+✔ FS_PERMISSION_NONESSENTIAL_DIR keeps control flow explicit for ignored paths (1214.9386ms)
+✔ FS_PERMISSION_REQUIRED_SOURCE blocks required baseline access (2260.2138ms)
+✔ UNKNOWN_CLASSIFICATION_FAILS_CLOSED (2719.6988ms)
+✔ NO_FALSE_PASS_ON_PARTIAL_OBSERVATION (876.4972ms)
+✔ GIT_BASE_DRIFT_BLOCKS_PROMOTION remains blocked when the target changes before promotion (9436.4554ms)
+✔ Git staging preserves source remote.origin.url (9352.4211ms)
+✔ Git staging does not invent origin when source has none (7255.2236ms)
+✔ Git staging materializes dirty state byte-for-byte without copying ignored dependency trees (9559.6002ms)
+✔ rollback backups remain exact and retain ignored local state (171.7258ms)
+✔ git porcelain parser handles added, modified, deleted, renamed, untracked, spaces, and unicode (3.4682ms)
+✔ staging delta excludes pre-existing untracked files but detects later mutation (14513.4762ms)
+Mission Run Summary:
+  Mission ID:          m-ge01
+  Status:              COMPLETED
+  Executed Count:      2
+  Executed Work Units: 2
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ GE01 — CREATE / EXECUTE SEPARATION (114.3712ms)
+Mission Run Summary:
+  Mission ID:          m-ge02
+  Status:              COMPLETED
+  Executed Count:      2
+  Executed Work Units: 2
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ GE02 — TWO WORK UNITS (335.5539ms)
+Mission Run Summary:
+  Mission ID:          m-ge03
+  Status:              RUNNING
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   1
+
+Mission Run Summary:
+  Mission ID:          m-ge03
+  Status:              COMPLETED
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ GE03 — STEP MODE (384.6255ms)
+Mission Run Summary:
+  Mission ID:          m-ge04
+  Status:              BLOCKED
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  1
+  Pending Approval:    0
+  Remaining Pending:   1
+
+✔ GE04 — BLOCK STOP (280.8829ms)
+Mission Run Summary:
+  Mission ID:          m-ge05
+  Status:              COMPLETED_WITH_BLOCKERS
+  Executed Count:      2
+  Executed Work Units: 2
+  Blocked Work Units:  1
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ GE05 — BLOCK CONTINUE (471.0535ms)
+Mission Run Summary:
+  Mission ID:          m-ge06
+  Status:              WAITING_APPROVAL
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    1
+  Remaining Pending:   1
+
+✔ GE06 — PENDING APPROVAL (270.2127ms)
+Mission Run Summary:
+  Mission ID:          m-ge07
+  Status:              BLOCKED
+  Executed Count:      0
+  Executed Work Units: 0
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ GE07 — INTERRUPTED RUNNING (269.3023ms)
+✔ GE08 — SAFE RESUME (352.6629ms)
+smag mission run error: ENOENT: no such file or directory, open 'C:\Users\IGORB~1\AppData\Local\Temp\smag-mission-execution-test-1789153745847\.smag\missions\missing-mission-id.json'
+smag mission run error: Unexpected token 'i', "invalid { json" is not valid JSON
+smag mission run error: Invalid missionId
+✔ GE09 — FAIL CLOSED (32.7811ms)
+smag mission run error: --max-work-units must be a positive safe integer
+smag mission run error: Invalid --max-work-units option: "-1"
+smag mission run error: Invalid --max-work-units option: "1.5"
+smag mission run error: Invalid --max-work-units option: "1x"
+Mission Run Summary:
+  Mission ID:          m-ge10
+  Status:              RUNNING
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   2
+
+✔ GE10 — BOUNDED EXECUTION (293.2846ms)
+✔ GE11 — EXECUTOR REPLACEABILITY (26.3539ms)
+Mission integration-mission created successfully.
+Mission Run Summary:
+  Mission ID:          integration-mission
+  Status:              COMPLETED
+  Executed Count:      2
+  Executed Work Units: 2
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ GE12 — REPRESENTATIVE CLI LIFECYCLE / INTEGRATION (242.8718ms)
+✔ GE13 — MISSION RUN JSON OUTPUT (195.0444ms)
+Mission Run Summary:
+  Mission ID:          m-ge02
+  Status:              COMPLETED
+  Executed Count:      0
+  Executed Work Units: 0
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+
+==================================================
+MISSION EXECUTION OVERHEAD BENCHMARK:
+CLI_PARSE_MS = 0.01
+MISSION_LOAD_MS = 0.73
+RUNNER_ORCHESTRATION_MS = 73.22
+SUPERVISE_MS = 0.00 (mocked)
+==================================================
+
+✔ OVERHEAD MEASUREMENT (103.723ms)
+✔ GI01 — EXPLICIT ISSUE SET (86.657ms)
+✔ GI02 — DUPLICATES (1.6896ms)
+✔ GI03 — FETCH FAILURE (1.8567ms)
+✔ GI04 — ISSUE CONTENT PRESERVATION (6.3291ms)
+✔ GI05 — REPOSITORY RESOLUTION (237.258ms)
+✔ GI06 — DETERMINISTIC IDENTITIES (6.7018ms)
+✔ GI07 — CREATE ONLY (7.0603ms)
+✔ GI08 — EXISTING MISSION (6.4785ms)
+✔ GI09 — SOURCE DRIFT (25.9457ms)
+✔ GI10 — MISSION RUNNER COMPATIBILITY / INTEGRATION (58.6808ms)
+✔ TRUST BOUNDARY: issue content != policy authority (25.8958ms)
+
+==================================================
+GITHUB MISSION INTAKE BENCHMARK:
+ISSUES_FETCHED = 3
+GITHUB_API_CALLS = 3
+INTAKE_TOTAL_MS = 3.00
+PERSISTENCE_MS = 3.00
+API_NETWORK_LATENCY = NOT_MEASURED (mocked)
+==================================================
+
+✔ API CALLS / OVERHEAD MEASUREMENT (5.3875ms)
+✔ CLI / input boundary - parseIssueNumberList (1.301ms)
+✔ Validation boundary - FETCH_CALLS_ON_INVALID_INPUT and MISSION_CREATED_ON_INVALID_INPUT (2.9751ms)
+✔ OA01 — INSPECT ACTIONABLE STATE (47.8663ms)
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+✔ OA02 — EXPLICIT RECONCILIATION (158.5491ms)
+smag mission reconcile error: Work Unit wu-1 is not in RECONCILIATION_REQUIRED state (status is PASS)
+✔ OA03 — WRONG STATE (78.9123ms)
+smag mission reconcile error: ENOENT: no such file or directory, open 'C:\Users\IGORB~1\AppData\Local\Temp\smag-mission-operator-test-1789153747583\.smag\missions\nonexistent-mission.json'
+✔ OA04 — WRONG IDENTIFIERS (21.0476ms)
+Mission Run Summary:
+  Mission ID:          m-oa05
+  Status:              BLOCKED
+  Executed Count:      0
+  Executed Work Units: 0
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+Mission Run Summary:
+  Mission ID:          m-oa05
+  Status:              COMPLETED
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ OA05 — CRASH → ACTION → RESUME (382.6897ms)
+Mission Run Summary:
+  Mission ID:          m-oa06
+  Status:              WAITING_APPROVAL
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    1
+  Remaining Pending:   0
+
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+Mission Run Summary:
+  Mission ID:          m-oa06
+  Status:              COMPLETED
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ OA06 — WAITING_APPROVAL / OA07 — INVALID APPROVAL (757.1121ms)
+Mission Run Summary:
+  Mission ID:          m-oa08
+  Status:              WAITING_APPROVAL
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    1
+  Remaining Pending:   0
+
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+Mission Run Summary:
+  Mission ID:          m-oa08
+  Status:              BLOCKED
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  1
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ OA08 — APPROVAL DOES NOT OVERRIDE GOVERNANCE (511.4791ms)
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+✔ OA09 — ACTION EVIDENCE (32.8ms)
+Mission Run Summary:
+  Mission ID:          m-oa10-reconcile
+  Status:              BLOCKED
+  Executed Count:      0
+  Executed Work Units: 0
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+Mission Run Summary:
+  Mission ID:          m-oa10-reconcile
+  Status:              COMPLETED
+  Executed Count:      1
+  Executed Work Units: 1
+  Blocked Work Units:  0
+  Pending Approval:    0
+  Remaining Pending:   0
+
+✔ OA10 — REPRESENTATIVE STOP/ACTION/RESUME (90.7588ms)
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+✔ OA11 — APPROVAL TARGET CONTEXT (438.6585ms)
+[
+  {
+    "workUnitId": "wu-2",
+    "status": "RECONCILIATION_REQUIRED",
+    "reason": "Interrupted",
+    "finalDecision": null,
+    "attempts": 1,
+    "executor": null,
+    "evidenceRef": null
+  },
+  {
+    "workUnitId": "wu-3",
+    "status": "PENDING_APPROVAL",
+    "reason": null,
+    "finalDecision": null,
+    "attempts": 1,
+    "executor": null,
+    "evidenceRef": null
+  }
+]
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+ACTION_APPLIED
+NEW_STATE = PENDING
+EXECUTION_OCCURRED = NO
+
+==================================================
+OPERATOR ACTIONS OVERHEAD BENCHMARK:
+INSPECT_ACTIONS_MS = 1.00
+RECONCILE_PERSIST_MS = 13.95
+APPROVAL_ACTION_MS = 411.12
+==================================================
+
+✔ OVERHEAD MEASUREMENT (437.7515ms)
+✔ G1 creating operator with token does not grant policy authority (3.967ms)
+✔ G2 commentIssue requires explicit authorization even with token (1.644ms)
+✔ G2 commentIssue requires authorization object with granted=true (0.6566ms)
+✔ G3 commentPull requires explicit authorization (0.7658ms)
+✔ G3 createWorkBranch requires explicit authorization (8.8709ms)
+✔ G3 openPull requires explicit authorization (0.5414ms)
+✔ G3 updatePullBody requires explicit authorization (0.4947ms)
+✔ G4 mergePull requires authorization AND approvalGranted (0.5321ms)
+✔ G4 deleteWorkBranch requires authorization AND approvalGranted (0.5379ms)
+✔ G5 deleteWorkBranch refuses main branch (0.6642ms)
+✔ G5 deleteWorkBranch refuses master branch (0.4069ms)
+✔ G5 deleteWorkBranch refuses dev branch (0.4083ms)
+✔ G5 createWorkBranch refuses protected branch as target (0.384ms)
+✔ G5 openPull refuses when head is a protected branch (0.2867ms)
+✔ G6 commentIssue refuses body containing token-shaped string (0.4446ms)
+✔ G6 commentPull refuses body containing token-shaped string (0.4203ms)
+✔ G7 sanitizeGitHubContent removes policy-sensitive fields (0.1981ms)
+✔ G8 createWorkBranch rejects unsafe branch names (0.2785ms)
+✔ G8 createWorkBranch rejects empty branch name (0.2189ms)
+✔ G9 status returns authenticated=false when no token (0.4093ms)
+✔ G10 operator exposes only expected read and write-safe operations (0.199ms)
+✔ G11 token presente + comando mutável explícito + policy DENY => ZERO remote mutation (1.2703ms)
+✔ G12 token presente + comando mutável explícito + policy REQUIRE_APPROVAL + approval ausente => BLOCKED (0.7145ms)
+✔ G13 token presente + comando mutável explícito + policy ALLOW => operação pode chegar ao adapter GitHub (194.2469ms)
+✖ G14 getChecks with SHA generates correct endpoint (10.0709ms)
+✖ G14 getChecks with branch generates correct endpoint (9.021ms)
+✖ G14 getChecks with tag generates correct endpoint (8.2173ms)
+✖ G14 getChecks 401/403/404 is not masked as zero checks (8.526ms)
+✔ G14 getChecks rejects empty or null ref (0.8006ms)
+✔ G14 getChecks rejects short SHA (0.359ms)
+✖ G8 createWorkBranch accepts full SHA and posts to git refs (5.3619ms)
+✔ G8 createWorkBranch rejects short SHA (0.7708ms)
+✔ G8 createWorkBranch rejects empty ref (0.2707ms)
+✔ G8 createWorkBranch attempts to resolve branch or tag (20.7022ms)
+✖ GitHub App credentials exchange JWT and POSTs to access_tokens endpoint (123.7818ms)
+✔ parseGitHubRef parses full GitHub issue URL (2.2484ms)
+✔ parseGitHubRef parses full GitHub PR URL (0.4397ms)
+✔ parseGitHubRef parses owner/repo#N format (0.3148ms)
+✔ parseGitHubRef parses #N local reference (0.7777ms)
+✔ parseGitHubRef returns nulls for unrecognized input (0.3881ms)
+✔ buildBudgetGate returns null when maxCostUsd is null (0.5057ms)
+✔ buildBudgetGate returns non-null with unknownCost flag when currentCostUsd is null but limit set (0.6751ms)
+✔ buildBudgetGate returns PASS when under budget (0.3366ms)
+✔ buildBudgetGate returns BLOCK when at or over budget (0.4973ms)
+✔ runWithRetry returns PASS on first attempt (14.4505ms)
+✔ runWithRetry retries RUNTIME_FAILED up to maxAttempts (1.3967ms)
+✔ runWithRetry stops retrying after PASS (0.4112ms)
+✔ runWithRetry does not retry BLOCKED decisions (0.2757ms)
+✔ runWithRetry uses custom shouldRetry predicate (0.3536ms)
+✔ runWithRetry with maxAttempts=1 never retries (1.1721ms)
+✔ Ensure test.yml does not use blacksmith runners (31.2745ms)
+✔ detectProject identifies Node.js project by package.json (31.211ms)
+✔ detectProject identifies Rust project by Cargo.toml (14.51ms)
+✔ detectProject identifies Go project by go.mod (12.3893ms)
+✔ detectProject identifies .NET project by .csproj (19.033ms)
+✔ detectProject identifies Python project by pyproject.toml (20.9628ms)
+✔ detectProject returns unknown for empty directory (11.3579ms)
+✔ detectProject returns unknown for mixed stack (19.2295ms)
+✔ resolveProfile returns correct built-in profiles (0.5744ms)
+✔ resolveProfile returns safe for unknown profile name (fail-closed) (3.4655ms)
+✔ resolveProfile maps legacy aliases (2.6144ms)
+✔ listProfiles returns all built-in profile names (0.4291ms)
+✔ code profile does not require approval (0.6889ms)
+✔ destructive profile requires approval (0.38ms)
+✔ smag init creates .smag/config.json with correct structure (59.3046ms)
+✔ smag init fails if config.json exists and force is not set (42.576ms)
+✔ smag init overwrites with --force (72.9482ms)
+✔ smag init fails-closed to safe for unknown profile (14.7218ms)
+✔ loadConfig returns safe defaults when no config present (14.7285ms)
+✔ loadConfig merges file config with profile defaults (29.2635ms)
+✔ loadConfig policy override replaces profile policy fields (23.8377ms)
+✔ INT01 - Representative End-to-End Governance Flow (Dry Run) (3474.9356ms)
+✔ INT02 - Fails closed if mutation survives (Real Execution) (8482.4265ms)
+✔ no isolation requirement remains NOT_CONFIGURED (2.2123ms)
+✔ explicit no-isolation requirement is NOT_REQUIRED (0.4973ms)
+✔ native process cannot satisfy filesystem isolation (1.4985ms)
+✔ native process cannot satisfy network and credential isolation (0.4282ms)
+✔ required=true without explicit capabilities fails closed (0.5856ms)
+✔ provider must prepare the runtime actually executed (0.5039ms)
+✔ provider with only documented/code-confirmed evidence cannot release critical isolation (0.5715ms)
+✔ provider mismatch blocks even when capabilities would otherwise pass (0.539ms)
+✔ malformed capability values fail closed (0.3902ms)
+✔ provider preparation failure blocks instead of degrading to native (0.7943ms)
+✔ Codex provider prepares workspace-write with network explicitly disabled (0.7564ms)
+✔ Codex provider strips any existing exec prefix before prepending its own (0.2733ms)
+✔ Codex provider blocks configured sandbox without representative verification (0.6276ms)
+✔ Codex provider blocks verification when active executor version is unknown (0.3833ms)
+✔ Codex verification is bound to platform and executor version (0.5312ms)
+✔ Codex provider never claims credential isolation (0.5182ms)
+✔ MOS01 — mission step consumes operator no-progress BLOCK config (121.5966ms)
+✔ MOS02 — unsupported operator REPLAN fails before Work Unit start (68.6178ms)
+✔ MOS03 — malformed operator config fails before Work Unit start (133.1549ms)
+✔ MOS04 — runMissionUntilStop snapshots resolved supervision options for the run (48.953ms)
+✔ MRP01 — existing plannerFn is reused for bounded no-progress REPLAN without runtime authority (47.4019ms)
+✔ MRP02 — retry planner receives no authority-bearing budget/policy/grant objects (110.8679ms)
+✔ MRP03 — repeated no-progress cannot exceed maxReplans (93.4794ms)
+✔ MRP04 — REPLAN without planner or explicit replan function blocks before supervise (14.2657ms)
+✔ MRP05 — explicit retry.replan takes precedence over plannerFn (16.1402ms)
+✔ MRP06 — planner exception blocks after proven no-progress (36.4458ms)
+✔ MRP07 — capability denial prevents both retry and replanning (13.2616ms)
+✔ MRP08 — mission planner cannot escalate runtime environment or timeout (19.9401ms)
+✔ MRB01 — recognized Work Unit elapsed budget is inherited by retry and blocks before the next attempt (158.0496ms)
+✔ MRB02 — explicit retry budget overrides inherited Work Unit budget (51.739ms)
+✔ MRS01 — legacy mission path remains single-attempt without retry configuration (111.0753ms)
+✔ MRS02 — retry can recover to PASS and persists both supervise attempts (34.7541ms)
+✔ MRS03 — no-progress authority blocks a mission before redundant third supervise attempt (15.9913ms)
+✔ MRS04 — changed retry evidence avoids false no-progress block (13.9809ms)
+✔ MRS05 — retry budget can block before supervise without corrupting mission state (43.618ms)
+✔ MRS06 — persisted mission retains retry attempt history after reload (125.4116ms)
+✔ MRS07 — capability block retains precedence and never enters retry (57.2943ms)
+✔ MRS08 — invalid retry/no-progress config blocks before supervise and leaves no phantom retry history (89.6213ms)
+✔ MRS09 — persisted retry history hashes intermediate reasons instead of storing raw text (161.6261ms)
+✔ MR01 — TWO PASS (131.541ms)
+✔ MR02 — BLOCK / STOP (29.9093ms)
+✔ MR03 — BLOCK / CONTINUE (120.9408ms)
+✔ MR04 — PASS THEN RESUME (146.3221ms)
+✔ MR05 — INTERRUPTED RUNNING (45.8528ms)
+✔ MR06 — PENDING APPROVAL (18.8179ms)
+✔ MR07 — EVIDENCE (55.2774ms)
+✔ MR08 — FAILURE (115.7902ms)
+✔ MR09 — EXECUTOR REPLACEABILITY (92.4642ms)
+✔ MR09A — TARGET WORKSPACE PRECEDENCE (1512.9059ms)
+✔ MR10 — BOUNDED LOOP (114.4557ms)
+✔ REPRESENTATIVE MULTI-WORKUNIT INTEGRATION (15460.329ms)
+
+==================================================
+MISSION RUNNER BENCHMARK:
+RUNNER_STEP_MEDIAN_MS = 6.87
+RUNNER_LOOP_OVERHEAD_MS = 2.35
+SUPERVISE_COMPONENT = 0.00 (mocked)
+==================================================
+
+✔ OVERHEAD MEASUREMENT (320.7511ms)
+✔ MRR01 — Mission replan can trigger trusted Codex task-payload rebuild (57.7851ms)
+✔ MRR02 — Mission replan can trigger trusted OpenCode task-payload rebuild (38.6616ms)
+✔ MRR03 — unvalidated executor runtime rebuild blocks before another Mission attempt (15.643ms)
+✔ MS01 create/persist deterministic mission schema (105.0856ms)
+✔ MS02 malformed state fails closed (0.7352ms)
+✔ MS03 deterministic first eligible selection (0.3224ms)
+✔ MS04 PASS Work Unit never selected again (24.4756ms)
+✔ MS05 BLOCKED preserves blocker + evidence (23.6556ms)
+✔ MS06 continueOnBlock=false stops queue (54.7242ms)
+✔ MS07 continueOnBlock=true allows next independent work while retaining blocker (41.0273ms)
+✔ MS08 interrupted RUNNING requires reconciliation (104.461ms)
+✔ MS09 duplicate resume never makes completed WU eligible (29.1624ms)
+✔ MS10 persistence write does not intentionally expose partial valid-looking state (7.6407ms)
+
+==================================================
+MEASUREMENT MEDIANS (ms):
+CREATE_MEDIAN_MS = 6.70
+LOAD_MEDIAN_MS = 12.56
+SELECT_MEDIAN_MS = 7.47
+RESULT_PERSIST_MEDIAN_MS = 15.81
+RESUME_MEDIAN_MS = 25.41
+==================================================
+
+✔ FASE 10 — MEASUREMENT / BENCHMARK (1093.785ms)
+✔ MA02 - relevant mutation killed -> adequacy PASS (36.59ms)
+✔ MA03 - relevant mutation survives -> adequacy FAIL (60.9193ms)
+✔ MA05 - target contamination fails closed (69.2829ms)
+✔ MA06 - provider unavailable when REQUIRED -> BLOCKED (2.1259ms)
+✔ MA07 - provider unavailable when OPTIONAL -> NOT_EXECUTED (1.8652ms)
+✔ MA11 - evidence identifies mutation + acceptance relationship (19.3387ms)
+✔ MA12 - zero mutations cannot produce PASS (5.3233ms)
+✔ HASH SYMLINK SAFETY - hashDirectory does not throw EISDIR and produces stable hash (39.5092ms)
+✔ WINDOWS/BUN-LIKE COPY SAFETY - node_modules symlinks do not cause EPERM during copy (45.8245ms)
+✔ NP01 — identical semantic inputs produce the same fingerprint regardless of object key order (2.5432ms)
+✔ NP02 — changed outcome changes the fingerprint (0.4233ms)
+✔ NP03 — first observation cannot prove no progress (1.3361ms)
+✔ NP04 — configured identical threshold blocks at the threshold (0.2823ms)
+✔ NP05 — changed fingerprint resets the consecutive streak (0.2477ms)
+✔ NP06 — non-consecutive repeats do not trigger (0.4315ms)
+✔ NP07 — invalid threshold fails closed as invalid configuration (0.3358ms)
+✔ NP08 — missing or invalid fingerprint fails closed when detector is configured (2.6183ms)
+✔ NP09 — canonical fingerprint rejects unsupported cyclic input (1.0599ms)
+✔ zero-change supervised run completes without rollback execution (10657.7361ms)
+✔ operator session submits three sequential tasks without repeated supervisor ceremony (2.8916ms)
+✔ operator session distinguishes executor preference from automatic selection (0.5665ms)
+✔ operator session status exposes project context without becoming policy authority (2.5071ms)
+✔ formatOperatorStatus labels executor preference separately from ready executors (0.3873ms)
+✔ OSC01 — bounded BLOCK config is normalized deterministically (2.5419ms)
+✔ OSC02 — noProgress=true uses conservative BLOCK defaults (0.3034ms)
+✔ OSC03 — operator config rejects REPLAN until a real planner provider is wired (0.6258ms)
+✔ OSC04 — unsupported retry fields fail closed (0.2774ms)
+✔ OSC05 — resolver loads supervision.retry from .smag/config.json (27.7565ms)
+✔ OSC06 — explicit programmatic retry has precedence over file config (17.8529ms)
+✔ OSC07 — malformed config JSON fails closed (35.283ms)
+✔ OSC08 — absent config leaves programmatic options unchanged (9.6424ms)
+✔ resolveGitHubOrigin prefers explicit --repo over config and remotes (574.9667ms)
+✔ resolveGitHubOrigin prefers configured repository over remotes (686.0978ms)
+✔ resolveGitHubOrigin prefers smag-private over origin (661.673ms)
+✔ resolveGitHubOrigin resolves GitHub HTTPS origin (657.2866ms)
+✔ resolveGitHubOrigin resolves GitHub SSH origin (679.0054ms)
+✔ resolveGitHubOrigin resolves ssh:// GitHub origin (890.4031ms)
+✔ resolveGitHubOrigin fails closed for non-GitHub origin (968.0083ms)
+✔ resolveGitHubOrigin rejects GitHub-looking non-GitHub host (916.1874ms)
+✔ path policy rejects traversal, absolute, and malformed paths (2.6824ms)
+✔ policy patterns support allow, deny, overrides, exact file, and directory prefixes (1.5496ms)
+✔ policy validation fails closed on malformed policy (0.3742ms)
+✔ pre-execution deliberation: SKIP avoids execution when work already completed (35.5513ms)
+✔ pre-execution deliberation: WARN allows override and proceeds to execution (34.3575ms)
+✔ structured planning: PROCEED/ESCALATE invokes planner and prepares execution (40.2541ms)
+✔ structured planning: Direct continues functioning without Structured Planning (34.3012ms)
+✔ process runner resolves spawn error exactly once (333.7661ms)
+✔ process runner times out and kills the child tree (336.4531ms)
+✔ process runner ignores close emitted while timeout handling is in progress (278.7367ms)
+✔ PROCESS_ARGUMENT_INJECTION blocks command-separator arguments before spawn (0.8073ms)
+✔ Windows npm shell path allows ordinary npm test arguments (1.7649ms)
+✔ Windows bare executor resolves PowerShell shim without shell parsing task arguments (0.4209ms)
+✔ Windows runtime resolves earlier PATH .cmd shim before later executable (0.2592ms)
+✔ Windows runtime prefers sibling PowerShell shim over .cmd when PATH contains spaces (0.2306ms)
+✔ Windows real executables remain direct when no PowerShell shim exists (0.3253ms)
+✔ Windows process runner uses resolved executor invocation (0.5859ms)
+✔ PROCESS_ARGUMENT_INJECTION rejects common Windows cmd metacharacters and newlines (0.2527ms)
+✔ provenance records harness, environment and configuration identity (554.839ms)
+✔ provenance does not serialize executor or acceptance environment secret values (287.6413ms)
+✔ structured hashes are deterministic across object key order (0.6446ms)
+✔ environment fingerprint is deterministic when recorded fields are identical (776.7534ms)
+✔ missing optional executor/model identity remains explicit instead of invented (280.8159ms)
+✔ all executed PASS controls produce release PASS (2.1125ms)
+✔ PASS without executed=true is a configuration failure (1.401ms)
+✔ blocking external blocker remains factual and blocks release (0.3415ms)
+✔ non-blocking external exception can permit release without changing factual status (0.2147ms)
+✔ NOT_EXECUTED blocking critical control blocks and never counts as executed-or-blocked coverage (0.2654ms)
+✔ NOT_APPLICABLE is accepted only as factual non-applicability (0.1625ms)
+✔ missing TEVV dimension fails configuration (0.2305ms)
+✔ unknown factual status fails configuration rather than being inferred (0.2757ms)
+✔ duplicate control ids fail configuration (0.3867ms)
+✔ RE01 - Evidence Package emits reproduction identity (2.7094ms)
+✔ RE02 - Secret values never serialized (0.3281ms)
+✔ RE05, RE06, RE09 - Identity mismatch blocks equivalence (deterministic hash) (0.3563ms)
+✔ RE07 - Expected and observed result are distinct fields (0.2748ms)
+✔ RE10 - Manifest hash is deterministic (0.2619ms)
+✔ H1 retry is bounded to exact maxAttempts (3.8441ms)
+✔ H1 retry stops exactly at maxAttempts even if shouldRetry returns true (0.4408ms)
+✔ H2 no infinite loop possible (maxAttempts is hard limit) (2.4432ms)
+✔ H2 invalid maxAttempts values fail closed before execution (0.5991ms)
+✔ H3 attempt N receives prior attempt failures in priorAttempts array (0.4392ms)
+✔ H4 each attempt has provenance recorded (0.5664ms)
+✔ H7 PASS does not erase prior failure history (0.4005ms)
+✔ H8 budget exceeded prevents additional retries (0.702ms)
+✔ H8 unknown configured budget prevents retries before execution (0.6367ms)
+✔ retry stops on BLOCKED (not a retryable decision) (0.6906ms)
+✔ retry stops on FAILED_ACCEPTANCE by default (0.318ms)
+✔ I1 evaluateBudget returns NOT_CONFIGURED when no limits set (0.2546ms)
+✔ I2 evaluateBudget returns EVALUATED when within cost limit (0.5344ms)
+✔ I3 evaluateBudget returns EXCEEDED when cost limit reached (0.5416ms)
+✔ I3 evaluateBudget returns EXCEEDED when cost limit exceeded (0.2409ms)
+✔ I3 evaluateBudget returns EXCEEDED when maxTurns exceeded (0.2824ms)
+✔ I7 unknown cost with a configured limit is UNKNOWN and not within budget (0.1966ms)
+✔ I8 unknown turn usage with a configured turn limit is UNKNOWN (0.1883ms)
+✔ I8 buildBudgetGate blocks when cost measurement is missing (0.2246ms)
+✔ I8 invalid budget measurements fail closed as UNKNOWN (0.149ms)
+✔ I9 EXCEEDED status prevents continuation via buildBudgetGate (0.1736ms)
+✔ I4 shared budget is checked before each retry attempt and blocks when exceeded (0.2636ms)
+✔ I6 budget passed via opts.budget is checked but not mutated by runWithRetry (0.2537ms)
+✔ unknown token measurement with configured limit blocks (2.3049ms)
+✔ token limit reached is EXCEEDED (0.3473ms)
+✔ provider exhausted blocks continuation (0.5152ms)
+✔ unknown provider credit state never becomes available (0.2704ms)
+✔ available provider credit alone evaluates within budget (0.2686ms)
+✔ retry wall-clock budget blocks before next attempt (3.7859ms)
+✔ elapsed time below limit permits attempt (0.5153ms)
+✔ invalid provider credit state fails closed (0.2466ms)
+✔ backwards-moving retry clock blocks (0.3864ms)
+✔ NPR01 — no-progress remains BLOCKED when no response handler is configured (2.4317ms)
+✔ NPR02 — deterministic CONTINUE response resets only the progress streak, not attempt count (1.7582ms)
+✔ NPR03 — CONTINUE cannot bypass the hard maxAttempts limit (4.3717ms)
+✔ NPR04 — invalid no-progress response fails closed (0.5552ms)
+✔ NPR05 — no-progress response exception fails closed (2.5692ms)
+✔ NPR06 — explicit BLOCK response remains authoritative (0.4416ms)
+✔ NPR07 — shared elapsed budget is not reset by CONTINUE response (1.2701ms)
+✔ NPR08 — response receives immutable attempt projections rather than mutable internal array (0.4709ms)
+✔ RNP01 — no-progress authority is disabled by default (2.4813ms)
+✔ RNP02 — two identical retryable observations block before a third attempt (1.6288ms)
+✔ RNP03 — changed fingerprints reset the streak and preserve bounded retry behavior (1.5424ms)
+✔ RNP04 — changed evidence for the same action is treated as changed progress state (0.7641ms)
+✔ RNP05 — missing fingerprint blocks continuation as unknown progress (0.4574ms)
+✔ RNP06 — fingerprint function failure blocks continuation (0.5766ms)
+✔ RNP07 — invalid no-progress threshold fails closed before execution (0.3422ms)
+✔ RNP08 — configured detector requires a fingerprint function (0.2474ms)
+✔ RNP09 — budget authority retains precedence before execution (0.7653ms)
+✔ RNP10 — PASS does not invoke no-progress measurement (0.4534ms)
+✔ RNP11 — no-progress fingerprints are bound into attempt provenance (0.3887ms)
+✔ RNP12 — non-retryable failure does not invoke no-progress measurement (0.2783ms)
+✔ RR01 — Codex rebuild changes only task payload (5.6991ms)
+✔ RR02 — OpenCode rebuild uses validated run invocation (0.6079ms)
+✔ RR03 — executor without validated rebuild semantics fails closed (4.7336ms)
+✔ RR04 — validator blocks command replacement (0.5964ms)
+✔ RR05 — validator blocks unrelated environment changes (2.1924ms)
+✔ RR06 — validator blocks timeout escalation (0.6286ms)
+✔ RR07 — non-cloneable runtime fails closed (3.2763ms)
+✔ RR08 — missing planning payload cannot rebuild runtime (0.3773ms)
+✔ collects sensitive values from known environment key names (3.3455ms)
+✔ exact known secret is redacted from text (1.4733ms)
+✔ longer overlapping secrets are redacted first (3.148ms)
+✔ explicit sensitive key metadata is supported (2.878ms)
+✔ deep redaction removes known values from evidence-like objects (0.5912ms)
+✔ arbitrary transformed secret is outside exact-match redaction scope (0.2658ms)
+✔ SimpleMutationProvider finds and kills mutants (658.4684ms)
+✔ SimpleMutationProvider detects survived mutants (559.329ms)
+✔ copyWorkspaceTree preserves ordinary files (78.7374ms)
+✔ Windows staging branch remaps node_modules directory links inside the staging root (1037.3943ms)
+﹣ Windows staging branch materializes internal node_modules file links (19.7521ms) # Windows host cannot create file-symlink fixture without symlink privilege; product branch remains covered by portable injected-platform regression
+✔ Windows staging branch rejects node_modules links that escape the workspace (438.1343ms)
+✔ known executor readiness uses the real process runner before READY (5.1858ms)
+✔ known executor readiness fails closed when operational probe fails (1.6433ms)
+✔ custom task-spec runtime is resolved without executing unsupported --version (1.5305ms)
+✔ Windows executable resolution prefers a PowerShell shim for npm-style CLIs (0.843ms)
+✔ SRP01 — no-progress defaults to BLOCK when no response policy is configured (5.8553ms)
+✔ SRP02 — REPLAN changes planning data only and allows a later attempt to recover (4.6124ms)
+✔ SRP03 — replan cannot change authority-bearing fields (1.0627ms)
+✔ SRP04 — maxReplans bounds repeated no-progress replanning (1.2897ms)
+✔ SRP05 — REPLAN requires a replan function and fails closed before supervise (0.3665ms)
+✔ SRP06 — invalid response policy fails closed before supervise (0.5802ms)
+✔ SRP07 — replan exception blocks and is not retried as if planning succeeded (1.2345ms)
+✔ SRP08 — invalid replan proposal blocks (1.3169ms)
+✔ SRP09 — replan does not erase prior attempt evidence (1.4044ms)
+✔ SRP10 — custom fingerprint sees the replanned input on later attempts (5.2977ms)
+✔ SRP11 — runtime mutation is an authority violation even when framed as a replan (0.9221ms)
+✔ SRP12 — replan receives only a deeply frozen sanitized runtime projection (0.9315ms)
+✔ SRP13 — non-cloneable authority context fails closed instead of leaking original references (0.7561ms)
+✔ SRP14 — non-cloneable planning proposal fails closed and is not applied (0.9742ms)
+✔ SWR01 — without retry configuration supervise remains single-attempt and unchanged (5.584ms)
+✔ SWR02 — runtime failure followed by PASS is projected as PASS with retry evidence (1.9773ms)
+✔ SWR03 — default no-progress fingerprint blocks identical runtime failures (2.3323ms)
+✔ SWR04 — changed failure evidence permits another retry (0.9494ms)
+✔ SWR05 — default fingerprint ignores volatile pid/timing/session identity (0.6086ms)
+✔ SWR06 — changed stderr changes the default fingerprint (0.9813ms)
+✔ SWR07 — custom no-progress fingerprint receives input and retry context (2.4358ms)
+✔ SWR08 — supervise exception becomes an explicit INTERNAL_FAILURE attempt (0.8787ms)
+✔ SWR09 — each supervise attempt receives attempt number and prior evidence (1.0227ms)
+✔ SWR10 — retry budget can block before supervise is invoked (1.5848ms)
+✔ SWR11 — identical failures are not stopped when noProgress is not configured (0.8413ms)
+✔ SWR12 — invalid no-progress configuration blocks before supervise (3.3215ms)
+✔ SRR01 — trusted runtime rebuild makes a validated replan effective (12.4593ms)
+✔ SRR02 — unvalidated executor rebuild fails closed before a third attempt (1.2451ms)
+✔ SRR03 — malformed runtimeRebuild configuration blocks before supervise (0.7009ms)
+✔ SRR04 — planner runtime mutation remains forbidden even with trusted rebuild enabled (4.4988ms)
+✔ happy promotion applies allowed added and modified files (6438.1145ms)
+✔ forbidden path blocks without mutating target (3460.6212ms)
+✔ base drift blocks before promotion and keeps target untouched (3347.3542ms)
+✔ target acceptance failure restores target exactly (3621.5691ms)
+✔ runtime failure never mutates target (2814.9587ms)
+✔ approval pending blocks before runtime (1006.7109ms)
+✔ approval denied blocks with BLOCKED decision (1040.6056ms)
+✔ deleted allowed file is promoted and deleted forbidden file is blocked (6811.1788ms)
+✔ regression: runtime support artifact exists in staging AND allowed project file changed (3803.8466ms)
+✔ regression: runtime artifact only causes no false PASS (3457.7795ms)
+✔ durable approval integration: full happy path (7045.5323ms)
+✔ durable approval integration: stale and mismatch blocks (3983.6048ms)
+✔ durable approval integration: policy deny, budget and risk checks override approvals (5030.3704ms)
+✔ dry-run prevents mutation adequacy and target mutation, and does not execute staging copy or runProcess (1020.971ms)
+✔ dry-run enforces existing governance checks before returning (1049.3074ms)
+✔ normal non-dry-run behavior still reaches mutation adequacy (3643.6866ms)
+✔ push refused when governance result is not PASS (10.3621ms)
+✔ push refused when governance is missing (0.3648ms)
+✔ push refused when authorizedBranch is not set (0.346ms)
+✔ push refused when authorizedBranch is a protected branch — main (0.3035ms)
+✔ push refused when authorizedBranch is dev (protected) (5.7338ms)
+✔ push proceeds on work branch with governance PASS (mock runner) (0.6203ms)
+✔ push records failure faithfully when git push fails (4.7895ms)
+✔ CI status PASS when all checks succeed (0.721ms)
+✔ CI status NO_CHECKS when zero check_runs exist (0.467ms)
+✔ CI status FAIL when any check fails (not upgraded) (0.4374ms)
+✔ CI status PENDING when any check still running (0.3966ms)
+✔ CI status FETCH_ERROR on fetch failure (2.4221ms)
+✔ SA01 — no configured capability contract preserves compatibility (2.0019ms)
+✔ SA02 — required capability without grant fails closed (0.3048ms)
+✔ SA03 — explicit allowlist grants required capability (0.3002ms)
+✔ SA04 — installed/available but undeclared capability is not implicitly granted (1.3382ms)
+✔ SA05 — conflicting allow/deny configuration fails closed (1.4281ms)
+✔ SA06 — child cannot escalate beyond parent grant (0.3653ms)
+✔ SA07 — child receives subset-only derived grant (0.2743ms)
+✔ SA08 — raw budget within limit becomes a passing gate (0.8679ms)
+✔ SA09 — configured budget with unknown measurement fails closed (0.4448ms)
+✔ SA10 — exhausted budget blocks dispatch (0.3522ms)
+✔ SA11 — legacy evaluated budget gate remains compatible (0.2119ms)
+✔ SA12 — capability denial has authority even when budget passes (0.4092ms)
+✔ SA13 — unrecognized legacy budget shape is preserved unchanged (0.1823ms)
+✔ Microsoft-style build validation returns immutable executable definition (2.3939ms)
+✔ invalid runtime args fail during build validation before readiness probe (3.1408ms)
+✔ invalid environment policy fails build before operational STARTING (0.62ms)
+✔ invalid acceptance binding fails build instead of failing after executor run (0.6801ms)
+✔ non-ready bound executor fails build before readiness probe (0.5546ms)
+✔ direct validator exposes structured validation kind and field (0.3795ms)
+✔ executor exit/PASS alone cannot satisfy a normal supervised task (2.2051ms)
+✔ material audited promoted changes satisfy supervisor completion (0.3285ms)
+✔ deterministic acceptance can satisfy completion even without changes (0.2379ms)
+✔ explicit read-only contract permits no-change completion (2.4998ms)
+✔ upstream failure is preserved rather than rewritten (4.6663ms)
+✔ unknown completion mode fails closed (1.8683ms)
+✔ UNSATISFIED uses governed acceptance failure exit code (102.6595ms)
+✔ SDA01 — missing capability grant blocks before executor (98.4217ms)
+✔ SDA02 — explicit grant permits dispatch and raw budget is evaluated (23.3496ms)
+✔ SDA03 — configured budget with unknown measurement blocks before executor (45.7443ms)
+✔ SDA04 — resolver can scope capabilities independently per work unit (199.7011ms)
+✔ SDA05 — legacy mission path remains dispatchable when no new authority is configured (30.1099ms)
+✔ SDA06 — legacy unrecognized budget shape is forwarded unchanged (103.1033ms)
+✔ SDA07 — capability resolver exception fails closed before executor (52.4655ms)
+✔ build establishes explicit READY barrier before run (4.9458ms)
+✔ failed build prevents executor/supervise start (1.169ms)
+✔ executor start is observed strictly after SUPERVISOR_READY (14.4349ms)
+✔ three sequential sessions preserve READY before EXECUTOR_START (17.5236ms)
+✔ OpenHands-style operational readiness must succeed before SUPERVISOR_READY (1.1041ms)
+✔ failed operational readiness prevents READY and executor execution (0.6242ms)
+✔ startup lifecycle events are observable before task execution (1.3916ms)
+✔ TP01 direct is default (5.541ms)
+✔ TP02 direct requires no TLC dependency (0.3904ms)
+✔ TP03 TLC planning maps requirements (0.5884ms)
+✔ TP04 TLC planning maps acceptance criteria (0.424ms)
+✔ TP05 TLC output cannot generate governance PASS (0.4297ms)
+✔ TP06 policy DENY remains authoritative (0.2913ms)
+✔ TP07 budget remains authoritative (0.2471ms)
+✔ TP08 approval remains authoritative (0.231ms)
+✔ TP09 targetWorkspace authority unchanged (0.265ms)
+✔ TP10 explicit TLC unavailable fails factually (1.5464ms)
+✔ TP11 legacy missions remain unchanged (0.255ms)
+✔ TP12 planning metadata reaches evidence (0.2979ms)
+✔ TP13 Codex adapter path remains executor-independent (0.2718ms)
+✔ TP14 external executor adapter path remains executor-independent (0.1721ms)
+✔ TR01 - Complete chain produces trace-complete PASS (8.3631ms)
+✔ TR02 - Orphan requirement detected (1.0006ms)
+✔ TR03 - Invalid requirement reference (0.3954ms)
+✔ TR04 - Missing required evidence (0.4967ms)
+✔ TR05 - Duplicate requirement ID (0.4606ms)
+✔ TR06 - Duplicate criterion ID (0.4425ms)
+✔ TR08 - Legacy not configured (0.4695ms)
+✔ TR09 - Persistence resume (35.8691ms)
+✔ TR10-TR14 - Traceability does not override authorities (0.625ms)
+✔ TR17 - Mixed mission (0.5977ms)
+ℹ tests 555
+ℹ suites 0
+ℹ pass 548
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 79211.046
+
+✖ failing tests:
+
+test at test\github-operator.test.mjs:273:1
+✖ G14 getChecks with SHA generates correct endpoint (10.0709ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /GitHub API GET \/repos\/owner\/repo\/commits\/e19f40289314c9ce2a671d8bc5da16c3e3962e5b\/check-runs ->/. Input:
+  
+  'Error: connect EACCES 4.228.31.149:443'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Projetos/dv/.tmp-w16-smag/packages/smag-governance/test/github-operator.test.mjs:275:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: connect EACCES 4.228.31.149:443
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1706:16),
+    expected: /GitHub API GET \/repos\/owner\/repo\/commits\/e19f40289314c9ce2a671d8bc5da16c3e3962e5b\/check-runs ->/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\github-operator.test.mjs:281:1
+✖ G14 getChecks with branch generates correct endpoint (9.021ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /GitHub API GET \/repos\/owner\/repo\/commits\/feat%2Fbranch-name\/check-runs ->/. Input:
+  
+  'Error: connect EACCES 4.228.31.149:443'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Projetos/dv/.tmp-w16-smag/packages/smag-governance/test/github-operator.test.mjs:283:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: connect EACCES 4.228.31.149:443
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1706:16),
+    expected: /GitHub API GET \/repos\/owner\/repo\/commits\/feat%2Fbranch-name\/check-runs ->/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\github-operator.test.mjs:289:1
+✖ G14 getChecks with tag generates correct endpoint (8.2173ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /GitHub API GET \/repos\/owner\/repo\/commits\/v1\.0\.0\/check-runs ->/. Input:
+  
+  'Error: connect EACCES 4.228.31.149:443'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Projetos/dv/.tmp-w16-smag/packages/smag-governance/test/github-operator.test.mjs:291:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: connect EACCES 4.228.31.149:443
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1706:16),
+    expected: /GitHub API GET \/repos\/owner\/repo\/commits\/v1\.0\.0\/check-runs ->/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\github-operator.test.mjs:297:1
+✖ G14 getChecks 401/403/404 is not masked as zero checks (8.526ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /GitHub API GET/. Input:
+  
+  'Error: connect EACCES 4.228.31.149:443'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Projetos/dv/.tmp-w16-smag/packages/smag-governance/test/github-operator.test.mjs:299:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: connect EACCES 4.228.31.149:443
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1706:16),
+    expected: /GitHub API GET/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\github-operator.test.mjs:329:1
+✖ G8 createWorkBranch accepts full SHA and posts to git refs (5.3619ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /GitHub API POST \/repos\/owner\/repo\/git\/refs ->/. Input:
+  
+  'Error: connect EACCES 4.228.31.149:443'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Projetos/dv/.tmp-w16-smag/packages/smag-governance/test/github-operator.test.mjs:331:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: connect EACCES 4.228.31.149:443
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1706:16),
+    expected: /GitHub API POST \/repos\/owner\/repo\/git\/refs ->/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\github-operator.test.mjs:361:1
+✖ GitHub App credentials exchange JWT and POSTs to access_tokens endpoint (123.7818ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /GitHub API POST \/app\/installations\/67890\/access_tokens -> (401|404)/. Input:
+  
+  'Error: connect EACCES 4.228.31.149:443'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Projetos/dv/.tmp-w16-smag/packages/smag-governance/test/github-operator.test.mjs:377:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: connect EACCES 4.228.31.149:443
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1706:16),
+    expected: /GitHub API POST \/app\/installations\/67890\/access_tokens -> (401|404)/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

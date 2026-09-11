@@ -1,0 +1,9 @@
+{
+  "solution_diffs_inspected":"AFTER_FREEZE_ONLY",
+  "content_used_to_define_verifier":false,
+  "leads":[
+    {"lead_id":"SMAG-N1","solution_sha":"97aa4a58dc86391d1f0534b7ef2b9d25640a0889","changed_paths":["packages/smag-governance/src/process.mjs","packages/smag-governance/src/smag-core.mjs","packages/smag-governance/src/supervise.mjs","packages/smag-governance/src/supervisor-session.mjs","packages/smag-governance/test/executor-streaming.test.mjs"],"focal_verifier_changed":"NO","result":"historical confirmation only; candidate rejected because parent focal already passes"},
+    {"lead_id":"SMAG-N2","solution_sha":"06448a8a6a017f2be4ad7d8c89c387e86792bb4c","changed_paths":["packages/smag-governance/src/smag-core.mjs","packages/smag-governance/src/startup-readiness.mjs","packages/smag-governance/src/supervisor-session.mjs","packages/smag-governance/test/startup-readiness.test.mjs","packages/smag-governance/test/supervisor-session.test.mjs"],"focal_verifier_changed":"YES","result":"confirms verifier/test interleaving; not used to create an oracle"}
+  ],
+  "holdout":"SEALED"
+}

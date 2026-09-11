@@ -1,0 +1,13 @@
+{
+  "json_parse":"PASS",
+  "parent_sha_resolution":"PASS",
+  "verifier_hash":"PASS",
+  "candidate_id_uniqueness":"PASS",
+  "solution_leakage":"PASS; content not used for verifier definition",
+  "holdout_leakage":"PASS; HOLDOUT=SEALED",
+  "p0_immutability":"PASS",
+  "secret_scan":"PASS",
+  "dv_harness":"PASS_6_OF_6",
+  "git_diff_check":"PASS",
+  "treatment_execution":"NOT_EXECUTED"
+}

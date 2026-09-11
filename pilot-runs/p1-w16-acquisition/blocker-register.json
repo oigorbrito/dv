@@ -1,0 +1,10 @@
+{
+  "wave":"P1-W16",
+  "blockers":[
+    {"id":"P1-W1-BLK-002","type":"CORPUS","status":"OPEN","impact":"comparative corpus remains partial; no new task admitted","next_condition":"independent pre-solution verifier with valid preservation evidence"},
+    {"id":"P1-W4-BLK-STRONG-CREDENTIAL","type":"EXTERNAL_CREDENTIAL","status":"OPEN","impact":"P1-S1 release remains blocked","next_condition":"authorized credential for approved C1 surface"},
+    {"id":"P1-W16-SMAG-PRESERVATION-NETWORK","type":"EXTERNAL_ENVIRONMENT","status":"OBSERVED","impact":"six broad-suite GitHub API tests cannot execute under current network policy","work_continuable":"local focal screening and documentation","unblock_condition":"reproducible network-enabled environment or repository-defined offline fixture"}
+  ],
+  "closed":[],
+  "holdout":"SEALED"
+}

@@ -1,0 +1,50 @@
+{
+  "wave":"P1-W16",
+  "source":"oigorbrito/smag",
+  "freeze_rule":"Metadata and parent tree only before solution inspection",
+  "leads":[
+    {
+      "lead_id":"SMAG-N1",
+      "repository":"oigorbrito/smag",
+      "candidate_commit_sha":"97aa4a58dc86391d1f0534b7ef2b9d25640a0889",
+      "parent_sha":"abafbde08af387f14c4e65abe9e26a09aee7f2bd",
+      "commit_message":"fix: expose supervised executor lifecycle events",
+      "task_statement":"The supervised executor lifecycle must expose the repository's existing lifecycle events and preserve the documented supervisor-to-executor ordering.",
+      "proposed_family":"F2",
+      "focal_verifier":"packages/smag-governance/test/supervisor-session.test.mjs",
+      "verifier_provenance":"file exists in the parent tree before solution inspection",
+      "verifier_present_in_parent":"YES",
+      "verifier_independent_of_candidate_solution":"UNKNOWN_PENDING_EXECUTION_AND_POST_FREEZE_CONFIRMATION",
+      "verifier_hash":"a19f9e09d43459fa9d463dfe848d2e53f603b393",
+      "verifier_command":"bun test packages/smag-governance/test/supervisor-session.test.mjs",
+      "preservation_command":"bun test packages/smag-governance/test",
+      "required_runtime":"Bun",
+      "required_services":"NONE_EXPECTED",
+      "dependency_lockfiles":["bun.lock"],
+      "expected_environment_reconstruction":"bun install --frozen-lockfile if required; no source edits",
+      "solution_diff_inspected_before_freeze":false
+    },
+    {
+      "lead_id":"SMAG-N2",
+      "repository":"oigorbrito/smag",
+      "candidate_commit_sha":"06448a8a6a017f2be4ad7d8c89c387e86792bb4c",
+      "parent_sha":"b0a3dbb9eb61aaae996be6e14f1b40fa2ee2368c",
+      "commit_message":"fix: adopt OpenHands-style startup readiness",
+      "proposed_family":"F6",
+      "focal_verifier":"NONE_IDENTIFIED_IN_PARENT_TREE",
+      "verifier_provenance":"not established before freeze",
+      "verifier_present_in_parent":"NO_IDENTIFIABLE_FOCAL",
+      "verifier_independent_of_candidate_solution":"NO",
+      "verifier_hash":"NOT_APPLICABLE",
+      "verifier_command":"NOT_APPLICABLE",
+      "preservation_command":"NOT_APPLICABLE",
+      "required_runtime":"Bun",
+      "required_services":"NONE_EXPECTED",
+      "dependency_lockfiles":["bun.lock"],
+      "expected_environment_reconstruction":"NOT_STARTED",
+      "solution_diff_inspected_before_freeze":false
+    }
+  ],
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

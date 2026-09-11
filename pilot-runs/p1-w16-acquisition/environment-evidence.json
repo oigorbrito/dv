@@ -1,0 +1,9 @@
+{
+  "wave":"P1-W16",
+  "source_checkout":{"path":"C:\\Projetos\\smag","repository":"oigorbrito/smag","source_operations":"read_only_clone_and_git_inspection","source_modified_by_wave":"NO","preexisting_dirty_state":"YES"},
+  "materialized_parent":{"path":"C:\\Projetos\\dv\\.tmp-w16-smag","used_for":"SMAG-N1 parent baseline only","sha":"abafbde08af387f14c4e65abe9e26a09aee7f2bd","detached":"YES","initial_clean":"YES"},
+  "toolchain":{"bun":"1.4.0","node":"v24.18.0","root_bunfig":"test root points to ./do-not-run-tests-from-root, which is absent","recovered_execution":"node --test from packages/smag-governance cwd; same focal file"},
+  "smag_n1":{"focal_environment":"local, no service expected","preservation_environment":"GitHub API/network tests require unavailable external access","classification":"ENVIRONMENT_BLOCKED_FOR_BROAD_PRESERVATION"},
+  "network_dependency":"preservation failures were limited to GitHub API/App credential exchange tests; no treatment or candidate was executed",
+  "holdout":"SEALED"
+}

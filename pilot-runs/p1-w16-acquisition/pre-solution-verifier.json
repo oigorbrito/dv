@@ -1,0 +1,33 @@
+{
+  "wave":"P1-W16",
+  "source":"oigorbrito/smag",
+  "leads":[
+    {
+      "lead_id":"SMAG-N1",
+      "parent_sha":"abafbde08af387f14c4e65abe9e26a09aee7f2bd",
+      "verifier":"packages/smag-governance/test/supervisor-session.test.mjs",
+      "verifier_hash":"a19f9e09d43459fa9d463dfe848d2e53f603b393",
+      "verifier_present_before_solution":"YES",
+      "focal_command":"node --test test/supervisor-session.test.mjs",
+      "focal_cwd":"packages/smag-governance",
+      "focal_exit_code":0,
+      "focal_result":"PASS_7_OF_7",
+      "focal_product_failure":"NO",
+      "preservation_command":"node --test test/*.test.mjs",
+      "preservation_exit_code":1,
+      "preservation_result":"548_PASS_6_FAIL_OUT_OF_555",
+      "preservation_attribution":"ENVIRONMENT_BLOCKED_GITHUB_NETWORK; six failures are GitHub API/network tests",
+      "decision":"REJECTED_PARENT_FOCAL_ALREADY_PASSES_AND_PRESERVATION_ENVIRONMENT_BLOCKED"
+    },
+    {
+      "lead_id":"SMAG-N2",
+      "parent_sha":"b0a3dbb9eb61aaae996be6e14f1b40fa2ee2368c",
+      "verifier":"NONE_IDENTIFIED",
+      "verifier_present_before_solution":"NO",
+      "decision":"REJECTED_NO_PRE_SOLUTION_VERIFIER"
+    }
+  ],
+  "solution_application":"NONE",
+  "treatment_execution":"NOT_EXECUTED",
+  "holdout":"SEALED"
+}

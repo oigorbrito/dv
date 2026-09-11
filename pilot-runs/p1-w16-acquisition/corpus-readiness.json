@@ -1,0 +1,11 @@
+{
+  "before":{"tasks":3,"families":3,"repositories":2},
+  "after":{"tasks":3,"families":3,"repositories":2},
+  "new_admissions":[],
+  "task_corpus":"PARTIAL",
+  "comparative_corpus_ready":"NO",
+  "smag_status":"SCREENED_NO_ADMISSION",
+  "reason":"N1 has no parent focal failure and blocked preservation; N2 has no pre-solution verifier.",
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}
