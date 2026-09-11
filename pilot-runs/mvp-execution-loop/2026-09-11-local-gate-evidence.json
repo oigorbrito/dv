@@ -162,8 +162,9 @@
     "root_node_modules_package_present": false,
     "local_workspace_package_present": false,
     "bun_lock_present": true,
-    "resolution": "DOWNLOAD_OR_INSTALL_REQUIRED",
-    "action_taken": "read_only_check; no bun install and no download",
+    "bun_cache_package": "@opentui/solid@0.4.5 present in local Bun cache",
+    "resolution": "OFFLINE_INSTALL_NOT_MATERIALIZED",
+    "action_taken": "read_only check; no bun install and no download",
     "classification": "ENVIRONMENT_BLOCKED"
   },
   "scientific_state": {

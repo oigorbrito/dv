@@ -76,8 +76,10 @@ A fifth local lead in `smag` was screened around issue #94. The verifier
 before the later source fix `6959888ca`, establishing temporal independence.
 The isolated parent replay from `packages/opencode` reached Bun but was blocked
 by the local dependency surface (`preload not found "@opentui/solid/preload"`,
-exit code 1). It remains `BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE`; this is not a
-product failure, and no solution diff or source checkout was modified.
+exit code 1). The package `@opentui/solid@0.4.5` is present in the local Bun
+cache, but no checkout has a materialized installation. An offline installation
+was not attempted. It remains `BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE`; this is
+not a product failure, and no solution diff or source checkout was modified.
 
 ## Remaining decision
 
