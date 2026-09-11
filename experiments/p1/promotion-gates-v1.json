@@ -1,0 +1,11 @@
+{
+  "contract_id":"p1-promotion-gates-v1",
+  "gates":[
+    {"phase":"P1-S0","requires":["programmatic invocation","observable identity/version","candidate capture","timeout/cancellation","retry visibility","usage or explicit telemetry limitation","pricing provenance","credential/quota state","tool compatibility","no hidden manual intervention","reproducible parameters"],"promotes_to":"P1-S1","minimum":"one strong path and one economic OR local/free path with accounting compatibility","claims_allowed":["executor surface qualified"],"claims_forbidden":["performance","ranking","savings"]},
+    {"phase":"P1-S1","requires":["preferably >=2 tasks across >=2 families","valid verifier baselines","Harness compatibility","telemetry/accounting fields","candidate capture","no solution leakage","no holdout exposure"],"promotes_to":"P1-S2","exception":"one task may proceed as SMOKE_TEST_ONLY","claims_allowed":["pipeline and protocol validity"],"claims_forbidden":["comparative superiority","generalization"]},
+    {"phase":"P1-S2","requires":["stable materialization","valid verification","accounting","timeouts","deterministic escalation","no systemic oracle defect","no uncontrolled manual intervention"],"promotes_to":"P1-S3","claims_allowed":["limited development pilot observations"],"claims_forbidden":["winner-favoring task selection"]},
+    {"phase":"P1-S3","requires":["task diversity","stable definitions","pinned executor versions","variance estimates","repeat budget","resolved deviations"],"promotes_to":"P1-S4","claims_allowed":["development comparison within scope"],"claims_forbidden":["external generalization"]},
+    {"phase":"P1-S4","requires":["frozen treatments/executors/shaping/repetitions/accounting","sealed verifier-first holdout","no tuning after seal"],"promotes_to":"P1-S5","claims_allowed":["holdout confirmation within protocol"],"claims_forbidden":["universal superiority beyond sampled scope"]},
+    {"phase":"P1-S5","requires":["complete evidence and overhead accounting","simpler alternatives compared","prior-art reuse assessed","holdout result available where claimed"],"promotes_to":"CLOSED","claims_allowed":["NO_BUILD, MICRO_POLICY_JUSTIFIED, or INCONCLUSIVE"],"claims_forbidden":["architecture approval from intuition"]}
+  ]
+}

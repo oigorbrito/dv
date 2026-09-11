@@ -1,0 +1,14 @@
+{
+  "captured_at":"2026-09-11",
+  "json_parse":"PASS",
+  "required_contracts_present":true,
+  "phase_count":6,
+  "duplicate_id_scan":"PASS",
+  "promotion_gate_completeness":"PASS",
+  "holdout_leakage_scan":"PASS",
+  "secret_scan":"PASS",
+  "p0_immutability_scan":"PASS",
+  "harness_self_test":{"command":"python -B tools/test_dv_pilot_harness.py","exit_code":0,"tests":6,"result":"PASS"},
+  "treatment_execution":"NOT_EXECUTED",
+  "model_calls":0
+}

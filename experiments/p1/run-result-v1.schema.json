@@ -1,0 +1,8 @@
+{
+  "schema_id":"p1-run-result-v1",
+  "required":["run_id","task_id","base_sha","treatment","executor_identity","shaping","started_at","ended_at","candidate_artifact_ref","oracle_result","failure_class","usage","accounting","environment","authoritative_evidence_ref"],
+  "enums":{"oracle_result":["YES","NO","INCONCLUSIVE"],"failure_class":["PRODUCT_FAILURE","HARNESS_FAILURE","ORACLE_DEFECT","ENVIRONMENT_DRIFT","RESOURCE_LIMIT","PROVIDER_FAILURE","INCONCLUSIVE_OTHER"]},
+  "usage":{"input_tokens":"integer_or_missing","cached_input_tokens":"integer_or_missing","output_tokens":"integer_or_missing","reasoning_tokens":"integer_or_missing","total_tokens":"integer_or_missing","missingness_reason":"required_when_missing"},
+  "accounting":{"routing_tokens":"integer_or_missing","shaping_tokens":"integer_or_missing","planning_tokens":"integer_or_missing","execution_tokens":"integer_or_missing","verification_tokens":"integer_or_missing","escalation_tokens":"integer_or_missing","retry_tokens":"integer_or_missing","monetary_cost":"number_or_missing"},
+  "rule":"missing telemetry is not zero; no result is accepted without provider/runtime identity and authoritative evidence reference"
+}

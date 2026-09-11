@@ -1,0 +1,14 @@
+{
+  "captured_at":"2026-09-11",
+  "entry_head":"d270b45845acc066feedf1d051a03d3d4e87e207",
+  "p0_treatment_evidence":"NONE",
+  "real_p0_runs":"0/24",
+  "p0_release":"NO",
+  "block_5a":"P1_DESIGN_READY_FOR_TASK_DISCOVERY",
+  "block_5b":"P1_TASK_CORPUS_PARTIAL / S0_QUALIFICATION_PARTIAL",
+  "admitted_p1_tasks":1,
+  "executor_s0_ready":0,
+  "p1_s1_release":"NO",
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

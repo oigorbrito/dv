@@ -1,0 +1,9 @@
+{
+  "gate_id":"p1-architecture-decision-v1",
+  "outcomes":["NO_BUILD","MICRO_POLICY_JUSTIFIED","INCONCLUSIVE"],
+  "decision_table":{"B0_dominates":"NO_BUILD / strong direct sufficient","B1_approximately_B2":"NO_BUILD dynamic escalation","B3_approximately_B2":"NO_BUILD smart/dynamic router","B4_competitive":"prefer local/free-first composition","S1_no_benefit":"drop deterministic shaping","existing_framework_approximately_DV":"reuse framework / NO_BUILD","B2_or_B4_superior_after_overhead":"MICRO_POLICY_JUSTIFIED candidate","no_stable_result":"INCONCLUSIVE"},
+  "micro_policy_requirements":["reproducible improvement","survives holdout","includes decision/context/verification/coordination/escalation/maintenance overhead","simpler baselines lose","prior-art reuse cannot provide same effect"],
+  "preferred_scope":["deterministic task certificate","minimal family policy","minimum-sufficient context","selective verification","deterministic escalation","compact factual handoff"],
+  "prohibited_default":"custom learned router/runtime/kernel",
+  "stop_no_build_conditions":["strong direct economically acceptable","cheap direct plus verify matches escalation","static matches dynamic","existing framework equivalent","savings do not exceed coordination/maintenance"]
+}

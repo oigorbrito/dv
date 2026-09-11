@@ -1,0 +1,11 @@
+{
+  "plan_id":"p1-statistical-analysis-v1",
+  "design":"paired task comparisons wherever feasible; treatment/executor/shaping definitions frozen before observation",
+  "report":["per-task raw outcomes","per-family outcomes","solve proportions","tokens per verified solution","monetary cost per verified solution","latency distributions","escalation frequencies","failure/inconclusive counts"],
+  "summaries":["median","distribution","robust descriptive statistics","bootstrap confidence intervals where appropriate"],
+  "mean_policy":"report mean only alongside distribution because cost and latency may be skewed",
+  "repetition_rule":"after S2, increase equally across treatments until uncertainty for the intended limited claim is sufficiently stable or a predeclared resource ceiling is reached; never stop because a preferred treatment leads",
+  "small_sample_rule":"descriptive evidence and INCONCLUSIVE; no universal superiority claim",
+  "p_value_rule":"no arbitrary p-value threshold is asserted without a later justified estimand/design amendment",
+  "primary_metric":"TOTAL_SYSTEM_TOKENS / VERIFIED_SOLVED_TASK"
+}

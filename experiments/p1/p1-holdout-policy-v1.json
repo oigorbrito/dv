@@ -1,0 +1,11 @@
+{
+  "policy_id":"p1-holdout-policy-v1",
+  "legacy_p0_holdout":"SEALED_AND_NOT_REUSED_AUTOMATICALLY",
+  "construction":"new external holdout only after development verifier-first procedure is stable",
+  "admission_contract":"experiments/p1/task-admissibility-contract-v1.json",
+  "seal_preconditions":["base verified","verifier provenance/hash verified","environment verified","task statement frozen"],
+  "after_seal_forbidden":["treatment selection","escalation tuning","task shaping tuning","executor selection","repeated probing"],
+  "release_preconditions":["treatments frozen","executors frozen","shaping frozen","repetitions frozen","accounting frozen","promotion decision documented"],
+  "preferred_release":"one final confirmation campaign",
+  "holdout_state":"SEALED"
+}
