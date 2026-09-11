@@ -1,0 +1,53 @@
+BLOCK 4AB AUTHORITATIVE E0 API SURFACE + FIRST REAL P0 RUN
+task: D-F1-01
+family: F1
+repository: oigorbrito/RJ
+base: c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d
+treatment: E0
+model: gpt-5.6-sol
+reasoning_effort: high
+rollout: r1
+
+DV
+head: 96c89010757f75370bb710db94fb83527179935d
+
+API PREFLIGHT
+OPENAI_API_KEY credential_present: false
+secret_value: not printed, stored, or committed
+api_connectivity: NOT_ATTEMPTED because credential was absent
+model_access: NOT_TESTED
+reasoning_effort_high: NOT_TESTED
+blocker: API_CREDENTIAL_UNAVAILABLE
+
+SOURCE C:\Projetos\RJ (read-only)
+origin: https://github.com/oigorbrito/RJ.git
+head: 4282cd5c836f81c6da95d17cf317c05525b417d7
+branch: preserve/rjudi-local-2026-09-08-192438
+status: dirty, 42 status lines (pre-existing)
+
+ISOLATED WORKSPACE
+source: C:\Projetos\RJ
+mode: local clone, no-hardlinks, no-checkout
+path: C:\Projetos\dv\pilot-runs\block-4ab-d-f1-01-e0-r1\workspace
+head: c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d
+detached: true
+clean: true
+origin: C:\Projetos\RJ
+
+TOOLCHAIN
+python: Python 3.13.14
+dotnet: 10.0.401
+git: git version 2.55.0.windows.5
+
+DOWNSTREAM NOT EXECUTED
+adapter: NOT_CREATED
+E0: NOT_EXECUTED
+candidate: NOT_PRODUCED
+focal_oracle: NOT_EXECUTED
+preservation_oracle: NOT_EXECUTED
+harness_run: NOT_EXECUTED
+harness_reconcile: NOT_EXECUTED
+provider_native_telemetry: UNAVAILABLE
+real_p0_runs: 0/24
+p0_release: NO
+holdout: SEALED / NOT OPENED
