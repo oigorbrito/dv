@@ -1,0 +1,13 @@
+BLOCK 4Z materialization attempt
+command: python tools/dv_workspace_materializer.py --repository oigorbrito/RJ --revision c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d --destination C:\Projetos\dv\pilot-runs\block-4z-d-f1-01-r1\workspace --identity-out C:\Projetos\dv\pilot-runs\block-4z-d-f1-01-r1\evidence\D-F1-01-workspace.json
+working_directory: C:\Projetos\dv
+exit_code: 1
+dv_head_before_attempt: 4e7a2cdcdfe83a8460882f44d719a99903d7b673
+dv_worktree: clean
+origin_fetch: https://github.com/oigorbrito/dv.git
+origin_push: https://github.com/oigorbrito/dv.git
+python: Python 3.13.14
+dotnet: 10.0.401
+underlying_git_exit_code: 128
+error: fatal: unable to access 'https://github.com/oigorbrito/RJ.git/': Failed to connect to github.com:443 after 55 ms: Could not connect to server
+result: historical workspace was not materialized; identity-out was not produced; no treatment or oracle was started

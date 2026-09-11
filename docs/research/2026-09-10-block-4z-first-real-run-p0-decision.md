@@ -25,6 +25,18 @@ No corpus, treatment, harness, oracle, or holdout artifact was changed or opened
 
 ## Workspace and toolchain preflight
 
+The final execution attempt was made from the clean `dv` checkout with:
+
+```text
+HEAD: 4e7a2cdcdfe83a8460882f44d719a99903d7b673
+branch: main
+worktree: clean
+origin/fetch: https://github.com/oigorbrito/dv.git
+origin/push: https://github.com/oigorbrito/dv.git
+python: 3.13.14
+dotnet: 10.0.401
+```
+
 The dv checkout identity at the start of the run was:
 
 ```text
@@ -42,14 +54,15 @@ The frozen historical workspace could not be materialized. The exact command was
 python tools/dv_workspace_materializer.py --repository oigorbrito/RJ --revision c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d --destination C:\Projetos\dv\pilot-runs\block-4z-d-f1-01-r1\workspace --identity-out C:\Projetos\dv\pilot-runs\block-4z-d-f1-01-r1\evidence\D-F1-01-workspace.json
 ```
 
-Result:
+Result of the final attempt:
 
 ```text
 exit code: 1 (Python exception; underlying git clone exit code: 128)
-fatal: unable to access 'https://github.com/oigorbrito/RJ.git/': Failed to connect to github.com:443 after 41 ms: Could not connect to server
+fatal: unable to access 'https://github.com/oigorbrito/RJ.git/': Failed to connect to github.com:443 after 55 ms: Could not connect to server
 ```
 
-No historical workspace, clean-base identity, candidate state, or workspace identity evidence was produced.
+No historical workspace, clean-base identity, candidate state, or workspace identity evidence was produced. The raw
+final attempt is preserved at `pilot-runs/block-4z-d-f1-01-r1/evidence/materializer-attempt-2026-09-10.txt`.
 
 ## Execution and verification status
 
