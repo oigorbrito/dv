@@ -28,7 +28,8 @@ proves metadata-surface access only. It does not qualify generation,
 provider-native usage telemetry, pricing, or free-tier eligibility, so the
 qualification probe remains pending.
 
-The current admitted corpus remains `D-F2-05`, `D-F5-01`, and `D-F6-01`.
+At the earlier snapshot recorded by this file, the admitted corpus was
+`D-F2-05`, `D-F5-01`, and `D-F6-01`.
 `COMPARATIVE_CORPUS_READY=NO`, `P1_S1_RELEASE=NO`, and `REAL_P0_RUNS=0/24`.
 The registered external blockers are marked `PENDING_EXTERNAL_ACTION` for
 queue management. This is an operational status, not a resolution or a
