@@ -148,6 +148,20 @@ terminal summary or exit code and left a Node process live. That specifically
 identified probe process was terminated and its exact temporary workspace was
 removed. The result remains `INCONCLUSIVE`; no preservation PASS is inferred.
 
+The SMAG staging lead was subsequently closed as an admissible development task
+`D-F2-06`. Its task statement is anchored to the independent document
+`docs/evidence/SMAG-WAVE1-STAGING-WINDOWS-LINKS-V1.md` at commit
+`d07422f79b01738f260f2446eb9689ca031392e7` (blob
+`194343d4e01ec1b15a83e45096156a6db4614f64`), which predates the candidate fix.
+The focal verifier and related regression files were present in parent
+`6ddf8c7461bdb13d407e7f78239dbecd53375573`; the candidate snapshot passed the
+focal verifier, while the parent failed on the byte-preservation assertion.
+The targeted preservation set (`git.test.mjs`, `git-origin-staging.test.mjs`,
+and `staging-links.test.mjs`) passed 5 tests with 1 explicit Windows symlink
+privilege skip in both parent and candidate. This supports admission with the
+platform limitation recorded; it is not treatment evidence. The broad suite
+probes remain inconclusive and are not used as a silent substitute.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

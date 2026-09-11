@@ -283,8 +283,26 @@
       "cleanup": "identified probe process terminated; exact temporary workspace removed",
       "qualification_effect": "does_not_establish_preservation_pass"
     },
-    "screening_result": "PROMISING_FAIL_TO_PASS_PENDING_ADMISSIBILITY_CLOSURE",
-    "classification": "BLOCKED",
+    "targeted_preservation_replay": {
+      "commands": [
+        "node --test test/git.test.mjs test/git-origin-staging.test.mjs test/staging-links.test.mjs"
+      ],
+      "parent": {"exit_code": 0, "passed": 5, "skipped": 1, "failed": 0},
+      "candidate": {"exit_code": 0, "passed": 5, "skipped": 1, "failed": 0},
+      "skip_reason": "Windows host cannot create file-symlink fixture without symlink privilege; portable injected-platform regression remains executed",
+      "status": "PASS_WITH_EXPLICIT_PLATFORM_SKIP"
+    },
+    "task_statement": "Windows staging must preserve dirty tracked and untracked workspace bytes, exclude ignored dependency trees, and keep internal dependency links within the staging root.",
+    "task_statement_provenance": {
+      "commit": "d07422f79b01738f260f2446eb9689ca031392e7",
+      "blob_sha1": "194343d4e01ec1b15a83e45096156a6db4614f64",
+      "predates_candidate": true
+    },
+    "admission_decision": "ADMITTED_DEVELOPMENT_TASK",
+    "assigned_task_id": "D-F2-06",
+    "family": "F2",
+    "screening_result": "ADMITTED_WITH_EXPLICIT_PLATFORM_LIMITATION",
+    "classification": "PASS",
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
@@ -312,7 +330,7 @@
     "treatment_executed": false
   },
   "scientific_state": {
-    "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
+    "admitted_tasks": ["D-F2-05", "D-F2-06", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],
     "task_corpus": "PARTIAL",
     "comparative_corpus_ready": "NO",
