@@ -329,6 +329,24 @@
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
+  "smag_baseline_lead": {
+    "repository": "C:\\Projetos\\smag",
+    "task_commit": "64da73d22afcef846d88f0c85cd070620098aab7",
+    "parent_sha": "0e0d0bce99809af5e8ba4c1ed4ee88937d59d525",
+    "changed_path_metadata": ["packages/smag-governance/src/git.mjs"],
+    "expected_verifier": "packages/smag-governance/test/git-staging.test.mjs",
+    "baseline_replay": {
+      "materialization": "isolated parent archive",
+      "command": "node --test test/git-staging.test.mjs",
+      "exit_code": 1,
+      "observed_error": "Could not find test/git-staging.test.mjs",
+      "temporary_workspace_cleanup": "PASS"
+    },
+    "screening_result": "REJECTED_NO_PARENT_VERIFIER",
+    "classification": "FAIL",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F2-06", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],
