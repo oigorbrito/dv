@@ -64,10 +64,12 @@ parent with `python -B scripts/run_live_network_certification.py` produced the
 expected import failure (`ModuleNotFoundError: No module named 'searchleads'`,
 exit code 1). The workflow invoking this exact command predates the task, and
 the parent has library-level preservation tests using injected transports, but
-those tests do not verify the script entrypoint. The lead is therefore recorded
-as `BLOCKED_ENTRYPOINT_VERIFIER_REPLAY_REQUIRED`: candidate-side entrypoint
-success and its environment contract remain to be qualified. No solution diff
-was inspected and no source was modified.
+those tests do not verify the script entrypoint. The candidate replay then
+passed the import boundary but was blocked at `brasilapi.com.br:443` by
+`WinError 10013` (exit code 1). The lead is therefore recorded as
+`BLOCKED_ENVIRONMENT_NETWORK_REPLAY`; candidate-side success remains
+unverified under a reproducible network contract. No solution diff was
+inspected and no source was modified.
 
 ## Remaining decision
 
