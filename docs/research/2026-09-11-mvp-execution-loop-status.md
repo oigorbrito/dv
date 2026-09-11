@@ -117,6 +117,16 @@ isolated replay from `packages/smag-governance` completed with exit code 0 and
 product evidence. The candidate diff was not inspected, no source checkout was
 changed, and no treatment was executed.
 
+An eighth SMAG lead, commit `e1f939f9a023e4da87cc2754d78e5132a5978c3b`, was
+screened against parent `6ddf8c7461bdb13d407e7f78239dbecd53375573` using the
+pre-existing `packages/smag-governance/test/git-staging.test.mjs` verifier.
+The isolated parent replay reached the assertion but failed on Windows newline
+representation: actual `DIRTY\r\n` versus expected `DIRTY\n` (exit code 1).
+This is recorded as `BLOCKED_ENVIRONMENT_LINE_ENDING`, because the observed
+failure does not yet isolate the historical product behavior from platform
+normalization. The candidate diff was not inspected, no source checkout was
+changed, and no treatment was executed.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

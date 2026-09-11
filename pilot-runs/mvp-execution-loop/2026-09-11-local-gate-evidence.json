@@ -236,6 +236,31 @@
     "solution_diff_inspected": false,
     "treatment_executed": false
   },
+  "smag_git_staging_lead": {
+    "repository": "C:\\Projetos\\smag",
+    "task_commit": "e1f939f9a023e4da87cc2754d78e5132a5978c3b",
+    "parent_sha": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+    "changed_path_metadata": ["packages/smag-governance/src/git.mjs"],
+    "verifier_path": "packages/smag-governance/test/git-staging.test.mjs",
+    "verifier_provenance": "pre-existing verifier in isolated parent archive; source checkout unchanged",
+    "command": "node --test test/git-staging.test.mjs",
+    "cwd": "packages/smag-governance",
+    "runtime": "node v24.18.0",
+    "baseline_replay": {
+      "exit_code": 1,
+      "tests": 1,
+      "passed": 0,
+      "failed": 1,
+      "assertions_reached": true,
+      "observed_failure": "AssertionError: actual DIRTY\\r\\n differs from expected DIRTY\\n",
+      "failure_attribution": "ENVIRONMENT_LINE_ENDING_UNRESOLVED",
+      "temporary_workspace_cleanup": "PASS"
+    },
+    "screening_result": "BLOCKED_ENVIRONMENT_LINE_ENDING",
+    "classification": "BLOCKED",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
   "smag_origin_resolution_lead": {
     "repository": "C:\\Projetos\\smag",
     "task_commit": "0d54f44cf",
