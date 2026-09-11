@@ -1,0 +1,23 @@
+{
+  "candidates": [
+    {
+      "content": {},
+      "finishReason": "MAX_TOKENS",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 12,
+    "totalTokenCount": 24,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 12
+      }
+    ],
+    "thoughtsTokenCount": 12,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.7-flash",
+  "responseId": "-hykatwf0IOq2w-14pbICg"
+}

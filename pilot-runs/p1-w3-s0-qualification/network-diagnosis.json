@@ -1,0 +1,10 @@
+{
+  "wave": "P1-W3",
+  "captured_at": "2026-09-11",
+  "dns": "PASS",
+  "tcp_443": "PASS",
+  "neutral_http_probe": {"status": 404,"classification":"PROVIDER_EDGE_REACHED","credentials":"NOT_USED"},
+  "prior_probe_failure": "not reproduced after elevated network path was available",
+  "api_probe_retries": 0,
+  "secret_values": "NOT_CAPTURED"
+}

@@ -1,0 +1,44 @@
+{
+  "qualification_id": "p1-executor-s0-qualification-v4",
+  "supersedes": "experiments/p1/executor-s0-qualification-v3.json for W3 runtime evidence",
+  "as_of": "2026-09-11",
+  "probe_policy": "one synthetic qualification probe only; no P1 task, candidate, holdout, or treatment execution",
+  "runtime_results": [
+    {
+      "candidate": "C2-google-gemini-3-7-flash",
+      "category": "C2_ECONOMIC_REMOTE",
+      "provider": "Google",
+      "model_requested": "gemini-3.7-flash",
+      "model_observed": "gemini-3.7-flash",
+      "request_id": "-hykatwf0IOq2w-14pbICg",
+      "http_status": 200,
+      "finish_reason": "MAX_TOKENS",
+      "input_tokens": 12,
+      "cached_input_tokens": "UNMEASURED",
+      "output_tokens": "UNMEASURED",
+      "reasoning_tokens": 12,
+      "total_tokens": 24,
+      "candidate_text": "UNMEASURED; raw response content object was empty",
+      "application_retry_count": 0,
+      "provider_retry_metadata": "UNMEASURED",
+      "raw_artifact": "pilot-runs/p1-w3-s0-qualification/gemini-3.7-flash-raw-response.json",
+      "S0_STATUS": "S0_READY_TELEMETRY_LIMITED",
+      "limitation": "explicit output and cached-input fields were not present; total usage was present",
+      "pricing_derivation": "NOT_RUN"
+    }
+  ],
+  "candidates": [
+    {"candidate":"C1-openai-sol","category":"C1_STRONG_REMOTE","S0_STATUS":"S0_CREDENTIAL_BLOCKED","blocker":"OPENAI_API_KEY absent; no request made"},
+    {"candidate":"C2-openai-luna","category":"C2_ECONOMIC_REMOTE","S0_STATUS":"S0_CREDENTIAL_BLOCKED","blocker":"OPENAI_API_KEY absent; no request made"},
+    {"candidate":"C4-google-free","category":"C4_FREE_OR_NEAR_FREE","S0_STATUS":"S0_READY_TELEMETRY_LIMITED","free_tier_status":"ACCOUNT_ELIGIBILITY_UNKNOWN","blocker":"provider/model access observed, free-tier eligibility not established separately"},
+    {"candidate":"C3-ollama-gpt-oss","category":"C3_LOCAL_OPEN_WEIGHT","S0_STATUS":"S0_DOWNLOAD_REQUIRED","blocker":"Ollama and model absent; no download"},
+    {"candidate":"C5-openmanus","category":"C5_SPECIALIZED_TOOL_EXECUTOR","S0_STATUS":"S0_NOT_A_STANDALONE_EXECUTOR","blocker":"underlying executor required"},
+    {"candidate":"C5-microsoft-agent-framework","category":"C5_SPECIALIZED_TOOL_EXECUTOR","S0_STATUS":"S0_NOT_A_STANDALONE_EXECUTOR","blocker":"underlying executor required"}
+  ],
+  "summary": {"S0_READY":0,"S0_READY_TELEMETRY_LIMITED":2,"S0_CREDENTIAL_BLOCKED":2,"S0_DOWNLOAD_REQUIRED":1,"S0_ENVIRONMENT_BLOCKED":0,"S0_NOT_A_STANDALONE_EXECUTOR":2,"S0_FAIL":0},
+  "strong_path": "BLOCKED",
+  "economic_or_local_or_free_path": "C2_RUNTIME_QUALIFIED_WITH_TELEMETRY_LIMITATION",
+  "p1_s1_release": "NO",
+  "holdout": "SEALED",
+  "treatment_execution": "NOT_EXECUTED"
+}

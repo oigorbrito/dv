@@ -1,0 +1,10 @@
+{
+  "wave": "P1-W3",
+  "blockers": [
+    {"blocker_id":"P1-W1-BLK-002","type":"CORPUS","status":"OPEN","impact":"only D-F6-01 is admissible and smoke-only","next_condition":"admit additional verifier-first tasks"},
+    {"blocker_id":"P1-W1-BLK-003","type":"EXECUTOR","status":"OPEN","impact":"strong path absent; economic path is telemetry-limited","next_condition":"qualify OpenAI strong path or another already approved strong candidate"},
+    {"blocker_id":"P1-W1-BLK-004","type":"HARNESS_SURFACE","status":"OPEN","impact":"provider retry metadata remains unobserved; remote evidence is otherwise representable","next_condition":"close provider retry/accounting limitation with another permitted runtime probe"}
+  ],
+  "closed_in_prior_wave": ["P1-W1-BLK-001"],
+  "holdout": "SEALED"
+}
