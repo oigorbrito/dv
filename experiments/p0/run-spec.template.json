@@ -1,0 +1,17 @@
+{
+  "protocol_version": "4M-v1",
+  "corpus_version": "v0",
+  "task_id": "<D-F*-01>",
+  "task_family": "<F1..F6>",
+  "base_revision": "<frozen-sha>",
+  "oracle_version": "block-2b-v1+4m-command-manifest-v1",
+  "treatment_id": "<E0|E1|E2|E3>",
+  "treatment_version": "<frozen-operational-binding>",
+  "rollout_id": "r1",
+  "environment_id": "<workspace/toolchain/container identity>",
+  "working_directory": "<absolute path to isolated task workspace>",
+  "executor_command": ["<bound treatment adapter or executable>", "<args>"],
+  "verifier_command": ["python", "tools/dv_oracle_adapter.py", "--spec", "<task-oracle-spec.json>"],
+  "timeout_seconds": 3600,
+  "verifier_timeout_seconds": 1800
+}
