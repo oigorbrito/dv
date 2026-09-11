@@ -1,0 +1,17 @@
+{
+  "wave":"P1-W9",
+  "parent_sha_validation":"PASS_FOR_19_LEADS",
+  "candidate_freeze_before_diff":"PASS",
+  "candidate_id_uniqueness":"PASS; D-F2-04 and D-F2-05 unused before W9",
+  "admitted_task_base_validation":"UNCHANGED; D-F5-01 and D-F6-01 remain valid",
+  "verifier_hash_validation":"PASS_FOR_EXISTING_ADMITTED_CORPUS; new candidates blocked before hashable execution result",
+  "evidence_paths":"PASS",
+  "json_parse":"PASS",
+  "secret_scan":"PASS",
+  "holdout_leakage":"PASS; HOLDOUT_ACCESS=NONE",
+  "p0_immutability":"PASS",
+  "treatment_execution":"NOT_EXECUTED",
+  "smoke_execution":"NOT_EXECUTED",
+  "harness_self_test":"PASS; 6/6; exit 0",
+  "diff_check":"PASS; exit 0"
+}

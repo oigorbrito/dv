@@ -1,0 +1,10 @@
+{
+  "wave":"P1-W9",
+  "executions":[
+    {"candidate_id":"D-F2-05","repository":"bpt2-abp","base_sha":"f3d2cd2d4c0840077451222868ca0d1c0323cdd2","workspace":"C:\\Projetos\\dv\\.tmp-w9-bpt2-122594","workspace_head":"f3d2cd2d4c0840077451222868ca0d1c0323cdd2","workspace_clean_before_command":true,"toolchain":"dotnet 10.0.401","focal_command":"dotnet build tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj --configuration Release","focal_exit_code":1,"focal_result":"ENVIRONMENT_BLOCKED_BEFORE_BUILD","preservation_command":"not reached; same restore dependency is required","preservation_exit_code":null,"evidence_refs":["bpt2-122594-build.stdout.log","bpt2-122594-build.stderr.log"]},
+    {"candidate_id":"D-F2-04","repository":"searchleads","base_sha":"2c886f863cf6d5f9473d15e60f2f55f938162876","workspace":"C:\\Projetos\\dv\\.tmp-w9-searchleads-2f63","workspace_head":"2c886f863cf6d5f9473d15e60f2f55f938162876","workspace_clean_before_command":true,"toolchain":"Python 3.13.14; pytest module unavailable","focal_command":"python -m pytest -q tests/test_evidence_envelope_integrity_v3.py","focal_exit_code":1,"focal_result":"ENVIRONMENT_BLOCKED: No module named pytest","preservation_command":"python -m pytest -q tests --ignore=tests/experimental -W error::ResourceWarning","preservation_exit_code":1,"preservation_result":"ENVIRONMENT_BLOCKED: No module named pytest","evidence_refs":["searchleads-2f63-focal.stdout.log","searchleads-2f63-focal.stderr.log","searchleads-2f63-preservation.stdout.log","searchleads-2f63-preservation.stderr.log"]}
+  ],
+  "solution_application":"NONE",
+  "candidate_output":"NONE",
+  "holdout_access":"NONE"
+}

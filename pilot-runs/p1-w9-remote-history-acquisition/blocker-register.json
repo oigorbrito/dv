@@ -1,0 +1,14 @@
+{
+  "wave":"P1-W9",
+  "blockers":[
+    {"blocker_id":"P1-W1-BLK-002","status":"OPEN_FOR_S2","impact":"comparative corpus remains two tasks/two families/one repository","next_condition":"admit additional independently verifiable task from a reproducible remote-history source"},
+    {"blocker_id":"P1-W4-BLK-STRONG-CREDENTIAL","status":"OPEN","impact":"S1 release remains blocked","next_condition":"authorized strong executor qualification"},
+    {"blocker_id":"P1-W1-BLK-003","status":"OPEN_FOR_S1","impact":"strong path unavailable","next_condition":"C1 S0 qualification"},
+    {"blocker_id":"P1-W1-BLK-004","status":"CLOSED","impact":"provider-internal retry metadata nonblocking missingness"},
+    {"blocker_id":"P1-W5-D-F1-01","status":"CLOSED","impact":"frozen base runner incompatibility"},
+    {"blocker_id":"P1-W9-D-F2-04","status":"OPEN","impact":"promising searchleads verifier cannot execute because pytest runtime is unavailable locally","next_condition":"approved reproducible Python/pytest environment"},
+    {"blocker_id":"P1-W9-D-F2-05","status":"OPEN","impact":"promising bpt2 verifier cannot restore because NuGet signature endpoint is blocked","next_condition":"approved reproducible offline package cache or external runner"}
+  ],
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

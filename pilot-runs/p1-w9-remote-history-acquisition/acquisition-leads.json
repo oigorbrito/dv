@@ -1,0 +1,30 @@
+{
+  "wave":"P1-W9",
+  "repositories":["oigorbrito/searchleads","oigorbrito/bpt2-abp","oigorbrito/podium7"],
+  "lead_count":19,
+  "parent_selection_rule":"first parent from solution commit; for merge 3786591, feature parent b12049d6d78eb0793ee6a41fda8befc9e945237f was selected",
+  "leads":[
+    {"repository":"searchleads","solution_sha":"5e21d1fa1c28aa3f3aa3b789a0b7894f2314c380","parent_sha":"aa44864cf0705c8a94934e1a6f6cc6b0eea46492","subject":"fix: make governance validation CLI runnable from checkout","priority":2},
+    {"repository":"searchleads","solution_sha":"9df9f6f9d15936796234fa969001e6175fd84780","parent_sha":"b3686abfc1bbd4a42771730a517037c83b0381ab","subject":"Fix import path for run_live_network_certification script by adding src to PYTHONPATH","priority":3},
+    {"repository":"searchleads","solution_sha":"3ad1481374f633dab618d5658598e2d7768b1bf9","parent_sha":"f6210dc075cacf2b72accca298903edac2569358","subject":"fix: install pytest in live certification workflow","priority":6},
+    {"repository":"searchleads","solution_sha":"2b95dcc557b66f2092301c513329731e0acb632d","parent_sha":"8501f5e9ea56290c178629504bf1974112866143","subject":"fix: include registration id in persistence probe","priority":6},
+    {"repository":"searchleads","solution_sha":"2f63d2f5126c5c743910fb536e1581f10375da60","parent_sha":"2c886f863cf6d5f9473d15e60f2f55f938162876","subject":"fix: persist v3 evidence digest atomically","priority":6},
+    {"repository":"searchleads","solution_sha":"07eb9bc3fa7f9d0a6450489b8601024df960ef9b","parent_sha":"f8d3a0afcf2cdfbbc5d899a1106a96138549328d","subject":"fix: fail closed on missing v3 envelope digest","priority":6},
+    {"repository":"searchleads","solution_sha":"6195d277161d2796248e841a348e63cc18e3e6e6","parent_sha":"11cc76acb715c441e410f27dd86da137b3e8567c","subject":"fix: harden v3 migration and idempotent save integrity","priority":6},
+    {"repository":"bpt2-abp","solution_sha":"122594aea314388282cd4e53c5e70997b15e6984","parent_sha":"f3d2cd2d4c0840077451222868ca0d1c0323cdd2","subject":"Fix Saved Search runner retry and cancellation correctness","priority":1},
+    {"repository":"bpt2-abp","solution_sha":"2dd32f0c87c73b635f640da4f34be74b6c1ae617","parent_sha":"109f447c9941eca7e0216e067d1051f02e209adb","subject":"Fix quantitative consumer benchmark compilation","priority":7},
+    {"repository":"bpt2-abp","solution_sha":"ecd14fff0b0203e2a230ff7eaf8dd89bd837b670","parent_sha":"0f572671eee5b73d68155421ce52c896e08b4c16","subject":"fix: satisfy canonical vehicle selector lint","priority":7},
+    {"repository":"bpt2-abp","solution_sha":"7d7b11a8627a63bbadc4517c8dea20d7a087dfd9","parent_sha":"788df4cbf745880ca9e37bfd2360f78e9fb20592","subject":"fix: allow ABP proxying Podium feed service","priority":7},
+    {"repository":"bpt2-abp","solution_sha":"fc3b3ffe5250bfebd3226364eb35633e97a6f14e","parent_sha":"68bf1919dab7f0f532d442b36d0ec279f410e0d8","subject":"fix: freeze Podium JSON field names","priority":7},
+    {"repository":"bpt2-abp","solution_sha":"6813b1dfb10e00ca55f001281ba9b1fd067b596d","parent_sha":"fae79c5b26a2b776557922abacf3e8bea3575411","subject":"Fix alert smoke conventional routes","priority":7},
+    {"repository":"bpt2-abp","solution_sha":"48d95aeac85d8c290e6b410d7129016e0cb7cb3d","parent_sha":"c185b31c67c28de900f2ef19a1ab384acdc75ae7","subject":"Fix Saved Search smoke local initialization","priority":7},
+    {"repository":"bpt2-abp","solution_sha":"8df0718d0e6b7c820370e2f7ddcd84ee951891d5","parent_sha":"bc79b4d17cdb2e95846b29aa1809451516a96780","subject":"Fix Saved Search smoke ID parsing","priority":7},
+    {"repository":"podium7","solution_sha":"96fa9b7487d95ea12473b10ef09720dc6ed385ae","parent_sha":"e8e6720f4c859cda9c70609889a207b3968c9ecf","subject":"Fix local readiness runner paths","priority":4},
+    {"repository":"podium7","solution_sha":"3786591cf847c2301caa3675fd4c3e1752ec4f89","parent_sha":"b12049d6d78eb0793ee6a41fda8befc9e945237f","subject":"Fix Operational Readiness test command matching","priority":5},
+    {"repository":"podium7","solution_sha":"3aedcdaf137aec1530199d1ac43a6efcd4449a4f","parent_sha":"a8cd731ee7e7328f2f1cfed27fdfb88a06f368a1","subject":"feat: add multisource v2 create match ingestion","priority":8},
+    {"repository":"podium7","solution_sha":"f1f707a9e90b59804788d66ce1b09ffd26668c96","parent_sha":"4374867ce72dc823b2ead46eb8c625e1a3746d5b","subject":"feat: add multisource v2 review path","priority":8}
+  ],
+  "solution_diff_inspected_before_freeze":false,
+  "holdout_access":"NONE",
+  "treatment_execution":"NOT_EXECUTED"
+}

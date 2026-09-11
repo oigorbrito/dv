@@ -1,0 +1,16 @@
+{
+  "wave":"P1-W9",
+  "frozen_before_solution_diff":true,
+  "candidate_namespace":"D-F2-04 for searchleads/2f63d2f; no existing ID reused",
+  "freezes":[
+    {"candidate_id":"D-F2-04","repository":"oigorbrito/searchleads","solution_sha":"2f63d2f5126c5c743910fb536e1581f10375da60","base_sha":"2c886f863cf6d5f9473d15e60f2f55f938162876","family":"F2","task_statement":"The evidence-envelope persistence path must preserve the pre-existing v3 integrity contract atomically and reject invalid envelope state deterministically.","verifier_ref":"tests/test_evidence_envelope_integrity_v3.py","verifier_provenance":"file exists at parent before solution commit; repository-owned test","solution_diff_seen_before_freeze":false,"status":"BLOCKED","reason":"BASE_NOT_REPRODUCIBLE_LOCALLY: pytest unavailable under available Python runtime"},
+    {"candidate_id":"D-F2-05","repository":"bpt2-abp","solution_sha":"122594aea314388282cd4e53c5e70997b15e6984","base_sha":"f3d2cd2d4c0840077451222868ca0d1c0323cdd2","family":"F2","task_statement":"The Saved Search claim/recovery path must preserve the repository's pre-existing transaction, rollback, cancellation, and idempotency invariants.","verifier_ref":"tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/Program.cs","verifier_provenance":"file, workflow, and bounded baseline contract exist at parent before solution commit","solution_diff_seen_before_freeze":false,"status":"BLOCKED","reason":"BASE_NOT_REPRODUCIBLE_LOCALLY: NuGet repository-signature restore blocked by socket policy"}
+  ],
+  "cheap_rejections":[
+    {"solution_shas":["5e21d1fa1c28aa3f3aa3b789a0b7894f2314c380","9df9f6f9d15936796234fa969001e6175fd84780","3ad1481374f633dab618d5658598e2d7768b1bf9","2b95dcc557b66f2092301c513329731e0acb632d","07eb9bc3fa7f9d0a6450489b8601024df960ef9b","6195d277161d2796248e841a348e63cc18e3e6e6"],"status":"REJECTED","reason":"INDEPENDENT_VERIFIER_NOT_AVAILABLE_OR_EXTERNAL_ENVIRONMENT_NOT_BOUNDED_AT_PARENT"},
+    {"solution_shas":["2dd32f0c87c73b635f640da4f34be74b6c1ae617","ecd14fff0b0203e2a230ff7eaf8dd89bd837b670","7d7b11a8627a63bbadc4517c8dea20d7a087dfd9","fc3b3ffe5250bfebd3226364eb35633e97a6f14e","6813b1dfb10e00ca55f001281ba9b1fd067b596d","48d95aeac85d8c290e6b410d7129016e0cb7cb3d","8df0718d0e6b7c820370e2f7ddcd84ee951891d5"],"status":"REJECTED","reason":"INDEPENDENT_VERIFIER_NOT_ESTABLISHED_AT_PARENT_OR_EXTERNAL_SERVICE_REQUIRED"},
+    {"solution_shas":["96fa9b7487d95ea12473b10ef09720dc6ed385ae","3786591cf847c2301caa3675fd4c3e1752ec4f89","3aedcdaf137aec1530199d1ac43a6efcd4449a4f","f1f707a9e90b59804788d66ce1b09ffd26668c96"],"status":"REJECTED","reason":"SOLUTION_LEAKAGE_OR_INTERLEAVED_TEST/IMPLEMENTATION_PROVENANCE"}
+  ],
+  "holdout_access":"NONE",
+  "treatment_execution":"NOT_EXECUTED"
+}

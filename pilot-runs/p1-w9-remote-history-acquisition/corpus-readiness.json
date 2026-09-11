@@ -1,0 +1,14 @@
+{
+  "wave":"P1-W9",
+  "before":{"task_count":2,"family_count":2,"repository_count":1},
+  "after":{"task_count":2,"family_count":2,"repository_count":1},
+  "new_admissions":0,
+  "new_candidates_materialized":2,
+  "runtime_diversity":["Python","Rust"],
+  "verifier_type_diversity":["Python unittest","Cargo workspace tests"],
+  "comparative_corpus_ready":false,
+  "reason":"Both promising parents were blocked by reproducibility constraints before baseline execution. No new task can be admitted without executable evidence. Existing corpus remains two tasks from one repository.",
+  "task_corpus":"PARTIAL",
+  "P1_S1_RELEASE":"NO",
+  "holdout":"SEALED"
+}
