@@ -135,6 +135,14 @@ freezing, full preservation evidence, and the reproducible environment contract
 remain to be closed. It remains a pending acquisition lead, not treatment
 evidence; no generated candidate or solution diff was inspected.
 
+An attempted broad candidate preservation probe (`node --test test/*.test.mjs`)
+was not promoted to a result: 55 test files were scheduled and 21 passing lines
+were observed, but the wrapper did not expose a terminal exit code or complete
+summary before its child processes released the temporary workspace. The probe
+is therefore `INCONCLUSIVE`, not preservation PASS. The temporary workspace was
+eventually removed without force-killing unidentified processes. No source
+checkout was changed and no treatment was executed.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

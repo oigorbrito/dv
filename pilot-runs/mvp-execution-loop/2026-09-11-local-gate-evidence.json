@@ -265,6 +265,15 @@
       "failed": 0,
       "temporary_workspace_cleanup": "PASS"
     },
+    "candidate_preservation_probe": {
+      "command": "node --test test/*.test.mjs",
+      "test_file_count": 55,
+      "execution_state": "INCONCLUSIVE",
+      "observable_output": "21 passing test lines observed before terminal summary and exit status became unavailable",
+      "exit_code": "UNOBSERVED",
+      "temporary_workspace_cleanup": "PASS_AFTER_NATURAL_TERMINATION",
+      "qualification_effect": "does_not_establish_preservation_pass"
+    },
     "screening_result": "PROMISING_FAIL_TO_PASS_PENDING_ADMISSIBILITY_CLOSURE",
     "classification": "BLOCKED",
     "solution_diff_inspected": false,
