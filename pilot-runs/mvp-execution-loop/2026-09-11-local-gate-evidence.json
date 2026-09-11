@@ -104,8 +104,11 @@
     "exit_code": 1,
     "observed_error": "ModuleNotFoundError: No module named 'searchleads'",
     "preexisting_verifier": "tests/test_live_network_smoke.py exists but exercises the library with injected transports; it does not verify the script entrypoint/import-path contract",
-    "screening_result": "REJECTED_NO_INDEPENDENT_ENTRYPOINT_VERIFIER",
-    "reason": "parent import failure is reproducible, but no independent pre-existing verifier for the corrected script entrypoint was established; no solution diff inspected",
+    "screening_result": "BLOCKED_ENTRYPOINT_VERIFIER_REPLAY_REQUIRED",
+    "preexisting_workflow_evidence": ".github/workflows/live-network-certification.yml invokes the exact script command before the task commit",
+    "preservation_evidence": "tests/test_live_network_smoke.py exists before the task and covers the underlying library with injected transports, but not the script entrypoint",
+    "reason": "parent import failure is reproducible and the workflow command is pre-existing, but candidate-side entrypoint success and reproducible external-environment behavior remain unverified; no solution diff inspected",
+    "blocker": "candidate replay and network/environment contract require a bounded future qualification step",
     "solution_diff_inspected": false,
     "treatment_executed": false
   },

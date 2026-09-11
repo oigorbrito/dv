@@ -62,10 +62,12 @@ modified.
 A fourth `searchleads` lead was screened at `9df9f6f`. Replaying its isolated
 parent with `python -B scripts/run_live_network_certification.py` produced the
 expected import failure (`ModuleNotFoundError: No module named 'searchleads'`,
-exit code 1). The parent already has library-level tests using injected
-transports, but they do not verify this script entrypoint. The lead is therefore
-rejected as `NO_INDEPENDENT_ENTRYPOINT_VERIFIER`; no solution diff was inspected
-and no source was modified.
+exit code 1). The workflow invoking this exact command predates the task, and
+the parent has library-level preservation tests using injected transports, but
+those tests do not verify the script entrypoint. The lead is therefore recorded
+as `BLOCKED_ENTRYPOINT_VERIFIER_REPLAY_REQUIRED`: candidate-side entrypoint
+success and its environment contract remain to be qualified. No solution diff
+was inspected and no source was modified.
 
 ## Remaining decision
 
