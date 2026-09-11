@@ -127,6 +127,14 @@ failure does not yet isolate the historical product behavior from platform
 normalization. The candidate diff was not inspected, no source checkout was
 changed, and no treatment was executed.
 
+The same verifier was then replayed against the isolated historical candidate
+snapshot `e1f939f9a023e4da87cc2754d78e5132a5978c3b`. It passed 1/1 test with
+exit code 0 and the temporary workspace was removed. This establishes a
+promising historical Fail-to-Pass pair, but not task admission: task-statement
+freezing, full preservation evidence, and the reproducible environment contract
+remain to be closed. It remains a pending acquisition lead, not treatment
+evidence; no generated candidate or solution diff was inspected.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor
