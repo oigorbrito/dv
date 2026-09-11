@@ -11,7 +11,21 @@ MetaO e SMAG são referências iniciais porque materializam funções úteis, ma
 
 A unidade de composição é a **função/capacidade**, não o código, linguagem, framework ou repositório de origem.
 
-## 2. Motivação
+## 2. Origem da reavaliação
+
+A decisão de reavaliar a direção anterior de MetaO e SMAG foi provocada pela análise de projetos externos, em especial o OpenManus (`FoundationAgents/OpenManus`).
+
+Ao observar uma abordagem modular capaz de combinar agentes, ferramentas e fluxos de execução, surgiu a hipótese de que manter e evoluir isoladamente dois sistemas próprios poderia ser menos eficiente do que compor capacidades maduras de vários projetos por uma camada de integração estreita.
+
+Esse episódio é o **gatilho histórico da reavaliação**, não evidência suficiente para copiar a arquitetura do OpenManus nem para adotá-lo como dependência obrigatória.
+
+Regra decorrente:
+
+> Quando um projeto externo demonstrar uma ideia, capacidade ou composição potencialmente superior, o `dv` deve reavaliar sua direção em vez de preservar decisões anteriores por inércia.
+
+A comparação deve continuar submetida a engenharia de software defensável e validação empírica. Uma arquitetura aparentemente madura, elegante ou popular é somente candidata até ser testada no contexto e nas métricas relevantes do `dv`.
+
+## 3. Motivação
 
 O ecossistema de agentes, executores, runtimes, protocolos e ferramentas evolui rápido demais para que um único desenvolvedor acompanhe, reimplemente e mantenha internamente todas as melhores soluções.
 
@@ -19,7 +33,7 @@ Por isso, o projeto deve favorecer composição e substituição em vez de repro
 
 A camada proposta deve absorver diferenças de implementação por standards, contratos ou adapters pequenos, mantendo o restante do sistema desacoplado.
 
-## 3. Resultado funcional desejado
+## 4. Resultado funcional desejado
 
 O sistema composto deve buscar, quando demonstrável:
 
@@ -35,7 +49,7 @@ O sistema composto deve buscar, quando demonstrável:
 
 Lentidão de um executor gratuito não é, por si só, defeito eliminatório. Se a composição conseguir entregar resultado verificadamente correto com custo significativamente menor e latência ainda aceitável para o caso de uso, esse trade-off deve ser medido e pode ser vantajoso.
 
-## 4. MetaO e SMAG: conceitos, não código
+## 5. MetaO e SMAG: conceitos, não código
 
 Do MetaO interessa principalmente a classe de funções como:
 
@@ -70,7 +84,7 @@ Essas listas não significam que o código do MetaO ou do SMAG será incorporado
 - uma composição de vários componentes;
 - ou nenhuma camada adicional, se a função não for necessária para determinada tarefa.
 
-## 5. Princípio de extensibilidade
+## 6. Princípio de extensibilidade
 
 Forma conceitual:
 
@@ -94,7 +108,7 @@ verified result
 
 O componente de integração não deve conhecer detalhes internos desnecessários dos providers. Preferir standards existentes (por exemplo A2A, MCP e workflow standards) e adapters estreitos antes de criar protocolos próprios.
 
-## 6. Objetivo econômico
+## 7. Objetivo econômico
 
 Métrica principal:
 
@@ -128,7 +142,7 @@ Também medir:
 - executor tier/model usado;
 - capacidade de usar opção gratuita/barata sem perda inaceitável de qualidade.
 
-## 7. Estratégia operacional provisória
+## 8. Estratégia operacional provisória
 
 A pesquisa atual favorece como baseline, ainda não como arquitetura congelada:
 
@@ -151,7 +165,7 @@ EXPAND / stronger executor / more context / planning / composition
 
 A ideia é não pagar antecipadamente por inteligência, contexto ou orquestração que talvez não sejam necessários.
 
-## 8. Regra de evolução
+## 9. Regra de evolução
 
 O `dv` deve permanecer proativo em relação ao ecossistema:
 
@@ -165,7 +179,25 @@ O `dv` deve permanecer proativo em relação ao ecossistema:
 
 Portanto, a arquitetura futura deve permitir evolução do ecossistema sem exigir que o mantenedor acompanhe internamente cada implementação.
 
-## 9. Regra de decisão
+## 10. Regra fixa de admissibilidade
+
+Nenhuma capacidade, componente, arquitetura ou decisão do `dv` é considerada aprovada apenas por plausibilidade, popularidade, elegância ou porque funciona isoladamente.
+
+Toda decisão relevante deve ser sustentada por dois eixos:
+
+1. **Engenharia de software defensável** — baixo acoplamento, contratos claros, substituibilidade, isolamento de falhas, manutenção viável, segurança, observabilidade e complexidade proporcional ao benefício.
+2. **Evidência empírica adequada à alegação** — baseline, tarefas representativas, métricas predefinidas, execução real quando necessária, resultados brutos e falhas preservados, comparação controlada e possibilidade explícita de resultado `INCONCLUSIVE`.
+
+Regras:
+
+- `boa ideia != aprovada`;
+- `código funcionando != arquitetura aprovada`;
+- `documentado != executado`;
+- `benchmark isolado != superioridade geral`;
+- `popularidade != evidência`;
+- `evidência insuficiente -> INCONCLUSIVE`.
+
+## 11. Regra de decisão
 
 Não se apegar ao código de MetaO, SMAG ou qualquer outro projeto.
 
@@ -177,7 +209,7 @@ Um provider novo deve ser aceito quando satisfizer o contrato necessário e demo
 
 Um provider existente deve poder ser removido quando deixar de ser competitivo ou necessário.
 
-## 10. Condição de sucesso do projeto
+## 12. Condição de sucesso do projeto
 
 O projeto terá sucesso se conseguir demonstrar uma composição substituível que faça ferramentas e executores heterogêneos trabalharem juntos com resultado verificável e custo total competitivo — inclusive aproveitando executores gratuitos ou mais fracos quando suficientes — sem criar um novo monólito difícil de manter.
 
