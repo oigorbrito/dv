@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-09-11T03:04:15.2814016Z",
+  "credential_present": true,
+  "endpoint": "https://api.openai.com/v1/responses",
+  "request_model": "gpt-5.6-sol",
+  "request_reasoning_effort": "high",
+  "http_status": 429,
+  "response_id": null,
+  "returned_model": null,
+  "provider_native_usage": null,
+  "quota_billing": "BLOCKED",
+  "error_type": "Microsoft.PowerShell.Commands.HttpResponseException",
+  "error_code": null,
+  "error_message": "O código de status da réplica não indica êxito: 429 (Too Many Requests).",
+  "classification": "INCONCLUSIVE / API_QUOTA_OR_BILLING_BLOCKED",
+  "secret_handling": "OPENAI_API_KEY value was not printed, persisted, or committed"
+}
