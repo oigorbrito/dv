@@ -78,8 +78,11 @@ The isolated parent replay from `packages/opencode` reached Bun but was blocked
 by the local dependency surface (`preload not found "@opentui/solid/preload"`,
 exit code 1). The package `@opentui/solid@0.4.5` is present in the local Bun
 cache, but no checkout has a materialized installation. An offline installation
-was not attempted. It remains `BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE`; this is
-not a product failure, and no solution diff or source checkout was modified.
+was attempted in a temporary clone with `bun install --offline
+--frozen-lockfile`: 20 packages resolved from cache, but Bun reported that the
+lockfile had changes and exited 1. No lockfile or source checkout was modified.
+It remains `BLOCKED_ENVIRONMENT_NOT_REPRODUCIBLE`; this is not a product
+failure, and no solution diff was inspected.
 
 ## Remaining decision
 

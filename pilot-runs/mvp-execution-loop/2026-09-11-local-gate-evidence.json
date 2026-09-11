@@ -167,6 +167,20 @@
     "action_taken": "read_only check; no bun install and no download",
     "classification": "ENVIRONMENT_BLOCKED"
   },
+  "smag_offline_install_probe": {
+    "repository": "C:\\Projetos\\smag-base-clean",
+    "workspace": "temporary local clone; removed after probe",
+    "commit": "d2cfc3eba1e05cef9ae8e3938369c5352363e0f7",
+    "command": "bun install --offline --frozen-lockfile",
+    "runtime": "bun 1.4.0",
+    "resolution": "20 packages resolved/downloaded/extracted from local cache",
+    "exit_code": 1,
+    "observed_error": "lockfile had changes, but lockfile is frozen",
+    "source_checkout_modified": false,
+    "lockfile_modified": false,
+    "classification": "ENVIRONMENT_BLOCKED_LOCKFILE_REPRODUCIBILITY",
+    "treatment_executed": false
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],
