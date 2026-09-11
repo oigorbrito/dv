@@ -17,8 +17,8 @@ HOLDOUT = SEALED
 ## Baseline and source
 
 The DV checkout was clean on `main` at
-`718b7b62eff40f03a80ce2688b831f9f12d71dcc`, equal to `origin/main`. The
-Harness self-test ran six tests and exited `0`. The public source
+`718b7b62eff40f03a80ce2688b831f9f12d71dcc`, equal to `origin/main` at the
+wave baseline. The Harness self-test ran six tests and exited `0`. The public source
 `oigorbrito/medvi` was verified at `531ba28602714359bafeeb8d806e4e06cc7ac34b`.
 Its temporary clone was kept outside the tracked DV artifacts.
 
@@ -34,7 +34,7 @@ M1's pre-existing observability tests were a valid independent focal
 surface and passed `7/7`, but the stated solution commit has the same tree as
 its parent. It therefore supplies no historical product delta for a task.
 Its broader preservation suite was blocked by the missing generated Prisma
-client.
+client. This same Prisma preservation blocker applies to M1, M2, and M3.
 
 M2's parent build/typecheck and test commands were available, but typecheck
 was blocked by the absent generated Prisma client. Preservation also exposed
@@ -42,9 +42,9 @@ the same Prisma setup failure and unrelated logger failures, so attribution
 to the auth change is not defensible.
 
 M3's build failed deterministically on the parent because
-`submitCheckout` is undefined, but its preservation suite was blocked by the
-absent generated Prisma client. A preservation failure cannot be silently
-removed, so the candidate was not admitted.
+`submitCheckout` is undefined, while its preservation suite was blocked by
+the absent generated Prisma client. The focal failure is useful historical
+evidence, but incomplete preservation prevents admission.
 
 M4/M1 are a duplicate logger/observability line for corpus purposes. M5 is a
 broad checkout/deployability changeset. L1-L5 were cheap-screened by parent
@@ -87,9 +87,16 @@ preservation, and environment gates.
 
 `P1-W1-BLK-002` remains open for comparative corpus expansion, and
 `P1-W4-BLK-STRONG-CREDENTIAL` remains open for strong executor qualification.
-The medvi source did not provide an admissible task in the screened leads.
-The M2/M3 environment limitation is recorded as observed evidence, not as a
-claim that no reproducible setup could ever exist.
+`P1-W14-MEDVI-ENV` now explicitly covers preservation for M1, M2, and M3;
+M2 additionally has a focal environment block, while M3 has a valid
+expected product build failure. The medvi source did not provide an
+admissible task in the screened leads. The environment limitation is
+recorded as observed evidence, not as a claim that no reproducible setup
+could ever exist.
+
+The W14 commit was not remotely preserved. The push attempt failed because
+`github.com:443` was unreachable. `P1-W14-BLK-GITHUB-PUSH` records the
+local/remote SHAs, ahead/behind state, impact, and exact unblock condition.
 
 The legacy holdout remained sealed and no holdout path was inspected. No
 treatment result, candidate output, or model/API call influenced selection.
