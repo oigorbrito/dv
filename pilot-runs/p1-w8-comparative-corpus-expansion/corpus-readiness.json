@@ -1,0 +1,16 @@
+{
+  "wave":"P1-W8",
+  "tasks_per_family":{"F5":1,"F6":1},
+  "repositories_represented":["oigorbrito/metaO"],
+  "language_runtime_diversity":["Python","Rust"],
+  "verifier_type_diversity":["Python unittest","Cargo workspace tests"],
+  "admitted_tasks":2,
+  "admitted_families":2,
+  "TASK_CORPUS":"PARTIAL",
+  "S1_CORPUS_READY":true,
+  "COMPARATIVE_CORPUS_READY":false,
+  "reason":"The corpus supports pipeline/smoke mechanics only. It remains concentrated in one repository with one task per family and cannot support treatment ranking, executor ranking, or generalization.",
+  "sample_size_claim":"NONE; the master-plan preferences are not treated as universal thresholds",
+  "holdout":"SEALED",
+  "holdout_access":"NONE"
+}

@@ -1,0 +1,20 @@
+{
+  "wave": "P1-W8",
+  "repositories_under_C_Projetos": [
+    {"path":"C:\\Projetos\\RJ","git":true,"head":"4282cd5c836f81c6da95d17cf317c05525b417d7","role":"existing P1 source; prior candidates screened"},
+    {"path":"C:\\Projetos\\smag","git":true,"head":"cca06e6bbf6c5d0c4b654a5807b5ddd2be16fb7b","role":"existing P1 source; prior candidates screened"},
+    {"path":"C:\\Projetos\\metao-gate","git":true,"head":"2f730773d073a5c4c5bd05b7ae4c0a4f2481a533","role":"local development evidence universe; no frozen P1 task admitted"},
+    {"path":"C:\\Projetos\\bpt2-abp","git":true,"head":"2a6d3b4a0578a722ef5f0d7cef8dfa748d8401a6","role":"local development evidence universe; no frozen P1 task admitted"},
+    {"path":"C:\\Projetos\\Rag-git","git":true,"head":"b4880adbf288bcefbebef6542658ab80d923f609","role":"local development evidence universe; no frozen P1 task admitted"},
+    {"path":"C:\\Projetos\\empirical-evaluator-ado","git":true,"head":"NOT_RECORDED_IN_P1_CANDIDATE_REGISTRY","role":"enumerated; no verifier-first task metadata available in DV"},
+    {"path":"C:\\Projetos\\opencode-direct-proof","git":true,"head":"0e81274cddfee6023dbca3a60b7d6b83abf8f8b8","role":"enumerated; no verifier-first task metadata available in DV"}
+  ],
+  "existing_registry": "pilot-runs/block-5b/task-discovery-screening.json",
+  "existing_registry_count": 18,
+  "existing_registry_outcome": "2 admitted; remaining candidates rejected or not admitted for verifier/provenance/base/environment reasons",
+  "new_candidate_search": "STOPPED",
+  "stop_reason": "B: newly considered local sources did not expose a pre-frozen verifier-first task record; continuing would require constructing or retrospectively binding verifiers, or external acquisition.",
+  "solution_diff_seen_before_freeze": false,
+  "holdout_access": "NONE",
+  "treatment_execution": "NOT_EXECUTED"
+}

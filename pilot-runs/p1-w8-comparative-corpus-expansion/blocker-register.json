@@ -1,0 +1,14 @@
+{
+  "wave":"P1-W8",
+  "blockers":[
+    {"blocker_id":"P1-W1-BLK-002","status":"OPEN_FOR_S2","impact":"corpus remains non-comparative: two tasks, two families, one repository","next_condition":"acquire independently admissible development tasks without weakening verifier-first gate"},
+    {"blocker_id":"P1-W4-BLK-STRONG-CREDENTIAL","status":"OPEN","impact":"strong executor qualification and S1 release remain blocked","next_condition":"authorized C1 credential and qualification probe"},
+    {"blocker_id":"P1-W1-BLK-003","status":"OPEN_FOR_S1","impact":"strong path not qualified","next_condition":"complete C1 S0 qualification"},
+    {"blocker_id":"P1-W1-BLK-004","status":"CLOSED","impact":"provider-internal retry metadata is nonblocking explicit missingness"},
+    {"blocker_id":"P1-W5-D-F1-01","status":"CLOSED","impact":"frozen base runner incompatibility"}
+  ],
+  "new_candidate_specific_blockers": [],
+  "stop_reason":"All existing candidates were consumed and new local-source screening repeated the verifier provenance barrier; further progress requires a new controlled acquisition source or external task metadata.",
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

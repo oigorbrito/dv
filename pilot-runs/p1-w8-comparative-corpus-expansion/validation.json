@@ -1,0 +1,17 @@
+{
+  "wave":"P1-W8",
+  "json_parse":"PASS",
+  "candidate_id_uniqueness":"PASS",
+  "base_sha_validation":"PASS_FOR_ADMITTED_TASKS",
+  "verifier_hash_validation":"PASS_FOR_ADMITTED_TASKS",
+  "evidence_paths":"PASS_FOR_REFERENCED_PRIOR_EVIDENCE",
+  "holdout_leakage":"PASS; HOLDOUT_ACCESS=NONE",
+  "secret_scan":"PASS; no credential/token recorded",
+  "p0_immutability":"PASS; no P0 artifact changed",
+  "focal_verifiers":"PRIOR_EVIDENCE_RETAINED; no new candidate reached execution gate",
+  "preservation_suites":"PRIOR_EVIDENCE_RETAINED; no new candidate reached execution gate",
+  "treatment_execution":"NOT_EXECUTED",
+  "smoke_execution":"NOT_EXECUTED",
+  "harness_self_test":"PASS; 6/6; exit 0",
+  "diff_check":"PASS; exit 0"
+}

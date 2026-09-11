@@ -1,0 +1,12 @@
+{
+  "wave": "P1-W8",
+  "materialized_new_candidates": 0,
+  "execution_policy": "Only candidates passing provenance and verifier-independence screening are materialized; no new candidate passed that gate.",
+  "admitted_baseline_evidence": [
+    {"candidate_id":"D-F5-01","status":"PASS","evidence_ref":"pilot-runs/p1-w5-verifier-first-corpus-closure/d-f5-execution.json"},
+    {"candidate_id":"D-F6-01","status":"PASS","evidence_ref":"pilot-runs/block-4ah-offline-oracle-closure/evidence/f6-offline-recovery-results.json"}
+  ],
+  "not_run_again": "Existing baseline evidence is tied to exact base, workspace, verifier, and environment; no unnecessary rerun was performed.",
+  "holdout_access": "NONE",
+  "treatment_execution": "NOT_EXECUTED"
+}

@@ -1,0 +1,54 @@
+{
+  "corpus_id": "p1-development-corpus-v3",
+  "supersedes": "experiments/p1/p1-development-corpus-v2.json",
+  "selection_rule": "W8 verifier-first only; no task is admitted without frozen base, independent verifier, reproducible baseline, preservation evidence, and solution isolation",
+  "source_inventory": "pilot-runs/p1-w8-comparative-corpus-expansion/discovery-inventory.json",
+  "candidate_inventory": "pilot-runs/p1-w8-comparative-corpus-expansion/candidate-screening.json",
+  "admitted_tasks": [
+    {
+      "task_id": "D-F5-01",
+      "family": "F5",
+      "repository": "oigorbrito/metaO",
+      "base_sha": "9cc5d6d722d509175a669624c9235156dffb4f85",
+      "task_statement_ref": "docs/research/2026-09-10-block-1-canonical-corpus-manifest.md",
+      "verifier_ref": "tests/unit/test_operator_ux_doctor.py and test_roadmap_1_work_unit_06.py",
+      "verifier_hash": "8216e56aa683724f2a61368ebc04264174e4207c3694c9793894a98bd886563b",
+      "baseline": "focal 10/10 PASS; preservation 469/469 PASS",
+      "evidence_ref": "pilot-runs/p1-w5-verifier-first-corpus-closure/d-f5-execution.json",
+      "admissibility": "ADMITTED"
+    },
+    {
+      "task_id": "D-F6-01",
+      "family": "F6",
+      "repository": "oigorbrito/metaO",
+      "base_sha": "5d00cd284ce8fe810b0f5192c56d98608be516d4",
+      "task_statement_ref": "experiments/p1/p1-development-corpus-v1.json",
+      "verifier_ref": "pilot-runs/block-4ah-offline-oracle-closure/run-specs/D-F6-01-oracle.json",
+      "verifier_hash": "daad36054dcaaa179bcf4604374e17420884785d489401b462d08dda0be87af3",
+      "baseline": "focal PASS; preservation PASS",
+      "evidence_ref": "pilot-runs/block-4ah-offline-oracle-closure/evidence/f6-offline-recovery-results.json",
+      "admissibility": "ADMITTED"
+    }
+  ],
+  "counts": {
+    "existing_candidates_screened": 18,
+    "new_candidates_discovered": 0,
+    "admitted": 2,
+    "not_admitted_or_rejected": 16,
+    "admitted_families": 2
+  },
+  "family_states": {
+    "F1": "PARTIAL",
+    "F2": "NOT_OPERATIONALIZABLE_YET",
+    "F3": "NOT_OPERATIONALIZABLE_YET",
+    "F4": "NOT_OPERATIONALIZABLE_YET",
+    "F5": "OPERATIONALIZABLE_FOR_D-F5-01",
+    "F6": "OPERATIONALIZABLE"
+  },
+  "task_corpus": "PARTIAL",
+  "comparative_corpus_ready": "NO",
+  "comparative_reason": "Two tasks from one repository and two families are suitable for pipeline/smoke mechanics but do not support comparative treatment or executor claims.",
+  "holdout": "SEALED",
+  "holdout_access": "NONE",
+  "treatment_execution": "NOT_EXECUTED"
+}

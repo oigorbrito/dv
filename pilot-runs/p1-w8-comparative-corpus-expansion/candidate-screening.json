@@ -1,0 +1,17 @@
+{
+  "wave": "P1-W8",
+  "contract": "experiments/p1/task-admissibility-contract-v1.json",
+  "screening_order": ["provenance", "verifier independence", "base availability", "environment feasibility", "materialization", "baseline execution"],
+  "existing_candidate_registry": "pilot-runs/block-5b/task-discovery-screening.json",
+  "existing_candidates_screened": 18,
+  "new_candidates": [],
+  "admitted": ["D-F5-01", "D-F6-01"],
+  "not_admitted_or_rejected": [
+    {"ids":["D-F1-01"],"reason":"ENVIRONMENT_UNAVAILABLE / frozen MTP-VSTest runner incompatibility"},
+    {"ids":["D-F1-02","D-F1-03","D-F5-02","D-F5-03","D-F2-01","D-F2-02","D-F2-03","D-F3-01","D-F3-02","D-F3-03","D-F4-01","D-F4-02","D-F6-02","D-F6-03"],"reason":"INDEPENDENT_VERIFIER_NOT_AVAILABLE or INVALID_ORACLE"},
+    {"ids":["D-F4-03"],"reason":"SOLUTION_LEAKAGE"}
+  ],
+  "decision": "No additional candidate satisfies all frozen conditions. Prior detailed evidence remains authoritative and was not overwritten.",
+  "holdout_access": "NONE",
+  "treatment_execution": "NOT_EXECUTED"
+}
