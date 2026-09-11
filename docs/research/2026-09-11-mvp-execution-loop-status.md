@@ -98,6 +98,17 @@ reported `lockfile had changes, but lockfile is frozen` and exited 1. The
 source checkout and lockfile remained unchanged; the SMAG lead stays pending
 under `ENVIRONMENT_BLOCKED_LOCKFILE_REPRODUCIBILITY`.
 
+A sixth SMAG lead was screened using the pre-existing
+`packages/smag-governance/test/origin-resolution.test.mjs` verifier and the
+isolated parent `5397b29a7f3f3beb3479e8332ce91d2afc8d81e0` of task commit
+`0d54f44cf`. The exact Node command from `packages/smag-governance` failed
+before assertions because `packages/smag-governance/src/smag.mjs` does not
+export `resolveGitHubOrigin` (`SyntaxError`, exit code 1). This is recorded as
+`BLOCKED_VERIFIER_OR_PRODUCT_SURFACE_UNRESOLVED`: attribution to the
+historical product change, verifier surface, or missing export contract remains
+unresolved without solution-side semantic inspection. The candidate diff was
+not inspected, no source checkout was changed, and no treatment was executed.
+
 ## Remaining decision
 
 The next defensible action is to qualify the first authorized strong executor

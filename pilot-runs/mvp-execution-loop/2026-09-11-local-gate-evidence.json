@@ -213,6 +213,29 @@
     "source_checkout_modified": false,
     "treatment_executed": false
   },
+  "smag_origin_resolution_lead": {
+    "repository": "C:\\Projetos\\smag",
+    "task_commit": "0d54f44cf",
+    "parent_sha": "5397b29a7f3f3beb3479e8332ce91d2afc8d81e0",
+    "verifier_path": "packages/smag-governance/test/origin-resolution.test.mjs",
+    "verifier_provenance": "pre-existing verifier in isolated parent archive; source checkout unchanged",
+    "command": "node --test test/origin-resolution.test.mjs",
+    "cwd": "packages/smag-governance",
+    "runtime": "node v24.18.0",
+    "baseline_replay": {
+      "exit_code": 1,
+      "tests": 1,
+      "passed": 0,
+      "failed": 1,
+      "observed_error": "SyntaxError: The requested module ../src/smag.mjs does not provide an export named resolveGitHubOrigin",
+      "assertions_reached": false,
+      "temporary_workspace_cleanup": "PASS"
+    },
+    "screening_result": "BLOCKED_VERIFIER_OR_PRODUCT_SURFACE_UNRESOLVED",
+    "classification": "BLOCKED",
+    "solution_diff_inspected": false,
+    "treatment_executed": false
+  },
   "scientific_state": {
     "admitted_tasks": ["D-F2-05", "D-F5-01", "D-F6-01"],
     "admitted_families": ["F2", "F5", "F6"],
