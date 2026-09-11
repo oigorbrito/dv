@@ -1,0 +1,53 @@
+{
+  "wave": "P1-W6",
+  "task_id": "D-F1-01",
+  "repository": "oigorbrito/RJ",
+  "base_sha": "c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d",
+  "workspace": "C:\\Projetos\\dv\\.tmp-w6-d-f1",
+  "workspace_head": "c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d",
+  "workspace_state": "DETACHED_CLEAN_BEFORE_COMMAND",
+  "requested_sdk": "10.0.100",
+  "resolved_sdk": "10.0.401",
+  "roll_forward_rule": "latestFeature",
+  "resolution_valid": true,
+  "global_json_runner": "Microsoft.Testing.Platform",
+  "test_project_runner_capability": "VSTest-targeted xunit.v3 projects; not compatible with selected MTP runner",
+  "affected_projects": [
+    "RJ.ApiTests.csproj",
+    "RJ.ArchitectureTests.csproj",
+    "RJ.DomainTests.csproj",
+    "RJ.HttpContractTests.csproj",
+    "RJ.IntegrationTests.csproj"
+  ],
+  "evidence": {
+    "global_json_sha256": "15FC2962D00BBB3FEBAE9DDB01301F0723EBB743E1CFCD57AF3D1FDD3FB640BB",
+    "directory_packages_props_sha256": "B7DC7B7BF181128534D0B4754CDDE8C95E1A644C120211C39197C9956B22F36E3",
+    "domain_tests_project_sha256": "154CF98662779E4376E8C4FBEE0DA0BC47598B77AF3ECF46197A43980BF26656",
+    "ci_sha256": "F40DE1ED387D074906D5908CC53ADF2BEEE96286DC1B20A5806096810FAE48E9"
+  },
+  "commands": [
+    {
+      "command": "dotnet test tests/RJ.DomainTests/RJ.DomainTests.csproj --filter FullyQualifiedName~ProcessTextNormalizerTests --no-restore",
+      "cwd": "C:\\Projetos\\dv\\.tmp-w6-d-f1",
+      "exit_code": 1,
+      "result": "FAIL_BEFORE_TEST_EXECUTION",
+      "stdout_ref": "d-f1-focal.stdout.log",
+      "stderr_ref": "d-f1-focal.stderr.log"
+    },
+    {
+      "command": "dotnet test RJ.slnx --configuration Release --no-build --no-restore",
+      "cwd": "C:\\Projetos\\dv\\.tmp-w6-d-f1",
+      "exit_code": 1,
+      "result": "FAIL_BEFORE_TEST_EXECUTION",
+      "stdout_ref": "d-f1-preservation.stdout.log",
+      "stderr_ref": "d-f1-preservation.stderr.log"
+    }
+  ],
+  "causal_classification": "FAIL_FROZEN_BASE_RUNNER_INCOMPATIBLE",
+  "exact_sdk_install": "NOT_PERFORMED_NOT_JUSTIFIED",
+  "admissibility": "NOT_ADMITTED",
+  "blocker_transition": "P1-W5-D-F1-01 CLOSED; historical base is not admissible under its frozen runner configuration",
+  "source_modified": false,
+  "treatment_executed": false,
+  "holdout": "SEALED"
+}

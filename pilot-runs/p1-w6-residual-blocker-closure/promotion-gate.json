@@ -1,0 +1,22 @@
+{
+  "wave":"P1-W6",
+  "phase":"P1-S0_TO_P1-S1",
+  "checks": {
+    "S1_CORPUS_READY": true,
+    "STRONG_PATH_READY": false,
+    "ECONOMIC_PATH_READY": true,
+    "ACCOUNTING_PRIMARY_READY": true,
+    "HARNESS_REMOTE_READY": true,
+    "HOLDOUT_SEALED": true
+  },
+  "S1_CORPUS_STATUS":"PASS",
+  "COMPARATIVE_CORPUS_STATUS":"NO",
+  "HARNESS_P1_REMOTE_READINESS":"PASS",
+  "HARNESS_LOCAL_EXECUTOR_READINESS":"NOT_TESTED",
+  "P1_S1_RELEASE":"NO",
+  "only_failing_required_term":"STRONG_PATH_READY",
+  "reason":"The frozen S1 gate permits two-task/two-family pipeline validation, accepts explicit telemetry limitation, and has an economic Gemini qualification path. Promotion remains NO because no strong path is S0-qualified.",
+  "REAL_P0_RUNS":"0/24",
+  "P0_RELEASE":"NO",
+  "holdout":"SEALED"
+}

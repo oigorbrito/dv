@@ -1,0 +1,22 @@
+{
+  "wave": "P1-W6",
+  "before": [
+    {"blocker_id":"P1-W1-BLK-002","status":"OPEN","impact":"corpus partial"},
+    {"blocker_id":"P1-W1-BLK-003","status":"OPEN","impact":"no fully qualified strong/economic path"},
+    {"blocker_id":"P1-W1-BLK-004","status":"OPEN","impact":"provider retry semantics unobserved"},
+    {"blocker_id":"P1-W4-BLK-STRONG-CREDENTIAL","status":"OPEN","impact":"strong path credential unavailable"},
+    {"blocker_id":"P1-W5-D-F1-01","status":"OPEN","impact":"historical runner mismatch"}
+  ],
+  "after": [
+    {"blocker_id":"P1-W1-BLK-002","status":"OPEN_FOR_S2_NOT_BLOCKING_S1","impact":"two tasks/two families support the frozen pipeline/smoke gate; comparative corpus remains incomplete","next_condition":"expand corpus before S2 comparative claims"},
+    {"blocker_id":"P1-W1-BLK-003","status":"OPEN_FOR_S1","impact":"strong and economic/local/free gate is not both satisfied because strong path is unavailable","next_condition":"authorized strong executor qualification"},
+    {"blocker_id":"P1-W1-BLK-004","status":"CLOSED","impact":"provider-internal retry metadata is explicitly nonblocking missingness under frozen contracts","closure_evidence":"telemetry-requirement-matrix.json"},
+    {"blocker_id":"P1-W4-BLK-STRONG-CREDENTIAL","status":"OPEN","impact":"P1-S1 promotion still lacks a strong executor","next_condition":"authorized C1 credential and real qualification"},
+    {"blocker_id":"P1-W5-D-F1-01","status":"CLOSED","impact":"frozen base is not admissible because its selected MTP runner rejects VSTest projects","closure_evidence":"d-f1-final-resolution.json"}
+  ],
+  "s1_blockers":["P1-W4-BLK-STRONG-CREDENTIAL"],
+  "s2_blockers":["P1-W1-BLK-002: corpus expansion","variance/sample work after S2 observations"],
+  "nonblocking_limitations":["provider-internal retry metadata UNMEASURED","cached-token partition UNMEASURED","local GPU/energy schema NOT_TESTED"],
+  "holdout":"SEALED",
+  "treatment_execution":"NOT_EXECUTED"
+}

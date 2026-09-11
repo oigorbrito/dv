@@ -1,0 +1,5 @@
+O global.json define o executor de teste como Microsoft.Testing.Platform. Todos os projetos devem usar esse executor de teste.
+Os seguintes projetos de teste estão usando o executor de teste do VSTest:
+RJ.DomainTests.csproj
+
+Consulte https://aka.ms/dotnet-test/mtp para obter mais informações.

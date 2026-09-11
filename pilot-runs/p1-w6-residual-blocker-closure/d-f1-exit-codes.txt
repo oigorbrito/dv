@@ -1,0 +1,6 @@
+version_exit=0
+info_exit=0
+focal_exit=1
+preservation_exit=1
+workspace=C:\Projetos\dv\.tmp-w6-d-f1
+head=c627a1bcdc87ff9b0bbd5ccc0b7d108daa5e324d

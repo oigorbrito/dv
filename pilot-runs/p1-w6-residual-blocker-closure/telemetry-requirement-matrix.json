@@ -1,0 +1,33 @@
+{
+  "wave": "P1-W6",
+  "contract_refs": {
+    "master_plan": "docs/research/MASTER-TEST-PLAN-P1.md",
+    "accounting": "experiments/p1/run-accounting-contract-v1.json",
+    "result_schema": "experiments/p1/run-result-v1.schema.json",
+    "promotion_gates": "experiments/p1/promotion-gates-v1.json"
+  },
+  "fields": [
+    {"field":"model identity","required_for_S0":true,"required_for_S1":true,"required_for_primary_metric":false,"available":"Gemini observed; C1 blocked","missingness_representable":true,"blocking":false},
+    {"field":"request ID","required_for_S0":false,"required_for_S1":true,"required_for_primary_metric":false,"available":"Gemini responseId observed in W3","missingness_representable":true,"blocking":false},
+    {"field":"raw response","required_for_S0":true,"required_for_S1":true,"required_for_primary_metric":false,"available":"W3 preserved","missingness_representable":true,"blocking":false},
+    {"field":"candidate output","required_for_S0":true,"required_for_S1":true,"required_for_primary_metric":false,"available":"schema field present; no treatment run","missingness_representable":true,"blocking":false},
+    {"field":"input tokens","required_for_S0":false,"required_for_S1":true,"required_for_primary_metric":true,"available":"12 in W3 probe","missingness_representable":true,"blocking":false},
+    {"field":"output tokens","required_for_S0":false,"required_for_S1":true,"required_for_primary_metric":true,"available":"UNMEASURED in W3","missingness_representable":true,"blocking":false},
+    {"field":"total tokens","required_for_S0":false,"required_for_S1":true,"required_for_primary_metric":true,"available":"24 in W3 probe","missingness_representable":true,"blocking":false},
+    {"field":"cached tokens","required_for_S0":false,"required_for_S1":true,"required_for_primary_metric":false,"available":"UNMEASURED in W3","missingness_representable":true,"blocking":false},
+    {"field":"reasoning tokens","required_for_S0":false,"required_for_S1":true,"required_for_primary_metric":true,"available":"12 thoughts tokens in W3 probe","missingness_representable":true,"blocking":false},
+    {"field":"application retries","required_for_S0":true,"required_for_S1":true,"required_for_primary_metric":true,"available":"0 by frozen no-retry policy","missingness_representable":true,"blocking":false},
+    {"field":"provider-internal retries","required_for_S0":false,"required_for_S1":false,"required_for_primary_metric":false,"available":"UNMEASURED","missingness_representable":true,"blocking":false},
+    {"field":"latency","required_for_S0":true,"required_for_S1":true,"required_for_primary_metric":false,"available":"schema/probe timing surface","missingness_representable":true,"blocking":false},
+    {"field":"timeout","required_for_S0":true,"required_for_S1":true,"required_for_primary_metric":false,"available":"client timeout configured","missingness_representable":true,"blocking":false},
+    {"field":"pricing provenance","required_for_S0":true,"required_for_S1":true,"required_for_primary_metric":false,"available":"source/date contract field","missingness_representable":true,"blocking":false}
+  ],
+  "blk_004_decision": "CLOSED",
+  "closure_reason": "Frozen S1 contracts require retry visibility at the application/run boundary and permit explicit telemetry limitation; they do not require provider-internal retry metadata. The result schema has no provider-internal retry field.",
+  "provider_internal_retry": "UNMEASURED_NONBLOCKING",
+  "missing_is_zero": false,
+  "accounting_primary": "PASS",
+  "accounting_primary_basis": "W3 has inputTokenCount=12, thoughtsTokenCount=12, and totalTokenCount=24; total system tokens are directly observed without imputing absent output/cached partitions.",
+  "accounting_partition_detail": "PARTIAL",
+  "partition_detail_basis": "output and cached token fields were absent in the preserved W3 response; they remain UNMEASURED, not zero."
+}
