@@ -1,10 +1,10 @@
 {
-  "json_parse": "PASS; 6/6 W25 JSON artifacts",
+  "json_parse": "PASS; 9/9 W25 JSON artifacts",
   "source_checkout_preservation": "PASS; source was dirty before and not modified",
   "sha_resolution": "PASS; known parent object resolves locally",
-  "dependency_version_evidence": "PASS; manifests and central versions recorded",
+  "dependency_version_evidence": "PASS; manifests, central versions, and floating preview dependency recorded",
   "postgres_environment_evidence": "PASS; service, port, CLI, and Docker observations recorded",
-  "environment_smoke": "NOT_APPLICABLE; package supply and controlled PostgreSQL were not qualified",
+  "environment_smoke": "NOT_APPLICABLE; package supply is NOT_QUALIFIED and controlled PostgreSQL was not qualified",
   "parent_failure_gate": "NOT_APPLICABLE; no lead reached parent execution",
   "failure_attribution": "PASS; no environment result classified as product failure",
   "solution_leakage": "PASS; no solution diff inspected",

@@ -1,0 +1,18 @@
+{
+  "known_parent_sha": "f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "evidence_blobs": {
+    "global.json": "d46d21e50b3f3284ca3589173cac1e0af1076810",
+    "modules/Directory.Packages.props": "2baf1c95b39e4f5b81a4907cfb7b097229ea4224",
+    ".config/dotnet-tools.json": "5ee665daa360fb6a7e5ed7cfc345f45b945ddb8b",
+    "main/BomPraTi/BomPraTi.csproj": "7eb6d62c8f6955ee507556ceb942a317f820c5b9"
+  },
+  "requirements": [
+    {"package_id":"Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite","required_version":"5.4.0-preview*","declaration_source":"main/BomPraTi/BomPraTi.csproj","cache_present":"NO_EVIDENCE","reproducible":"NO"},
+    {"package_id":"Volo.Abp.EntityFrameworkCore.PostgreSql","required_version":"10.6.0","declaration_source":"main/BomPraTi/BomPraTi.csproj","cache_present":"NO_EVIDENCE","reproducible":"NOT_PROVEN"},
+    {"package_id":"Microsoft.EntityFrameworkCore.Tools","required_version":"10.0.9","declaration_source":"main/BomPraTi/BomPraTi.csproj","cache_present":"NO_EVIDENCE","reproducible":"NOT_PROVEN"},
+    {"package_id":"Volo.Abp.CLI","required_version":"10.6.0","declaration_source":".config/dotnet-tools.json","cache_present":"NOT_PROVEN","reproducible":"NOT_PROVEN"},
+    {"package_id":"dotnet-ef","required_version":"10.0.9","declaration_source":".config/dotnet-tools.json","cache_present":"NOT_PROVEN","reproducible":"NOT_PROVEN"}
+  ],
+  "scope": "minimum environment-smoke inputs; not a complete transitive graph",
+  "decision": "PACKAGE_SUPPLY=NOT_QUALIFIED"
+}

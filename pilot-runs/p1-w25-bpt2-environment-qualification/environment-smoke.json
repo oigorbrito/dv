@@ -1,0 +1,8 @@
+{
+  "authorized": false,
+  "status": "NOT_TESTED",
+  "sha": "f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "commands": ["dotnet tool restore", "dotnet restore main/BomPraTi.slnx", "bash scripts/fresh-migration-gate.sh"],
+  "reason": "PACKAGE_SUPPLY=NOT_QUALIFIED and POSTGRES_ENV=BLOCKED",
+  "workspace_created": false
+}

@@ -1,0 +1,10 @@
+{
+  "repository_nuget_config": "ABSENT",
+  "effective_sources": [
+    {"name":"nuget.org","location":"https://api.nuget.org/v3/index.json","enabled":true,"credential_required":"UNKNOWN"},
+    {"name":"Microsoft Visual Studio Offline Packages","location":"C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\","enabled":true,"credential_required":"NO"}
+  ],
+  "configuration_modified": false,
+  "network": "external package availability not established",
+  "secrets_recorded": false
+}

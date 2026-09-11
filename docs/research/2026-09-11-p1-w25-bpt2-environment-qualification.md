@@ -2,7 +2,7 @@
 
 ## Decision
 
-`BPT2_ENVIRONMENT_QUALIFIED = BLOCKED` and `bpt2-abp = BLOCKED_SOURCE`.
+`BPT2_ENVIRONMENT_QUALIFIED = NO` and `bpt2-abp = REJECT_SOURCE`.
 The environment gate was evaluated before any new candidate search. The local
 .NET SDK is available, but exact dependency restoration and a controlled
 PostgreSQL environment are not currently reproducible. No candidate was
@@ -52,16 +52,20 @@ without restore evidence.
 
 ## Package supply
 
-`PACKAGE_SUPPLY = BLOCKED`. The global package cache exists and contains 17
+`PACKAGE_SUPPLY = NOT_QUALIFIED`. The global package cache exists and contains 17
 top-level directories, but the required ABP/Npgsql graph was not established
 as present. No complete parent lockfile exists, and no offline restore was
 attempted because the required dependency graph was not demonstrably available.
 The repository-defined restore commands remain `dotnet tool restore`,
 `dotnet restore main/BomPraTi.slnx`, and the documented migration gate.
 
-The exact unblock condition is an approved offline package supply or external
-runner that resolves the parent-controlled versions reproducibly and captures
-the resolved graph without changing the historical source.
+The parent also declares `Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite` as
+`5.4.0-preview*`. This floating version, combined with the absent lockfile,
+means the historical inputs do not define one exact reproducible dependency
+graph. Pinning it would change the historical source semantics. The minimum
+protocol-consistent recovery is a replacement historical source with exact
+dependency inputs or an explicit future protocol amendment; W25 did not apply
+either.
 
 ## PostgreSQL qualification
 
@@ -81,14 +85,16 @@ and deterministic cleanup.
 
 ## Environment smoke and candidate sequencing
 
-The environment smoke was `NOT_EXECUTED` because both package supply and
-controlled PostgreSQL had to be qualified first. No isolated parent workspace
-was created. This correctly prevents environment recovery from being inferred
-from a partial cache or an uncontrolled port.
+The environment smoke was `NOT_TESTED` because package supply is
+`NOT_QUALIFIED` and controlled PostgreSQL is `BLOCKED`. No isolated parent
+workspace was created. This correctly prevents environment recovery from being
+inferred from a partial cache or an uncontrolled port.
 
-Because `BPT2_ENVIRONMENT_QUALIFIED` is `BLOCKED`, the source remains
-`BLOCKED_SOURCE` and the metadata-only candidate discovery stage was not
-entered. The previously excluded candidate
+Because `BPT2_ENVIRONMENT_QUALIFIED` is `NO`, the source is now
+`REJECT_SOURCE`: the historical dependency inputs are not reconstructable
+without changing semantics, and no alternate reproducible historical path was
+identified. The metadata-only candidate discovery stage was not entered. The
+previously excluded candidate
 `004cbd44dbd864af28c94c173ed1d106e1d2bf8c` was not reopened. There are no new
 leads, pre-solution freezes, parent focal results, candidate executions, or
 preservation results.
@@ -109,13 +115,15 @@ scan, holdout scan, P0 immutability, secret scan, Harness self-test, and
 
 ## Final blockers
 
-- exact dependency graph is not reproducible from a parent lockfile/cache;
+- exact dependency graph is not reproducible from parent-controlled inputs;
 - controlled PostgreSQL 17 is unavailable;
 - Docker daemon access is blocked;
 - external TCP/network remains unavailable;
 - strong executor credential remains absent;
 - W22-W25 local commits remain unpublished due authorization.
 
-The next defensible action is to satisfy the package-supply and controlled
-PostgreSQL conditions, then rerun only the environment smoke. Candidate search
-must begin only after that smoke passes.
+The next defensible action is a separately authorized protocol decision about a
+replacement source or amendment for the floating dependency. PostgreSQL remains
+an independent environment blocker, but it cannot rehabilitate this historical
+source under the current reproducibility contract. Candidate search must not
+begin for bpt2 in W25.

@@ -32,6 +32,7 @@
   "database_bootstrap_command": "bash scripts/fresh-migration-gate.sh against a disposable database",
   "env_var_names": ["BPT_DB_CONNECTION", "ConnectionStrings__Default", "BPT_FIXTURE_VEHICLE_ID"],
   "external_network_required": "YES_OR_UNRESOLVED",
+  "historical_reproducibility_defect": "main/BomPraTi/BomPraTi.csproj declares Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite as 5.4.0-preview*, a floating version, and the parent has no lockfile",
   "deviations": [
     "no complete parent lockfile identified",
     "exact packages absent from observed global package cache",

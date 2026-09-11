@@ -1,9 +1,9 @@
 {
-  "bpt2_environment_qualified": "BLOCKED",
-  "package_supply": "BLOCKED",
+  "bpt2_environment_qualified": "NO",
+  "package_supply": "NOT_QUALIFIED",
   "postgres_env": "BLOCKED",
   "environment_smoke": "NOT_EXECUTED",
-  "source_disposition": "BLOCKED_SOURCE",
+  "source_disposition": "REJECT_SOURCE",
   "metadata_only_leads": 0,
   "leads_pre_frozen": 0,
   "parent_materializations": 0,
@@ -13,9 +13,9 @@
   "candidate_executions": 0,
   "preservation_executions": 0,
   "new_admissions": 0,
-  "reason": "environment contract cannot be established reproducibly before candidate search",
+  "reason": "parent-controlled dependency inputs cannot define a reproducible exact graph: floating preview dependency plus absent lockfile and unavailable package supply",
   "unblock_conditions": [
-    "exact dependency graph supplied through approved reproducible offline cache or runner",
+    "protocol amendment or replacement historical source with exact dependency graph",
     "controlled PostgreSQL 17 runtime",
     "reproducible bootstrap and cleanup contract"
   ],
