@@ -24,6 +24,9 @@ reported as a GeForce GTX 1650 with 4096 MiB.
 
 The current admitted corpus remains `D-F2-05`, `D-F5-01`, and `D-F6-01`.
 `COMPARATIVE_CORPUS_READY=NO`, `P1_S1_RELEASE=NO`, and `REAL_P0_RUNS=0/24`.
+The registered external blockers are marked `PENDING_EXTERNAL_ACTION` for
+queue management. This is an operational status, not a resolution or a
+promotion of any scientific gate.
 
 ## New-source screening
 

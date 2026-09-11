@@ -60,5 +60,13 @@
     "p1_s1_release": "NO",
     "real_p0_runs": "0/24",
     "architecture_decision": "INCONCLUSIVE"
+  },
+  "blocker_register_state": {
+    "status": "PENDING_EXTERNAL_ACTION",
+    "p1_w1_blk_002": "PENDING",
+    "p1_w4_blk_strong_credential": "PENDING",
+    "p1_w16_smag_preservation_network": "PENDING",
+    "github_publication": "PENDING",
+    "pending_does_not_mean_resolved": true
   }
 }
