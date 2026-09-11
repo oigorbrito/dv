@@ -1,0 +1,9 @@
+{
+  "candidate":"D-F2-04",
+  "focal_command":"python -m pytest -q tests/test_evidence_envelope_integrity_v3.py",
+  "focal_status":"NOT_REACHED; pytest version not reproducibly bound",
+  "preservation_command":"python -m pytest -q tests --ignore=tests/experimental -W error::ResourceWarning",
+  "preservation_status":"NOT_REACHED; pytest version not reproducibly bound",
+  "solution_application":"NONE",
+  "treatment_execution":"NOT_EXECUTED"
+}

@@ -1,0 +1,11 @@
+{
+  "candidate":"D-F2-04",
+  "python":"3.13.14",
+  "pytest_module_available_under_canonical_python":false,
+  "pip_cache_pytest_wheel":false,
+  "pypi_dns":"NOT_REACHED_FOR_INSTALL; version not bound",
+  "pypi_tcp_443":"NOT_REACHED_FOR_INSTALL; version not bound",
+  "project_install":"pyproject declares src package discovery; no project install attempted",
+  "network_during_verification":"NOT_USED",
+  "environment_status":"BLOCKED_DEPENDENCY_VERSION_NOT_REPRODUCIBLE"
+}

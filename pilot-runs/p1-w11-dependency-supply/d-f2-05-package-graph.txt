@@ -1,0 +1,14 @@
+Fresh exact-base restore resolved 91 entries for net10.0. Direct pins:
+Volo.Abp.Ddd.Application.Contracts 10.6.0
+Volo.Abp.Ddd.Application 10.6.0
+Volo.Abp.Ddd.Domain 10.6.0
+Volo.Abp.EntityFrameworkCore.PostgreSql 10.6.0
+Microsoft.EntityFrameworkCore.Design 10.0.9
+Transitive graph was obtained from project.assets.json and dotnet list package --include-transitive.
+Resolved families: Microsoft.AspNetCore 10.0.9; Microsoft.EntityFrameworkCore 10.0.9;
+Microsoft.Extensions 10.0.9 plus Caching.Hybrid 10.7.0; Npgsql 10.0.0;
+Nito.AsyncEx 5.1.2; Nito.Disposables 2.2.1; System.CodeDom 10.0.9;
+System.Linq.Dynamic.Core 1.6.7; System.Management 10.0.9; TimeZoneConverter 7.2.0;
+Volo.Abp resolved packages 10.6.0; JetBrains.Annotations 2025.2.2;
+project references BomPraTi Catalog/Marketplace/Media/Sellers Contracts 1.0.0.
+Full machine-readable resolution remains in the generated assets provenance outside the commit.

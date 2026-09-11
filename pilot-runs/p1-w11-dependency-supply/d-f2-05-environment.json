@@ -1,0 +1,15 @@
+{
+  "candidate":"D-F2-05",
+  "workspace":"C:\\Projetos\\dv\\.tmp-w11-run2\\bpt2",
+  "head":"f3d2cd2d4c0840077451222868ca0d1c0323cdd2",
+  "detached_clean":true,
+  "sdk_contract":"10.0.100; rollForward latestFeature",
+  "sdk_used":"10.0.401",
+  "nuget_dns":"PASS",
+  "nuget_tcp_443":"FAIL",
+  "restore_source":"existing C:\\Users\\Igor B\\.nuget\\packages",
+  "postgres_contract":"PostgreSQL 17-alpine from historical workflow",
+  "docker_cli":"29.7.2",
+  "docker_engine":"BLOCKED; Docker API pipe unavailable",
+  "environment_status":"POSTGRES_RUNTIME_BLOCKED"
+}

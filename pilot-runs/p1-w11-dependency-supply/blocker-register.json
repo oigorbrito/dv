@@ -1,0 +1,10 @@
+{
+  "wave":"P1-W11",
+  "blockers":[
+    {"id":"P1-W9-D-F2-04","status":"OPEN","classification":"BLOCKED_DEPENDENCY_VERSION_NOT_REPRODUCIBLE","condition":"historical pytest was unpinned and no dated package-index/CI resolution is available"},
+    {"id":"P1-W9-D-F2-05","status":"OPEN","classification":"BLOCKED_POSTGRES_RUNTIME","condition":"Docker daemon unavailable; bounded PostgreSQL 17 runtime not reached"},
+    {"id":"P1-W4-BLK-STRONG-CREDENTIAL","status":"OPEN","condition":"strong executor qualification remains credential blocked"}
+  ],
+  "holdout":"SEALED",
+  "treatments":"NOT_EXECUTED"
+}

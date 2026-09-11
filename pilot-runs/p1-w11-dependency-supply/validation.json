@@ -1,0 +1,14 @@
+{
+  "json_parse":"PASS",
+  "package_provenance":"PASS; existing cache metadata and nupkg hashes recorded",
+  "package_hashes":"PASS for inventoried cached artifacts",
+  "environment_manifest":"PASS",
+  "base_sha":"PASS; fresh detached exact base",
+  "candidate_ids":"PASS",
+  "secret_scan":"PASS",
+  "holdout_leakage":"PASS; SEALED and no holdout access",
+  "p0_immutability":"PASS",
+  "harness_self_test":"PASS; 6/6",
+  "git_diff_check":"PASS",
+  "treatment_execution":"NOT_EXECUTED"
+}

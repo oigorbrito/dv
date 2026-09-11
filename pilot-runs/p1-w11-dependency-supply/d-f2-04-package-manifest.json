@@ -1,0 +1,6 @@
+{
+  "candidate":"D-F2-04",
+  "base_sha":"2c886f863cf6d5f9473d15e60f2f55f938162876",
+  "packages":[{"package":"pytest","version":"UNPINNED","source":"historical README/CI pip install pytest","artifact":"NOT_ACQUIRED","sha256":"UNAVAILABLE"}],
+  "local_residual":{"venv":"C:\\Projetos\\searchleads\\.venv-baseline","pytest_version":"9.1.1","provenance":"not a historical package-index snapshot; not accepted for reconstruction"}
+}

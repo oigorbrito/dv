@@ -1,0 +1,522 @@
+{
+  "candidate": "D-F2-05",
+  "count": 86,
+  "artifacts": [
+    {
+      "package": "JetBrains.Annotations@2025.2.2",
+      "sha256": "05FEE6D0FDC3401E3B1AB31B9CD9577778BDFC6312E4183A8082D6A5DB2356F6",
+      "size": 196349,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\jetbrains.annotations\\2025.2.2\\JetBrains.Annotations.2025.2.2.nupkg"
+    },
+    {
+      "package": "Microsoft.AspNetCore.Authorization@10.0.9",
+      "sha256": "805B56E5AB9D645691681FDEE88A8AA7C953B7D851AAA3150AE9D15AC8DE83BB",
+      "size": 143614,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.9\\Microsoft.AspNetCore.Authorization.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.AspNetCore.Metadata@10.0.9",
+      "sha256": "D2424BBB793EE8A6E62DF2A4A02404F1294ECFFD809EA63027E81678934BD16E",
+      "size": 72159,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.aspnetcore.metadata\\10.0.9\\Microsoft.AspNetCore.Metadata.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Bcl.AsyncInterfaces@10.0.9",
+      "sha256": "82BCF210D6C573B0ADD1D8265204A7D53AF79DD3357DD9501A24812F362D0BD7",
+      "size": 99121,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\10.0.9\\Microsoft.Bcl.AsyncInterfaces.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.EntityFrameworkCore.Abstractions@10.0.9",
+      "sha256": "4053486418BF773028D72774E4016916FB1DE557F72169B97C6E0FD7254F8BCA",
+      "size": 53782,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.9\\Microsoft.EntityFrameworkCore.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.EntityFrameworkCore.Analyzers@10.0.9",
+      "sha256": "A76ADFA221DB2B1B569AC6943F02C25F2F7743B78A00664BEC1A472DD8551626",
+      "size": 51755,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.9\\Microsoft.EntityFrameworkCore.Analyzers.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.EntityFrameworkCore.Relational@10.0.9",
+      "sha256": "59DF1522C96B3E608EC024A64D2CFA4C456FAD9917237C12F235C3536DEDAF53",
+      "size": 1043484,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.9\\Microsoft.EntityFrameworkCore.Relational.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.EntityFrameworkCore@10.0.9",
+      "sha256": "390C6DDF1582E6A207D3D48349F0F496BC0209785EF8B6729A708E1D35CFBC24",
+      "size": 1427274,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.9\\Microsoft.EntityFrameworkCore.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Caching.Abstractions@10.0.9",
+      "sha256": "BD4C6109921780860F8CD2D64502413537CF1A7E4AE087E815FA0E72AD61A145",
+      "size": 178707,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\10.0.9\\Microsoft.Extensions.Caching.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Caching.Hybrid@10.7.0",
+      "sha256": "62081026AE7E47997290D6195A254739B20C3D5440DBC5CE943E288847BCE397",
+      "size": 354083,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.caching.hybrid\\10.7.0\\Microsoft.Extensions.Caching.Hybrid.10.7.0.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Caching.Memory@10.0.9",
+      "sha256": "0AD94BE375AC6E5C545F8258E7B0D138F969F2D91B1B9D27A5CA1D19540BF61A",
+      "size": 194961,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.caching.memory\\10.0.9\\Microsoft.Extensions.Caching.Memory.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration.Abstractions@10.0.9",
+      "sha256": "A6589A92C10041DC723D4454552957A5F1772F3241F77CC769E103B1A1794091",
+      "size": 145008,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.9\\Microsoft.Extensions.Configuration.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration.Binder@10.0.9",
+      "sha256": "A2E25AFBCE07FDB7CC8BAEEFDB98631168532320476964C902812F02BC1BAC60",
+      "size": 387332,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.9\\Microsoft.Extensions.Configuration.Binder.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration.CommandLine@10.0.9",
+      "sha256": "0ECABBB90B5C39FE69037391F0773B5F7D753AC069494FC3A5DAF8F3529A0E0E",
+      "size": 134773,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.configuration.commandline\\10.0.9\\Microsoft.Extensions.Configuration.CommandLine.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration.EnvironmentVariables@10.0.9",
+      "sha256": "4EA9B24AC7B5E26C855ABACB6CD4900FB6D3BF34FF650DB8C1CA729087BC5CEA",
+      "size": 120521,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.configuration.environmentvariables\\10.0.9\\Microsoft.Extensions.Configuration.EnvironmentVariables.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration.FileExtensions@10.0.9",
+      "sha256": "AF5DB41343D4086221F02B199F3A83959EE291B4FC060FF055807F83E249EC3E",
+      "size": 138811,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\10.0.9\\Microsoft.Extensions.Configuration.FileExtensions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration.Json@10.0.9",
+      "sha256": "BE51F8B837DC955F62EF32DE7921746BFA428850DD838983C878E4D0ED8A33CD",
+      "size": 154985,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.configuration.json\\10.0.9\\Microsoft.Extensions.Configuration.Json.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration.UserSecrets@10.0.9",
+      "sha256": "380B39F8B1394F3E850D0FE206C55FE983F987AD328BACF31D770C4F8B0A364C",
+      "size": 135602,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.configuration.usersecrets\\10.0.9\\Microsoft.Extensions.Configuration.UserSecrets.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration@10.0.9",
+      "sha256": "E1DF2BE95CAE9DED506F4930AB37C63C0EC12B69EF6A239E9D388979DCEAEAC5",
+      "size": 186857,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.9\\Microsoft.Extensions.Configuration.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.DependencyInjection.Abstractions@10.0.9",
+      "sha256": "633429180B2B8CB535F2CD35E8B98CEC33092A69743332A5D5B3CF609FDEAC49",
+      "size": 283841,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.9\\Microsoft.Extensions.DependencyInjection.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.DependencyInjection@10.0.9",
+      "sha256": "608AA00E49F04EAE3C5FCF0899DADF6AFDED990EAD67020E62C2EDE9D4F8D0CF",
+      "size": 349394,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.9\\Microsoft.Extensions.DependencyInjection.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Diagnostics.Abstractions@10.0.9",
+      "sha256": "3A80426AD91203E4166CC7F21717AE10E2076F4E2E90F1F7DA035F094B1AAF63",
+      "size": 150405,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\10.0.9\\Microsoft.Extensions.Diagnostics.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Diagnostics@10.0.9",
+      "sha256": "9E786CE3E67C80D2FCF43B6D8EAB74151EAE598E54E9B4357486B4C30322527A",
+      "size": 157702,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.diagnostics\\10.0.9\\Microsoft.Extensions.Diagnostics.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.FileProviders.Abstractions@10.0.9",
+      "sha256": "B253222529B290C5DCCB4A6EFEEBE809A3B0EC18B2054650599DB5E844616689",
+      "size": 126847,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\10.0.9\\Microsoft.Extensions.FileProviders.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.FileProviders.Composite@10.0.9",
+      "sha256": "BC72CA1C358D27D1AEC486F84432CE5BA4698341B6AF38DA3BEB60D3E9CB65F1",
+      "size": 115447,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.fileproviders.composite\\10.0.9\\Microsoft.Extensions.FileProviders.Composite.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.FileProviders.Embedded@10.0.9",
+      "sha256": "E635C02CE3CEE26F9FD4B1C5946F794A4DA8BA26E029A6FA8F66EC74A5F0AE4F",
+      "size": 118300,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\10.0.9\\Microsoft.Extensions.FileProviders.Embedded.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.FileProviders.Physical@10.0.9",
+      "sha256": "D7857EBE768DC9978D7F7A52A85424C44A6ECBD5979BE268DE59669B8504D98E",
+      "size": 194404,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\10.0.9\\Microsoft.Extensions.FileProviders.Physical.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.FileSystemGlobbing@10.0.9",
+      "sha256": "FBC81897BC4F99E4C3E546B379D7512927CCB6D0830A82F284DB2C3F40DD934E",
+      "size": 191186,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\10.0.9\\Microsoft.Extensions.FileSystemGlobbing.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Hosting.Abstractions@10.0.9",
+      "sha256": "C1B549C36D893F187C61749E5C241DADB604E287CF8B487A3BC64DFE0C90E821",
+      "size": 232096,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\10.0.9\\Microsoft.Extensions.Hosting.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Localization.Abstractions@10.0.9",
+      "sha256": "9118383DE91AFE74F36CCB4276636CDABE02C3EEA0962C2C7BF2D4D47FDC8DF9",
+      "size": 79753,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\10.0.9\\Microsoft.Extensions.Localization.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Localization@10.0.9",
+      "sha256": "34C6A0B2C95A09086399C36E1FC301D6B90AFC8D4459EC9E6351EB17E7FF3042",
+      "size": 102677,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.localization\\10.0.9\\Microsoft.Extensions.Localization.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Logging.Abstractions@10.0.9",
+      "sha256": "B2EDAAFCE66E1BB9C1DF09D44D57229B2DE81D275EB458788619A32377FFCA6F",
+      "size": 808392,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.9\\Microsoft.Extensions.Logging.Abstractions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Logging@10.0.9",
+      "sha256": "EB8E316313C1F8FB701944C028957DC01C971D61644793A5D29D3CC05430326E",
+      "size": 228056,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.logging\\10.0.9\\Microsoft.Extensions.Logging.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Options.ConfigurationExtensions@10.0.9",
+      "sha256": "5D5289ACD8CFA348688D8E55E31A0BC5E769BE4AADAF8189AA409484B2924DC4",
+      "size": 131403,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\10.0.9\\Microsoft.Extensions.Options.ConfigurationExtensions.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Options@10.0.9",
+      "sha256": "FDF735835483248F359CE6514BB5B82D92000B4B2C99AB2A69686024AFBDAD1B",
+      "size": 491846,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.options\\10.0.9\\Microsoft.Extensions.Options.10.0.9.nupkg"
+    },
+    {
+      "package": "Microsoft.Extensions.Primitives@10.0.9",
+      "sha256": "5843ED9A511EC66E904854782139411EE503E7F6EA31F79C3B115EE6191B00F5",
+      "size": 206940,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.9\\Microsoft.Extensions.Primitives.10.0.9.nupkg"
+    },
+    {
+      "package": "Nito.AsyncEx.Context@5.1.2",
+      "sha256": "EC1095609819C94DBF678AFC08A6A3A2B9736A3AFA18150101B63701CB303C2D",
+      "size": 48885,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\nito.asyncex.context\\5.1.2\\Nito.AsyncEx.Context.5.1.2.nupkg"
+    },
+    {
+      "package": "Nito.AsyncEx.Tasks@5.1.2",
+      "sha256": "5B98F1659D296CF1ED7BA4E4593AB8143B4739E8EF96B7726F5227C3E6219787",
+      "size": 82084,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\nito.asyncex.tasks\\5.1.2\\Nito.AsyncEx.Tasks.5.1.2.nupkg"
+    },
+    {
+      "package": "Nito.Disposables@2.2.1",
+      "sha256": "14A0CB516CACAABA121CB53690B8CAD66D20E35EC000F87A9F64C893089AA5C3",
+      "size": 45142,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\nito.disposables\\2.2.1\\Nito.Disposables.2.2.1.nupkg"
+    },
+    {
+      "package": "Npgsql.EntityFrameworkCore.PostgreSQL@10.0.0",
+      "sha256": "5C82719D331E92D4153F5AADB2510819B9811AB210B2F8D08C23114ECF5421B8",
+      "size": 351655,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\10.0.0\\Npgsql.EntityFrameworkCore.PostgreSQL.10.0.0.nupkg"
+    },
+    {
+      "package": "Npgsql@10.0.0",
+      "sha256": "5152B3F5D1FFAD50826CCC8576A037D5162986DD5780344B22A532D03A7D0024",
+      "size": 1847453,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\npgsql\\10.0.0\\Npgsql.10.0.0.nupkg"
+    },
+    {
+      "package": "System.CodeDom@10.0.9",
+      "sha256": "7A9B29FC14E8CC5A0E867EA0396628F3E15FEC665746A31CE45DE81252B08082",
+      "size": 512558,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\system.codedom\\10.0.9\\System.CodeDom.10.0.9.nupkg"
+    },
+    {
+      "package": "System.Linq.Dynamic.Core@1.6.7",
+      "sha256": "0B771FD1EEFB44AF91C282002DC7383BB30479940E3A7C4FF5EBE474A04C023B",
+      "size": 2297368,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\system.linq.dynamic.core\\1.6.7\\System.Linq.Dynamic.Core.1.6.7.nupkg"
+    },
+    {
+      "package": "System.Management@10.0.9",
+      "sha256": "21323C914CC7156D3F58EC6A6F553DCE5023203A184D980E9B744DE64FAB4196",
+      "size": 799520,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\system.management\\10.0.9\\System.Management.10.0.9.nupkg"
+    },
+    {
+      "package": "TimeZoneConverter@7.2.0",
+      "sha256": "33611399430F07A55617162B9913D5E74E8A97849E5C76118224EA6AA9CD0434",
+      "size": 272646,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\timezoneconverter\\7.2.0\\TimeZoneConverter.7.2.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Auditing.Contracts@10.6.0",
+      "sha256": "32FB08EE2BD1901CA17C0F97D7043FE8C966F0369E090A721D6AC7DA4C36A86C",
+      "size": 74076,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.auditing.contracts\\10.6.0\\Volo.Abp.Auditing.Contracts.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Auditing@10.6.0",
+      "sha256": "57238942659D2CC6AB9060529F564374911B6AD959E3033B372A66BF9B878CD4",
+      "size": 203017,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.auditing\\10.6.0\\Volo.Abp.Auditing.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Authorization.Abstractions@10.6.0",
+      "sha256": "E4313F892E0E4F825B3EF998E6DCC8CB140952CA6D8C63F3CEF006B508D179EC",
+      "size": 165617,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.authorization.abstractions\\10.6.0\\Volo.Abp.Authorization.Abstractions.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Authorization@10.6.0",
+      "sha256": "DCA524181A954F50BD64BF1F581C9A16AB997A89B13915F26A4D6ADCC6B941E6",
+      "size": 348013,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.authorization\\10.6.0\\Volo.Abp.Authorization.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.BackgroundWorkers@10.6.0",
+      "sha256": "5F5D1CEEE18854A32165E95835F0F77C82EEF2D266E202EED0B0CD191D4A36A5",
+      "size": 155885,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.backgroundworkers\\10.6.0\\Volo.Abp.BackgroundWorkers.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Caching@10.6.0",
+      "sha256": "736E88DC7644E000B77B20731C79D78FBC44ED8F6E356364B758130DF19BF75D",
+      "size": 268312,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.caching\\10.6.0\\Volo.Abp.Caching.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Core@10.6.0",
+      "sha256": "EF1466073301DFFC560F35DAD1B616A265B4893CDCBB6BD7B306C0C58A097524",
+      "size": 1003298,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.core\\10.6.0\\Volo.Abp.Core.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Data@10.6.0",
+      "sha256": "9A78916219B012533572465262247F00A0D97C1F9A908393174FFF1457A0FFE2",
+      "size": 134054,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.data\\10.6.0\\Volo.Abp.Data.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Ddd.Application.Contracts@10.6.0",
+      "sha256": "2C4F4B0BDE39790876E8EF7161D0C54C41DCEDBC53415665710D2320537CB8EB",
+      "size": 158880,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.ddd.application.contracts\\10.6.0\\Volo.Abp.Ddd.Application.Contracts.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Ddd.Application@10.6.0",
+      "sha256": "67D53E609603E46C06BD1309387847F21B2AF3839BEBA78054C72961F88A3C90",
+      "size": 179916,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.ddd.application\\10.6.0\\Volo.Abp.Ddd.Application.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Ddd.Domain.Shared@10.6.0",
+      "sha256": "A3A54C32FEDC8661DD1ECDA2C3FF9E00B5CE18F17ADAF0849FED0AAE359A19F1",
+      "size": 79202,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.ddd.domain.shared\\10.6.0\\Volo.Abp.Ddd.Domain.Shared.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Ddd.Domain@10.6.0",
+      "sha256": "5FDA662E319E4133AABEC7EE0738363C82EA6487614C433EC2676270389E5D01",
+      "size": 487064,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.ddd.domain\\10.6.0\\Volo.Abp.Ddd.Domain.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.DistributedLocking.Abstractions@10.6.0",
+      "sha256": "A3A940EDE6D8DEF6D29C72B9E513B48CC5F89487799E1580A58081E49B39A1C9",
+      "size": 78387,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.distributedlocking.abstractions\\10.6.0\\Volo.Abp.DistributedLocking.Abstractions.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.EntityFrameworkCore.PostgreSql@10.6.0",
+      "sha256": "DB6C1E60493AF2A077F520615E2D13B0623DF73FD125AF8B614B7C508147F245",
+      "size": 33011,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.entityframeworkcore.postgresql\\10.6.0\\Volo.Abp.EntityFrameworkCore.PostgreSql.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.EntityFrameworkCore@10.6.0",
+      "sha256": "9D68E0E921988937F43C72F1801449FE2248697C7643A7BD2CF2B640D9DF205E",
+      "size": 143550,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.entityframeworkcore\\10.6.0\\Volo.Abp.EntityFrameworkCore.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.EventBus.Abstractions@10.6.0",
+      "sha256": "2E45792944E46D6D37EAF5F6F546F80B193D9ABC5E6C62DE1BAD92A9F74B383B",
+      "size": 122323,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.eventbus.abstractions\\10.6.0\\Volo.Abp.EventBus.Abstractions.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.EventBus@10.6.0",
+      "sha256": "3F98C1ED9220868D9658831CDB35B76D47602A22303E0CCF283A0E5A44999B8F",
+      "size": 296844,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.eventbus\\10.6.0\\Volo.Abp.EventBus.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.ExceptionHandling@10.6.0",
+      "sha256": "3CCFF45C1FE27D8CBD36AE85155EA826076DA35CBFA664A486C21DFEED0BC7E2",
+      "size": 201724,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.exceptionhandling\\10.6.0\\Volo.Abp.ExceptionHandling.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Features@10.6.0",
+      "sha256": "B645F4D3F51496A47F53FF4C43E9A6ECFB38DBF52FEB7720EC72752DA2F8D839",
+      "size": 251488,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.features\\10.6.0\\Volo.Abp.Features.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.GlobalFeatures@10.6.0",
+      "sha256": "EAA597258090235E77FE13A32A2F4DE540962221905CBD35361134777BF30AF4",
+      "size": 125305,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.globalfeatures\\10.6.0\\Volo.Abp.GlobalFeatures.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Guids@10.6.0",
+      "sha256": "E53CDFBA3DD870D70F49AFF0E2827C5364F3C44A4A2CDF198109E34E6FFDD35B",
+      "size": 72465,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.guids\\10.6.0\\Volo.Abp.Guids.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Http.Abstractions@10.6.0",
+      "sha256": "ED15791D6A4B4A705C4C1632DC160D5BD2A2C4A8004A8C27518A5DFA71C3FDA8",
+      "size": 67810,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.http.abstractions\\10.6.0\\Volo.Abp.Http.Abstractions.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Json.Abstractions@10.6.0",
+      "sha256": "35DE361C3CB64EA9D9717E14C84C03CC8B18A65A6AFC73A6ED09C0AA1B381C64",
+      "size": 65907,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.json.abstractions\\10.6.0\\Volo.Abp.Json.Abstractions.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Json.SystemTextJson@10.6.0",
+      "sha256": "5A86B03E9EE6FCF82CF6B255C0F1E552110DB7A5F337D9F98058D11B17B83BD3",
+      "size": 129890,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.json.systemtextjson\\10.6.0\\Volo.Abp.Json.SystemTextJson.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Json@10.6.0",
+      "sha256": "CB4D75BEC8FBC7BABE5ED5DB9EE737A5D303EC4FE307444D4854B90A5A8D5EBE",
+      "size": 63540,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.json\\10.6.0\\Volo.Abp.Json.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Localization.Abstractions@10.6.0",
+      "sha256": "196C149CF6FAFA17159432037E91488966A1AEA690815C9006AF2C03384B38C3",
+      "size": 89613,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.localization.abstractions\\10.6.0\\Volo.Abp.Localization.Abstractions.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Localization@10.6.0",
+      "sha256": "8B0D2102A2195E0A8248FB74FC7BA785B84988ECE11D524EF5685F70CEBD56FD",
+      "size": 232831,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.localization\\10.6.0\\Volo.Abp.Localization.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.MultiTenancy.Abstractions@10.6.0",
+      "sha256": "35BEE2C6F50037CD68B02C986BD026302CB86B25E91FE214A04781F2EFD396AA",
+      "size": 119473,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.multitenancy.abstractions\\10.6.0\\Volo.Abp.MultiTenancy.Abstractions.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.MultiTenancy@10.6.0",
+      "sha256": "D934CBD00A6AC5578ADB00B38D070CF3DE97E450AE74521EF7ED98E6ECB786DC",
+      "size": 137378,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.multitenancy\\10.6.0\\Volo.Abp.MultiTenancy.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.ObjectExtending@10.6.0",
+      "sha256": "0F49696525FD09FE08A9D1F41F3E7FFBE68B33B009EF89C49AD79DAE10BBE7D1",
+      "size": 201117,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.objectextending\\10.6.0\\Volo.Abp.ObjectExtending.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.ObjectMapping@10.6.0",
+      "sha256": "E3C54F6B3C08A9020E750BAE7CD64E1BAF402AAFA93D71418D4F4961895B118A",
+      "size": 102691,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.objectmapping\\10.6.0\\Volo.Abp.ObjectMapping.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Security@10.6.0",
+      "sha256": "66DD64AF71A82566F1FD6DB3F6BC7F006A58761E7534CF6422E5679ED348B394",
+      "size": 192517,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.security\\10.6.0\\Volo.Abp.Security.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Serialization@10.6.0",
+      "sha256": "88C14856CAEC674AD1A5F0FF6ECF643D1A131512CCDA398B745D0F7C01DE1DFD",
+      "size": 71468,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.serialization\\10.6.0\\Volo.Abp.Serialization.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Settings@10.6.0",
+      "sha256": "7C14B37D03DD4F3B378373E87B3CCCEEA97F538AACAB72946F6F96C6362D6CDE",
+      "size": 165182,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.settings\\10.6.0\\Volo.Abp.Settings.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Specifications@10.6.0",
+      "sha256": "9C7598438FC18DB6CB65E42C859C741A7EA7573FC4DE53A2FF06A36F01A64C6F",
+      "size": 94257,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.specifications\\10.6.0\\Volo.Abp.Specifications.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Threading@10.6.0",
+      "sha256": "3F68DF438563B20BDA3E88D8EBEB1C548D7780B33734831C7C51F74D1685D542",
+      "size": 135947,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.threading\\10.6.0\\Volo.Abp.Threading.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Timing@10.6.0",
+      "sha256": "9CDEA1C35B803102CA120547494EBCA348BF048E1F71954AFF0E8E1BCC41DB8E",
+      "size": 107012,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.timing\\10.6.0\\Volo.Abp.Timing.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Uow@10.6.0",
+      "sha256": "9D36BF6D170732F65BE935473D932661693865A5C477AE3AD0B12877EE16364B",
+      "size": 166513,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.uow\\10.6.0\\Volo.Abp.Uow.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Validation.Abstractions@10.6.0",
+      "sha256": "18EDE9FDF13B6184C207DFD4F48EC0F27F36B6EAC5C19147A322016FF1A3B1F3",
+      "size": 74494,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.validation.abstractions\\10.6.0\\Volo.Abp.Validation.Abstractions.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.Validation@10.6.0",
+      "sha256": "000AFE4BE208506E1913D3DB858B40A160689FFDE3AD011C980D18C4A4E550D6",
+      "size": 228083,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.validation\\10.6.0\\Volo.Abp.Validation.10.6.0.nupkg"
+    },
+    {
+      "package": "Volo.Abp.VirtualFileSystem@10.6.0",
+      "sha256": "FE91D36D544E902D2F0DA04621B3C2F6D97365F382A2D3ED4EA3E623AF467592",
+      "size": 124108,
+      "path": "C:\\Users\\Igor B\\.nuget\\packages\\volo.abp.virtualfilesystem\\10.6.0\\Volo.Abp.VirtualFileSystem.10.6.0.nupkg"
+    }
+  ]
+}

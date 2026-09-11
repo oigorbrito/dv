@@ -1,0 +1,10 @@
+{
+  "candidate":"D-F2-05",
+  "supply_status":"PASS_FOR_RESTORE_BUILD",
+  "source":"existing user global-packages cache",
+  "downloaded_in_w11":false,
+  "nupkg_hashes_recorded":true,
+  "representative_hashes":{"Volo.Abp.Ddd.Application@10.6.0":"67D53E609603E46C06BD1309387847F21B2AF3839BEBA78054C72961F88A3C90","Volo.Abp.Ddd.Application.Contracts@10.6.0":"2C4F4B0BDE39790876E8EF7161D0C54C41DCEDBC53415665710D2320537CB8EB","Volo.Abp.EntityFrameworkCore.PostgreSql@10.6.0":"DB6C1E60493AF2A077F520615E2D13B0623DF73FD125AF8B614B7C508147F245","Microsoft.EntityFrameworkCore.Design@10.0.9":"see elevated cache inventory; hash retained in execution evidence"},
+  "version_mutation":false,
+  "live_network_required_for_build":false
+}

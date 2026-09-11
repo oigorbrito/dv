@@ -1,0 +1,13 @@
+{
+  "candidate":"D-F2-05",
+  "restore_command":"dotnet restore tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj --ignore-failed-sources",
+  "restore_exit_code":0,
+  "assets_generated":true,
+  "build_command":"dotnet build tests/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture/BomPraTi.SavedSearchPostgresClaimBenchmarkFixture.csproj --configuration Release --no-restore",
+  "build_exit_code":0,
+  "build_result":"PASS; 0 warnings; 0 errors",
+  "focal_status":"NOT_REACHED; bounded PostgreSQL runtime unavailable",
+  "preservation_status":"NOT_REACHED; bounded PostgreSQL runtime unavailable",
+  "solution_application":"NONE",
+  "treatment_execution":"NOT_EXECUTED"
+}

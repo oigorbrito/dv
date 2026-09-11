@@ -1,0 +1,12 @@
+{
+  "candidate":"D-F2-04",
+  "repository":"oigorbrito/searchleads",
+  "base_sha":"2c886f863cf6d5f9473d15e60f2f55f938162876",
+  "python_contract":">=3.11",
+  "historical_sources":["pyproject.toml",".github/workflows/ci.yml"],
+  "historical_pytest_install":"python -m pip install --upgrade pip pytest",
+  "pytest_version_status":"PYTEST_UNPINNED_BY_HISTORICAL_CONTRACT",
+  "version_bound":false,
+  "decision":"DEPENDENCY_VERSION_NOT_REPRODUCIBLY_BOUND",
+  "no_current_latest_substitution":true
+}
