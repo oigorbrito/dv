@@ -1,0 +1,12 @@
+{
+  "wave": "P1-W2",
+  "result_kind": "QUALIFICATION_PROBE_ONLY",
+  "comparative_p1_run": false,
+  "task_id": "NOT_APPLICABLE",
+  "treatment": "NOT_APPLICABLE",
+  "verified_solved_task": "NOT_APPLICABLE",
+  "usage_missingness": "represented as UNMEASURED, never zero",
+  "failure_classes_checked": ["HARNESS_FAILURE","ORACLE_DEFECT","ENVIRONMENT_DRIFT","PROVIDER_FAILURE","INCONCLUSIVE_OTHER"],
+  "provider_usage": "preserved only when returned by provider",
+  "result": "PASS"
+}

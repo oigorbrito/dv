@@ -1,0 +1,17 @@
+{
+  "harness_version": "Harness v1",
+  "requirements": [
+    {"requirement":"run/qualification identity","status":"PASS","evidence":"qualification evidence has explicit probe classification and not_a_p1_run"},
+    {"requirement":"provider/model identity","status":"PASS","evidence":"requested identity is represented; observed identity remains missing when no response exists"},
+    {"requirement":"raw response and artifact hash","status":"PASS","evidence":"raw response is absent explicitly on pre-HTTP failure; no fabricated hash"},
+    {"requirement":"usage missingness","status":"PASS","evidence":"UNMEASURED is preserved and not coerced to zero"},
+    {"requirement":"retry semantics","status":"PARTIAL","evidence":"application retry count recorded; provider internal retry remains unobserved"},
+    {"requirement":"candidate capture","status":"PASS","evidence":"probe is explicitly excluded from candidate/P1 result corpus"},
+    {"requirement":"environment/error attribution","status":"PASS","evidence":"socket failure is classified ENVIRONMENT_BLOCKED"},
+    {"requirement":"local GPU/energy normalized schema","status":"PARTIAL","evidence":"raw inventory can be preserved; no local executor qualified"}
+  ],
+  "HARNESS_PROVIDER_ADAPTER": "NOT_REQUIRED",
+  "HARNESS_CHANGE": "NOT_REQUIRED",
+  "HARNESS_P1_READINESS": "PARTIAL",
+  "reason": "No core gap was demonstrated; actual remote surfaces remain unqualified and local resource schema is not required for this blocked wave"
+}

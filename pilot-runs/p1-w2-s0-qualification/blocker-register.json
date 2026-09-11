@@ -1,0 +1,11 @@
+{
+  "wave": "P1-W2",
+  "blockers": [
+    {"blocker_id":"P1-W1-BLK-001","type":"REMOTE_STATE","status":"CLOSED","evidence":"HEAD and origin/main both equal 348f47ff1044c1751ae8c1c865ae1e32fca941b6","closure":"remote already reconciled; no push required"},
+    {"blocker_id":"P1-W1-BLK-002","type":"CORPUS","status":"OPEN","impact":"only D-F6-01 remains admissible and smoke-only","next_condition":"admit additional verifier-first tasks"},
+    {"blocker_id":"P1-W1-BLK-003","type":"EXECUTOR","status":"OPEN","impact":"no strong and no economic/local/free path is S0-qualified","next_condition":"credentialed or locally available executor completes qualification probe"},
+    {"blocker_id":"P1-W1-BLK-004","type":"HARNESS_SURFACE","status":"OPEN","impact":"provider retry semantics remain unobserved; local GPU/energy schema is not required yet","next_condition":"qualify an actual surface and record native retry semantics"}
+  ],
+  "holdout": "SEALED",
+  "treatment_execution": "NOT_EXECUTED"
+}

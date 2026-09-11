@@ -1,0 +1,20 @@
+{
+  "probe_classification": "QUALIFICATION_PROBE_ONLY",
+  "not_a_p1_run": true,
+  "provider": "Google",
+  "model_requested": "gemini-3.7-flash",
+  "request_timestamp_utc": "2026-09-11T15:15:32.9203056Z",
+  "latency_ms": 6910,
+  "http_response_received": false,
+  "request_id": "UNMEASURED",
+  "usage": "UNMEASURED",
+  "candidate_artifact": "NOT_CREATED",
+  "retry": {"application_retry_count": 0,"provider_retry_observable":"UNMEASURED"},
+  "finish_status": "UNMEASURED",
+  "error_class": "ENVIRONMENT_BLOCKED",
+  "error_type": "System.Net.Http.HttpRequestException",
+  "sanitized_error": "socket access to generativelanguage.googleapis.com:443 was prohibited before an HTTP response",
+  "secret_values": "NOT_CAPTURED",
+  "raw_response_artifact": "ABSENT_BECAUSE_NO_HTTP_RESPONSE",
+  "source": "Google Gemini models documentation verified 2026-09-11"
+}

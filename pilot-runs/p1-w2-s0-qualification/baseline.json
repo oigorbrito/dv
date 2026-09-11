@@ -1,0 +1,16 @@
+{
+  "wave": "P1-W2",
+  "purpose": "S0 executor qualification closure",
+  "initial_head": "348f47ff1044c1751ae8c1c865ae1e32fca941b6",
+  "final_head_before_commit": "348f47ff1044c1751ae8c1c865ae1e32fca941b6",
+  "branch": "main",
+  "origin_main": "348f47ff1044c1751ae8c1c865ae1e32fca941b6",
+  "remote_reconciliation": "ALREADY_EQUAL",
+  "harness_command": "python -B tools/test_dv_pilot_harness.py",
+  "harness_exit_code": 0,
+  "harness_tests": 6,
+  "harness_result": "PASS",
+  "holdout": "SEALED",
+  "p1_treatment_execution": "NOT_EXECUTED",
+  "paid_treatment_execution": "NOT_EXECUTED"
+}

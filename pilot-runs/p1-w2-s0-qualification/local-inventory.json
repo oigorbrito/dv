@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-09-11",
+  "surfaces": [
+    {"surface_id":"python","binary":"python","path":"C:\\Users\\Igor B\\AppData\\Local\\Programs\\Python\\Python313\\python.exe","version":"3.13.14","status":"AVAILABLE"},
+    {"surface_id":"node","binary":"node","path":"C:\\Program Files\\nodejs\\node.exe","version":"24.18.0","status":"AVAILABLE"},
+    {"surface_id":"docker","binary":"docker","path":"C:\\Users\\Igor B\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe","version":"29.7.2","status":"AVAILABLE","executor":false},
+    {"surface_id":"nvidia-smi","binary":"nvidia-smi","path":"C:\\WINDOWS\\system32\\nvidia-smi.exe","version":"driver 462.30 / CUDA 11.2","hardware":"GeForce GTX 1650; 4096 MiB","status":"AVAILABLE","executor":false},
+    {"surface_id":"ollama","binary":"ollama","path":null,"version":null,"model_present":false,"status":"NOT_AVAILABLE"},
+    {"surface_id":"vllm","binary":"vllm","path":null,"version":null,"model_present":false,"status":"NOT_AVAILABLE"},
+    {"surface_id":"llama.cpp","binary":"llama-server/llama-cli","path":null,"version":null,"model_present":false,"status":"NOT_AVAILABLE"}
+  ],
+  "downloads": "NOT_ATTEMPTED",
+  "large_model_installation": "NOT_ATTEMPTED"
+}
