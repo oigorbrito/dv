@@ -79,6 +79,7 @@ class HarnessTests(unittest.TestCase):
         result = validate_suggestion({
             "proposed_change": "Record verifier SHA-256",
             "evidence_class": ["REPRODUCIBILITY", "ORACLE_VALIDITY"],
+            "research_basis": "REPRODUCIBILITY_REPLICABILITY",
             "experimental_problem_addressed": "Parent and candidate verifier bytes must be reproducible",
             "necessity": True,
             "existing_artifact_sufficient": False,
@@ -87,6 +88,50 @@ class HarnessTests(unittest.TestCase):
         })
         self.assertEqual(result["recommendation"], "ACCEPTED")
         self.assertEqual(result["supported"], "YES")
+
+    def test_empirical_documentation_suggestions_are_accepted(self):
+        suggestions = [
+            ("Record exact runtime/toolchain versions because missing environment identity prevents independent reproduction of a run", "REPRODUCIBILITY_REPLICABILITY"),
+            ("Record verifier provenance and hash because without it the oracle cannot be independently reconstructed", "REPRODUCIBILITY_REPLICABILITY"),
+            ("Record failure-attribution criteria because otherwise provider failures and product failures cannot be consistently distinguished", "EMPIRICAL_SOFTWARE_ENGINEERING"),
+            ("Record total-system-token accounting definitions because inconsistent inclusion rules would invalidate cross-treatment measurement", "BOTH"),
+            ("Record protocol-amendment lineage because later results cannot be traced to the effective experimental contract", "REPRODUCIBILITY_REPLICABILITY"),
+        ]
+        for proposed_change, research_basis in suggestions:
+            result = validate_suggestion({
+                "proposed_change": proposed_change,
+                "evidence_class": ["EMPIRICAL_RESEARCH_GUIDANCE", "REPRODUCIBILITY"],
+                "research_basis": research_basis,
+                "experimental_problem_addressed": proposed_change,
+                "necessity": True,
+                "existing_artifact_sufficient": False,
+                "smallest_sufficient_change": "Add the minimum immutable field needed for the stated evidence gap",
+                "consequence_if_not_done": "Independent reproduction or consistent empirical interpretation remains impossible",
+            })
+            self.assertEqual(result["recommendation"], "ACCEPTED", result)
+
+    def test_generic_documentary_preferences_are_rejected_even_with_reproducibility_label(self):
+        proposals = [
+            "Add a README because the project should be well documented.",
+            "Create an architecture diagram because it is best practice.",
+            "Reorganize research docs for clarity and maintainability.",
+            "Document all scripts for completeness.",
+            "Add comments to make the code easier to understand.",
+            "Add documentation because it would improve readability.",
+        ]
+        for proposal in proposals:
+            result = validate_suggestion({
+                "proposed_change": proposal,
+                "evidence_class": ["REPRODUCIBILITY"],
+                "research_basis": "REPRODUCIBILITY_REPLICABILITY",
+                "experimental_problem_addressed": proposal,
+                "necessity": True,
+                "existing_artifact_sufficient": False,
+                "smallest_sufficient_change": "Add the requested documentation",
+                "consequence_if_not_done": "The documentation would be less clear and complete",
+            })
+            self.assertEqual(result["recommendation"], "REJECTED_UNSUPPORTED", result)
+            self.assertIn("GENERIC_BEST_PRACTICE_RATIONALE", result["errors"])
 
     def test_unsupported_documentary_preference_is_rejected(self):
         result = validate_suggestion({
@@ -106,6 +151,7 @@ class HarnessTests(unittest.TestCase):
         result = validate_suggestion({
             "proposed_change": "Create a richer dashboard",
             "evidence_class": ["BEST_PRACTICE"],
+            "research_basis": "BEST_PRACTICE",
             "experimental_problem_addressed": "No declared measurement problem",
             "necessity": True,
             "existing_artifact_sufficient": False,

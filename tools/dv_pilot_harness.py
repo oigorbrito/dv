@@ -23,6 +23,23 @@ SUGGESTION_EVIDENCE_CLASSES = {
     "EMPIRICAL_RESEARCH_GUIDANCE", "EXPERIMENTAL_DESIGN", "REPRODUCIBILITY",
     "MEASUREMENT", "ORACLE_VALIDITY", "FAILURE_ATTRIBUTION", "TRACEABILITY",
 }
+SUGGESTION_RESEARCH_BASES = {
+    "EMPIRICAL_SOFTWARE_ENGINEERING",
+    "REPRODUCIBILITY_REPLICABILITY",
+    "BOTH",
+}
+SUGGESTION_POLICY_VERSION = 2
+GENERIC_SUGGESTION_TERMS = {
+    "best practice", "industry standard", "maintainability", "architecture preference",
+    "would be useful", "improve clarity", "clearer documentation", "more complete",
+    "easier onboarding", "better organization", "nicer naming", "conventional structure",
+    "for completeness", "easier to understand", "readability", "well documented", "for clarity",
+}
+RESEARCH_CONSEQUENCE_TERMS = {
+    "empirical", "experiment", "validity", "reproduc", "replic", "measurement",
+    "oracle", "failure attribution", "traceability", "verifier", "cannot", "prevents",
+    "invalid", "inconsistent", "reconstruct", "independent replay", "distinguish",
+}
 REQUIRED_SPEC = (
     "protocol_version", "corpus_version", "task_id", "task_family", "base_revision",
     "oracle_version", "treatment_id", "treatment_version", "rollout_id", "environment_id",
@@ -106,10 +123,11 @@ def validate_suggestion(suggestion: dict[str, Any]) -> dict[str, Any]:
     """Apply the evidence gate to one methodological/documentary suggestion."""
     required = (
         "proposed_change", "evidence_class", "experimental_problem_addressed",
-        "necessity", "existing_artifact_sufficient", "smallest_sufficient_change",
-        "consequence_if_not_done",
+        "research_basis", "necessity", "existing_artifact_sufficient",
+        "smallest_sufficient_change", "consequence_if_not_done",
     )
-    errors = [f"missing suggestion field: {key}" for key in required if key not in suggestion]
+    errors: list[str] = []
+    errors.extend(f"missing suggestion field: {key}" for key in required if key not in suggestion)
     classes = suggestion.get("evidence_class")
     if isinstance(classes, str):
         classes = [classes]
@@ -117,16 +135,37 @@ def validate_suggestion(suggestion: dict[str, Any]) -> dict[str, Any]:
         errors.append("evidence_class must be a non-empty string or array of strings")
         classes = []
     elif any(value not in SUGGESTION_EVIDENCE_CLASSES for value in classes):
-        errors.append("evidence_class contains an unsupported class")
+        errors.append("UNSUPPORTED_EVIDENCE_CLASS")
+    research_basis = suggestion.get("research_basis")
+    if research_basis not in SUGGESTION_RESEARCH_BASES:
+        errors.append("MISSING_EMPIRICAL_RESEARCH_BASIS" if research_basis is None else "UNSUPPORTED_RESEARCH_BASIS")
     for key in ("proposed_change", "experimental_problem_addressed", "smallest_sufficient_change", "consequence_if_not_done"):
         if key in suggestion and (not isinstance(suggestion[key], str) or not suggestion[key].strip()):
             errors.append(f"{key} must be a non-empty string")
     if "necessity" in suggestion and suggestion["necessity"] is not True:
         errors.append("necessity must be true for a supported recommendation")
     if suggestion.get("existing_artifact_sufficient") is True:
-        errors.append("existing artifact is sufficient; no change is necessary")
+        errors.append("EXISTING_ARTIFACT_NOT_SHOWN_INSUFFICIENT")
+    problem = suggestion.get("experimental_problem_addressed")
+    consequence = suggestion.get("consequence_if_not_done")
+    if not isinstance(problem, str) or not problem.strip():
+        errors.append("NO_CONCRETE_EXPERIMENTAL_PROBLEM")
+    if not isinstance(consequence, str) or not consequence.strip():
+        errors.append("NO_OBJECTIVE_CONSEQUENCE_IF_OMITTED")
+    research_text = " ".join(str(suggestion.get(key, "")) for key in (
+        "proposed_change", "experimental_problem_addressed", "smallest_sufficient_change", "consequence_if_not_done"
+    )).lower()
+    if any(term in research_text for term in GENERIC_SUGGESTION_TERMS):
+        errors.append("GENERIC_BEST_PRACTICE_RATIONALE")
+    if not any(term in research_text for term in RESEARCH_CONSEQUENCE_TERMS):
+        errors.append("NO_REPRODUCIBILITY_CONSEQUENCE")
+    if "evidence_class" in suggestion and isinstance(classes, list) and classes and research_basis in SUGGESTION_RESEARCH_BASES:
+        specialized = set(classes) - {"EMPIRICAL_RESEARCH_GUIDANCE", "REPRODUCIBILITY"}
+        if specialized and not any(term in research_text for term in RESEARCH_CONSEQUENCE_TERMS):
+            errors.append("EVIDENCE_CLASS_NOT_CONNECTED_TO_EXPERIMENT")
     supported = not errors
     return {
+        "policy_version": SUGGESTION_POLICY_VERSION,
         "supported": "YES" if supported else "NO",
         "recommendation": "ACCEPTED" if supported else "REJECTED_UNSUPPORTED",
         "evidence_class": classes,

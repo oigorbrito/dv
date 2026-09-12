@@ -1,0 +1,24 @@
+{
+  "policy_id": "dv-suggestion-policy-v2",
+  "policy_version": 2,
+  "scope": "methodological and documentary suggestions",
+  "acceptance_rule": "requires explicit empirical software engineering and/or reproducibility/replicability basis connected to a concrete experimental problem",
+  "research_bases": [
+    "EMPIRICAL_SOFTWARE_ENGINEERING",
+    "REPRODUCIBILITY_REPLICABILITY",
+    "BOTH"
+  ],
+  "evidence_classes": [
+    "EMPIRICAL_RESEARCH_GUIDANCE",
+    "EXPERIMENTAL_DESIGN",
+    "REPRODUCIBILITY",
+    "MEASUREMENT",
+    "ORACLE_VALIDITY",
+    "FAILURE_ATTRIBUTION",
+    "TRACEABILITY"
+  ],
+  "generic_preference_rationales_rejected": true,
+  "historical_artifacts": "remain historical; v2 applies prospectively",
+  "treatment_execution_affected": false,
+  "holdout": "SEALED"
+}
