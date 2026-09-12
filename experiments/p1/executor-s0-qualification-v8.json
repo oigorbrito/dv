@@ -22,9 +22,11 @@
       "reasoning_tokens": "UNMEASURED",
       "latency_ms": 4384,
       "application_retry_count": 0,
-      "cost_class": "UNMEASURED",
-      "free_tier_status": "UNMEASURED",
-      "B4_FREE_FIRST_READY": "NO",
+      "cost_class": "FREE_TIER_CONFIRMED",
+      "free_tier_status": "CONFIRMED",
+      "cost_evidence_source": "Google AI Studio project/API-key UI",
+      "cost_evidence_observed_label": "Nível gratuito",
+      "B4_FREE_FIRST_READY": "YES",
       "limitation": "raw response, request identifier, timestamps, finish status and pricing/account eligibility are not available in the supplied record"
     }
   ],
@@ -38,7 +40,7 @@
     "S0_FAIL": 0,
     "probe_executed_in_this_step": false,
     "probe_recorded_from_prior_observation": true,
-    "B4_FREE_FIRST_READY": "NO",
+    "B4_FREE_FIRST_READY": "YES",
     "STRONG_PATH_READY": "NO",
     "P1_S1_RELEASE": "NO",
     "holdout": "SEALED",
