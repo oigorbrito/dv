@@ -1,0 +1,47 @@
+{
+  "qualification_id": "p1-executor-s0-qualification-v8",
+  "supersedes": "experiments/p1/executor-s0-qualification-v4.json only for the separately identified Gemini 3.8 surface",
+  "as_of": "2026-09-11",
+  "probe_policy": "record the supplied single synthetic qualification probe; no new API call, P1 task, candidate, holdout, or treatment execution",
+  "candidates": [
+    {
+      "candidate": "C4-google-gemini-3-8-flash",
+      "category": "C4_FREE_OR_NEAR_FREE",
+      "provider": "Google",
+      "logical_model_name": "Gemini 3.8 Flash",
+      "model_runtime": "Gemini API",
+      "model_requested": "gemini-3.8-flash",
+      "model_observed": "gemini-3.8-flash",
+      "probe_evidence": "pilot-runs/p1-w5-gemini-b4/gemini-3.8-qualification-probe.json",
+      "S0_STATUS": "S0_READY_TELEMETRY_LIMITED",
+      "surface_status": "QUALIFIED",
+      "input_tokens": 12,
+      "candidate_tokens": 9,
+      "total_tokens": 112,
+      "cached_tokens": "UNMEASURED",
+      "reasoning_tokens": "UNMEASURED",
+      "latency_ms": 4384,
+      "application_retry_count": 0,
+      "cost_class": "UNMEASURED",
+      "free_tier_status": "UNMEASURED",
+      "B4_FREE_FIRST_READY": "NO",
+      "limitation": "raw response, request identifier, timestamps, finish status and pricing/account eligibility are not available in the supplied record"
+    }
+  ],
+  "summary": {
+    "S0_READY": 0,
+    "S0_READY_TELEMETRY_LIMITED": 1,
+    "S0_CREDENTIAL_BLOCKED": 0,
+    "S0_DOWNLOAD_REQUIRED": 0,
+    "S0_ENVIRONMENT_BLOCKED": 0,
+    "S0_NOT_A_STANDALONE_EXECUTOR": 0,
+    "S0_FAIL": 0,
+    "probe_executed_in_this_step": false,
+    "probe_recorded_from_prior_observation": true,
+    "B4_FREE_FIRST_READY": "NO",
+    "STRONG_PATH_READY": "NO",
+    "P1_S1_RELEASE": "NO",
+    "holdout": "SEALED",
+    "treatment_execution": "NOT_EXECUTED"
+  }
+}
