@@ -34,8 +34,8 @@
       "qualification_ref": "experiments/p1/executor-s0-qualification-v9.json",
       "qualification_status": "S0_READY_TELEMETRY_LIMITED",
       "executor_surface": "Gemini API generateContent",
-      "executor_command": ["REMOTE_PROVIDER_SURFACE", "Google", "gemini-3.8-flash", "generateContent"],
-      "binding_status": "DECLARATIVE_SURFACE_BINDING; no invocation in this wave"
+      "executor_command": ["python", "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py", "--candidate", "C1-google-gemini", "--model", "gemini-3.8-flash"],
+      "binding_status": "HARNESS_PROCESS_BINDING; fixture-validated; no external invocation in this wave"
     },
     "B4": {
       "treatment_id": "B4",
@@ -48,13 +48,17 @@
       "qualification_status": "S0_READY_TELEMETRY_LIMITED",
       "cost_class": "FREE_TIER_CONFIRMED",
       "executor_surface": "Gemini API generateContent",
-      "executor_command": ["REMOTE_PROVIDER_SURFACE", "Google", "gemini-3.8-flash", "generateContent"],
-      "binding_status": "DECLARATIVE_SURFACE_BINDING; B4 semantics remain distinct from B0"
+      "executor_command": ["python", "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py", "--candidate", "C4-google-gemini-3-8-flash", "--model", "gemini-3.8-flash"],
+      "binding_status": "HARNESS_PROCESS_BINDING; fixture-validated; B4 semantics remain distinct from B0"
     }
   },
   "specs": [
     {
       "smoke_spec_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r1",
+      "protocol_version": "4R-v1",
+      "corpus_version": "p1-development-corpus-v6",
+      "treatment_version": "treatment-design-v1",
+      "environment_id": "smag-windows-node24-git",
       "run_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r1",
       "task_id": "D-F2-06",
       "task_family": "F2",
@@ -70,7 +74,7 @@
       "repetition": 1,
       "workspace_target": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06",
       "working_directory": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06/packages/smag-governance",
-      "executor_command": ["REMOTE_PROVIDER_SURFACE", "Google", "gemini-3.8-flash", "generateContent"],
+      "executor_command": ["python", "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py", "--candidate", "C1-google-gemini", "--model", "gemini-3.8-flash"],
       "retry_policy": {"application_retry_limit": 0, "provider_retry_metadata": "UNMEASURED_IF_NOT_EXPOSED"},
       "escalation_policy": {"mode": "none", "limit": 0},
       "timeouts": {"executor_ms": 1800000, "verifier_ms": 600000, "run_ms": 2400000},
@@ -83,6 +87,10 @@
     },
     {
       "smoke_spec_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r1",
+      "protocol_version": "4R-v1",
+      "corpus_version": "p1-development-corpus-v6",
+      "treatment_version": "treatment-design-v1",
+      "environment_id": "smag-windows-node24-git",
       "run_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r1",
       "task_id": "D-F2-06",
       "task_family": "F2",
@@ -98,7 +106,7 @@
       "repetition": 1,
       "workspace_target": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06",
       "working_directory": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06/packages/smag-governance",
-      "executor_command": ["REMOTE_PROVIDER_SURFACE", "Google", "gemini-3.8-flash", "generateContent"],
+      "executor_command": ["python", "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py", "--candidate", "C1-google-gemini", "--model", "gemini-3.8-flash"],
       "retry_policy": {"application_retry_limit": 0, "provider_retry_metadata": "UNMEASURED_IF_NOT_EXPOSED"},
       "escalation_policy": {"mode": "none", "limit": 0},
       "timeouts": {"executor_ms": 1800000, "verifier_ms": 600000, "run_ms": 2400000},
@@ -111,6 +119,10 @@
     },
     {
       "smoke_spec_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r1",
+      "protocol_version": "4R-v1",
+      "corpus_version": "p1-development-corpus-v6",
+      "treatment_version": "treatment-design-v1",
+      "environment_id": "smag-windows-node24-git",
       "run_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r1",
       "task_id": "D-F2-06",
       "task_family": "F2",
@@ -126,7 +138,7 @@
       "repetition": 1,
       "workspace_target": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06",
       "working_directory": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06/packages/smag-governance",
-      "executor_command": ["REMOTE_PROVIDER_SURFACE", "Google", "gemini-3.8-flash", "generateContent"],
+      "executor_command": ["python", "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py", "--candidate", "C4-google-gemini-3-8-flash", "--model", "gemini-3.8-flash"],
       "retry_policy": {"application_retry_limit": 0, "provider_retry_metadata": "UNMEASURED_IF_NOT_EXPOSED"},
       "escalation_policy": {"mode": "deterministic_only", "triggers": ["no_candidate_before_timeout", "explicit_blocker", "focal_verifier_failure", "preservation_failure", "structurally_invalid_artifact", "resource_ceiling"], "limit": 0},
       "timeouts": {"executor_ms": 1800000, "verifier_ms": 600000, "run_ms": 2400000},
@@ -139,6 +151,10 @@
     },
     {
       "smoke_spec_id": "P1-S1-SMOKE-D-F2-06-B4-S1-r1",
+      "protocol_version": "4R-v1",
+      "corpus_version": "p1-development-corpus-v6",
+      "treatment_version": "treatment-design-v1",
+      "environment_id": "smag-windows-node24-git",
       "run_id": "P1-S1-SMOKE-D-F2-06-B4-S1-r1",
       "task_id": "D-F2-06",
       "task_family": "F2",
@@ -154,7 +170,7 @@
       "repetition": 1,
       "workspace_target": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06",
       "working_directory": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06/packages/smag-governance",
-      "executor_command": ["REMOTE_PROVIDER_SURFACE", "Google", "gemini-3.8-flash", "generateContent"],
+      "executor_command": ["python", "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py", "--candidate", "C4-google-gemini-3-8-flash", "--model", "gemini-3.8-flash"],
       "retry_policy": {"application_retry_limit": 0, "provider_retry_metadata": "UNMEASURED_IF_NOT_EXPOSED"},
       "escalation_policy": {"mode": "deterministic_only", "triggers": ["no_candidate_before_timeout", "explicit_blocker", "focal_verifier_failure", "preservation_failure", "structurally_invalid_artifact", "resource_ceiling"], "limit": 0},
       "timeouts": {"executor_ms": 1800000, "verifier_ms": 600000, "run_ms": 2400000},
