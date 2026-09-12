@@ -1,0 +1,45 @@
+{
+  "qualification_id": "p1-executor-s0-qualification-v6",
+  "supersedes": "experiments/p1/executor-s0-qualification-v5.json for the observed 2026-09-11 C1 credential/transport state",
+  "as_of": "2026-09-11",
+  "probe_policy": "one synthetic qualification probe only; no P1 task, candidate, holdout, or treatment execution",
+  "candidates": [
+    {
+      "candidate": "C1-openai-sol",
+      "provider": "OpenAI",
+      "logical_model_name": "GPT-5.6 Sol",
+      "canonical_api_model_id": "gpt-5.6-sol",
+      "api_surface": "Responses API",
+      "credential_env_var": "OPENAI_API_KEY",
+      "credential_present": true,
+      "probe_evidence": "pilot-runs/mvp-execution-loop/2026-09-11-openai-qualification-probe.json",
+      "S0_STATUS": "S0_ENVIRONMENT_BLOCKED",
+      "identity_observed": false,
+      "usage_observed": false,
+      "blocker": "outbound socket access prohibited before HTTP response"
+    },
+    {
+      "candidate": "C1-anthropic-opus",
+      "provider": "Anthropic",
+      "logical_model_name": "Claude Opus 4.8",
+      "canonical_api_model_id": "claude-opus-4-8",
+      "api_surface": "Claude API",
+      "credential_env_var": "ANTHROPIC_API_KEY",
+      "credential_present": false,
+      "S0_STATUS": "S0_CREDENTIAL_BLOCKED"
+    }
+  ],
+  "summary": {
+    "S0_READY": 0,
+    "S0_READY_TELEMETRY_LIMITED": 0,
+    "S0_CREDENTIAL_BLOCKED": 1,
+    "S0_DOWNLOAD_REQUIRED": 0,
+    "S0_ENVIRONMENT_BLOCKED": 1,
+    "S0_NOT_A_STANDALONE_EXECUTOR": 0,
+    "S0_FAIL": 0,
+    "probe_executed": true,
+    "P1_S1_RELEASE": "NO",
+    "holdout": "SEALED",
+    "treatment_execution": "NOT_EXECUTED"
+  }
+}
