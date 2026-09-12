@@ -1,0 +1,33 @@
+{
+  "wave": "P1-S1-NEWLINE-REMEDIATION",
+  "qualification_only": true,
+  "producer": "Git checkout/apply conversion governed by system core.autocrlf",
+  "classification": "PROCESS_OUTPUT_REPRESENTATION_DRIFT",
+  "direct_git_diff_stdout_hex": "64696666202d2d67697420612f747261636b65642e74787420622f747261636b65642e7478740a696e64657820386431613439343334343835396366353330303062656439363439336533356133383037386431332e2e65366630346264653662616230386539333931333530353434306166393133656665363864383330203130303634340a2d2d2d20612f747261636b65642e7478740a2b2b2b20622f747261636b65642e7478740a4040202d31202b312040400a2d424153450a2b44495254590a",
+  "direct_git_diff_line_ending": "LF",
+  "materialized_file_hex_with_system_autocrlf": "44495254590d0a",
+  "materialized_file_hex_with_isolated_config": "44495254590a",
+  "target_bytes": "44495254590a",
+  "verifier_git_blob_id": "15dae37524ecf0d24e9dfd570b618bacdba4135f",
+  "verifier_raw_byte_sha256": "1ee34ce2c25bcdcbb8b2ebaba7b6d1eef59a1ed552220d462af9ed9b125c003c",
+  "package_json_git_blob_id": "7658f7fda49ee19c13a6adf45ef80dd8edc9278a",
+  "bun_lock_git_blob_id": "a0b485f1516174d1a901664b25bc962aac547776",
+  "remediation": {
+    "type": "NEUTRAL_OPERATIONAL_ENVIRONMENT",
+    "scope": "one harness run and its child processes",
+    "git_config": "core.autocrlf=false",
+    "implementation": "ephemeral HOME/USERPROFILE with a run-local .gitconfig",
+    "verifier_changed": false,
+    "oracle_changed": false
+  },
+  "raw_newline_control": "PASS",
+  "parent_workspace_head": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+  "parent_workspace_clean_before_control": true,
+  "parent_verifier_command": ["node", "--test", "packages/smag-governance/test/git-staging.test.mjs"],
+  "parent_verifier_exit_code": 0,
+  "parent_verifier_reproduction": "PASS",
+  "external_api_calls": 0,
+  "treatments_executed": 0,
+  "smoke_runs_executed_in_this_wave": 0,
+  "holdout": "SEALED"
+}

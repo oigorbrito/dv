@@ -72,6 +72,36 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def prepare_git_environment(run_dir: Path, env: dict[str, str]) -> tuple[dict[str, str], dict[str, Any]]:
+    """Provide an isolated Git config with the repository's LF contract."""
+    if os.name != "nt":
+        return env, {"status": "NOT_APPLICABLE", "core_autocrlf": None}
+
+    git_home = run_dir / "git-home"
+    git_home.mkdir(parents=True, exist_ok=False)
+    config = git_home / ".gitconfig"
+    result = subprocess.run(
+        ["git", "config", "--file", str(config), "core.autocrlf", "false"],
+        cwd=str(run_dir),
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or "failed to prepare isolated Git config")
+
+    child_env = dict(env)
+    child_env["HOME"] = str(git_home)
+    child_env["USERPROFILE"] = str(git_home)
+    return child_env, {
+        "status": "PASS",
+        "home": str(git_home),
+        "config": str(config),
+        "config_sha256": sha256_file(config),
+        "core_autocrlf": "false",
+    }
+
+
 def validate_suggestion(suggestion: dict[str, Any]) -> dict[str, Any]:
     """Apply the evidence gate to one methodological/documentary suggestion."""
     required = (
@@ -174,7 +204,7 @@ def git_probe(cwd: str, args: list[str]) -> str | None:
     return proc.stdout.strip() if proc.returncode == 0 else None
 
 
-def environment_snapshot(cwd: str, spec: dict[str, Any]) -> dict[str, Any]:
+def environment_snapshot(cwd: str, spec: dict[str, Any], git_environment: dict[str, Any]) -> dict[str, Any]:
     head = git_probe(cwd, ["rev-parse", "HEAD"])
     status = git_probe(cwd, ["status", "--porcelain=v1"])
     root = git_probe(cwd, ["rev-parse", "--show-toplevel"])
@@ -191,6 +221,7 @@ def environment_snapshot(cwd: str, spec: dict[str, Any]) -> dict[str, Any]:
             "dirty": None if status is None else bool(status),
             "status_sha256": None if status is None else sha256_bytes(status.encode()),
         },
+        "git_environment": git_environment,
         "toolchain": spec.get("toolchain_versions", {}),
         "container_image_digest": spec.get("container_image_digest"),
     }
@@ -340,9 +371,10 @@ def cmd_run(args: argparse.Namespace) -> int:
     started_utc, started_mono = utc_now(), time.monotonic()
     append_jsonl(events_path, event(run_id, "harness", "run_start", spec_sha256=spec_digest))
     cwd = str(Path(spec["working_directory"]).resolve())
-    env_snapshot = environment_snapshot(cwd, spec)
     env = os.environ.copy()
     env.update({"DV_RUN_ID": run_id, "DV_EVENT_LOG": str(run_dir / "child-events.jsonl"), "DV_RUN_DIR": str(run_dir), "DV_TASK_ID": str(spec["task_id"]), "DV_TREATMENT_ID": str(spec["treatment_id"])})
+    env, git_environment = prepare_git_environment(run_dir, env)
+    env_snapshot = environment_snapshot(cwd, spec, git_environment)
 
     executor = spec["executor_command"]
     append_jsonl(events_path, event(run_id, "execution", "process_start", argv=executor, timeout_seconds=spec.get("executor_timeout_seconds")))

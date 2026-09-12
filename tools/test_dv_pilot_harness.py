@@ -7,12 +7,25 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from dv_pilot_harness import apply_candidate, validate_suggestion
+from dv_pilot_harness import apply_candidate, prepare_git_environment, validate_suggestion
 
 HARNESS = HERE / "dv_pilot_harness.py"
 
 
 class HarnessTests(unittest.TestCase):
+    def test_git_environment_isolated_and_lf_on_windows(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            run_dir = Path(tmp) / "run"
+            run_dir.mkdir()
+            env, metadata = prepare_git_environment(run_dir, {"PATH": "fixture"})
+            if sys.platform == "win32":
+                self.assertEqual(metadata["status"], "PASS")
+                self.assertEqual(metadata["core_autocrlf"], "false")
+                self.assertEqual(env["HOME"], metadata["home"])
+                self.assertTrue(Path(metadata["config"]).is_file())
+            else:
+                self.assertEqual(metadata["status"], "NOT_APPLICABLE")
+
     def test_candidate_application_uses_git_apply_without_manual_repair(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -163,6 +176,8 @@ class HarnessTests(unittest.TestCase):
             self.assertAlmostEqual(rec["recomputed"]["total_monetary_cost"], 0.02)
             self.assertEqual(rec["recomputed"]["currency"], "USD")
             self.assertEqual(summary["environment"]["declared_environment_id"], "fixture-env")
+            if sys.platform == "win32":
+                self.assertEqual(summary["environment"]["git_environment"]["core_autocrlf"], "false")
             self.assertIn("git", summary["environment"])
             for name in ("spec.json", "events.jsonl", "executor.stdout.log", "executor.stderr.log", "verifier.stdout.log", "verifier.stderr.log"):
                 self.assertIsNotNone(summary["artifact_manifest"][name]["sha256"])
