@@ -18,7 +18,7 @@ from typing import Any
 SCHEMA_VERSION = "dv-pilot-run-v1"
 OUTCOMES = {"YES", "NO", "INCONCLUSIVE"}
 TOKEN_CATEGORIES = {"routing", "planning", "context", "execution", "handoff", "verification", "retry"}
-FAILURE_ATTRIBUTIONS = {None, "PRODUCT_FAILURE", "HARNESS_FAILURE", "ORACLE_DEFECT", "ENVIRONMENT_DRIFT", "INCONCLUSIVE_OTHER"}
+FAILURE_ATTRIBUTIONS = {None, "PRODUCT_FAILURE", "HARNESS_FAILURE", "ORACLE_DEFECT", "ENVIRONMENT_DRIFT", "RESOURCE_LIMIT", "PROVIDER_FAILURE", "INCONCLUSIVE_OTHER"}
 SUGGESTION_EVIDENCE_CLASSES = {
     "EMPIRICAL_RESEARCH_GUIDANCE", "EXPERIMENTAL_DESIGN", "REPRODUCIBILITY",
     "MEASUREMENT", "ORACLE_VALIDITY", "FAILURE_ATTRIBUTION", "TRACEABILITY",
@@ -286,6 +286,23 @@ def read_verifier_result(path: Path, verifier_timed_out: bool) -> dict[str, Any]
     return obj
 
 
+def provider_failure_from_artifact(run_dir: Path, executor_result: dict[str, Any]) -> dict[str, Any] | None:
+    """Prefer an observed provider error over downstream verifier parsing noise."""
+    if executor_result["timed_out"] or executor_result["exit_code"] == 0:
+        return None
+    artifact = run_dir / "provider-error.json"
+    if not artifact.is_file():
+        return None
+    try:
+        error = load_json(artifact)
+    except (OSError, json.JSONDecodeError):
+        return None
+    status = error.get("status") if isinstance(error, dict) else None
+    if isinstance(status, int) and 400 <= status <= 599:
+        return {"status": status, "reason": error.get("reason", "UNMEASURED")}
+    return None
+
+
 def parse_child_events(path: Path, run_id: str) -> tuple[list[dict[str, Any]], list[str]]:
     events, errors = [], []
     if not path.exists():
@@ -427,6 +444,16 @@ def cmd_run(args: argparse.Namespace) -> int:
     append_jsonl(events_path, event(run_id, "verification", "process_start", argv=verifier, timeout_seconds=spec.get("verifier_timeout_seconds")))
     ver_result = run_process(verifier, cwd, env, run_dir / "verifier.stdout.log", run_dir / "verifier.stderr.log", spec.get("verifier_timeout_seconds"))
     verification = read_verifier_result(run_dir / "verifier.stdout.log", ver_result["timed_out"])
+    provider_failure = provider_failure_from_artifact(run_dir, exec_result)
+    if provider_failure is not None:
+        verification = dict(verification)
+        verification["failure_attribution"] = "PROVIDER_FAILURE"
+        verification["provider_failure"] = provider_failure
+        verification["parser_interpretation"] = verification.get("reason")
+        verification["reason"] = (
+            f"provider-error.json records HTTP {provider_failure['status']} "
+            f"{provider_failure['reason']}; candidate path was not reached"
+        )
     append_jsonl(events_path, event(run_id, "verification", "process_end", argv=verifier, **ver_result))
 
     summary = {

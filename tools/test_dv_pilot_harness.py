@@ -302,6 +302,26 @@ class HarnessTests(unittest.TestCase):
             self.assertTrue(summary["process_results"]["executor"]["timed_out"])
             self.assertNotEqual(summary["verification"].get("failure_attribution"), "PRODUCT_FAILURE")
 
+    def test_http_503_after_provider_invocation_is_provider_failure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec_path = self._scripts_and_spec(root)
+            (root / "executor.py").write_text(
+                "import json,os\n"
+                "from pathlib import Path\n"
+                "Path(os.environ['DV_RUN_DIR'], 'provider-error.json').write_text(json.dumps({'status':503,'reason':'Service Unavailable'}), encoding='utf-8')\n"
+                "raise SystemExit(75)\n",
+                encoding="utf-8",
+            )
+            (root / "verifier.py").write_text("print('no candidate')\n", encoding="utf-8")
+            proc = self._run(root, spec_path)
+            self.assertEqual(proc.returncode, 0, proc.stderr)
+            run_dir = Path(proc.stdout.strip())
+            summary = json.loads((run_dir / "run.json").read_text(encoding="utf-8"))
+            self.assertEqual(summary["verification"]["outcome"], "INCONCLUSIVE")
+            self.assertEqual(summary["verification"]["failure_attribution"], "PROVIDER_FAILURE")
+            self.assertEqual(summary["verification"]["provider_failure"]["status"], 503)
+
 
 if __name__ == "__main__":
     unittest.main()
