@@ -1,0 +1,75 @@
+{
+  "wave": "W34",
+  "artifact_id": "p1-w34-s1-closure-v1",
+  "scope": "Stage closure using W33 reconciled W31 r2 evidence; no execution",
+  "baseline": {
+    "head": "43b6125be7b7e61bf4f26ae34cf45d0bb1eef0ae",
+    "harness": "15/15 PASS",
+    "w33_reconciliation": "pilot-runs/p1-w33-attribution-reconciliation/r2-attribution-reconciliation-v1.json",
+    "w33_reconciliation_sha256": "c0bab1c0ae739ad3eec6d3536b7355b211887962c8a615783544f553f78634ae",
+    "w31_summary": "pilot-runs/p1-w31-smoke-r2/execution-summary.json",
+    "holdout": "SEALED"
+  },
+  "closure_inputs": {
+    "r2_evidence_consistent": "YES",
+    "closure_review_ready": "YES",
+    "r2_attempts": 4,
+    "r2_final_attribution": "4/4 PROVIDER_FAILURE",
+    "r2_provider_result": "4/4 HTTP 503 Service Unavailable",
+    "r2_task_result": "4/4 INCONCLUSIVE",
+    "r2_smoke_pipeline": "4/4 BLOCKED",
+    "candidate_produced": "0/4",
+    "application_retries": 0,
+    "parent_verifier_control": "PASS"
+  },
+  "canonical_criteria": "experiments/p1/promotion-gates-v1.json",
+  "stage_decision": {
+    "p1_s1_stage_status": "BLOCKED",
+    "p1_s1_closure_recorded": "YES",
+    "p1_s1_complete": "NO",
+    "closure_interpretation": "Terminal blocked closure is recorded separately from successful stage completion; no candidate was available for task evaluation."
+  },
+  "provider": {
+    "p1_s1_provider_blocker": "ACTIVE",
+    "unblock_condition": "Independent evidence that Gemini service availability has recovered, a canonical provider-availability check passes, or another already-authorized C1 surface becomes executable.",
+    "c1_google_gemini_qualified": "YES",
+    "strong_path_ready": "PASS"
+  },
+  "r3": {
+    "eligibility_if_unblocked": "REQUIRES_POLICY_DECISION",
+    "r3_ids_created": false,
+    "r3_preauthorized": false
+  },
+  "accounting": {
+    "status": "PARTIAL",
+    "api_calls_represented": 4,
+    "application_retries": 0,
+    "token_accounting": "UNMEASURED",
+    "monetary_accounting": "UNMEASURED",
+    "failures_retained_in_accounting": true,
+    "missing_values_not_coerced_to_zero": true
+  },
+  "corpus_and_promotion": {
+    "task_corpus": "PARTIAL",
+    "comparative_corpus_ready": "NO",
+    "p1_s2_release": "NO",
+    "p1_s2_blockers": [
+      "P1_S1_COMPLETE=NO",
+      "P1_S1_STAGE_STATUS=BLOCKED",
+      "COMPARATIVE_CORPUS_READY=NO",
+      "provider blocker ACTIVE",
+      "no candidate/verifier-on-candidate evidence",
+      "primary accounting telemetry UNMEASURED"
+    ]
+  },
+  "scope_preserved": {
+    "api_calls_this_wave": 0,
+    "treatments_this_wave": 0,
+    "smoke_runs_this_wave": 0,
+    "p1_s2_executed": false,
+    "p0_executed": false,
+    "holdout": "SEALED",
+    "run_history_modified": false,
+    "task_verifier_oracle_modified": false
+  }
+}
