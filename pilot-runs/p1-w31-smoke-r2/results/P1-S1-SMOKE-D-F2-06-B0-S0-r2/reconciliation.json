@@ -1,0 +1,60 @@
+{
+  "artifact_manifest": {
+    "candidate.diff": {
+      "bytes": null,
+      "sha256": null
+    },
+    "child-events.jsonl": {
+      "bytes": 400,
+      "sha256": "e099497fa92d01f76ebb9c028ea8988cbd701548ae3f791916eb3da88c1f27b1"
+    },
+    "events.jsonl": {
+      "bytes": 2375,
+      "sha256": "a29c5453322ef36fbea044b1d53000bfac46c0523f10e93a245ffa069706c446"
+    },
+    "executor.stderr.log": {
+      "bytes": 36,
+      "sha256": "91ab871a1f9b05ce23c20c001a1f8bcb7a5498e4574c9b5ff6534c10ff5f588c"
+    },
+    "executor.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "provider-error.json": {
+      "bytes": 1034,
+      "sha256": "ce959b8a3021aac7d5386790a5a8f8eeab65835aff34fd1885c35e66fc8295a1"
+    },
+    "provider-raw-response.json": {
+      "bytes": null,
+      "sha256": null
+    },
+    "spec.json": {
+      "bytes": 2806,
+      "sha256": "17953fd4b3d542419440d935a49b38bb166f3aa1e14467043b5a7a29d32eb7af"
+    },
+    "verifier.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verifier.stdout.log": {
+      "bytes": 210,
+      "sha256": "77cfd2ad9dd50cec374d3a8f4b3023e6a7ff34d036ad7b3459af8ae84eb39943"
+    }
+  },
+  "errors": [],
+  "primary_metrics_complete": false,
+  "recomputed": {
+    "child_event_count": 1,
+    "currency": null,
+    "total_monetary_cost": null,
+    "total_system_tokens": null,
+    "wall_clock_seconds": 59.49561559999893
+  },
+  "run_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r2",
+  "schema_version": "dv-pilot-run-v1",
+  "status": "PASS",
+  "warnings": [
+    "MISSING/UNRESOLVED token telemetry",
+    "MISSING/UNRESOLVED monetary telemetry"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "wave": "W31",
+  "scope": "Exactly four authorized P1-S1 D-F2-06 r2 attempts",
+  "run_order": [
+    "P1-S1-SMOKE-D-F2-06-B0-S0-r2",
+    "P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+    "P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+    "P1-S1-SMOKE-D-F2-06-B4-S1-r2"
+  ],
+  "runs_attempted": 4,
+  "runs_completed": 4,
+  "api_calls": 4,
+  "application_retries": 0,
+  "treatments_executed": 4,
+  "model": "gemini-3.8-flash",
+  "provider": "Google Gemini API",
+  "provider_results": {
+    "P1-S1-SMOKE-D-F2-06-B0-S0-r2": {"status": 503, "reason": "Service Unavailable", "request_id": "UNMEASURED", "usage": "UNMEASURED"},
+    "P1-S1-SMOKE-D-F2-06-B0-S1-r2": {"status": 503, "reason": "Service Unavailable", "request_id": "UNMEASURED", "usage": "UNMEASURED"},
+    "P1-S1-SMOKE-D-F2-06-B4-S0-r2": {"status": 503, "reason": "Service Unavailable", "request_id": "UNMEASURED", "usage": "UNMEASURED"},
+    "P1-S1-SMOKE-D-F2-06-B4-S1-r2": {"status": 503, "reason": "Service Unavailable", "request_id": "UNMEASURED", "usage": "UNMEASURED"}
+  },
+  "candidate_capture": "NOT_REACHED",
+  "candidate_application": "NOT_REACHED",
+  "verifier": "NOT_TESTED_ON_CANDIDATE; parent control exit 0",
+  "task_results": "INCONCLUSIVE",
+  "failure_attribution": "PROVIDER_FAILURE",
+  "smoke_pipeline_status": "BLOCKED",
+  "reconciliation": "4/4 PASS",
+  "raw_evidence": "preserved per run under results/<RUN_ID>/provider-error.json",
+  "r1_attempts_immutable": true,
+  "p1_s1_complete": "NO",
+  "p1_s2_release": "NO",
+  "real_p0_runs": "0/24",
+  "p0_release": "NO",
+  "holdout": "SEALED",
+  "treatment_execution": "COMPLETED_WITH_PROVIDER_FAILURES; no candidate reached application"
+}

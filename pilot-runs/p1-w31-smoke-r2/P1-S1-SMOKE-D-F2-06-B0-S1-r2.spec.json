@@ -1,0 +1,90 @@
+{
+  "smoke_spec_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+  "protocol_version": "4R-v1",
+  "corpus_version": "p1-development-corpus-v6",
+  "treatment_version": "treatment-design-v1",
+  "environment_id": "smag-windows-node24-git",
+  "run_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+  "task_id": "D-F2-06",
+  "task_family": "F2",
+  "repository": "oigorbrito/smag",
+  "base_revision": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+  "oracle_version": "p1-development-corpus-v6",
+  "verifier_command": [
+    "node",
+    "--test",
+    "test/git-staging.test.mjs"
+  ],
+  "verifier_working_directory": "packages/smag-governance",
+  "treatment_id": "B0",
+  "executor_binding": "C1-google-gemini",
+  "shaping": {
+    "mode": "S1_DETERMINISTIC_TASK_SHAPING",
+    "fields": [
+      "objective",
+      "constraints",
+      "allowed_scope",
+      "repository_paths",
+      "verifier_reference",
+      "environment_constraints",
+      "required_output_artifact"
+    ]
+  },
+  "rollout_id": "r2",
+  "repetition": 2,
+  "workspace_target": "pilot-runs/p1-w31-smoke-r2/workspaces/P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+  "working_directory": "pilot-runs/p1-w31-smoke-r2/workspaces/P1-S1-SMOKE-D-F2-06-B0-S1-r2/packages/smag-governance",
+  "executor_command": [
+    "python",
+    "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py",
+    "--candidate",
+    "C1-google-gemini",
+    "--model",
+    "gemini-3.8-flash"
+  ],
+  "retry_policy": {
+    "application_retry_limit": 0,
+    "provider_retry_metadata": "UNMEASURED_IF_NOT_EXPOSED"
+  },
+  "escalation_policy": {
+    "mode": "none",
+    "limit": 0
+  },
+  "timeouts": {
+    "executor_ms": 1800000,
+    "verifier_ms": 600000,
+    "run_ms": 2400000
+  },
+  "telemetry_requirements": [
+    "identity",
+    "timestamps",
+    "candidate_artifact",
+    "usage_or_explicit_missingness",
+    "retry_events",
+    "authoritative_usage_reference"
+  ],
+  "accounting_fields": [
+    "routing",
+    "task_shaping",
+    "planning",
+    "context_input",
+    "execution",
+    "escalation_handoff",
+    "verification",
+    "retry_replanning"
+  ],
+  "failure_attribution_ref": "experiments/p1/failure-attribution-v1.json",
+  "artifact_paths": {
+    "run_root": "pilot-runs/p1-w31-smoke-r2/results/P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+    "shaping": "shaping.json",
+    "candidate": "candidate.diff",
+    "verifier": "verifier-result.json",
+    "reconciliation": "reconciliation.json"
+  },
+  "holdout": "DEVELOPMENT_ONLY; legacy holdout untouched",
+  "stop_conditions": [
+    "one rollout complete",
+    "shaping cost recorded separately",
+    "no automatic promotion to S2"
+  ]
+}
