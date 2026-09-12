@@ -1,0 +1,50 @@
+{
+  "probe_classification": "QUALIFICATION_PROBE_ONLY",
+  "candidate_id": "C1-google-gemini",
+  "provider": "Google",
+  "logical_model": "Gemini 3.8 Flash",
+  "requested_model": "gemini-3.8-flash",
+  "observed_model": "gemini-3.8-flash",
+  "prompt": "Return exactly: DV_S0_PROBE_OK",
+  "raw_candidate_text": "DV_S0_PROBE_OK",
+  "normalized_candidate_text": "DV_S0_PROBE_OK",
+  "exact_match": true,
+  "request_id": "EsGkauOLKuOg6dkP4NyXgAY",
+  "start_timestamp": "2026-09-12T03:03:44.4171291Z",
+  "end_timestamp": "2026-09-12T03:03:46.2544848Z",
+  "latency_ms": 1837.356,
+  "http_status": 200,
+  "finish_status": "STOP",
+  "input_tokens": 13,
+  "output_tokens": 9,
+  "total_tokens": 102,
+  "reasoning_tokens": 80,
+  "cached_tokens": "UNMEASURED",
+  "other_usage_fields": {
+    "promptTokenCount": 13,
+    "candidatesTokenCount": 9,
+    "totalTokenCount": 102,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 13
+      }
+    ],
+    "thoughtsTokenCount": 80,
+    "serviceTier": "standard"
+  },
+  "application_retry_count": 0,
+  "provider_client_retry_metadata": "UNMEASURED",
+  "timeout_seconds": 30,
+  "client_surface_version": "System.Net.Http.HttpClient / Gemini generateContent v1beta",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+  "safe_response_headers": {
+    "date": "Sat, 12 Sep 2026 03:03:47 GMT"
+  },
+  "transport_error": "NONE",
+  "raw_artifact": "pilot-runs\\p1-c1-gemini-qualification\\raw-response.json",
+  "raw_artifact_sha256": "007009CBBB6BE5FB468B009C62FA4CBEF27EE50A01271D8F62D336111A1E5576",
+  "secret_persisted": false,
+  "treatment_execution": false,
+  "holdout_accessed": false
+}
