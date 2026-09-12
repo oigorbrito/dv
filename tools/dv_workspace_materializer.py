@@ -105,17 +105,28 @@ def materialize_local(source: Path, revision: str, destination: Path) -> dict:
                 file_hashes[relative] = hashlib.sha256(data).hexdigest()
 
         head = run(local_git(source, ["rev-parse", revision]))
+        run(["git", "init", "--quiet"], destination)
+        git_dir = destination / ".git"
+        alternate_file = git_dir / "objects" / "info" / "alternates"
+        alternate_file.parent.mkdir(parents=True, exist_ok=True)
+        alternate_file.write_bytes(((source / ".git" / "objects").resolve().as_posix() + "\n").encode("utf-8"))
+        run(["git", "config", "core.autocrlf", "false"], destination)
+        run(["git", "config", "core.eol", "lf"], destination)
+        run(["git", "update-ref", "HEAD", head], destination)
+        run(["git", "read-tree", head], destination)
+        status = run(["git", "status", "--porcelain"], destination)
         return {
             "repository": str(source),
             "requested_revision": revision,
             "head_revision": head,
             "source_git_object_database": str((source / ".git").resolve()),
-            "materialization_method": "direct_git_blob_plumbing",
+            "materialization_method": "direct_git_blob_plumbing_with_isolated_git_identity",
+            "isolated_git_dir": str(git_dir.resolve()),
             "tracked_entry_count": len(parsed),
             "symlink_fallbacks": symlink_fallbacks,
             "byte_preserving_regular_files": True,
             "file_sha256": file_hashes,
-            "worktree_clean": True,
+            "worktree_clean": not status,
             "destination": str(destination.resolve()),
         }
     except Exception:

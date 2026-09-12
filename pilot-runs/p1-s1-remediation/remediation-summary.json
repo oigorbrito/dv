@@ -1,0 +1,26 @@
+{
+  "wave": "post-smoke-remediation",
+  "no_rerun": true,
+  "external_api_calls": 0,
+  "treatment_runs": 0,
+  "blockers": {
+    "candidate_capture": "HARNESS_DEFECT",
+    "candidate_application": "HARNESS_DEFECT",
+    "workspace_git_identity": "MATERIALIZATION_DEFECT",
+    "newline_verifier": "ENVIRONMENT_DRIFT",
+    "http_error_details": "MEASUREMENT_GAP",
+    "monetary_cost": "MEASUREMENT_GAP_NOT_S1_BLOCKING"
+  },
+  "candidate_capture_ready": true,
+  "candidate_application_ready": true,
+  "isolated_git_workspace": {"mechanism": "isolated_git_dir_with_source_object_alternate", "exact_head": "6ddf8c7461bdb13d407e7f78239dbecd53375573", "worktree_status": "CLEAN"},
+  "relevant_bytes": "PRESERVED",
+  "parent_verifier_control": {"cwd": "packages/smag-governance", "exit_code": 1, "outcome": "INCONCLUSIVE", "reason": "DIRTY CRLF output differs from frozen LF assertion"},
+  "newline_reproduction_ready": false,
+  "http_error_telemetry_ready": true,
+  "request_id_policy": "capture only provider-exposed header; otherwise UNMEASURED",
+  "fixture_validation": {"http_4xx": "PASS", "http_5xx": "PASS", "malformed_output": "PASS", "actionable_unified_diff": "PASS", "candidate_application": "PASS", "local_end_to_end": "PASS", "secret_redaction": "PASS", "zero_retry": "PASS"},
+  "local_smoke_pipeline_dry_run": "PASS",
+  "smoke_rerun_ready": "NO",
+  "holdout": "SEALED"
+}

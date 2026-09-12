@@ -5,13 +5,63 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from dv_pilot_harness import validate_suggestion
-
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+from dv_pilot_harness import apply_candidate, validate_suggestion
+
 HARNESS = HERE / "dv_pilot_harness.py"
 
 
 class HarnessTests(unittest.TestCase):
+    def test_candidate_application_uses_git_apply_without_manual_repair(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(["git", "init", "--quiet"], cwd=root, check=True)
+            subprocess.run(["git", "config", "user.name", "fixture"], cwd=root, check=True)
+            subprocess.run(["git", "config", "user.email", "fixture@example.invalid"], cwd=root, check=True)
+            (root / "a.txt").write_text("old\n", encoding="utf-8")
+            subprocess.run(["git", "add", "a.txt"], cwd=root, check=True)
+            subprocess.run(["git", "commit", "--quiet", "-m", "fixture"], cwd=root, check=True)
+            (root / "a.txt").write_text("new\n", encoding="utf-8")
+            patch = subprocess.check_output(["git", "diff", "--", "a.txt"], cwd=root, text=True)
+            (root / "a.txt").write_text("old\n", encoding="utf-8")
+            run_dir = root / "run"
+            run_dir.mkdir()
+            (run_dir / "candidate.diff").write_text(patch, encoding="utf-8")
+            result = apply_candidate(run_dir, str(root))
+            self.assertEqual(result["status"], "PASS", result)
+            self.assertEqual((root / "a.txt").read_text(encoding="utf-8"), "new\n")
+
+    def test_local_end_to_end_fixture_captures_applies_and_verifies_candidate(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(["git", "init", "--quiet"], cwd=root, check=True)
+            subprocess.run(["git", "config", "user.name", "fixture"], cwd=root, check=True)
+            subprocess.run(["git", "config", "user.email", "fixture@example.invalid"], cwd=root, check=True)
+            (root / "a.txt").write_text("old\n", encoding="utf-8")
+            subprocess.run(["git", "add", "a.txt"], cwd=root, check=True)
+            subprocess.run(["git", "commit", "--quiet", "-m", "fixture"], cwd=root, check=True)
+            spec_path = self._scripts_and_spec(root)
+            executor = root / "executor.py"
+            executor.write_text(
+                "import json, os\nfrom pathlib import Path\n"
+                "Path(os.environ['DV_RUN_DIR'], 'candidate.diff').write_text('diff --git a/a.txt b/a.txt\\n--- a/a.txt\\n+++ b/a.txt\\n@@ -1 +1 @@\\n-old\\n+new\\n', encoding='utf-8')\n"
+                "open(os.environ['DV_EVENT_LOG'], 'a', encoding='utf-8').write(json.dumps({'run_id':os.environ['DV_RUN_ID'],'event_id':'fixture','token_category':'execution','tokens':1,'source':'fixture','provider':'fixture','model_or_service':'fixture','cache_status':'miss'})+'\\n')\n",
+                encoding="utf-8",
+            )
+            verifier = root / "verifier.py"
+            verifier.write_text("import json\nprint(json.dumps({'outcome':'YES','harness_valid':True,'evidence_refs':['fixture:verifier'],'failure_attribution':None}))\n", encoding="utf-8")
+            spec = json.loads(spec_path.read_text(encoding="utf-8"))
+            spec["executor_command"] = [sys.executable, str(executor)]
+            spec["verifier_command"] = [sys.executable, str(verifier)]
+            spec_path.write_text(json.dumps(spec), encoding="utf-8")
+            proc = self._run(root, spec_path)
+            self.assertEqual(proc.returncode, 0, proc.stderr)
+            run_dir = Path(proc.stdout.strip())
+            summary = json.loads((run_dir / "run.json").read_text(encoding="utf-8"))
+            self.assertEqual(summary["candidate_application"]["status"], "PASS", {"summary": summary, "stdout": proc.stdout, "stderr": proc.stderr})
+            self.assertEqual(summary["verification"]["outcome"], "YES")
+
     def test_evidence_gated_suggestion_is_accepted(self):
         result = validate_suggestion({
             "proposed_change": "Record verifier SHA-256",

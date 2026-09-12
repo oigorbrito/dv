@@ -29,6 +29,8 @@ class WorkspaceMaterializerTests(unittest.TestCase):
             actual = (destination / "tracked.txt").read_bytes()
             self.assertEqual(actual, expected)
             self.assertEqual(identity["head_revision"], revision)
+            self.assertEqual(run(["git", "rev-parse", "HEAD"], destination), revision)
+            self.assertTrue((destination / ".git" / "objects" / "info" / "alternates").is_file())
             self.assertEqual(identity["file_sha256"]["tracked.txt"], hashlib.sha256(expected).hexdigest())
             self.assertEqual(identity["symlink_fallbacks"], [])
 

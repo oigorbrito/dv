@@ -31,6 +31,7 @@ REQUIRED_SPEC = (
 MATERIAL_ARTIFACTS = (
     "spec.json", "events.jsonl", "child-events.jsonl", "executor.stdout.log",
     "executor.stderr.log", "verifier.stdout.log", "verifier.stderr.log",
+    "candidate.diff", "provider-raw-response.json", "provider-error.json",
 )
 
 
@@ -155,6 +156,14 @@ def run_process(argv: list[str], cwd: str, env: dict[str, str], stdout: Path, st
         "timeout_seconds": timeout,
         "termination_reason": "TIMEOUT" if timed_out else "PROCESS_EXIT",
     }
+
+
+def apply_candidate(run_dir: Path, cwd: str) -> dict[str, Any]:
+    candidate = run_dir / "candidate.diff"
+    if not candidate.is_file():
+        return {"status": "BLOCKED", "reason": "candidate.diff not produced", "exit_code": None}
+    result = subprocess.run(["git", "apply", "--whitespace=nowarn", str(candidate)], cwd=cwd, capture_output=True, text=True, check=False)
+    return {"status": "PASS" if result.returncode == 0 else "FAIL", "exit_code": result.returncode, "stderr": result.stderr[-4000:]}
 
 
 def git_probe(cwd: str, args: list[str]) -> str | None:
@@ -340,6 +349,9 @@ def cmd_run(args: argparse.Namespace) -> int:
     exec_result = run_process(executor, cwd, env, run_dir / "executor.stdout.log", run_dir / "executor.stderr.log", spec.get("executor_timeout_seconds"))
     append_jsonl(events_path, event(run_id, "execution", "process_end", argv=executor, **exec_result))
 
+    candidate_result = apply_candidate(run_dir, cwd) if exec_result["exit_code"] == 0 and not exec_result["timed_out"] else {"status": "BLOCKED", "reason": "executor did not complete successfully", "exit_code": None}
+    append_jsonl(events_path, event(run_id, "execution", "candidate_application", **candidate_result))
+
     verifier = spec["verifier_command"]
     append_jsonl(events_path, event(run_id, "verification", "process_start", argv=verifier, timeout_seconds=spec.get("verifier_timeout_seconds")))
     ver_result = run_process(verifier, cwd, env, run_dir / "verifier.stdout.log", run_dir / "verifier.stderr.log", spec.get("verifier_timeout_seconds"))
@@ -354,6 +366,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         "working_directory": cwd,
         "commands": {"executor": executor, "verifier": verifier},
         "process_results": {"executor": exec_result, "verifier": ver_result},
+        "candidate_application": candidate_result,
         "verification": verification,
         "timing": {"start_utc": started_utc, "end_utc": utc_now(), "wall_clock_seconds": time.monotonic() - started_mono, "executor_seconds": exec_result["duration_seconds"], "verifier_seconds": ver_result["duration_seconds"]},
         "environment": env_snapshot,

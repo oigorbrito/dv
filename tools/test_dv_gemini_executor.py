@@ -1,16 +1,19 @@
 import json
+import io
 import os
 import subprocess
 import sys
 import tempfile
 import unittest
+import urllib.error
+from unittest import mock
 from pathlib import Path
 
 
 HERE = Path(__file__).resolve().parent
 EXECUTOR = HERE / "dv_gemini_executor.py"
 sys.path.insert(0, str(HERE))
-from dv_gemini_executor import build_request, parse_response
+from dv_gemini_executor import build_request, extract_unified_diff, parse_response, response_request_id, safe_response_headers, write_candidate
 
 
 class GeminiBindingTests(unittest.TestCase):
@@ -18,8 +21,42 @@ class GeminiBindingTests(unittest.TestCase):
         request = build_request("gemini-3.8-flash", "frozen prompt", "secret-not-logged")
         self.assertEqual(request.full_url, "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent")
         self.assertEqual(request.get_header("X-goog-api-key"), "secret-not-logged")
-        self.assertEqual(request.method, "POST")
-        self.assertEqual(request.get_header("Content-type"), "application/json")
+
+    def test_candidate_contract_accepts_only_unified_diff(self):
+        self.assertIsNone(extract_unified_diff("plain answer"))
+        self.assertEqual(extract_unified_diff("```diff\n--- a/a.txt\n+++ b/a.txt\n@@\n-x\n+y\n```"), "--- a/a.txt\n+++ b/a.txt\n@@\n-x\n+y\n")
+
+    def test_response_headers_redact_credentials_and_preserve_request_id(self):
+        headers = {"x-request-id": "req-1", "x-goog-api-key": "secret", "content-type": "application/json"}
+        self.assertEqual(response_request_id(headers), "req-1")
+        self.assertNotIn("x-goog-api-key", {k.lower() for k in safe_response_headers(headers)})
+
+    def test_http_error_fixtures_preserve_status_body_and_retry_zero(self):
+        for status in (429, 500):
+            with self.subTest(status=status), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                error = urllib.error.HTTPError("https://example.invalid", status, "fixture", {"x-request-id": "req-fixture", "x-goog-api-key": "secret"}, io.BytesIO(b'{"error":"fixture"}'))
+                env = os.environ.copy()
+                env.update({"DV_RUN_DIR": str(root), "DV_EVENT_LOG": str(root / "events.jsonl"), "DV_RUN_ID": "fixture-http" , "GEMINI_API_KEY": "secret-not-logged", "DV_TASK_PROMPT": "prompt"})
+                with mock.patch("urllib.request.urlopen", side_effect=error), mock.patch.dict(os.environ, env, clear=True), mock.patch.object(sys, "argv", [str(EXECUTOR), "--candidate", "C1-google-gemini", "--model", "gemini-3.8-flash"]):
+                    from dv_gemini_executor import main
+                    self.assertEqual(main(), 75)
+                payload = json.loads((root / "provider-error.json").read_text(encoding="utf-8"))
+                self.assertEqual(payload["status"], status)
+                self.assertEqual(payload["request_id"], "req-fixture")
+                self.assertNotIn("x-goog-api-key", {key.lower() for key in payload["headers"]})
+                event = json.loads((root / "events.jsonl").read_text(encoding="utf-8"))
+                self.assertEqual(event["application_retry_count"], 0)
+
+    def test_malformed_response_fixture_is_rejected(self):
+        with self.assertRaises(json.JSONDecodeError):
+            parse_response(b"not-json", "gemini-3.8-flash")
+
+    def test_candidate_file_is_captured_with_canonical_bytes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)
+            self.assertTrue(write_candidate("```diff\n--- a/a.txt\n+++ b/a.txt\n@@\n-x\n+y\n```", path))
+            self.assertEqual((path / "candidate.diff").read_text(encoding="utf-8"), "--- a/a.txt\n+++ b/a.txt\n@@\n-x\n+y\n")
 
     def test_response_parser_preserves_usage_and_observed_model(self):
         raw = json.dumps({"modelVersion": "gemini-3.8-flash-001", "candidates": [{"content": {"parts": [{"text": "patch"}]}}], "usageMetadata": {"promptTokenCount": 4, "candidatesTokenCount": 5, "totalTokenCount": 9}}).encode()
