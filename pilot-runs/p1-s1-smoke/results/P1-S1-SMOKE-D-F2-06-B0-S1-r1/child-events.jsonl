@@ -1,0 +1,1 @@
+{"run_id":"P1-S1-SMOKE-D-F2-06-B0-S1-r1","event_id":"gemini-1789185041772476200","token_category":"execution","source":"provider-usage","provider":"Google","model_or_service":"gemini-3.8-flash","cache_status":"unknown","application_retry_count":0,"provider_retry_metadata":"UNMEASURED","input_tokens":421,"output_tokens":583,"total_tokens":1279,"reasoning_tokens":275,"tokens":1279}

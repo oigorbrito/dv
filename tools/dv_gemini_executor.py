@@ -20,8 +20,8 @@ def now() -> str:
 
 def build_request(model: str, prompt: str, api_key: str) -> urllib.request.Request:
     payload = json.dumps({"contents": [{"role": "user", "parts": [{"text": prompt}]}]}).encode()
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
-    return urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"}, method="POST")
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    return urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json", "x-goog-api-key": api_key}, method="POST")
 
 
 def parse_response(raw: bytes, requested_model: str) -> tuple[str, dict, str]:

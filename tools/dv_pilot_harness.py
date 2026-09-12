@@ -306,7 +306,15 @@ def reconcile(run_dir: Path, summary: dict[str, Any], events: list[dict[str, Any
 
 
 def cmd_run(args: argparse.Namespace) -> int:
-    spec = load_json(Path(args.spec).resolve())
+    loaded = load_json(Path(args.spec).resolve())
+    spec = loaded
+    if isinstance(loaded, dict) and isinstance(loaded.get("specs"), list):
+        if not args.run_id:
+            raise SystemExit("aggregate spec requires --run-id")
+        matches = [candidate for candidate in loaded["specs"] if isinstance(candidate, dict) and candidate.get("run_id") == args.run_id]
+        if len(matches) != 1:
+            raise SystemExit(f"aggregate spec does not contain exactly one spec for run id: {args.run_id}")
+        spec = matches[0]
     if not isinstance(spec, dict):
         raise SystemExit("spec must be a JSON object")
     errors = validate_spec(spec)

@@ -1,0 +1,50 @@
+{
+  "artifact_manifest": {
+    "child-events.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "events.jsonl": {
+      "bytes": 2063,
+      "sha256": "961d7730d3ee288a271e69de3c3e547d3a065c72fcdac3824332dd8dd8dada19"
+    },
+    "executor.stderr.log": {
+      "bytes": 36,
+      "sha256": "91ab871a1f9b05ce23c20c001a1f8bcb7a5498e4574c9b5ff6534c10ff5f588c"
+    },
+    "executor.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "spec.json": {
+      "bytes": 2719,
+      "sha256": "781e712135d52bf38f2de6107a0574281f97d803c3aeaddefdc9b0278a4e11bd"
+    },
+    "verifier.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verifier.stdout.log": {
+      "bytes": 972,
+      "sha256": "20dc9c706bdaaf82e4f5d68df4f5561a266da5b1ebe4665ebafe72518653ce03"
+    }
+  },
+  "errors": [
+    "base revision mismatch: declared 6ddf8c7461bdb13d407e7f78239dbecd53375573, observed edb39bf1eb279d53ffffb5da2a4e106c5aff57ef"
+  ],
+  "primary_metrics_complete": false,
+  "recomputed": {
+    "child_event_count": 0,
+    "currency": null,
+    "total_monetary_cost": null,
+    "total_system_tokens": null,
+    "wall_clock_seconds": 11.758470599999782
+  },
+  "run_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r1",
+  "schema_version": "dv-pilot-run-v1",
+  "status": "FAIL",
+  "warnings": [
+    "MISSING/UNRESOLVED token telemetry",
+    "MISSING/UNRESOLVED monetary telemetry"
+  ]
+}

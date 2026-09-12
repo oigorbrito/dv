@@ -16,7 +16,8 @@ from dv_gemini_executor import build_request, parse_response
 class GeminiBindingTests(unittest.TestCase):
     def test_request_construction_has_fixed_surface_and_no_retry_setting(self):
         request = build_request("gemini-3.8-flash", "frozen prompt", "secret-not-logged")
-        self.assertEqual(request.full_url, "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=secret-not-logged")
+        self.assertEqual(request.full_url, "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent")
+        self.assertEqual(request.get_header("X-goog-api-key"), "secret-not-logged")
         self.assertEqual(request.method, "POST")
         self.assertEqual(request.get_header("Content-type"), "application/json")
 
