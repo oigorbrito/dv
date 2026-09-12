@@ -1,0 +1,94 @@
+{
+  "wave": "W35",
+  "artifact_id": "p1-w35-provider-availability-requalification-v1",
+  "scope": "Provider availability requalification and prospective r3 policy decision only",
+  "baseline": {
+    "head": "70a3ac13561f711c6ad5bd7aea958f99937ff173",
+    "branch": "main",
+    "worktree": "CLEAN",
+    "harness": "15/15 PASS",
+    "w34_closure": "pilot-runs/p1-w34-s1-closure/p1-s1-closure.json",
+    "w34_closure_sha256": "8881D5EC6A7D3CB51572EB9175352DBEC3DB2AF67AAEA4198498F4A8929E5334",
+    "w33_reconciliation": "pilot-runs/p1-w33-attribution-reconciliation/r2-attribution-reconciliation-v1.json",
+    "w33_reconciliation_sha256": "C0BAB1C0AE739AD3EEC6D3536B7355B211887962C8A615783544F553F78634AE",
+    "gemini_api_key_presence": "PRESENT_BOOLEAN_ONLY",
+    "holdout": "SEALED"
+  },
+  "canonical_availability_contract": {
+    "source": "experiments/p1/executor-s0-qualification-v9.json",
+    "method": "one canonical synthetic C1 qualification probe using the existing probe text; no P1 task payload; no application retry",
+    "probe_text": "Return exactly: DV_S0_PROBE_OK",
+    "requested_model": "gemini-3.8-flash",
+    "surface": "Gemini API v1beta generateContent",
+    "application_retry_count": 0
+  },
+  "availability_attempt": {
+    "attempted": false,
+    "api_calls_executed": 0,
+    "provider": "Google",
+    "model": "gemini-3.8-flash",
+    "status": "BLOCKED",
+    "blocking_observation": "The authorized external execution request was rejected before process start because the execution access token could not be refreshed after account session state changed.",
+    "http_status": "UNMEASURED",
+    "request_id": "UNMEASURED",
+    "latency": "UNMEASURED",
+    "usage": "UNMEASURED",
+    "raw_response_artifact": "NONE",
+    "application_retry_count": 0,
+    "provider_availability": "BLOCKED",
+    "evidence_class": "EXECUTOR_TOOLING_BLOCKED_BEFORE_PROVIDER_REQUEST"
+  },
+  "provider_state": {
+    "p1_s1_provider_blocker": "ACTIVE",
+    "c1_google_gemini_qualified": "YES",
+    "strong_path_ready": "PASS",
+    "qualification_not_demoted": true,
+    "unblock_condition": "A successful canonical availability probe from an authorized execution session, or equivalent independently observable availability evidence already permitted by the contract."
+  },
+  "rerun_policy": {
+    "source": "experiments/p1/p1-s1-smoke-rerun-authorizations-v1.json plus tools/dv_pilot_harness.py policy-check contract",
+    "r1_status": "IMMUTABLE; prior HARNESS_FAILURE / ENVIRONMENT_DRIFT evidence",
+    "r2_status": "IMMUTABLE; reconciled PROVIDER_FAILURE with HTTP 503",
+    "r3_policy_status": "REQUIRES_AMENDMENT",
+    "policy_check_required": "YES",
+    "suggestion": "pilot-runs/p1-w35-provider-availability/r3-policy-suggestion.json",
+    "suggestion_sha256": "569B5098A09A18AEA1B0573F76DF1346F09AD33AE1E21C7E5FA0C40DD3DB334D",
+    "policy_check_result": "ACCEPTED",
+    "policy_check_exit_code": 0,
+    "policy_check_scope": "prospective suggestion only; acceptance does not authorize r3 or create IDs"
+  },
+  "decision": {
+    "r3_eligibility": "BLOCKED",
+    "r3_ids_created": false,
+    "r3_execution": "NOT_EXECUTED",
+    "p1_s1_stage_status": "BLOCKED",
+    "p1_s1_closure_recorded": "YES",
+    "p1_s1_complete": "NO",
+    "p1_s2_release": "NO",
+    "task_corpus": "PARTIAL",
+    "comparative_corpus_ready": "NO"
+  },
+  "scope_preserved": {
+    "task_statement_sent": false,
+    "treatments_executed": 0,
+    "p1_s1_runs_executed": 0,
+    "p1_s2_executed": false,
+    "p0_executed": false,
+    "holdout_accessed": false,
+    "r1_r2_history_modified": false,
+    "task_verifier_oracle_modified": false,
+    "secret_persisted": false
+  },
+  "validation": {
+    "harness_self_test": "15/15 PASS",
+    "json_parse": "PASS",
+    "credential_secret_scan": "PASS",
+    "holdout_leakage_scan": "PASS; SEALED only",
+    "r1_r2_immutability": "PASS",
+    "policy_check": "PASS",
+    "p1_s1_gate_consistency": "PASS",
+    "p1_s2_gate_consistency": "PASS",
+    "p0_immutability": "PASS",
+    "git_diff_check": "PASS"
+  }
+}
