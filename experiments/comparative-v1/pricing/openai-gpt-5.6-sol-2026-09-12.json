@@ -1,0 +1,23 @@
+{
+  "schema_version": "comparative-v1-pricing-snapshot-v1",
+  "provider": "OpenAI",
+  "model": "gpt-5.6-sol",
+  "captured_date": "2026-09-12",
+  "currency": "USD",
+  "unit": "per_1m_tokens",
+  "standard_service": {
+    "input": 4.00,
+    "cached_input": 0.40,
+    "output": 20.00
+  },
+  "long_context_rule": {
+    "threshold_input_tokens": 272000,
+    "input_multiplier": 2.0,
+    "output_multiplier": 1.5,
+    "scope": "full request when input exceeds threshold"
+  },
+  "service_tier_for_comparative_probe": "default",
+  "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+  "source_observation": "Official model page observed 2026-09-12; promotional standard pricing shown as $4.00 input, $0.40 cached input, $20.00 output per 1M tokens, stated available at least through 2026-11-21.",
+  "accounting_rule": "Retain this historical source/date for runs executed under this schedule. Do not retroactively overwrite costs with later prices; later normalization is a separate analysis."
+}
