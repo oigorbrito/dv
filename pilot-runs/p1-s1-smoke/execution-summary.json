@@ -1,0 +1,27 @@
+{
+  "wave": "P1-S1",
+  "scope": "D-F2-06 four smoke specs, one attempt each",
+  "run_order": [
+    "P1-S1-SMOKE-D-F2-06-B0-S0-r1",
+    "P1-S1-SMOKE-D-F2-06-B0-S1-r1",
+    "P1-S1-SMOKE-D-F2-06-B4-S0-r1",
+    "P1-S1-SMOKE-D-F2-06-B4-S1-r1"
+  ],
+  "runs_attempted": 4,
+  "runs_completed": 4,
+  "api_calls": 4,
+  "application_retries": 0,
+  "treatments_executed": 4,
+  "task_results": "INCONCLUSIVE",
+  "pipeline_status": "BLOCKED",
+  "reconciliation": "FAIL",
+  "run_outcomes": {
+    "P1-S1-SMOKE-D-F2-06-B0-S0-r1": {"executor_exit": 75, "api": "HTTPError", "verifier_exit": 1, "attribution": "PROVIDER_FAILURE + HARNESS_FAILURE"},
+    "P1-S1-SMOKE-D-F2-06-B0-S1-r1": {"executor_exit": 0, "api_status": 200, "observed_model": "gemini-3.8-flash", "total_tokens": 1279, "reasoning_tokens": 275, "verifier_exit": 1, "attribution": "HARNESS_FAILURE"},
+    "P1-S1-SMOKE-D-F2-06-B4-S0-r1": {"executor_exit": 0, "api_status": 200, "observed_model": "gemini-3.8-flash", "total_tokens": 1237, "reasoning_tokens": 341, "verifier_exit": 1, "attribution": "HARNESS_FAILURE"},
+    "P1-S1-SMOKE-D-F2-06-B4-S1-r1": {"executor_exit": 75, "api": "HTTPError", "verifier_exit": 1, "attribution": "PROVIDER_FAILURE + HARNESS_FAILURE"}
+  },
+  "workspace": {"materializer": "direct_git_blob_plumbing", "fresh_per_run": true, "git_head_observable": false, "symlink_fallbacks": 58},
+  "gates": {"P1_S1_SMOKE_EXECUTION": "BLOCKED", "P1_S1_COMPLETE": "NO", "STRONG_PATH_READY": "PASS", "TASK_CORPUS": "PARTIAL", "COMPARATIVE_CORPUS_READY": "NO", "P1_S2_RELEASE": "NO", "REAL_P0_RUNS": "0/24", "P0_RELEASE": "NO", "HOLDOUT": "SEALED"},
+  "limitations": ["HTTP status/request-id not exposed for HTTPError runs", "candidate application path not available in Harness v1", "materialized workspace has no independent .git object database", "monetary cost unmeasured"]
+}

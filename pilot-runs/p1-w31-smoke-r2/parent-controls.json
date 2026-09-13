@@ -1,0 +1,34 @@
+[
+  {
+    "run_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r2",
+    "command": "node --test test/git-staging.test.mjs",
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\p1-w31-smoke-r2\\workspaces\\P1-S1-SMOKE-D-F2-06-B0-S0-r2\\packages\\smag-governance",
+    "exit_code": 1,
+    "expected_base": "FAIL",
+    "autocrlf": "false"
+  },
+  {
+    "run_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+    "command": "node --test test/git-staging.test.mjs",
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\p1-w31-smoke-r2\\workspaces\\P1-S1-SMOKE-D-F2-06-B0-S1-r2\\packages\\smag-governance",
+    "exit_code": 1,
+    "expected_base": "FAIL",
+    "autocrlf": "false"
+  },
+  {
+    "run_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+    "command": "node --test test/git-staging.test.mjs",
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\p1-w31-smoke-r2\\workspaces\\P1-S1-SMOKE-D-F2-06-B4-S0-r2\\packages\\smag-governance",
+    "exit_code": 1,
+    "expected_base": "FAIL",
+    "autocrlf": "false"
+  },
+  {
+    "run_id": "P1-S1-SMOKE-D-F2-06-B4-S1-r2",
+    "command": "node --test test/git-staging.test.mjs",
+    "cwd": "C:\\Projetos\\dv\\pilot-runs\\p1-w31-smoke-r2\\workspaces\\P1-S1-SMOKE-D-F2-06-B4-S1-r2\\packages\\smag-governance",
+    "exit_code": 1,
+    "expected_base": "FAIL",
+    "autocrlf": "false"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "wave": "W31",
+  "head": "fa78f4405dac2f66803e50b1f7e2ff5ff11e3bfc",
+  "branch": "main",
+  "worktree": "CLEAN",
+  "harness": "0:12/12 PASS",
+  "credential_presence": "PRESENT_BOOLEAN_ONLY",
+  "authorization": "experiments/p1/p1-s1-smoke-rerun-authorizations-v1.json",
+  "run_ids": [
+    "P1-S1-SMOKE-D-F2-06-B0-S0-r2",
+    "P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+    "P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+    "P1-S1-SMOKE-D-F2-06-B4-S1-r2"
+  ],
+  "strong_path": "PASS",
+  "workspace_readiness": "PASS_FROM_W29_REMEDIATION_EVIDENCE",
+  "parent_verifier_reproduction": "PASS_FROM_W29_REMEDIATION_EVIDENCE",
+  "holdout": "SEALED"
+}

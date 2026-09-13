@@ -1,0 +1,22 @@
+{
+  "proposed_change": "Extend the exhaustive frozen C1 candidate set with one additional prospective fallback candidate, C1-google-gemini, after C1-openai-sol and C1-anthropic-opus.",
+  "evidence_class": [
+    "EXPERIMENTAL_DESIGN",
+    "REPRODUCIBILITY",
+    "MEASUREMENT",
+    "TRACEABILITY"
+  ],
+  "experimental_problem_addressed": "The mandatory strong-reference qualification gate remains blocked because the two currently frozen C1 implementations are externally unavailable: OpenAI is quota-blocked and Anthropic lacks an authorized credential.",
+  "necessity": true,
+  "existing_artifact_sufficient": false,
+  "smallest_sufficient_change": "Add exactly C1-google-gemini as a prospective fallback in position three, preserving the existing candidate order, strong-reference criteria, qualification procedure, telemetry requirements, verifier requirements, accounting, retry policy, treatment definitions, and holdout protocol.",
+  "consequence_if_not_done": "The strong-reference path remains blocked solely by external provider or credential availability, preventing progression to the intended comparative stages.",
+  "scope": "C1 candidate-universe eligibility only",
+  "unchanged": [
+    "C1-openai-sol remains first",
+    "C1-anthropic-opus remains second",
+    "no automatic Gemini qualification",
+    "no treatment execution",
+    "no holdout access"
+  ]
+}

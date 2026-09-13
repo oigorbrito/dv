@@ -1,0 +1,118 @@
+{
+  "accounting": {
+    "child_event_count": 1,
+    "currency": null,
+    "total_monetary_cost": null,
+    "total_system_tokens": 1279,
+    "wall_clock_seconds": 12.25880320000033
+  },
+  "artifact_manifest": {
+    "child-events.jsonl": {
+      "bytes": 383,
+      "sha256": "490d562bd54bfd78c87c431d60c5b2211282598dbdaae74840f095b1e28b2ea4"
+    },
+    "events.jsonl": {
+      "bytes": 2062,
+      "sha256": "7f3221b5124254f83e6621f56e4a3b1b807b5036ec3e8a0741689265a9a998af"
+    },
+    "executor.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "executor.stdout.log": {
+      "bytes": 2823,
+      "sha256": "da90f3445adb3ff6e0827f8e1f4afab359debf306f84fe37ada34973d7e2663d"
+    },
+    "spec.json": {
+      "bytes": 2593,
+      "sha256": "29a0bc9f71c1d56ed6fb3bfb1d69a6f2fc05c8b47c821ca2bad68cf3df7294bf"
+    },
+    "verifier.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verifier.stdout.log": {
+      "bytes": 972,
+      "sha256": "30a794ecb48bafe828023bfa0cfb40dd53dc55a2b1f470491a3573e225e458a7"
+    }
+  },
+  "commands": {
+    "executor": [
+      "python",
+      "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py",
+      "--candidate",
+      "C1-google-gemini",
+      "--model",
+      "gemini-3.8-flash"
+    ],
+    "verifier": [
+      "node",
+      "--test",
+      "test/git-staging.test.mjs"
+    ]
+  },
+  "environment": {
+    "container_image_digest": null,
+    "declared_environment_id": "smag-windows-node24-git",
+    "git": {
+      "available": true,
+      "dirty": true,
+      "head": "edb39bf1eb279d53ffffb5da2a4e106c5aff57ef",
+      "status_sha256": "1b0fbc1a7de96d63b4e48391e819a18ba4c56c28e164210012bb85939d33ca8e",
+      "worktree_root": "C:/Projetos/dv"
+    },
+    "machine": "AMD64",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\Igor B\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "toolchain": {}
+  },
+  "identity": {
+    "base_revision": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+    "corpus_version": "p1-development-corpus-v6",
+    "environment_id": "smag-windows-node24-git",
+    "oracle_version": "p1-development-corpus-v6",
+    "protocol_version": "4R-v1",
+    "rollout_id": "r1",
+    "task_family": "F2",
+    "task_id": "D-F2-06",
+    "treatment_id": "B0",
+    "treatment_version": "treatment-design-v1"
+  },
+  "primary_metrics_complete": false,
+  "process_results": {
+    "executor": {
+      "duration_seconds": 9.524292300000525,
+      "exit_code": 0,
+      "termination_reason": "PROCESS_EXIT",
+      "timed_out": false,
+      "timeout_seconds": null
+    },
+    "verifier": {
+      "duration_seconds": 2.321438599999965,
+      "exit_code": 1,
+      "termination_reason": "PROCESS_EXIT",
+      "timed_out": false,
+      "timeout_seconds": null
+    }
+  },
+  "reconciliation_status": "FAIL",
+  "run_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r1",
+  "schema_version": "dv-pilot-run-v1",
+  "spec_sha256": "f5d1eddd9b4063a1885c4073345d8f954c26c504e175641b0c28f492aefbcdc0",
+  "timing": {
+    "end_utc": "2026-09-12T03:50:44.121522+00:00",
+    "executor_seconds": 9.524292300000525,
+    "start_utc": "2026-09-12T03:50:31.862707+00:00",
+    "verifier_seconds": 2.321438599999965,
+    "wall_clock_seconds": 12.25880320000033
+  },
+  "verification": {
+    "evidence_refs": [],
+    "failure_attribution": "HARNESS_FAILURE",
+    "harness_valid": false,
+    "outcome": "INCONCLUSIVE",
+    "reason": "verifier final non-empty line is not JSON: Expecting value: line 1 column 1 (char 0)"
+  },
+  "working_directory": "C:\\Projetos\\dv\\pilot-runs\\p1-s1-smoke\\workspaces\\D-F2-06\\packages\\smag-governance"
+}

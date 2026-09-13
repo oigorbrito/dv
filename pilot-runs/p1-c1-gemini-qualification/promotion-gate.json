@@ -1,0 +1,19 @@
+{
+  "wave": "P1-C1-GEMINI-QUALIFICATION",
+  "qualification_only": true,
+  "terms": {
+    "C1_GOOGLE_GEMINI_QUALIFIED": "YES",
+    "STRONG_PATH_READY": "PASS",
+    "TASK_CORPUS": "PARTIAL",
+    "S1_CORPUS_READY": "PASS",
+    "COMPARATIVE_CORPUS_READY": "NO",
+    "ECONOMIC_PATH_READY": "PASS_WITH_TELEMETRY_LIMITATION",
+    "ACCOUNTING_PRIMARY_READY": "PASS",
+    "HARNESS_P1_REMOTE_READINESS": "PASS",
+    "HOLDOUT_SEALED": true
+  },
+  "P1_S1_RELEASE": "YES",
+  "smoke_specs": "MUST_BE_MATERIALIZED_AND_VALIDATED_NEXT; NOT_EXECUTED_IN_THIS_WAVE",
+  "treatment_execution": "NOT_EXECUTED",
+  "next_gate": "materialize and validate P1-S1 smoke specs, then stop before smoke execution"
+}

@@ -1,0 +1,24 @@
+{
+  "body": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+  "error_type": "HTTPError",
+  "headers": {
+    "Accept-Ranges": "none",
+    "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "Connection": "close",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Date": "Sat, 12 Sep 2026 05:30:46 GMT",
+    "Server": "scaffolding on HTTPServer2",
+    "Server-Timing": "gfet4t7; dur=22963",
+    "Transfer-Encoding": "chunked",
+    "Vary": "Origin,Accept-Encoding",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Gemini-Service-Tier": "standard",
+    "X-XSS-Protection": "0"
+  },
+  "latency_ms": 23192.242,
+  "raw_response_sha256": "01f5c7d4e4d8ec06c8098777e731b3d552ba518feb02b681f6c569edcd9c6f6d",
+  "reason": "Service Unavailable",
+  "request_id": null,
+  "status": 503
+}

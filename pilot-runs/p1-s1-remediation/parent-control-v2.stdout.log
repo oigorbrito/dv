@@ -1,0 +1,12 @@
+HEAD=6ddf8c7461bdb13d407e7f78239dbecd53375573
+STATUS=
+✔ Git staging materializes dirty state without copying ignored dependency trees (2402.7931ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2704.163
+PARENT_EXIT=0

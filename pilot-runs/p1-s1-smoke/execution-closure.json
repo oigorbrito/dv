@@ -1,0 +1,61 @@
+{
+  "wave": "P1-S1-SMOKE",
+  "spec_artifact": "experiments/p1/p1-s1-smoke-specs-v1.json",
+  "spec_count": 4,
+  "specs_loaded": 4,
+  "specs_attempted": 0,
+  "specs_completed": 0,
+  "run_order_preserved": true,
+  "task_id": "D-F2-06",
+  "base_sha": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+  "verifier_ref": "packages/smag-governance/test/git-staging.test.mjs",
+  "verifier_sha1_expected": "15dae37524ecf0d24e9dfd570b618bacdba4135f",
+  "verifier_sha1_observed_in_git_blob": "15dae37524ecf0d24e9dfd570b618bacdba4135f",
+  "workspace": {
+    "target": "pilot-runs/p1-s1-smoke/workspaces/D-F2-06",
+    "clone_attempt": "BLOCKED_PERMISSION_ON_GIT_OBJECTS",
+    "archive_attempt": "PARTIAL_EXTRACTION_WITH_FILE_REPRESENTATION_DRIFT",
+    "archive_verifier_sha1_observed": "FB92BC0282FC89A5421949FBFEE799C266EC35AC",
+    "source_checkout_modified": false,
+    "valid_isolated_workspace": false
+  },
+  "executor_surface": {
+    "declared_command": ["REMOTE_PROVIDER_SURFACE", "Google", "gemini-3.8-flash", "generateContent"],
+    "resolution": "NOT_FOUND",
+    "harness_executable_binding": false,
+    "model_calls": 0,
+    "candidate_capture": "NOT_STARTED"
+  },
+  "runs": [
+    {"run_id":"P1-S1-SMOKE-D-F2-06-B0-S0-r1","status":"BLOCKED","task_result":"NOT_TESTED","failure_attribution":"HARNESS_FAILURE"},
+    {"run_id":"P1-S1-SMOKE-D-F2-06-B0-S1-r1","status":"BLOCKED","task_result":"NOT_TESTED","failure_attribution":"HARNESS_FAILURE"},
+    {"run_id":"P1-S1-SMOKE-D-F2-06-B4-S0-r1","status":"BLOCKED","task_result":"NOT_TESTED","failure_attribution":"HARNESS_FAILURE"},
+    {"run_id":"P1-S1-SMOKE-D-F2-06-B4-S1-r1","status":"BLOCKED","task_result":"NOT_TESTED","failure_attribution":"HARNESS_FAILURE"}
+  ],
+  "shared_blocker": {
+    "id": "P1-S1-BLK-EXECUTOR-SURFACE-AND-WORKSPACE",
+    "classification": "HARNESS_FAILURE",
+    "evidence": [
+      "REMOTE_PROVIDER_SURFACE is not an installed executable",
+      "source checkout C:\\Projetos\\smag is dirty and cannot be cloned under current ownership policy",
+      "archive extraction did not preserve the verifier file bytes in the target workspace"
+    ],
+    "impact": "No smoke run can validly reach executor, candidate capture, application, or verifier reconciliation",
+    "resolution_required": "Provide an approved executable Gemini workspace runner and reproducible byte-preserving isolated workspace materialization; do not alter verifier semantics"
+  },
+  "accounting": "NO_TREATMENT_RESOURCES_CONSUMED; qualification evidence is not a treatment run",
+  "wave_classification": "BLOCKED",
+  "pipeline_validity": "NOT_ESTABLISHED",
+  "P1_S1_COMPLETE": "NO",
+  "P1_S2_RELEASE": "NO",
+  "STRONG_PATH_READY": "PASS",
+  "TASK_CORPUS": "PARTIAL",
+  "COMPARATIVE_CORPUS_READY": "NO",
+  "ACCOUNTING_PRIMARY_READY": "PASS",
+  "HARNESS_P1_REMOTE_READINESS": "PARTIAL",
+  "P1_S1_RELEASE": "YES",
+  "REAL_P0_RUNS": "0/24",
+  "P0_RELEASE": "NO",
+  "HOLDOUT": "SEALED",
+  "treatment_execution": "NOT_EXECUTED"
+}

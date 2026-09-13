@@ -1,0 +1,22 @@
+{
+  "proposed_change": "Permit one new, separately identified P1-S1 attempt set after a prior attempt was blocked by an external provider failure and independent provider recovery evidence is available, preserving all prior attempts immutably and keeping application_retry_count at zero.",
+  "evidence_class": [
+    "EXPERIMENTAL_DESIGN",
+    "REPRODUCIBILITY",
+    "TRACEABILITY"
+  ],
+  "experimental_problem_addressed": "The P1-S1 smoke stage cannot reach candidate verification when an external provider failure blocks all prior attempts; without a distinct-attempt rule, provider recovery cannot be evaluated without either abandoning the frozen smoke cell or misclassifying a new attempt as an application retry.",
+  "research_basis": "EMPIRICAL_SOFTWARE_ENGINEERING",
+  "necessity": true,
+  "existing_artifact_sufficient": false,
+  "smallest_sufficient_change": "Add a prospective rule for at most one new attempt set only after independent availability evidence, immutable preservation of r1/r2, fresh IDs, and zero application retry; do not authorize execution or create IDs in this wave.",
+  "consequence_if_not_done": "The blocked smoke stage remains incomplete even after an independently demonstrated provider recovery, and the protocol cannot distinguish a permitted new attempt from an application retry.",
+  "scope": "prospective P1-S1 rerun policy only",
+  "unchanged": [
+    "r1 and r2 evidence remain immutable",
+    "no task payload is used for availability checking",
+    "no r3 IDs are created in this wave",
+    "no treatment or holdout execution",
+    "all prior resource accounting remains retained"
+  ]
+}

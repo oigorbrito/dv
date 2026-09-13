@@ -1,0 +1,50 @@
+{
+  "artifact_manifest": {
+    "child-events.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "events.jsonl": {
+      "bytes": 2082,
+      "sha256": "21343e46a1b3ffc91ea2e226c2e7823076cefa4cbb10b1ef79b5d416814a828f"
+    },
+    "executor.stderr.log": {
+      "bytes": 36,
+      "sha256": "91ab871a1f9b05ce23c20c001a1f8bcb7a5498e4574c9b5ff6534c10ff5f588c"
+    },
+    "executor.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "spec.json": {
+      "bytes": 2849,
+      "sha256": "007b00fa6d75d670235296b9ea5f427db0bb1c01c78bc81b17f6a3ea13cb9a1c"
+    },
+    "verifier.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verifier.stdout.log": {
+      "bytes": 972,
+      "sha256": "e70081251146d4625085add071984c470e061d1890c9442b6807a95f2906b5b9"
+    }
+  },
+  "errors": [
+    "base revision mismatch: declared 6ddf8c7461bdb13d407e7f78239dbecd53375573, observed edb39bf1eb279d53ffffb5da2a4e106c5aff57ef"
+  ],
+  "primary_metrics_complete": false,
+  "recomputed": {
+    "child_event_count": 0,
+    "currency": null,
+    "total_monetary_cost": null,
+    "total_system_tokens": null,
+    "wall_clock_seconds": 27.533893900001203
+  },
+  "run_id": "P1-S1-SMOKE-D-F2-06-B4-S1-r1",
+  "schema_version": "dv-pilot-run-v1",
+  "status": "FAIL",
+  "warnings": [
+    "MISSING/UNRESOLVED token telemetry",
+    "MISSING/UNRESOLVED monetary telemetry"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "recalculation_id": "p1-gates-after-gemini-b4-free-first",
+  "timestamp": "2026-09-11",
+  "head": "fbb2de0774b510f221406d7f54594c449734a375",
+  "branch": "main",
+  "worktree": "CLEAN",
+  "harness": "9/9 PASS",
+  "holdout": "SEALED",
+  "api_calls_executed": "NONE",
+  "treatments_executed": "NONE",
+  "gates": [
+    {
+      "gate_name": "B4_FREE_FIRST_READY",
+      "required_conditions": ["qualified Gemini executor surface", "free tier explicitly evidenced"],
+      "observed_conditions": ["Gemini 3.8 surface qualified", "Google AI Studio label: Nível gratuito"],
+      "status": "PASS",
+      "blocker": null,
+      "evidence": "experiments/p1/executor-s0-qualification-v8.json"
+    },
+    {
+      "gate_name": "B4_EXECUTOR_PATH_READY",
+      "required_conditions": ["B4_FREE_FIRST_READY=YES"],
+      "observed_conditions": ["B4_FREE_FIRST_READY=YES"],
+      "status": "PASS",
+      "blocker": null,
+      "evidence": "experiments/p1/executor-s0-qualification-v8.json"
+    },
+    {
+      "gate_name": "STRONG_PATH_READY",
+      "required_conditions": ["frozen C1 qualification succeeds"],
+      "observed_conditions": ["OpenAI quota remains unavailable", "Anthropic credential remains absent"],
+      "status": "BLOCKED",
+      "blocker": "P1-W4-BLK-STRONG-CREDENTIAL",
+      "evidence": "experiments/p1/executor-s0-qualification-v7.json"
+    },
+    {
+      "gate_name": "TASK_CORPUS",
+      "required_conditions": ["admitted verifier-first development tasks"],
+      "observed_conditions": ["admitted tasks remain D-F2-05, D-F5-01, D-F6-01", "corpus is partial"],
+      "status": "PASS",
+      "blocker": null,
+      "evidence": "experiments/p1/p1-development-corpus-v6.json"
+    },
+    {
+      "gate_name": "S1_CORPUS_READY",
+      "required_conditions": ["valid verifier baselines", "Harness compatibility", "no solution leakage", "holdout sealed"],
+      "observed_conditions": ["prior canonical gate PASS", "holdout sealed"],
+      "status": "PASS",
+      "blocker": null,
+      "evidence": "pilot-runs/p1-w13-strong-surface/promotion-gate.json"
+    },
+    {
+      "gate_name": "COMPARATIVE_CORPUS_READY",
+      "required_conditions": ["sufficient comparative task coverage"],
+      "observed_conditions": ["TASK_CORPUS=PARTIAL"],
+      "status": "FAIL",
+      "blocker": "comparative corpus remains partial",
+      "evidence": "experiments/p1/p1-development-corpus-v6.json"
+    },
+    {
+      "gate_name": "ACCOUNTING_PRIMARY_READY",
+      "required_conditions": ["complete-system token metric representable", "missing values remain unmeasured"],
+      "observed_conditions": ["TOTAL_SYSTEM_TOKENS / VERIFIED_SOLVED_TASK contract present"],
+      "status": "PASS",
+      "blocker": null,
+      "evidence": "experiments/p1/run-accounting-contract-v1.json"
+    },
+    {
+      "gate_name": "HARNESS_P1_REMOTE_READINESS",
+      "required_conditions": ["run identity", "artifact capture", "verification and reconciliation"],
+      "observed_conditions": ["Harness self-test 9/9 PASS"],
+      "status": "PASS",
+      "blocker": null,
+      "evidence": "tools/test_dv_pilot_harness.py"
+    },
+    {
+      "gate_name": "P1_S1_RELEASE",
+      "required_conditions": ["P1-S0 strong path", "economic/local/free path", "S1 corpus and accounting readiness"],
+      "observed_conditions": ["B4 path PASS", "strong path BLOCKED", "comparative corpus NOT READY"],
+      "status": "FAIL",
+      "blocker": "P1-W4-BLK-STRONG-CREDENTIAL; comparative corpus remains partial",
+      "evidence": "experiments/p1/promotion-gates-v1.json"
+    },
+    {
+      "gate_name": "P0_RELEASE",
+      "required_conditions": ["real P0 runs completed and valid"],
+      "observed_conditions": ["REAL_P0_RUNS=0/24"],
+      "status": "FAIL",
+      "blocker": "no real P0 execution",
+      "evidence": "docs/research/MASTER-TEST-PLAN-P1.md"
+    }
+  ],
+  "next_critical_action": "qualify frozen C1-openai-sol when usable quota exists; otherwise evaluate frozen Anthropic fallback when authorized credential appears",
+  "no_gate_inference": true
+}

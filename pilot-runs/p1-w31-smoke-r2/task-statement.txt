@@ -1,0 +1,31 @@
+# SMAG WAVE 1 — Windows staging dependency links
+
+## Classification
+
+- FINDING = `DEF-WAVE1-STAGING-SYMLINK-001`
+- STATUS = `PATCHED_NOT_YET_EXECUTED`
+- TYPE = `PRODUCT_DEFECT`
+
+## Operator evidence
+
+On Windows PowerShell at revision `d803ac54487d84d097e00e3bd5c58f4b2be85f61`, the first real governed task failed before executor runtime while copying the installed workspace into `%TEMP%/smag-staging-*`.
+
+Observed error class: `EPERM` while recreating a Bun dependency link below `node_modules/.bun/.../node_modules/@actions/core`.
+
+The evidence package recorded `runtime = NOT_EXECUTED`, so this result is not evidence about the corrected Codex runtime itself.
+
+## Root cause
+
+`backupDirectory()` copied the complete workspace with `fs.cp(..., { recursive: true, dereference: false, verbatimSymlinks: true })`. On Windows, dependency directory links can require different link creation semantics than a verbatim symbolic-link recreation.
+
+## Remediation
+
+For Windows staging only, links encountered under a `node_modules` path are deferred while the rest of the tree is copied. Internal directory links are then recreated as Windows junctions pointing to the corresponding target inside the staging root. Internal file links are materialized as files. Dependency links that resolve outside the workspace fail closed instead of creating an escape from staging.
+
+Non-Windows copy semantics are unchanged. Symlinks outside dependency paths are unchanged.
+
+## Evidence state
+
+The patch and focused tests are committed but have not yet been executed in the operator Windows checkout. Do not mark `FIRST_REAL_TASK = PASS` until live reproduction reaches and completes executor runtime.
+
+The separate `ENOSPC -> INTERNAL_FAILURE` and default executor-timeout findings remain open; this patch does not silently change their classifications.

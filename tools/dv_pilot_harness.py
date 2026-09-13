@@ -18,10 +18,27 @@ from typing import Any
 SCHEMA_VERSION = "dv-pilot-run-v1"
 OUTCOMES = {"YES", "NO", "INCONCLUSIVE"}
 TOKEN_CATEGORIES = {"routing", "planning", "context", "execution", "handoff", "verification", "retry"}
-FAILURE_ATTRIBUTIONS = {None, "PRODUCT_FAILURE", "HARNESS_FAILURE", "ORACLE_DEFECT", "ENVIRONMENT_DRIFT", "INCONCLUSIVE_OTHER"}
+FAILURE_ATTRIBUTIONS = {None, "PRODUCT_FAILURE", "HARNESS_FAILURE", "ORACLE_DEFECT", "ENVIRONMENT_DRIFT", "RESOURCE_LIMIT", "PROVIDER_FAILURE", "INCONCLUSIVE_OTHER"}
 SUGGESTION_EVIDENCE_CLASSES = {
     "EMPIRICAL_RESEARCH_GUIDANCE", "EXPERIMENTAL_DESIGN", "REPRODUCIBILITY",
     "MEASUREMENT", "ORACLE_VALIDITY", "FAILURE_ATTRIBUTION", "TRACEABILITY",
+}
+SUGGESTION_RESEARCH_BASES = {
+    "EMPIRICAL_SOFTWARE_ENGINEERING",
+    "REPRODUCIBILITY_REPLICABILITY",
+    "BOTH",
+}
+SUGGESTION_POLICY_VERSION = 2
+GENERIC_SUGGESTION_TERMS = {
+    "best practice", "industry standard", "maintainability", "architecture preference",
+    "would be useful", "improve clarity", "clearer documentation", "more complete",
+    "easier onboarding", "better organization", "nicer naming", "conventional structure",
+    "for completeness", "easier to understand", "readability", "well documented", "for clarity",
+}
+RESEARCH_CONSEQUENCE_TERMS = {
+    "empirical", "experiment", "validity", "reproduc", "replic", "measurement",
+    "oracle", "failure attribution", "traceability", "verifier", "cannot", "prevents",
+    "invalid", "inconsistent", "reconstruct", "independent replay", "distinguish",
 }
 REQUIRED_SPEC = (
     "protocol_version", "corpus_version", "task_id", "task_family", "base_revision",
@@ -31,6 +48,7 @@ REQUIRED_SPEC = (
 MATERIAL_ARTIFACTS = (
     "spec.json", "events.jsonl", "child-events.jsonl", "executor.stdout.log",
     "executor.stderr.log", "verifier.stdout.log", "verifier.stderr.log",
+    "candidate.diff", "provider-raw-response.json", "provider-error.json",
 )
 
 
@@ -71,14 +89,45 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def prepare_git_environment(run_dir: Path, env: dict[str, str]) -> tuple[dict[str, str], dict[str, Any]]:
+    """Provide an isolated Git config with the repository's LF contract."""
+    if os.name != "nt":
+        return env, {"status": "NOT_APPLICABLE", "core_autocrlf": None}
+
+    git_home = run_dir / "git-home"
+    git_home.mkdir(parents=True, exist_ok=False)
+    config = git_home / ".gitconfig"
+    result = subprocess.run(
+        ["git", "config", "--file", str(config), "core.autocrlf", "false"],
+        cwd=str(run_dir),
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or "failed to prepare isolated Git config")
+
+    child_env = dict(env)
+    child_env["HOME"] = str(git_home)
+    child_env["USERPROFILE"] = str(git_home)
+    return child_env, {
+        "status": "PASS",
+        "home": str(git_home),
+        "config": str(config),
+        "config_sha256": sha256_file(config),
+        "core_autocrlf": "false",
+    }
+
+
 def validate_suggestion(suggestion: dict[str, Any]) -> dict[str, Any]:
     """Apply the evidence gate to one methodological/documentary suggestion."""
     required = (
         "proposed_change", "evidence_class", "experimental_problem_addressed",
-        "necessity", "existing_artifact_sufficient", "smallest_sufficient_change",
-        "consequence_if_not_done",
+        "research_basis", "necessity", "existing_artifact_sufficient",
+        "smallest_sufficient_change", "consequence_if_not_done",
     )
-    errors = [f"missing suggestion field: {key}" for key in required if key not in suggestion]
+    errors: list[str] = []
+    errors.extend(f"missing suggestion field: {key}" for key in required if key not in suggestion)
     classes = suggestion.get("evidence_class")
     if isinstance(classes, str):
         classes = [classes]
@@ -86,16 +135,37 @@ def validate_suggestion(suggestion: dict[str, Any]) -> dict[str, Any]:
         errors.append("evidence_class must be a non-empty string or array of strings")
         classes = []
     elif any(value not in SUGGESTION_EVIDENCE_CLASSES for value in classes):
-        errors.append("evidence_class contains an unsupported class")
+        errors.append("UNSUPPORTED_EVIDENCE_CLASS")
+    research_basis = suggestion.get("research_basis")
+    if research_basis not in SUGGESTION_RESEARCH_BASES:
+        errors.append("MISSING_EMPIRICAL_RESEARCH_BASIS" if research_basis is None else "UNSUPPORTED_RESEARCH_BASIS")
     for key in ("proposed_change", "experimental_problem_addressed", "smallest_sufficient_change", "consequence_if_not_done"):
         if key in suggestion and (not isinstance(suggestion[key], str) or not suggestion[key].strip()):
             errors.append(f"{key} must be a non-empty string")
     if "necessity" in suggestion and suggestion["necessity"] is not True:
         errors.append("necessity must be true for a supported recommendation")
     if suggestion.get("existing_artifact_sufficient") is True:
-        errors.append("existing artifact is sufficient; no change is necessary")
+        errors.append("EXISTING_ARTIFACT_NOT_SHOWN_INSUFFICIENT")
+    problem = suggestion.get("experimental_problem_addressed")
+    consequence = suggestion.get("consequence_if_not_done")
+    if not isinstance(problem, str) or not problem.strip():
+        errors.append("NO_CONCRETE_EXPERIMENTAL_PROBLEM")
+    if not isinstance(consequence, str) or not consequence.strip():
+        errors.append("NO_OBJECTIVE_CONSEQUENCE_IF_OMITTED")
+    research_text = " ".join(str(suggestion.get(key, "")) for key in (
+        "proposed_change", "experimental_problem_addressed", "smallest_sufficient_change", "consequence_if_not_done"
+    )).lower()
+    if any(term in research_text for term in GENERIC_SUGGESTION_TERMS):
+        errors.append("GENERIC_BEST_PRACTICE_RATIONALE")
+    if not any(term in research_text for term in RESEARCH_CONSEQUENCE_TERMS):
+        errors.append("NO_REPRODUCIBILITY_CONSEQUENCE")
+    if "evidence_class" in suggestion and isinstance(classes, list) and classes and research_basis in SUGGESTION_RESEARCH_BASES:
+        specialized = set(classes) - {"EMPIRICAL_RESEARCH_GUIDANCE", "REPRODUCIBILITY"}
+        if specialized and not any(term in research_text for term in RESEARCH_CONSEQUENCE_TERMS):
+            errors.append("EVIDENCE_CLASS_NOT_CONNECTED_TO_EXPERIMENT")
     supported = not errors
     return {
+        "policy_version": SUGGESTION_POLICY_VERSION,
         "supported": "YES" if supported else "NO",
         "recommendation": "ACCEPTED" if supported else "REJECTED_UNSUPPORTED",
         "evidence_class": classes,
@@ -157,6 +227,14 @@ def run_process(argv: list[str], cwd: str, env: dict[str, str], stdout: Path, st
     }
 
 
+def apply_candidate(run_dir: Path, cwd: str) -> dict[str, Any]:
+    candidate = run_dir / "candidate.diff"
+    if not candidate.is_file():
+        return {"status": "BLOCKED", "reason": "candidate.diff not produced", "exit_code": None}
+    result = subprocess.run(["git", "apply", "--whitespace=nowarn", str(candidate)], cwd=cwd, capture_output=True, text=True, check=False)
+    return {"status": "PASS" if result.returncode == 0 else "FAIL", "exit_code": result.returncode, "stderr": result.stderr[-4000:]}
+
+
 def git_probe(cwd: str, args: list[str]) -> str | None:
     try:
         proc = subprocess.run(["git", *args], cwd=cwd, capture_output=True, text=True, check=False, timeout=2)
@@ -165,7 +243,7 @@ def git_probe(cwd: str, args: list[str]) -> str | None:
     return proc.stdout.strip() if proc.returncode == 0 else None
 
 
-def environment_snapshot(cwd: str, spec: dict[str, Any]) -> dict[str, Any]:
+def environment_snapshot(cwd: str, spec: dict[str, Any], git_environment: dict[str, Any]) -> dict[str, Any]:
     head = git_probe(cwd, ["rev-parse", "HEAD"])
     status = git_probe(cwd, ["status", "--porcelain=v1"])
     root = git_probe(cwd, ["rev-parse", "--show-toplevel"])
@@ -182,6 +260,7 @@ def environment_snapshot(cwd: str, spec: dict[str, Any]) -> dict[str, Any]:
             "dirty": None if status is None else bool(status),
             "status_sha256": None if status is None else sha256_bytes(status.encode()),
         },
+        "git_environment": git_environment,
         "toolchain": spec.get("toolchain_versions", {}),
         "container_image_digest": spec.get("container_image_digest"),
     }
@@ -205,6 +284,23 @@ def read_verifier_result(path: Path, verifier_timed_out: bool) -> dict[str, Any]
     if obj["outcome"] != "INCONCLUSIVE" and obj.get("harness_valid") is not True:
         return {"outcome": "INCONCLUSIVE", "harness_valid": False, "evidence_refs": [], "failure_attribution": "HARNESS_FAILURE", "reason": "YES/NO requires harness_valid=true"}
     return obj
+
+
+def provider_failure_from_artifact(run_dir: Path, executor_result: dict[str, Any]) -> dict[str, Any] | None:
+    """Prefer an observed provider error over downstream verifier parsing noise."""
+    if executor_result["timed_out"] or executor_result["exit_code"] == 0:
+        return None
+    artifact = run_dir / "provider-error.json"
+    if not artifact.is_file():
+        return None
+    try:
+        error = load_json(artifact)
+    except (OSError, json.JSONDecodeError):
+        return None
+    status = error.get("status") if isinstance(error, dict) else None
+    if isinstance(status, int) and 400 <= status <= 599:
+        return {"status": status, "reason": error.get("reason", "UNMEASURED")}
+    return None
 
 
 def parse_child_events(path: Path, run_id: str) -> tuple[list[dict[str, Any]], list[str]]:
@@ -306,7 +402,15 @@ def reconcile(run_dir: Path, summary: dict[str, Any], events: list[dict[str, Any
 
 
 def cmd_run(args: argparse.Namespace) -> int:
-    spec = load_json(Path(args.spec).resolve())
+    loaded = load_json(Path(args.spec).resolve())
+    spec = loaded
+    if isinstance(loaded, dict) and isinstance(loaded.get("specs"), list):
+        if not args.run_id:
+            raise SystemExit("aggregate spec requires --run-id")
+        matches = [candidate for candidate in loaded["specs"] if isinstance(candidate, dict) and candidate.get("run_id") == args.run_id]
+        if len(matches) != 1:
+            raise SystemExit(f"aggregate spec does not contain exactly one spec for run id: {args.run_id}")
+        spec = matches[0]
     if not isinstance(spec, dict):
         raise SystemExit("spec must be a JSON object")
     errors = validate_spec(spec)
@@ -323,19 +427,33 @@ def cmd_run(args: argparse.Namespace) -> int:
     started_utc, started_mono = utc_now(), time.monotonic()
     append_jsonl(events_path, event(run_id, "harness", "run_start", spec_sha256=spec_digest))
     cwd = str(Path(spec["working_directory"]).resolve())
-    env_snapshot = environment_snapshot(cwd, spec)
     env = os.environ.copy()
     env.update({"DV_RUN_ID": run_id, "DV_EVENT_LOG": str(run_dir / "child-events.jsonl"), "DV_RUN_DIR": str(run_dir), "DV_TASK_ID": str(spec["task_id"]), "DV_TREATMENT_ID": str(spec["treatment_id"])})
+    env, git_environment = prepare_git_environment(run_dir, env)
+    env_snapshot = environment_snapshot(cwd, spec, git_environment)
 
     executor = spec["executor_command"]
     append_jsonl(events_path, event(run_id, "execution", "process_start", argv=executor, timeout_seconds=spec.get("executor_timeout_seconds")))
     exec_result = run_process(executor, cwd, env, run_dir / "executor.stdout.log", run_dir / "executor.stderr.log", spec.get("executor_timeout_seconds"))
     append_jsonl(events_path, event(run_id, "execution", "process_end", argv=executor, **exec_result))
 
+    candidate_result = apply_candidate(run_dir, cwd) if exec_result["exit_code"] == 0 and not exec_result["timed_out"] else {"status": "BLOCKED", "reason": "executor did not complete successfully", "exit_code": None}
+    append_jsonl(events_path, event(run_id, "execution", "candidate_application", **candidate_result))
+
     verifier = spec["verifier_command"]
     append_jsonl(events_path, event(run_id, "verification", "process_start", argv=verifier, timeout_seconds=spec.get("verifier_timeout_seconds")))
     ver_result = run_process(verifier, cwd, env, run_dir / "verifier.stdout.log", run_dir / "verifier.stderr.log", spec.get("verifier_timeout_seconds"))
     verification = read_verifier_result(run_dir / "verifier.stdout.log", ver_result["timed_out"])
+    provider_failure = provider_failure_from_artifact(run_dir, exec_result)
+    if provider_failure is not None:
+        verification = dict(verification)
+        verification["failure_attribution"] = "PROVIDER_FAILURE"
+        verification["provider_failure"] = provider_failure
+        verification["parser_interpretation"] = verification.get("reason")
+        verification["reason"] = (
+            f"provider-error.json records HTTP {provider_failure['status']} "
+            f"{provider_failure['reason']}; candidate path was not reached"
+        )
     append_jsonl(events_path, event(run_id, "verification", "process_end", argv=verifier, **ver_result))
 
     summary = {
@@ -346,6 +464,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         "working_directory": cwd,
         "commands": {"executor": executor, "verifier": verifier},
         "process_results": {"executor": exec_result, "verifier": ver_result},
+        "candidate_application": candidate_result,
         "verification": verification,
         "timing": {"start_utc": started_utc, "end_utc": utc_now(), "wall_clock_seconds": time.monotonic() - started_mono, "executor_seconds": exec_result["duration_seconds"], "verifier_seconds": ver_result["duration_seconds"]},
         "environment": env_snapshot,

@@ -1,0 +1,71 @@
+{
+  "wave": "W33",
+  "artifact_id": "p1-w33-r2-attribution-reconciliation-v1",
+  "scope": "Traceability-only reconciliation of the four immutable W31 r2 attempts",
+  "source_artifacts_immutable": true,
+  "failure_attribution_contract": "experiments/p1/failure-attribution-v1.json",
+  "contract_interpretation": {
+    "provider_failure": "An observed provider/API failure that prevents candidate production; it is not a product failure.",
+    "harness_failure": "A harness/verifier/evidence-processing failure that prevents valid interpretation of the run.",
+    "precedence_applied": "An observed provider HTTP failure reached through the harness takes precedence over downstream verifier parsing noise when the candidate was not reached because of that provider failure."
+  },
+  "inconsistency_cause": "A_AND_C: the W31 run generator classified the empty downstream verifier output as HARNESS_FAILURE, while the wave summary used provider-aware interpretation; the generator lacked provider-error-aware attribution.",
+  "correction_method": "Derived reconciliation artifact; original run.json, execution-summary.json, provider-error.json, logs, timestamps, and reconciliation.json were not overwritten.",
+  "attempts": [
+    {
+      "run_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r2",
+      "original_run_json_attribution": "HARNESS_FAILURE",
+      "summary_attribution": "PROVIDER_FAILURE",
+      "provider_observation": {"status": 503, "reason": "Service Unavailable"},
+      "final_reconciled_attribution": "PROVIDER_FAILURE",
+      "task_result": "INCONCLUSIVE",
+      "smoke_pipeline_status": "BLOCKED",
+      "artifact_sha256": {"run.json": "56a08396e5b60f390fbfee61c6471754703815b7b360dd6a141e2b853a35c505", "provider-error.json": "ce959b8a3021aac7d5386790a5a8f8eeab65835aff34fd1885c35e66fc8295a1", "reconciliation.json": "c1d71d43c1f35cf28e67c9535e2572ae8e9a9f3f6a31fd16eb81add014b131f5"}
+    },
+    {
+      "run_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+      "original_run_json_attribution": "HARNESS_FAILURE",
+      "summary_attribution": "PROVIDER_FAILURE",
+      "provider_observation": {"status": 503, "reason": "Service Unavailable"},
+      "final_reconciled_attribution": "PROVIDER_FAILURE",
+      "task_result": "INCONCLUSIVE",
+      "smoke_pipeline_status": "BLOCKED",
+      "artifact_sha256": {"run.json": "ba4bed9aae91853f58697dd7f5895f1c695479287919d8217d32309323800fd0", "provider-error.json": "7bf4dc88e7bf460d04448371f126274cb3705db4b13b32ab8af36748672fb0c9", "reconciliation.json": "7a039e380a599fd1eaa5a572c9ed1d1637215f9304e7328e5574ef0455583b75"}
+    },
+    {
+      "run_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+      "original_run_json_attribution": "HARNESS_FAILURE",
+      "summary_attribution": "PROVIDER_FAILURE",
+      "provider_observation": {"status": 503, "reason": "Service Unavailable"},
+      "final_reconciled_attribution": "PROVIDER_FAILURE",
+      "task_result": "INCONCLUSIVE",
+      "smoke_pipeline_status": "BLOCKED",
+      "artifact_sha256": {"run.json": "56943e6f1d5332b34499a397e5b38f5031d273d4b4bd4ed1aaee99a49ddc9e1e", "provider-error.json": "76ac46f71e6d751b983afefd30dd33937c92cdb4ec9da8817306ad5752768c5d", "reconciliation.json": "c04e1348b27fd88fe9a6160b24ed78868d806c22232b70bed7595a14292c6338"}
+    },
+    {
+      "run_id": "P1-S1-SMOKE-D-F2-06-B4-S1-r2",
+      "original_run_json_attribution": "HARNESS_FAILURE",
+      "summary_attribution": "PROVIDER_FAILURE",
+      "provider_observation": {"status": 503, "reason": "Service Unavailable"},
+      "final_reconciled_attribution": "PROVIDER_FAILURE",
+      "task_result": "INCONCLUSIVE",
+      "smoke_pipeline_status": "BLOCKED",
+      "artifact_sha256": {"run.json": "a65486dad63e369c05754e91af072a64e13d3d5366e5aab169d2f697e05e6b07", "provider-error.json": "44b4d31aac9b182c4df762dfff02c4cfdd371b8f9f82d0653c3c4e30effb9805", "reconciliation.json": "f0317058597d028d0f4e8977924c30f3295f31d963d3ca8c7aedbc4074a9f538"}
+    }
+  ],
+  "consistency": {
+    "attempts_consistent": "YES",
+    "summary_consistent_with_reconciled_interpretation": "YES",
+    "accounting_unchanged": "YES",
+    "provider_availability_unchanged": "YES",
+    "r2_evidence_consistent": "YES",
+    "p1_s1_closure_review_ready": "YES"
+  },
+  "scope_preserved": {
+    "api_calls_in_w33": 0,
+    "treatments_in_w33": 0,
+    "r3_created": false,
+    "p1_s2_executed": false,
+    "holdout": "SEALED"
+  }
+}

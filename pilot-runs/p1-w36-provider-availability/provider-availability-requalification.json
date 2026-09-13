@@ -1,0 +1,91 @@
+{
+  "wave": "W36",
+  "purpose": "PROVIDER_AVAILABILITY_REQUALIFICATION_ONLY",
+  "baseline": {
+    "head": "a1042a2097d082716a1264fb393f8818362850c7",
+    "branch": "main",
+    "worktree": "CLEAN",
+    "harness": "15/15 PASS",
+    "gemini_api_key_present": true,
+    "holdout": "SEALED",
+    "w35_artifact": "pilot-runs/p1-w35-provider-availability/provider-availability-requalification.json",
+    "accepted_policy_artifact": "pilot-runs/p1-w35-provider-availability/r3-policy-suggestion.json"
+  },
+  "execution_session": {
+    "ready": "YES",
+    "authorization_scope": "single synthetic availability probe",
+    "credential_value_persisted": false
+  },
+  "availability_probe": {
+    "provider": "Google",
+    "requested_model": "gemini-3.8-flash",
+    "observed_model": "gemini-3.8-flash",
+    "prompt": "Return exactly: DV_S0_PROBE_OK",
+    "api_calls_attempted": 1,
+    "api_calls_actually_sent": 1,
+    "application_retry_count": 0,
+    "status": 200,
+    "request_id": "EOGkapDnCdKhz7IPsLOI-AI",
+    "response": "DV_S0_PROBE_OK",
+    "normalized_response": "DV_S0_PROBE_OK",
+    "latency_ms": 1819.85,
+    "usage": {
+      "input_tokens": 13,
+      "output_tokens": 9,
+      "reasoning_tokens": 89,
+      "total_tokens": 111,
+      "cached_input_tokens": "UNMEASURED",
+      "service_tier": "standard"
+    },
+    "raw_artifact": "pilot-runs/p1-w36-provider-availability/provider-raw-response.json",
+    "event_artifact": "pilot-runs/p1-w36-provider-availability/events.jsonl",
+    "raw_response_sha256": "22a152a8fdb5e947ed055c955138a17b3b06c6f54f5b593419494b5db2c3a811",
+    "payload_scope": {
+      "task_statement_sent": false,
+      "repository_content_sent": false,
+      "candidate_context_sent": false,
+      "verifier_content_sent": false,
+      "holdout_content_sent": false
+    }
+  },
+  "classification": {
+    "provider_availability": "AVAILABLE",
+    "provider_blocker": "CLEARED",
+    "c1_google_gemini_qualified": "YES",
+    "strong_path_ready": "PASS"
+  },
+  "rerun_policy": {
+    "source": "pilot-runs/p1-w35-provider-availability/r3-policy-suggestion.json",
+    "policy_check": "ACCEPTED",
+    "status": "ALLOWED_BY_ACCEPTED_AMENDMENT",
+    "r3_eligibility": "YES",
+    "ids_created": false,
+    "r3_executed": false,
+    "prior_r1_r2_immutable": true,
+    "prospective_scope_only": true
+  },
+  "stage_state": {
+    "p1_s1_provider_blocker": "CLEARED",
+    "p1_s1_stage_status": "BLOCKED",
+    "p1_s1_complete": "NO",
+    "comparative_corpus_ready": "NO",
+    "p1_s2_release": "NO",
+    "treatments_executed": 0,
+    "p1_runs_executed": 0,
+    "p0_runs_executed": 0
+  },
+  "validation": {
+    "holdout_leakage": "PASS",
+    "p0_immutability": "PASS",
+    "r1_r2_immutability": "PASS",
+    "secret_scan": "PASS",
+    "exact_prompt": "PASS",
+    "retry_count": "PASS",
+    "json": "PASS",
+    "harness": "15/15 PASS"
+  },
+  "limitations": [
+    "This probe establishes provider availability only, not treatment performance or P1 completion.",
+    "No r3 attempt identity was created and no task payload was sent."
+  ]
+}

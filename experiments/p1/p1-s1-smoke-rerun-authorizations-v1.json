@@ -1,0 +1,110 @@
+{
+  "artifact_id": "p1-s1-smoke-rerun-authorizations-v1",
+  "wave": "W30",
+  "purpose": "Distinct post-remediation attempt identities; authorization only, no execution.",
+  "source_spec": "experiments/p1/p1-s1-smoke-specs-v1.json",
+  "authorization_source": "explicit user authorization in W30 instruction; no secret material persisted",
+  "previous_attempts_immutable": true,
+  "previous_attempt_status": "BLOCKED / INCONCLUSIVE",
+  "remediation_refs": [
+    "1616e8f7d3f448fca1e7ff32d0d0b905e0e09579",
+    "63c311707f09774c0ac2a118cb7be80086b8e79f",
+    "53263ad4712134cfa34c0640994c2ccd08b4d7ee"
+  ],
+  "shared_binding": {
+    "task_id": "D-F2-06",
+    "family": "F2",
+    "base_sha": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+    "verifier_path": "packages/smag-governance/test/git-staging.test.mjs",
+    "verifier_sha1": "15dae37524ecf0d24e9dfd570b618bacdba4135f",
+    "model": "gemini-3.8-flash",
+    "application_retry_count": 0,
+    "holdout": "SEALED",
+    "payload_scope": "D-F2-06 task statement and frozen S0/S1 shaping fields only"
+  },
+  "attempts": [
+    {
+      "attempt_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r2",
+      "parent_spec_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r1",
+      "previous_attempt_id": "P1-S1-SMOKE-D-F2-06-B0-S0-r1",
+      "treatment_id": "B0",
+      "executor_binding": "C1-google-gemini",
+      "shaping": "S0_RAW_TASK",
+      "rollout_id": "r2",
+      "repetition": 2,
+      "escalation_limit": 0,
+      "lineage_reason": "Rerun authorized after prior HARNESS_FAILURE / ENVIRONMENT_DRIFT remediation; not a product or model-failure conclusion."
+    },
+    {
+      "attempt_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r2",
+      "parent_spec_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r1",
+      "previous_attempt_id": "P1-S1-SMOKE-D-F2-06-B0-S1-r1",
+      "treatment_id": "B0",
+      "executor_binding": "C1-google-gemini",
+      "shaping": {
+        "mode": "S1_DETERMINISTIC_TASK_SHAPING",
+        "fields": ["objective", "constraints", "allowed_scope", "repository_paths", "verifier_reference", "environment_constraints", "required_output_artifact"]
+      },
+      "rollout_id": "r2",
+      "repetition": 2,
+      "escalation_limit": 0,
+      "lineage_reason": "Rerun authorized after prior HARNESS_FAILURE / ENVIRONMENT_DRIFT remediation; not a product or model-failure conclusion."
+    },
+    {
+      "attempt_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+      "parent_spec_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r1",
+      "previous_attempt_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r1",
+      "treatment_id": "B4",
+      "executor_binding": "C4-google-gemini-3-8-flash",
+      "shaping": "S0_RAW_TASK",
+      "rollout_id": "r2",
+      "repetition": 2,
+      "escalation_limit": 0,
+      "lineage_reason": "Rerun authorized after prior HARNESS_FAILURE / ENVIRONMENT_DRIFT remediation; not a product or model-failure conclusion."
+    },
+    {
+      "attempt_id": "P1-S1-SMOKE-D-F2-06-B4-S1-r2",
+      "parent_spec_id": "P1-S1-SMOKE-D-F2-06-B4-S1-r1",
+      "previous_attempt_id": "P1-S1-SMOKE-D-F2-06-B4-S1-r1",
+      "treatment_id": "B4",
+      "executor_binding": "C4-google-gemini-3-8-flash",
+      "shaping": {
+        "mode": "S1_DETERMINISTIC_TASK_SHAPING",
+        "fields": ["objective", "constraints", "allowed_scope", "repository_paths", "verifier_reference", "environment_constraints", "required_output_artifact"]
+      },
+      "rollout_id": "r2",
+      "repetition": 2,
+      "escalation_limit": 0,
+      "lineage_reason": "Rerun authorized after prior HARNESS_FAILURE / ENVIRONMENT_DRIFT remediation; not a product or model-failure conclusion."
+    }
+  ],
+  "validation": {
+    "attempt_count": 4,
+    "unique_new_attempt_ids": true,
+    "no_previous_id_reused": true,
+    "task_base_consistent": true,
+    "verifier_consistent": true,
+    "treatment_executor_consistent": true,
+    "shaping_consistent": true,
+    "zero_application_retry": true,
+    "holdout_excluded": true,
+    "solution_leakage": false,
+    "execution": "NOT_EXECUTED"
+  },
+  "credential_presence": "PRESENT_BOOLEAN_ONLY",
+  "readiness": {
+    "SMOKE_RERUN_READY": "YES",
+    "STRONG_PATH_READY": "PASS",
+    "workspace_validation": "PASS_FROM_W29_REMEDIATION_EVIDENCE",
+    "parent_verifier_control": "PASS_FROM_W29_REMEDIATION_EVIDENCE",
+    "candidate_capture": "READY",
+    "candidate_application": "READY",
+    "http_error_telemetry": "READY",
+    "RERUN_EXECUTION_AUTHORIZED_NEXT": "YES"
+  },
+  "execution_counts": {
+    "api_calls": 0,
+    "treatments": 0,
+    "smoke_runs": 0
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "smoke_spec_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+  "protocol_version": "4R-v1",
+  "corpus_version": "p1-development-corpus-v6",
+  "treatment_version": "treatment-design-v1",
+  "environment_id": "smag-windows-node24-git",
+  "run_id": "P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+  "task_id": "D-F2-06",
+  "task_family": "F2",
+  "repository": "oigorbrito/smag",
+  "base_revision": "6ddf8c7461bdb13d407e7f78239dbecd53375573",
+  "oracle_version": "p1-development-corpus-v6",
+  "verifier_command": [
+    "node",
+    "--test",
+    "test/git-staging.test.mjs"
+  ],
+  "verifier_working_directory": "packages/smag-governance",
+  "treatment_id": "B4",
+  "executor_binding": "C4-google-gemini-3-8-flash",
+  "shaping": "S0_RAW_TASK",
+  "rollout_id": "r2",
+  "repetition": 2,
+  "workspace_target": "pilot-runs/p1-w31-smoke-r2/workspaces/P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+  "working_directory": "pilot-runs/p1-w31-smoke-r2/workspaces/P1-S1-SMOKE-D-F2-06-B4-S0-r2/packages/smag-governance",
+  "executor_command": [
+    "python",
+    "C:\\Projetos\\dv\\tools\\dv_gemini_executor.py",
+    "--candidate",
+    "C4-google-gemini-3-8-flash",
+    "--model",
+    "gemini-3.8-flash"
+  ],
+  "retry_policy": {
+    "application_retry_limit": 0,
+    "provider_retry_metadata": "UNMEASURED_IF_NOT_EXPOSED"
+  },
+  "escalation_policy": {
+    "mode": "deterministic_only",
+    "triggers": [
+      "no_candidate_before_timeout",
+      "explicit_blocker",
+      "focal_verifier_failure",
+      "preservation_failure",
+      "structurally_invalid_artifact",
+      "resource_ceiling"
+    ],
+    "limit": 0
+  },
+  "timeouts": {
+    "executor_ms": 1800000,
+    "verifier_ms": 600000,
+    "run_ms": 2400000
+  },
+  "telemetry_requirements": [
+    "provider",
+    "candidate",
+    "logical_model",
+    "requested_model",
+    "observed_model",
+    "request_id",
+    "timestamps",
+    "latency",
+    "raw_candidate_output",
+    "normalized_output",
+    "finish_status",
+    "provider_native_usage",
+    "reasoning_tokens_if_exposed",
+    "cached_tokens_if_exposed",
+    "application_retry_count",
+    "provider_retry_metadata_if_exposed",
+    "timeout",
+    "client_surface_version",
+    "raw_response_artifact",
+    "raw_response_sha256"
+  ],
+  "accounting_fields": [
+    "routing",
+    "task_shaping",
+    "planning",
+    "context_input",
+    "execution",
+    "escalation_handoff",
+    "verification",
+    "retry_replanning"
+  ],
+  "failure_attribution_ref": "experiments/p1/failure-attribution-v1.json",
+  "artifact_paths": {
+    "run_root": "pilot-runs/p1-w31-smoke-r2/results/P1-S1-SMOKE-D-F2-06-B4-S0-r2",
+    "candidate": "candidate.diff",
+    "verifier": "verifier-result.json",
+    "reconciliation": "reconciliation.json"
+  },
+  "holdout": "DEVELOPMENT_ONLY; legacy holdout untouched",
+  "stop_conditions": [
+    "one rollout complete",
+    "free tier is not zero system cost",
+    "no automatic promotion to S2"
+  ]
+}

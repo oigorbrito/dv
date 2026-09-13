@@ -1,0 +1,79 @@
+{
+  "wave": "W29-CLOSURE-STATE-CONSISTENCY",
+  "purpose": "Resolve the apparent Gemini strong-path state conflict without a new probe.",
+  "head_initial": "63c311707f09774c0ac2a118cb7be80086b8e79f",
+  "canonical_precedence": {
+    "amendment": {
+      "commit": "aa975df4e3d7fc3615d11883bbfe54b057fa88f2",
+      "artifact": "experiments/p1/c1-gemini-amendment-v1.json",
+      "sha256": "FA2CE5A3890B39D5B4951A9E8CFE5D382455E5BF075A23FB46713DCD8CA8BAE7",
+      "eligible": "YES"
+    },
+    "qualification": {
+      "commit": "e218cb675eb760dc4a83ea475eec331d331ed71e",
+      "artifact": "experiments/p1/executor-s0-qualification-v9.json",
+      "sha256": "A688A64992EAF5C074408A8FE6D8B73BC2C00970AC44FB84D54ECDB5409EEFD3",
+      "candidate": "C1-google-gemini",
+      "provider": "Google",
+      "requested_model": "gemini-3.8-flash",
+      "observed_model": "gemini-3.8-flash",
+      "prompt": "Return exactly: DV_S0_PROBE_OK",
+      "normalized_response": "DV_S0_PROBE_OK",
+      "exact_match": true,
+      "application_retry_count": 0,
+      "qualification_status": "S0_READY_TELEMETRY_LIMITED",
+      "qualified": "YES",
+      "strong_path": "PASS"
+    }
+  },
+  "qualification_artifacts": {
+    "qualification_json_sha256": "16D69FA8D19658C82D7BC6195B0EF844FE0BF50FC788549EF1BF4AD87971D37D",
+    "promotion_gate_sha256": "A39AF50E2B4BC8027B5447CEC22C5491DFACF25F709387A35B35A00F87F05F59",
+    "raw_artifact_sha256_declared": "007009CBBB6BE5FB468B009C62FA4CBEF27EE50A01271D8F62D336111A1E5576",
+    "schema_and_consistency": "PASS"
+  },
+  "later_artifacts": [
+    {
+      "artifact": "pilot-runs/p1-s1-smoke/execution-summary.json",
+      "sha256": "877C3C2A58C40E1401D2BA19AD0E12ED746ABD6AFC2B7F3C53B15F600995DBA1",
+      "effect": "Preserves STRONG_PATH_READY=PASS; reports smoke execution blocked separately."
+    },
+    {
+      "artifact": "pilot-runs/p1-s1-smoke/execution-closure.json",
+      "sha256": "7EC14636BA9F14FC2B0B9DFFE66021B04EFA9DE8F5646C3EF57016632802A386",
+      "effect": "Preserves STRONG_PATH_READY=PASS; reports P1-S1 completion and rerun prerequisites separately."
+    },
+    {
+      "artifact": "docs/research/2026-09-12-p1-s1-newline-remediation.md",
+      "sha256": "30AD52842333A08C58AF982C4A943673660201330E4095C21FEE5FFE40618EC5",
+      "effect": "Reports SMOKE_RERUN_READY=NO for remaining operational/spec conditions; does not revoke C1 qualification."
+    }
+  ],
+  "credential_semantics": "QUALIFICATION_PERSISTS",
+  "credential_rule_evidence": "promotion-gates-v1 requires credential/quota state during P1-S0 qualification and does not define repeated credential presence as a demotion rule",
+  "disqualifying_evidence": "NO",
+  "regression_cause": "STALE_PRE_QUALIFICATION_STATE_OR_CREDENTIAL_PRESENCE_CONFUSION; no later canonical disqualification exists",
+  "canonical_state": {
+    "C1_GOOGLE_GEMINI_ELIGIBLE": "YES",
+    "C1_GOOGLE_GEMINI_QUALIFIED": "YES",
+    "STRONG_PATH_READY": "PASS",
+    "NEWLINE_REPRODUCTION_READY": "YES",
+    "PARENT_VERIFIER_REPRODUCTION": "PASS",
+    "CANDIDATE_CAPTURE_READY": "YES",
+    "CANDIDATE_APPLICATION_READY": "YES",
+    "HTTP_ERROR_TELEMETRY_READY": "YES",
+    "LOCAL_SMOKE_PIPELINE_DRY_RUN": "PASS",
+    "SMOKE_RERUN_READY": "YES_FOR_NEWLY_AUTHORIZED_RUN_IDS",
+    "P1_S1_COMPLETE": "NO",
+    "P1_S2_RELEASE": "NO",
+    "REAL_P0_RUNS": "0/24",
+    "P0_RELEASE": "NO",
+    "HOLDOUT": "SEALED"
+  },
+  "prior_smoke_attempts": "IMMUTABLE_BLOCKED_INCONCLUSIVE; no IDs or results changed",
+  "api_calls": 0,
+  "treatments": 0,
+  "smoke_runs_this_wave": 0,
+  "files_changed_before_wave": "NONE",
+  "decision": "C1 qualification persists; the conflicting NO state is stale/non-canonical; no historical evidence was rewritten."
+}
