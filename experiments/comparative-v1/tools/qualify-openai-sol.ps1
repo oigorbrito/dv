@@ -96,7 +96,6 @@ try {
     }
 
     $raw = [string]$response.Content
-    $decoded = $null
     try {
         $decoded = $raw | ConvertFrom-Json -Depth 100
     }
@@ -109,11 +108,11 @@ try {
 
     if ($result.http_status -lt 200 -or $result.http_status -ge 300) {
         $result.status = "BLOCKED"
-        $result.qualification_status = if ($result.http_status -eq 401 -or $result.http_status -eq 403 -or $result.http_status -eq 429) { "S0_CREDENTIAL_OR_QUOTA_BLOCKED" } else { "S0_PROVIDER_BLOCKED" }
+        $result.qualification_status = if ($result.http_status -in @(401,403,429)) { "S0_CREDENTIAL_OR_QUOTA_BLOCKED" } else { "S0_PROVIDER_BLOCKED" }
         if ($decoded.error) {
             $etype = if ($decoded.error.type) { [string]$decoded.error.type } else { "unknown" }
             $ecode = if ($decoded.error.code) { [string]$decoded.error.code } else { "unknown" }
-            $result.blocker = "HTTP_$($result.http_status):$etype:$ecode"
+            $result.blocker = "HTTP_$($result.http_status):${etype}:${ecode}"
         }
         else {
             $result.blocker = "HTTP_$($result.http_status)"
@@ -151,7 +150,7 @@ try {
     }
 
     $identityOk = ($result.observed_model -eq $Model)
-    $usageOk = ($result.input_tokens -is [long] -or $result.input_tokens -is [int]) -and ($result.output_tokens -is [long] -or $result.output_tokens -is [int]) -and ($result.total_tokens -is [long] -or $result.total_tokens -is [int])
+    $usageOk = ($result.input_tokens -is [System.ValueType]) -and ($result.output_tokens -is [System.ValueType]) -and ($result.total_tokens -is [System.ValueType])
     $responseOk = ($result.response_status -eq "completed") -and $result.exact_match
 
     if ($identityOk -and $usageOk -and $responseOk) {
