@@ -1,0 +1,34 @@
+schema_version: comparative-task-v1
+task_id: T2
+stratum: medium
+family: F2-cross-component-integration-defect
+instance_id: django__django-14053
+source:
+  benchmark: SWE-bench
+  preferred_dataset: princeton-nlp/SWE-bench
+  repository: django/django
+  base_commit: 179ee13eb37348cd87169a198aec18fedccc8668
+materialization:
+  prompt_field: problem_statement
+  prompt_must_be_byte_identical_across_treatments: true
+  assert_dataset_base_commit: true
+  solution_fields_forbidden_to_treatment:
+    - patch
+    - test_patch
+    - FAIL_TO_PASS
+    - PASS_TO_PASS
+oracle:
+  authority: external-swe-bench
+  evaluator_repo: SWE-bench/SWE-bench
+  evaluator_revision: 02e7a74ffd0b707aab73d203fe87bdc7c76afc8e
+  use_dataset_fail_to_pass: true
+  use_dataset_pass_to_pass: true
+  require_interaction_evidence: true
+  require_boundary_preservation: true
+  require_adjacent_regression_preservation: true
+  require_harness_integrity: true
+  outcomes: [YES, NO, INCONCLUSIVE]
+classification_basis: >-
+  The public task statement establishes interaction among HashedFilesMixin.post_process,
+  collectstatic, storage subclasses, and downstream storage integrations. Classification
+  does not depend on the eventual patch file count.
