@@ -1,0 +1,60 @@
+{
+  "protocol_id": "dv-p2-continuity-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "depends_on": [
+    "P1 does not need to be scientifically positive, but at least one reproducible executor path and verifier-first task path must be operational before P2 execution",
+    "No P2 execution may use the sealed P1 holdout by default"
+  ],
+  "research_question": "For software-engineering tasks resumed after an externally imposed checkpoint, does transferred task continuity state improve verified completion efficiency compared with workspace-only or trajectory-based baselines after all handoff/context overhead is counted?",
+  "primary_claim": "C3",
+  "null_hypotheses": [
+    "Workspace-only resumption is at least as efficient as structured task-state transfer.",
+    "Existing compression/summary methods are at least as efficient as a DV-specific structured task state."
+  ],
+  "design": {
+    "stage_A": "same-executor fresh-instance resumption to isolate continuity from executor mismatch",
+    "stage_B": "cross-executor handoff only if stage_A shows exploitable continuity headroom",
+    "stage_C": "handoff direction/timing only if stage_B remains justified",
+    "checkpoint_policy": "externally imposed and frozen before treatment execution; initial default target is 50% of execution budget or an equivalent objective milestone if budget checkpointing is impossible",
+    "paired_comparison": true,
+    "same_workspace_snapshot_across_treatments": true,
+    "same_successor_configuration_across_treatments": true,
+    "independent_verification_required": true
+  },
+  "state_decomposition": {
+    "world_state": ["repository/workspace snapshot", "git state", "tests/artifacts"],
+    "task_knowledge": ["objective", "acceptance criteria", "constraints", "verified progress", "failed approaches", "blockers", "remaining work", "next objective", "verification results"],
+    "trajectory": ["messages", "prompts", "tool-call history", "intermediate outputs"]
+  },
+  "initial_treatments": {
+    "C0_WORKSPACE_ONLY": "Successor receives the same workspace/world state and task statement, with no predecessor trajectory or custom task-state package.",
+    "C1_FULL_TRAJECTORY": "Successor receives workspace plus full transferable predecessor trajectory subject to safety/redaction limits.",
+    "C2_EXISTING_COMPRESSION": "Successor receives workspace plus a frozen existing summary/compression method; no DV-specific intelligent compiler.",
+    "C3_FIXED_STRUCTURED_STATE": "Successor receives workspace plus a deterministic fixed schema of task knowledge; no full trajectory.",
+    "C4_STRUCTURED_STATE_PLUS_RECENT": "Successor receives workspace plus fixed structured task knowledge and a frozen bounded recent interaction window."
+  },
+  "deferred_treatment": "Adaptive executor-specific context compilation is prohibited in initial P2. It may be proposed only if simpler structured continuity is supported and a measurable residual headroom remains.",
+  "primary_metric": "TOTAL_SYSTEM_TOKENS / VERIFIED_SOLVED_TASK",
+  "secondary_metrics": [
+    "verified solve rate",
+    "total monetary cost / verified solved task",
+    "wall-clock latency",
+    "handoff payload tokens",
+    "successor recovery tokens until first new verified progress",
+    "repeated-work rate",
+    "state-induced error rate",
+    "handoff bootstrap latency",
+    "failure and inconclusive rates"
+  ],
+  "accounting_rule": "All predecessor, checkpointing, serialization, compression, summary, handoff, successor bootstrap, verification, retry, and controller costs relevant to a treatment are included. UNMEASURED != ZERO.",
+  "anti_bias_rules": [
+    "FULL_TRAJECTORY is not assumed beneficial",
+    "MORE_CONTEXT is not assumed beneficial",
+    "STRUCTURED_STATE is not assumed superior to existing compression",
+    "No adaptive context compiler may be introduced to rescue a losing fixed-state treatment",
+    "No treatment definition may change after outcome observation"
+  ],
+  "allowed_outcomes": ["NO_BUILD", "REUSE_EXISTING", "MINIMAL_CAPABILITY_JUSTIFIED", "INCONCLUSIVE"],
+  "architecture_effect": "NONE until decision-gate requirements are met",
+  "holdout": "SEPARATE_OR_FUTURE; P1 sealed holdout remains untouched by default"
+}
