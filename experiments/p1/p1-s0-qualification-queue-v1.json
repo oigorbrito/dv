@@ -1,0 +1,51 @@
+{
+  "queue_id": "p1-s0-qualification-queue-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "purpose": "Define the lowest-cost executor qualification order and blocker handling so P1 can proceed without ad-hoc replanning.",
+  "global_rule": "A blocked candidate is recorded and skipped. Qualification criteria are never weakened to force readiness.",
+  "strong_lane": {
+    "required": true,
+    "goal": "Obtain at least one S0-ready strong executor independently of the economic lane.",
+    "order": [
+      {
+        "candidate": "C1-openai-sol",
+        "action": "RUN_ONE_SYNTHETIC_QUALIFICATION_PROBE_IF_AUTHORIZED_AND_QUOTA_AVAILABLE",
+        "on_block": "RECORD_AND_SKIP"
+      },
+      {
+        "candidate": "C1-anthropic-opus",
+        "action": "RUN_ONE_SYNTHETIC_QUALIFICATION_PROBE_IF_CREDENTIAL_AVAILABLE",
+        "on_block": "RECORD_AND_SKIP"
+      }
+    ]
+  },
+  "economic_lane": {
+    "required": true,
+    "goal": "Obtain at least one S0-ready economic, free, near-free, or local executor.",
+    "order": [
+      {
+        "category": "C4_FREE_OR_NEAR_FREE",
+        "preference": "free/near-free remote",
+        "action": "QUALIFY_ONLY_IF_FREE_OR_COST_BOUNDARY_IS_KNOWN_BEFORE_GENERATION",
+        "on_block": "RECORD_AND_SKIP"
+      },
+      {
+        "category": "C3_LOCAL_OPEN_WEIGHT",
+        "preference": "local runtime",
+        "action": "QUALIFY_ONLY_IF_RUNTIME_AND_MODEL_ARTIFACT_ARE_AVAILABLE_AND_LOCAL_ACCOUNTING_REQUIREMENTS_ARE_RECORDED",
+        "on_block": "RECORD_AND_SKIP"
+      },
+      {
+        "category": "C2_ECONOMIC_REMOTE",
+        "preference": "economic remote API",
+        "action": "QUALIFY_IF_CREDENTIAL_QUOTA_AND_USAGE_TELEMETRY_ARE_AVAILABLE",
+        "on_block": "RECORD_AND_SKIP"
+      }
+    ]
+  },
+  "not_required_for_minimal_smoke": ["C5_SPECIALIZED_TOOL_EXECUTOR"],
+  "promotion_condition": "At least one S0-ready strong executor and at least one S0-ready economic/free/local executor, each satisfying executor-screening-contract-v1.",
+  "next_action_after_promotion": "Execute p1-minimal-execution-matrix-v1 as a pipeline smoke only; do not infer comparative treatment superiority.",
+  "terminal_outcome_if_exhausted": "INCONCLUSIVE_EXECUTOR_AVAILABILITY",
+  "scientific_boundary": "Executor/provider unavailability is not evidence for or against the DV routing/escalation hypothesis."
+}
