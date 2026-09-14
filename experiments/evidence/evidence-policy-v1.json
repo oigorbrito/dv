@@ -3,7 +3,7 @@
   "status": "PROPOSED",
   "purpose": "Govern how DV research claims are promoted, scoped, superseded, retested, or rejected without converting exploratory observations into architecture facts.",
   "principles": [
-    "ANEC DOTAL != REPRODUCED != CONTROLLED != HOLDOUT_CONFIRMED != INDEPENDENTLY_REPLICATED",
+    "ANECDOTAL != REPRODUCED != CONTROLLED != HOLDOUT_CONFIRMED != INDEPENDENTLY_REPLICATED",
     "EXECUTOR_SUCCESS != VERIFIED_TASK_SUCCESS",
     "LOWER_LOCAL_COST != LOWER_TOTAL_SYSTEM_COST",
     "SUPPORTED claims are always scope-bounded",
