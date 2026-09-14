@@ -1,0 +1,57 @@
+{
+  "derivation_id": "p1-aggregate-metric-derivation-v1",
+  "purpose": "Freeze how validated P1 run results are transformed into descriptive and comparative metrics without post-hoc metric invention.",
+  "input_statuses": [
+    "VALID_FOR_PRIMARY_ANALYSIS",
+    "VALID_FOR_LIMITED_ANALYSIS"
+  ],
+  "primary_metric": {
+    "name": "TOTAL_SYSTEM_TOKENS_PER_VERIFIED_SOLVED_TASK",
+    "numerator": "sum total-system tokens consumed by all treatment runs in the comparison set, including failed and inconclusive runs when the accounting metric is complete",
+    "denominator": "count of runs with oracle_result == YES in the same comparison set",
+    "undefined_when": "verified_solved_count == 0"
+  },
+  "secondary_metrics": {
+    "VERIFIED_SOLVE_RATE": "YES / all validly-attributed treatment runs; report INCONCLUSIVE separately rather than silently combining with NO",
+    "MONETARY_COST_PER_VERIFIED_SOLVED_TASK": "sum monetary cost / verified_solved_count when comparable price accounting is available",
+    "WALL_CLOCK_LATENCY": "distribution of ended_at - started_at by treatment and task",
+    "ESCALATION_RATE": "runs with one or more escalation/handoff events / eligible runs",
+    "RETRY_RATE": "runs with one or more retry/replan events / eligible runs",
+    "FAILURE_RATE": "valid PRODUCT_FAILURE outcomes / validly-attributed treatment runs",
+    "INCONCLUSIVE_RATE": "INCONCLUSIVE outcomes / all attempted treatment runs",
+    "VERIFICATION_TOKEN_SHARE": "verification_tokens / total_system_tokens when both are measured",
+    "CONTROL_OVERHEAD_SHARE": "(routing + shaping + planning + escalation + retry + verification tokens) / total_system_tokens when all required partitions are measured"
+  },
+  "paired_reporting": {
+    "rule": "When the same frozen task has comparable runs across treatments, preserve task pairing in summaries.",
+    "report": [
+      "per-task outcome matrix",
+      "per-task total-system tokens",
+      "per-task monetary cost where comparable",
+      "per-family summary",
+      "aggregate summary"
+    ]
+  },
+  "distribution_reporting": [
+    "median",
+    "mean only alongside distribution",
+    "min/max or quantiles where informative",
+    "raw per-task outcomes",
+    "bootstrap confidence intervals only where justified by sample size/design"
+  ],
+  "pareto_dimensions": [
+    "verified solve rate",
+    "total-system tokens",
+    "monetary cost where comparable",
+    "latency"
+  ],
+  "prohibitions": [
+    "no composite score",
+    "no silent imputation of missing telemetry",
+    "no dropping expensive failed runs from numerator",
+    "no treating provider/harness failure as PRODUCT_FAILURE",
+    "no universal superiority claim from S1 smoke or undersized samples"
+  ],
+  "small_sample_rule": "Descriptive evidence only; conclusion remains INCONCLUSIVE for broad superiority claims.",
+  "architecture_effect": "NONE"
+}

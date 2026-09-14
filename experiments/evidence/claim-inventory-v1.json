@@ -1,0 +1,112 @@
+{
+  "inventory_id": "dv-claim-inventory-v1",
+  "status": "PROPOSED",
+  "as_of": "2026-09-14",
+  "rules": [
+    "Before building a policy that chooses, measure whether valuable choice headroom exists.",
+    "A capability enters mandatory architecture only if an explicit claim requires it and the claim meets the evidence policy.",
+    "A supported capability claim does not imply custom implementation; reuse is tested separately.",
+    "Claims may be historically supported while operationally stale."
+  ],
+  "claims": [
+    {
+      "claim_id": "C1_ROUTING_HEADROOM",
+      "statement": "Task and executor heterogeneity creates economically meaningful headroom between the best fixed execution configuration and the retrospective per-task oracle configuration.",
+      "experiment": "P1",
+      "current_status": "PLAUSIBLE",
+      "current_evidence_level": "E0_EXPLORATORY",
+      "dv_specific_evidence": "NOT_YET_ESTABLISHED",
+      "primary_falsifier": "Retrospective oracle is not materially better than the best fixed configuration after complete-system accounting.",
+      "architecture_if_supported": "routing opportunity exists; policy still unproven",
+      "architecture_if_refuted": "no adaptive routing layer"
+    },
+    {
+      "claim_id": "C2_ECONOMIC_ESCALATION",
+      "statement": "Minimum plausible execution followed by verification and selective escalation can improve the verified-success/cost frontier relative to strong-direct and simpler fixed baselines.",
+      "experiment": "P1",
+      "depends_on": ["C1_ROUTING_HEADROOM"],
+      "current_status": "PLAUSIBLE",
+      "current_evidence_level": "E0_EXPLORATORY",
+      "dv_specific_evidence": "P1_PENDING_EXECUTOR_QUALIFICATION",
+      "primary_falsifier": "Cheap-direct plus verification or strong-direct matches or dominates escalation after failed-attempt, verification, and handoff overhead.",
+      "architecture_if_supported": "minimal routing/escalation policy candidate",
+      "architecture_if_refuted": "fixed treatment; no dynamic escalation"
+    },
+    {
+      "claim_id": "C3_CONTINUITY_VALUE",
+      "statement": "Transferable task continuity beyond workspace state reduces recovery cost or increases verified completion enough to pay for its transfer and maintenance overhead.",
+      "experiment": "P2",
+      "current_status": "PLAUSIBLE",
+      "current_evidence_level": "E0_EXPLORATORY",
+      "dv_specific_evidence": "UNPROVEN",
+      "primary_falsifier": "Workspace-only resumption or an existing generic compressor matches structured task continuity on the Pareto frontier.",
+      "architecture_if_supported": "continuity capability justified; implementation source still open",
+      "architecture_if_refuted": "workspace-only or existing context mechanism"
+    },
+    {
+      "claim_id": "C4_COMPOSITION_HEADROOM",
+      "statement": "Different tasks or task states benefit from materially different execution compositions, creating meaningful headroom between the best fixed composition and a retrospective composition oracle.",
+      "experiment": "P3",
+      "current_status": "PLAUSIBLE",
+      "current_evidence_level": "E0_EXPLORATORY",
+      "dv_specific_evidence": "UNPROVEN",
+      "primary_falsifier": "Best fixed composition approximately matches the composition oracle after coordination overhead.",
+      "architecture_if_supported": "composition-selection opportunity exists; policy still unproven",
+      "architecture_if_refuted": "fixed composition"
+    },
+    {
+      "claim_id": "C5_SEQUENTIAL_ADAPTATION",
+      "statement": "State-aware sequential decisions during execution outperform the best fixed cascade and simple deterministic rules after controller and handoff overhead.",
+      "experiment": "P4",
+      "depends_on": ["C2_ECONOMIC_ESCALATION"],
+      "current_status": "PLAUSIBLE",
+      "current_evidence_level": "E0_EXPLORATORY",
+      "dv_specific_evidence": "UNPROVEN",
+      "primary_falsifier": "Best fixed cascade or simple rules reaches an equivalent or superior verified-success/cost frontier.",
+      "architecture_if_supported": "adaptive controller candidate",
+      "architecture_if_refuted": "static rules/cascade; no learned or LLM controller"
+    },
+    {
+      "claim_id": "C6_INTEGRATED_DV",
+      "statement": "Combining only previously justified routing, continuity, composition, verification, and control capabilities preserves a material Pareto improvement after all interaction overhead.",
+      "experiment": "P5",
+      "depends_on": ["C1_ROUTING_HEADROOM", "C2_ECONOMIC_ESCALATION", "C3_CONTINUITY_VALUE", "C4_COMPOSITION_HEADROOM", "C5_SEQUENTIAL_ADAPTATION"],
+      "current_status": "UNTESTED",
+      "current_evidence_level": "E0_EXPLORATORY",
+      "dv_specific_evidence": "COMPLETELY_UNPROVEN",
+      "primary_falsifier": "Strong-direct, simple cascade, or a thinner system reaches an equivalent or superior external holdout frontier.",
+      "architecture_if_supported": "integrated DV candidate, limited to components that survived ablation",
+      "architecture_if_refuted": "NO_BUILD or THIN_DV"
+    },
+    {
+      "claim_id": "C7_CUSTOM_IMPLEMENTATION_NECESSITY",
+      "statement": "For any supported capability, no existing provider, standard, framework, or thin adapter provides an equivalent effect at lower total integration and maintenance cost.",
+      "experiment": "TRANSVERSAL_REUSE_GATE",
+      "current_status": "UNTESTED",
+      "current_evidence_level": "E0_EXPLORATORY",
+      "primary_falsifier": "Existing provider or composition is equivalent or better under the required contract and accounting.",
+      "architecture_if_supported": "custom implementation may be justified at minimum sufficient scope",
+      "architecture_if_refuted": "REUSED"
+    },
+    {
+      "claim_id": "C8_ECOSYSTEM_ADAPTABILITY",
+      "statement": "The retained DV capabilities continue to provide value or can be recalibrated without core redesign when model capability, price, harness, availability, or task distribution changes materially.",
+      "experiment": "P5_AND_RETEST",
+      "current_status": "UNTESTED",
+      "current_evidence_level": "E0_EXPLORATORY",
+      "primary_falsifier": "Material ecosystem change makes the retained architecture noncompetitive or requires broad core reconstruction.",
+      "architecture_if_supported": "capability-oriented adaptation justified",
+      "architecture_if_refuted": "retest, simplify, replace provider, or retire affected capability"
+    }
+  ],
+  "negative_guardrails": [
+    "Full trajectories are not assumed beneficial in escalation.",
+    "Multi-agent is not assumed superior to single-agent.",
+    "More context is not assumed superior.",
+    "The strongest model is not assumed economically optimal.",
+    "A learned or LLM controller is not assumed superior to deterministic rules.",
+    "Existing DV or MetaO code is not assumed preferable to external reuse.",
+    "A component that once helped is not assumed permanently useful."
+  ],
+  "no_architecture_effect": true
+}

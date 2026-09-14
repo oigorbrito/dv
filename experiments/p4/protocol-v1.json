@@ -1,0 +1,59 @@
+{
+  "protocol_id": "dv-p4-sequential-control-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "primary_claim": "C5",
+  "research_question": "Does state-aware sequential control improve verified completion efficiency over fixed execution, fixed cascade, and simple deterministic rules after controller and switching overhead are counted?",
+  "precondition": "P4 may execute only if prior experiments show material headroom for at least one adaptive decision beyond a fixed treatment.",
+  "state_minimum": [
+    "verified_progress",
+    "verification_state",
+    "recent_failure_class",
+    "current_execution_configuration",
+    "attempt_count",
+    "no_verified_progress_cost",
+    "budget_remaining",
+    "available_alternatives"
+  ],
+  "initial_action_space": ["CONTINUE", "VERIFY", "RETRY", "SWITCH", "ESCALATE", "STOP"],
+  "baselines": {
+    "F0_FIXED": "one frozen executor/configuration until stop condition",
+    "F1_FIXED_CASCADE": "frozen cheap-to-strong or equivalent deterministic escalation",
+    "F2_RULE_CONTROLLER": "simple deterministic state rules frozen before execution",
+    "F3_LLM_CONTROLLER": "LLM chooses only from the frozen action set using structured state",
+    "F4_LEARNED_POLICY": "deferred until enough logged trajectories exist",
+    "ORACLE": "retrospective policy used for headroom/regret analysis only"
+  },
+  "execution_order": [
+    "P4-A deterministic rules only",
+    "P4-B LLM controller only if P4-A leaves material oracle headroom",
+    "P4-C learned policy only if logged evidence volume and residual headroom justify it"
+  ],
+  "primary_metric": "TOTAL_SYSTEM_TOKENS / VERIFIED_SOLVED_TASK",
+  "secondary_metrics": [
+    "verified solve rate",
+    "monetary cost / verified solved task",
+    "latency",
+    "controller tokens/cost/latency",
+    "switch count",
+    "handoff cost",
+    "no-progress cost before intervention",
+    "verification frequency",
+    "decision regret versus retrospective oracle where estimable"
+  ],
+  "control_tax": "All controller inference, state serialization, candidate scoring, switching, handoff, verification, and retry overhead enters total cost.",
+  "anti_bias_rules": [
+    "LEARNED_POLICY is not assumed superior to deterministic rules",
+    "LLM_CONTROLLER is not assumed superior to fixed cascade",
+    "A more complex controller is prohibited unless the immediately simpler baseline leaves material measured headroom",
+    "No transcript dump is provided to the controller by default; use frozen structured state",
+    "Controller complexity may be removed even if previously implemented"
+  ],
+  "decision_gate": {
+    "fixed_or_cascade_approximately_best": "NO_BUILD adaptive controller",
+    "rules_approximately_llm_or_learned": "CUSTOM_MINIMAL deterministic control at most",
+    "llm_materially_improves_frontier": "MINIMAL_CAPABILITY_JUSTIFIED subject to holdout",
+    "no_stable_result": "INCONCLUSIVE"
+  },
+  "architecture_effect": "NONE until E3 evidence",
+  "holdout": "Frozen unseen tasks required before mandatory adaptive controller promotion"
+}

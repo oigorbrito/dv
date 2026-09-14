@@ -1,0 +1,31 @@
+{
+  "gate_id": "dv-p2-continuity-decision-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "claim": "C3",
+  "required_evidence": "E3_HOLDOUT_CONFIRMED by default for promotion to mandatory architecture",
+  "decision_table": {
+    "C0_approximately_best": "NO_BUILD / workspace-only continuity sufficient",
+    "C2_approximately_C3_or_C4": "REUSE_EXISTING / existing compression is sufficient",
+    "C3_or_C4_materially_improves_frontier": "MINIMAL_CAPABILITY_JUSTIFIED candidate",
+    "C1_full_trajectory_worse": "retain as negative evidence; do not transfer full trajectory by default",
+    "cross_executor_gain_not_reproduced": "limit claim to same-executor resumption",
+    "no_stable_result": "INCONCLUSIVE"
+  },
+  "promotion_requirements": [
+    "paired controlled evidence with frozen workspace/checkpoint/successor where feasible",
+    "independent verification of final task success",
+    "total-system accounting including handoff and recovery costs",
+    "effect survives a separate unseen holdout",
+    "simpler workspace-only and existing-compression baselines lose materially within the supported scope",
+    "no existing provider supplies equivalent benefit at lower integration and maintenance cost"
+  ],
+  "stop_conditions": [
+    "workspace-only is economically equivalent or superior",
+    "existing compression is economically equivalent or superior",
+    "continuity gains disappear after payload/bootstrap/verification cost",
+    "state transfer increases false confidence or state-induced errors enough to eliminate net benefit"
+  ],
+  "architecture_if_supported": "Only the smallest empirically sufficient continuity capability is eligible. Task Runtime, vector memory, learned memory, or adaptive Context Compiler are not implied.",
+  "architecture_if_refuted": "Do not add custom Task State solely for handoff; preserve workspace-only or reuse existing context facilities.",
+  "no_post_hoc_rescue": true
+}

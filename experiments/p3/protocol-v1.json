@@ -1,0 +1,60 @@
+{
+  "protocol_id": "dv-p3-composition-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "primary_claim": "C4",
+  "research_question": "Do heterogeneous software-engineering tasks exhibit enough composition-specific performance/cost variation that selecting the execution composition can improve the verified-success/cost frontier over the best fixed composition?",
+  "first_gate": "Measure oracle composition headroom before building any adaptive composition selector.",
+  "null_hypothesis": "The best fixed composition is economically equivalent to retrospective per-task oracle composition within the frozen scope.",
+  "initial_compositions": {
+    "A0_DIRECT": "single direct executor",
+    "A1_DIRECT_VERIFY": "single executor plus independent verifier",
+    "A2_PLAN_EXECUTE": "planner plus executor",
+    "A3_PLAN_EXECUTE_VERIFY": "planner plus executor plus independent verifier",
+    "A4_PARALLEL_TWO_EXECUTORS_VERIFY": "two parallel executor attempts plus independent selection/verification",
+    "A5_ORCHESTRATOR_MANAGED": "existing orchestrator-managed execution with frozen configuration"
+  },
+  "control_requirements": [
+    "Hold task, model/capability budget, workspace, tools, permissions, acceptance criteria, and final verifier constant wherever technically feasible.",
+    "Record model/harness/tool differences explicitly when perfect control is impossible.",
+    "Do not infer architecture effects from comparisons that simultaneously change model capability without stratified analysis.",
+    "All composition overhead is included in total-system accounting."
+  ],
+  "task_profile_fields": [
+    "spread",
+    "novelty",
+    "centrality",
+    "tool_intensity",
+    "sequential_depth",
+    "parallelizability",
+    "specification_ambiguity",
+    "verification_strength",
+    "context_footprint"
+  ],
+  "headroom_analysis": {
+    "oracle": "For each task, retrospectively choose the lowest-total-cost verified-successful composition among frozen treatments.",
+    "baseline": "Best fixed composition across the same task distribution.",
+    "decision": "If OracleComposition is not materially better than BestFixedComposition, adaptive composition selection is rejected for this scope."
+  },
+  "primary_metric": "TOTAL_SYSTEM_TOKENS / VERIFIED_SOLVED_TASK",
+  "secondary_metrics": [
+    "verified solve rate",
+    "monetary cost / verified solved task",
+    "latency",
+    "planning tokens",
+    "verification tokens",
+    "coordination tokens",
+    "parallel duplicate-work cost",
+    "false acceptance rate",
+    "architecture tax versus A0_DIRECT"
+  ],
+  "adaptive_selector": "PROHIBITED in P3-A. A simple rule-based selector may be tested in P3-B only if P3-A demonstrates material oracle headroom.",
+  "anti_bias_rules": [
+    "MULTI_AGENT is not assumed superior",
+    "ORCHESTRATION is not assumed superior",
+    "VERIFICATION is not assumed mandatory for every task",
+    "MAXIMAL composition is a baseline, not a preferred architecture",
+    "No new composition may be added post-hoc solely to rescue the DV hypothesis"
+  ],
+  "allowed_outcomes": ["NO_BUILD", "REUSE_EXISTING", "MINIMAL_CAPABILITY_JUSTIFIED", "INCONCLUSIVE"],
+  "holdout": "Must be distinct/frozen before any architecture promotion claim"
+}

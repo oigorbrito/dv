@@ -1,0 +1,70 @@
+{
+  "policy_id": "dv-evidence-policy-v1",
+  "status": "PROPOSED",
+  "purpose": "Govern how DV research claims are promoted, scoped, superseded, retested, or rejected without converting exploratory observations into architecture facts.",
+  "principles": [
+    "ANECDOTAL != REPRODUCED != CONTROLLED != HOLDOUT_CONFIRMED != INDEPENDENTLY_REPLICATED",
+    "EXECUTOR_SUCCESS != VERIFIED_TASK_SUCCESS",
+    "LOWER_LOCAL_COST != LOWER_TOTAL_SYSTEM_COST",
+    "SUPPORTED claims are always scope-bounded",
+    "negative and null results are first-class evidence",
+    "architecture components require an explicit supported claim",
+    "existing providers must be preferred when they provide equivalent effect at lower integration and maintenance cost",
+    "historical evidence remains valid for its original scope even when operationally stale"
+  ],
+  "evidence_levels": {
+    "E0_EXPLORATORY": "Single or few exploratory observations. Hypothesis generation only.",
+    "E1_REPRODUCED": "Behavior reproduced under the same frozen setup. No comparative causal claim implied.",
+    "E2_CONTROLLED": "Frozen baseline and treatment, paired comparison where feasible, independent verification, and complete accounting.",
+    "E3_HOLDOUT_CONFIRMED": "Frozen protocol confirmed on unseen holdout tasks without post-hoc tuning.",
+    "E4_INDEPENDENTLY_REPLICATED": "Result reproduced by a materially independent implementation, benchmark, team, or external study under compatible scope."
+  },
+  "claim_status": [
+    "UNTESTED",
+    "PLAUSIBLE",
+    "SUPPORTED",
+    "REFUTED",
+    "INCONCLUSIVE",
+    "SUPERSEDED"
+  ],
+  "operational_status": [
+    "CURRENT",
+    "STALE_RETEST_REQUIRED",
+    "NOT_OPERATIONALLY_RELEVANT",
+    "RETIRED"
+  ],
+  "architecture_promotion_rule": {
+    "default_minimum_evidence": "E3_HOLDOUT_CONFIRMED",
+    "exceptions": "Only for non-core experimental infrastructure where no architecture claim is made.",
+    "mandatory_checks": [
+      "simpler baseline loses materially within the frozen scope",
+      "all routing, context, verification, handoff, retry, coordination, controller, and maintenance overhead relevant to the claim is included",
+      "no existing provider or simpler composition supplies equivalent effect at lower total cost",
+      "failure and inconclusive runs remain in the record"
+    ]
+  },
+  "capability_decisions": [
+    "REJECTED",
+    "REUSED",
+    "CUSTOM_MINIMAL",
+    "CUSTOM_ADVANCED",
+    "INCONCLUSIVE"
+  ],
+  "retest_triggers": [
+    "MATERIAL_MODEL_CAPABILITY_SHIFT",
+    "MATERIAL_MODEL_PRICE_SHIFT",
+    "HARNESS_MAJOR_RELEASE",
+    "NEW_EXECUTOR_CLASS",
+    "VERIFIER_CHANGE",
+    "BENCHMARK_INVALIDATION",
+    "TASK_DISTRIBUTION_SHIFT",
+    "PROVIDER_AVAILABILITY_CHANGE",
+    "MATERIAL_REPLICATION_CONTRADICTION"
+  ],
+  "retest_guidance": {
+    "price_shift_reference": ">=25% relative change is a default review trigger, not a universal scientific threshold",
+    "performance_shift_reference": ">=5 percentage-point verified solve-rate change is a default review trigger, not a universal scientific threshold",
+    "rule": "A trigger marks the operational recommendation stale; it does not erase historical evidence for the original scope."
+  },
+  "no_architecture_effect": true
+}

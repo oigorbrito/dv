@@ -1,0 +1,62 @@
+{
+  "matrix_id": "p1-minimal-execution-matrix-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "purpose": "Allow P1 smoke execution to start immediately when any required executor categories become S0-ready, while skipping blocked candidates without redesigning the protocol.",
+  "scientific_boundary": [
+    "This matrix does not qualify any executor.",
+    "This matrix does not authorize paid or credentialed calls beyond existing project authorization.",
+    "Blocked candidates are skipped, not reinterpreted as failures of a treatment.",
+    "No holdout task may be accessed.",
+    "Executor and verifier bindings must be frozen before each treatment run."
+  ],
+  "required_categories_for_comparative_smoke": {
+    "strong": "one S0-ready C1_STRONG_REMOTE-equivalent path",
+    "economic": "one S0-ready C2_ECONOMIC_REMOTE, C3_LOCAL_OPEN_WEIGHT, or C4_FREE_OR_NEAR_FREE-equivalent path"
+  },
+  "fallback_order": {
+    "strong": [
+      "first S0-ready candidate in C1_STRONG_REMOTE",
+      "any newly qualified strong path satisfying executor-screening-contract-v1"
+    ],
+    "economic": [
+      "first S0-ready candidate in C4_FREE_OR_NEAR_FREE",
+      "first S0-ready candidate in C3_LOCAL_OPEN_WEIGHT",
+      "first S0-ready candidate in C2_ECONOMIC_REMOTE",
+      "any newly qualified lower-cost path satisfying executor-screening-contract-v1"
+    ]
+  },
+  "skip_rule": "If a candidate is credential-, quota-, environment-, install-, licensing-, or telemetry-blocked, record the blocker and advance to the next candidate. Do not weaken S0 qualification to make the matrix executable.",
+  "task_source": "experiments/p1/p1-development-corpus-v6.json",
+  "smoke_task_selection": {
+    "rule": "Use the smallest verifier-first subset that covers at least two admitted task families when possible.",
+    "target_count": "2-4 tasks",
+    "one_task_exception": "Allowed only for pipeline smoke; no comparative claim."
+  },
+  "cells": [
+    {"treatment":"B0_STRONG_DIRECT","requires":["strong"],"shaping":["S0_RAW_TASK"],"initial_repetitions":1},
+    {"treatment":"B1_CHEAP_DIRECT_VERIFY","requires":["economic"],"shaping":["S0_RAW_TASK"],"initial_repetitions":1},
+    {"treatment":"B2_CHEAP_THEN_ESCALATE","requires":["economic","strong"],"shaping":["S0_RAW_TASK"],"initial_repetitions":1},
+    {"treatment":"B3_STATIC_FAMILY_POLICY","requires":["economic","strong"],"shaping":["S0_RAW_TASK"],"initial_repetitions":1,"gate":"run only after family policy is frozen prospectively"},
+    {"treatment":"B4_LOCAL_OR_FREE_FIRST","requires":["C3_LOCAL_OPEN_WEIGHT_or_C4_FREE_OR_NEAR_FREE","strong fallback if escalation is part of frozen treatment"],"shaping":["S0_RAW_TASK"],"initial_repetitions":1,"gate":"skip without penalty if no local/free candidate is S0-ready"}
+  ],
+  "paired_shaping_extension": {
+    "status": "DEFERRED_UNTIL_PIPELINE_VALID",
+    "treatment": "S1_DETERMINISTIC_TASK_SHAPING",
+    "rule": "Add only as paired S0/S1 comparison after base smoke path executes reproducibly."
+  },
+  "minimum_run_record": [
+    "task_id",
+    "treatment_id",
+    "executor/model/harness identity",
+    "invocation parameters",
+    "input/output/cached/reasoning tokens when exposed",
+    "explicit telemetry limitation when not exposed",
+    "wall time",
+    "monetary cost provenance",
+    "verification result",
+    "retry/escalation events",
+    "failure attribution",
+    "candidate artifact reference"
+  ],
+  "release_rule": "Smoke evidence validates the pipeline only. Comparative or architecture claims remain prohibited until later P1 gates are satisfied."
+}
