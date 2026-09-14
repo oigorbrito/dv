@@ -1,0 +1,63 @@
+{
+  "protocol_id": "dv-p5-integrated-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "primary_claim": "C6",
+  "research_question": "When all empirically supported DV capabilities are integrated, does the complete system improve the verified-success/cost/latency frontier versus strong simple baselines after every control, context, handoff, verification, coordination, and maintenance-relevant overhead is counted?",
+  "precondition": "P5 integrates only capabilities individually supported by prior gates; unsupported components are excluded rather than retained for completeness.",
+  "systems": {
+    "S0_STRONG_DIRECT": "best practical strong single-agent/executor baseline with minimal verifier appropriate to the task",
+    "S1_SIMPLE_CASCADE": "best simple deterministic cascade surviving P1",
+    "S2_THIN_DV": "only minimal supported routing/state/verification rules; no unsupported advanced controller",
+    "S3_SUPPORTED_FULL_DV": "all and only capabilities supported by prior experiments",
+    "S4_MAXIMAL_AGENTIC": "maximal practical orchestration/composition baseline when available"
+  },
+  "primary_metric": "TOTAL_SYSTEM_TOKENS / VERIFIED_SOLVED_TASK",
+  "required_joint_reporting": [
+    "verified solve rate",
+    "total system tokens",
+    "total monetary cost",
+    "wall-clock latency",
+    "false acceptance rate",
+    "routing/control overhead",
+    "context/handoff overhead",
+    "verification overhead",
+    "coordination overhead",
+    "retry/replan overhead"
+  ],
+  "frontier_rule": "No system wins by a single scalar alone. Promotion requires a materially useful Pareto-frontier improvement or a predeclared constrained operating point that simpler baselines cannot match.",
+  "task_distribution_requirements": [
+    "heterogeneous task profiles",
+    "multiple repositories or materially different code surfaces where feasible",
+    "mix of localized and broader tasks",
+    "explicit task-profile recording",
+    "sealed external holdout",
+    "shifted-distribution confirmation where feasible"
+  ],
+  "ecosystem_change_tests": [
+    "new executor/capability introduction",
+    "material price change",
+    "provider unavailability or rate limit",
+    "major harness change"
+  ],
+  "ablation_requirements": [
+    "remove routing",
+    "remove continuity if present",
+    "remove composition selection if present",
+    "remove adaptive control if present",
+    "remove independent verifier where safe and scientifically meaningful",
+    "remove explicit cost awareness"
+  ],
+  "null_hypothesis": "Best simple/fixed systems achieve an equivalent or better practical frontier after complete overhead accounting.",
+  "success_condition": "At least one externally confirmed, operationally useful frontier region remains unavailable to simpler baselines and the gain survives complete-system accounting.",
+  "failure_conditions": [
+    "integrated overhead eliminates isolated gains",
+    "strong direct dominates or is economically acceptable at the required success level",
+    "simple cascade matches supported-full-DV",
+    "external providers/frameworks reproduce the same effect at lower maintenance cost",
+    "gain fails sealed holdout or distribution-shift check"
+  ],
+  "allowed_outcomes": ["NO_BUILD", "THIN_DV", "SUPPORTED_DV", "REUSE_EXISTING", "INCONCLUSIVE"],
+  "complexity_rule": "If an ablation shows a component has no positive marginal utility within uncertainty, remove it from the candidate architecture.",
+  "retest_rule": "Any material ecosystem shift may mark the operational conclusion STALE_RETEST_REQUIRED without erasing historical evidence.",
+  "architecture_effect": "P5 is the first protocol allowed to justify an integrated operational DV architecture."
+}
