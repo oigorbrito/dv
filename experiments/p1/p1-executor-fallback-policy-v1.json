@@ -1,0 +1,60 @@
+{
+  "policy_id": "p1-executor-fallback-policy-v1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "goal": "Keep P1 moving by skipping blocked executor candidates while preserving qualification rigor and treatment definitions.",
+  "principles": [
+    "candidate blocker != treatment failure",
+    "qualification failure != scientific result",
+    "do not spend effort repairing a provider-specific path before checking the next admissible candidate",
+    "do not weaken telemetry, identity, reproducibility, timeout, licensing, or cost-provenance requirements to force readiness",
+    "prefer zero/low-cost qualification paths when scientifically interchangeable",
+    "a newly discovered candidate may enter only through the same frozen screening contract"
+  ],
+  "decision_loop": [
+    "select next candidate from category priority",
+    "run documentation/surface gate",
+    "if blocked -> record blocker and skip",
+    "if surface-qualified -> run exactly the permitted S0 qualification probe",
+    "if S0-ready -> freeze binding for smoke matrix",
+    "if S0-not-ready -> record evidence and skip",
+    "continue until required category coverage exists or candidate universe is exhausted"
+  ],
+  "category_priority": [
+    {
+      "need": "economic_or_free",
+      "order": ["C4_FREE_OR_NEAR_FREE", "C3_LOCAL_OPEN_WEIGHT", "C2_ECONOMIC_REMOTE"],
+      "reason": "minimize qualification and later treatment cost without changing the scientific role"
+    },
+    {
+      "need": "strong",
+      "order": ["C1_STRONG_REMOTE", "new_strong_candidate_if_screened"],
+      "reason": "strong path is required for B0 and escalation fallback"
+    },
+    {
+      "need": "specialized_optional",
+      "order": ["C5_SPECIALIZED_TOOL_EXECUTOR"],
+      "reason": "not required for the minimal P1 smoke"
+    }
+  ],
+  "blocker_classes": [
+    "CREDENTIAL_BLOCKED",
+    "QUOTA_BLOCKED",
+    "PAID_CALL_NOT_AUTHORIZED",
+    "ENVIRONMENT_BLOCKED",
+    "INSTALL_REQUIRED",
+    "HARDWARE_INSUFFICIENT",
+    "TELEMETRY_INSUFFICIENT",
+    "IDENTITY_UNOBSERVABLE",
+    "LICENSING_OR_TERMS_UNRESOLVED",
+    "COST_PROVENANCE_UNRESOLVED",
+    "NOT_PROGRAMMATICALLY_INVOCABLE"
+  ],
+  "exhaustion_outcome": "INCONCLUSIVE_EXECUTOR_AVAILABILITY",
+  "exhaustion_rule": "If no admissible strong+economic pair can be qualified, do not infer that routing/escalation lacks value; record P1 as operationally blocked and continue only independent research work.",
+  "links": {
+    "screening_contract": "experiments/p1/executor-screening-contract-v1.json",
+    "candidate_universe": "experiments/p1/executor-candidate-universe-v1.json",
+    "execution_matrix": "experiments/p1/p1-minimal-execution-matrix-v1.json",
+    "treatment_design": "experiments/p1/treatment-design-v1.json"
+  }
+}
